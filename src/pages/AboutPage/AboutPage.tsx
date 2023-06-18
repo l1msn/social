@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {JSX} from 'react';
 
-const AboutPage: React.FC = () => {
+const AboutPage: React.FC = (): JSX.Element => {
     return (
         <div>
             ABOUT PAGE
