@@ -1,7 +1,8 @@
 import {useContext} from "react";
-import {LocalStorageThemeKey, ThemeContext} from "../context/theme/ThemeContext";
-import Themes from "../consts/Themes";
-import IUseThemeResult from "../interfaces/hooks/IUseThemeResult";
+import IUseThemeResult from "app/providers/ThemeProvider/interfaces/hooks/IUseThemeResult";
+import {LocalStorageThemeKey, ThemeContext} from "app/providers/ThemeProvider/lib/ThemeContext";
+import Themes from "app/providers/ThemeProvider/consts/Themes";
+
 
 
 function useTheme(): IUseThemeResult {

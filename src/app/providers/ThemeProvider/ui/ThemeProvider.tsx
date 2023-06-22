@@ -1,9 +1,7 @@
 import React, {JSX, useMemo, useState} from 'react';
-import { LocalStorageThemeKey, ThemeContext} from './ThemeContext';
-import Themes from "../../consts/Themes";
-import IThemeContextProps from "../../interfaces/props/IThemeContextProps";
-
-
+import Themes from "../consts/Themes";
+import {LocalStorageThemeKey, ThemeContext} from "../lib/ThemeContext";
+import IThemeContextProps from "app/providers/ThemeProvider/interfaces/props/IThemeContextProps";
 
 const defaultTheme: Themes = localStorage.getItem(LocalStorageThemeKey) as Themes || Themes.LIGHT;
 

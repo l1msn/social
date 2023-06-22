@@ -1,7 +1,7 @@
 import HTMLWebpackPlugin from "html-webpack-plugin";
 import webpack from "webpack";
-import {IBuildOptions} from "config/build/types/config";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import {IBuildOptions} from "./types/config";
 
 export function buildPlugins({paths}: IBuildOptions): webpack.WebpackPluginInstance[] {
     return [

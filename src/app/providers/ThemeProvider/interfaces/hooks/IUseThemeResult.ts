@@ -1,4 +1,4 @@
-import Themes from "../../consts/Themes";
+import Themes from "app/providers/ThemeProvider/consts/Themes";
 
 interface IUseThemeResult {
     toggleTheme: () => void;

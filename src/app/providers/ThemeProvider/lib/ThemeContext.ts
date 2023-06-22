@@ -1,5 +1,6 @@
 import {createContext} from "react";
-import IThemeContextProps from "../../interfaces/props/IThemeContextProps";
+import IThemeContextProps from "app/providers/ThemeProvider/interfaces/props/IThemeContextProps";
+
 
 
 const LocalStorageThemeKey = 'theme';

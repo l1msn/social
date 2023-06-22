@@ -2,7 +2,7 @@
   "name": "social",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "src/index.tsx",
   "scripts": {
     "start": "webpack serve --env port=3000",
     "build:prod": "webpack --env mode=production",
@@ -34,6 +34,6 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.12.1"
+    "react-router-dom": "^6.13.0"
   }
 }

@@ -1,6 +1,5 @@
 import React from "react";
-import Themes from "../../consts/Themes";
-
+import Themes from "app/providers/ThemeProvider/consts/Themes";
 
 interface IThemeContextProps {
     children?: React.ReactNode,
