@@ -1,7 +1,11 @@
-import {createContext} from "react";
-import IThemeContextProps from "app/providers/ThemeProvider/interfaces/props/IThemeContextProps";
+import React, {createContext} from "react";
+import Themes from "app/providers/ThemeProvider/consts/Themes";
 
-
+interface IThemeContextProps {
+    children?: React.ReactNode,
+    theme?: Themes,
+    setTheme?: (theme: Themes) => void;
+}
 
 const LocalStorageThemeKey = 'theme';
 
