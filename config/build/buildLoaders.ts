@@ -6,7 +6,21 @@ export function buildLoaders({isDev}: IBuildOptions): webpack.RuleSetRule[] {
     const TSLoader: webpack.RuleSetRule = {
         test: /\.tsx?$/,
         use: 'ts-loader',
-        exclude: /node_modules/,
+        exclude: /node_modules/
+    }
+
+    const SVGLoader: webpack.RuleSetRule = {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+    }
+
+    const FileLoader: webpack.RuleSetRule = {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+            {
+                loader: 'file-loader',
+            },
+        ],
     }
 
     const CSSLoader: webpack.RuleSetRule = {
@@ -31,6 +45,6 @@ export function buildLoaders({isDev}: IBuildOptions): webpack.RuleSetRule[] {
     }
 
     return [
-        TSLoader, CSSLoader
+        TSLoader, CSSLoader, SVGLoader, FileLoader
     ]
 }
