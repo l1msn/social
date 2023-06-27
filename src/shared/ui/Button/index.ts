@@ -1,3 +1,3 @@
-import Button from "./ui/Button";
+import Button from './ui/Button';
 
 export default Button;

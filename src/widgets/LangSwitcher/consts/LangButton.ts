@@ -3,4 +3,4 @@ enum LangButton {
     RU = 'ru'
 }
 
-export default LangButton
+export default LangButton;

@@ -1,5 +1,5 @@
-import React, {createContext} from "react";
-import Themes from "app/providers/ThemeProvider/consts/Themes";
+import React, {createContext} from 'react';
+import Themes from 'app/providers/ThemeProvider/consts/Themes';
 
 interface IThemeContextProps {
     children?: React.ReactNode,
@@ -9,6 +9,6 @@ interface IThemeContextProps {
 
 const LocalStorageThemeKey = 'theme';
 
-const ThemeContext = createContext<IThemeContextProps>({} as IThemeContextProps)
+const ThemeContext = createContext<IThemeContextProps>({} as IThemeContextProps);
 
-export { ThemeContext, LocalStorageThemeKey }
+export {ThemeContext, LocalStorageThemeKey};
