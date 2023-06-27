@@ -1,7 +1,6 @@
-import React from "react";
+import React from 'react';
 
 const AboutPageLazy = React.lazy(
-    () => import('./AboutPage')
-)
+    () => import('./AboutPage'));
 
 export default AboutPageLazy;
