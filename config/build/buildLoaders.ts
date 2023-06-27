@@ -23,6 +23,17 @@ export function buildLoaders({isDev}: IBuildOptions): webpack.RuleSetRule[] {
         ],
     }
 
+    const BabelLoader: webpack.RuleSetRule = {
+        test: /\.(tsx|js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+            loader: 'babel-loader',
+            options: {
+                presets: [['@babel/preset-env']]
+            }
+        }
+    }
+
     const CSSLoader: webpack.RuleSetRule = {
         test: /\.s[ac]ss$/i,
         use: [
@@ -45,6 +56,6 @@ export function buildLoaders({isDev}: IBuildOptions): webpack.RuleSetRule[] {
     }
 
     return [
-        TSLoader, CSSLoader, SVGLoader, FileLoader
+        FileLoader, SVGLoader, BabelLoader, TSLoader, CSSLoader,
     ]
 }
