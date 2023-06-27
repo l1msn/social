@@ -14,24 +14,24 @@ interface ISidebarProps {
 }
 
 const Sidebar: React.FC<ISidebarProps> = ({className}: ISidebarProps): JSX.Element => {
-  const [collapsed, setCollapsed] = useState<boolean>(false);
+    const [collapsed, setCollapsed] = useState<boolean>(false);
 
-  const {theme} = useTheme();
+    const {theme} = useTheme();
 
-  function onToggle(): void {
-    setCollapsed((prevState) => !prevState);
-  }
-  return (
-    <div className={classNames(cls.Sidebar, {[cls.collapsed]: collapsed}, [className])}>
-      <Button theme={ThemeButton.CLEAR} onClick={onToggle}>{
+    function onToggle(): void {
+        setCollapsed((prevState) => !prevState);
+    }
+    return (
+        <div className={classNames(cls.Sidebar, {[cls.collapsed]: collapsed}, [className])}>
+            <Button className={cls.burger} theme={ThemeButton.CLEAR} onClick={onToggle}>{
                 theme == Themes.DARK ? <DarkIcon/> : <LightIcon/>
-      }</Button>
-      <div className={cls.switchers}>
-        <LangSwitcher className={cls.lang}/>
-        <ThemeSwitcher/>
-      </div>
-    </div>
-  );
+            }</Button>
+            <div className={cls.switchers}>
+                <LangSwitcher className={cls.lang}/>
+                <ThemeSwitcher/>
+            </div>
+        </div>
+    );
 };
 
 export default Sidebar;

@@ -9,13 +9,13 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const Button: React.FC<IButtonProps> = (props: IButtonProps): JSX.Element => {
-  const {className, children, theme, ...otherProps} = props;
+    const {className, children, theme, ...otherProps} = props;
 
-  return (
-    <button {...otherProps} className={classNames(cls.Button, {}, [className, cls[theme]])}>
-      {children}
-    </button>
-  );
+    return (
+        <button {...otherProps} className={classNames(cls.Button, {}, [className, cls[theme]])}>
+            {children}
+        </button>
+    );
 };
 
 export default Button;

@@ -10,15 +10,15 @@ interface INavbarProps {
 }
 
 const Navbar: React.FC<INavbarProps> = ({className}: INavbarProps): JSX.Element => {
-  const {t} = useTranslation('navbar');
-  return (
-    <div className={classNames(cls.navbar, {}, [className])}>
-      <div className={cls.links}>
-        <AppLink theme={AppLinkThemes.SECONDARY} to={'/'} className={cls.mainLink}>{t('Main')}</AppLink>
-        <AppLink theme={AppLinkThemes.SECONDARY} to={'/about'}>{t('About')}</AppLink>
-      </div>
-    </div>
-  );
+    const {t} = useTranslation('navbar');
+    return (
+        <div className={classNames(cls.navbar, {}, [className])}>
+            <div className={cls.links}>
+                <AppLink theme={AppLinkThemes.SECONDARY} to={'/'} className={cls.mainLink}>{t('Main')}</AppLink>
+                <AppLink theme={AppLinkThemes.SECONDARY} to={'/about'}>{t('About')}</AppLink>
+            </div>
+        </div>
+    );
 };
 
 export default Navbar;

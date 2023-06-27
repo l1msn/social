@@ -8,15 +8,15 @@ interface IUseThemeResult {
 }
 
 function useTheme(): IUseThemeResult {
-  const {theme, setTheme} = useContext(ThemeContext);
+    const {theme, setTheme} = useContext(ThemeContext);
 
-  function toggleTheme(): void {
-    const newTheme: Themes = theme === Themes.DARK ? Themes.LIGHT : Themes.DARK;
-    setTheme(newTheme);
-    localStorage.setItem(LocalStorageThemeKey, newTheme);
-  }
+    function toggleTheme(): void {
+        const newTheme: Themes = theme === Themes.DARK ? Themes.LIGHT : Themes.DARK;
+        setTheme(newTheme);
+        localStorage.setItem(LocalStorageThemeKey, newTheme);
+    }
 
-  return {theme, toggleTheme};
+    return {theme, toggleTheme};
 }
 
 export default useTheme;

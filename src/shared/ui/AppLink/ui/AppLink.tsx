@@ -11,13 +11,13 @@ interface IAppLinkProps extends LinkProps{
 }
 
 const AppLink: React.FC<IAppLinkProps> = (props): JSX.Element => {
-  const {to, className, children, theme = AppLinkThemes.PRIMARY} = props;
+    const {to, className, children, theme = AppLinkThemes.PRIMARY} = props;
 
-  return (
-    <Link to={to} className={classNames(cls.applink, {}, [className, cls[theme]])}>
-      {children}
-    </Link>
-  );
+    return (
+        <Link to={to} className={classNames(cls.applink, {}, [className, cls[theme]])}>
+            {children}
+        </Link>
+    );
 };
 
 export default AppLink;

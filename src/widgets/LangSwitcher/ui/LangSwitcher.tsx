@@ -14,21 +14,21 @@ interface ILangSwitcherProps {
 }
 
 const LangSwitcher: React.FC<ILangSwitcherProps> = ({className}: ILangSwitcherProps): JSX.Element => {
-  const {i18n} = useTranslation();
+    const {i18n} = useTranslation();
 
-  function toggleLang(): void {
-    i18n.changeLanguage(i18n.language == 'en' ? 'ru' : 'en');
-  }
+    function toggleLang(): void {
+        i18n.changeLanguage(i18n.language == 'en' ? 'ru' : 'en');
+    }
 
-  return (
-    <Button
-      theme={ThemeButton.CLEAR}
-      onClick={toggleLang}
-      className={classNames(cls.LangSwitcher, {}, [className])}
-    >
-      {i18n.language == LangButton.EN ? <EnIcon/> : <RuIcon/>}
-    </Button>
-  );
+    return (
+        <Button
+            theme={ThemeButton.CLEAR}
+            onClick={toggleLang}
+            className={classNames(cls.LangSwitcher, {}, [className])}
+        >
+            {i18n.language == LangButton.EN ? <EnIcon/> : <RuIcon/>}
+        </Button>
+    );
 };
 
 export default LangSwitcher;

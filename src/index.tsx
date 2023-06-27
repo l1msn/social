@@ -10,8 +10,8 @@ const root = createRoot(container!);
 
 root.render(
     <BrowserRouter>
-      <ThemeProvider >
-        <App />
-      </ThemeProvider>
+        <ThemeProvider >
+            <App />
+        </ThemeProvider>
     </BrowserRouter>,
 );
