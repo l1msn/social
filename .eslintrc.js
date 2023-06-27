@@ -7,6 +7,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
     'plugin:react/recommended',
+    'plugin:i18next/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:import/typescript',
@@ -15,6 +16,7 @@ module.exports = {
   overrides: [
 
   ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     parser: '@typescript-eslint/parser',
     ecmaVersion: 'latest',
@@ -27,6 +29,7 @@ module.exports = {
   plugins: [
     'react',
     '@typescript-eslint',
+    'i18next',
   ],
   rules: {
     'import/no-unresolved': 'off',
@@ -41,6 +44,7 @@ module.exports = {
     'new-cap': 'warn',
     'no-unused-vars': 'warn',
     'react/react-in-jsx-scope': 'warn',
+    'i18next/no-literal-string': ['error', {markupOnly: true}],
   },
   globals: {
     __IS_DEV__: true,
