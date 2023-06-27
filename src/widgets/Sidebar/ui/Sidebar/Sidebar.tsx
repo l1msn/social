@@ -7,6 +7,7 @@ import DarkIcon from "shared/assets/icons/menu-dark.svg"
 import LightIcon from "shared/assets/icons/menu-light.svg"
 import ThemeButton from "shared/ui/Button/consts/ThemeButton";
 import ThemeSwitcher from "widgets/ThemeSwitcher";
+import LangSwitcher from "widgets/LangSwitcher";
 
 interface ISidebarProps {
     className?: string
@@ -26,6 +27,7 @@ const Sidebar: React.FC<ISidebarProps> = ({className}: ISidebarProps): JSX.Eleme
                 theme == Themes.DARK ? <DarkIcon/> : <LightIcon/>
             }</Button>
             <div className={cls.switchers}>
+                <LangSwitcher className={cls.lang}/>
                 <ThemeSwitcher/>
             </div>
         </div>
