@@ -22,8 +22,8 @@ const Sidebar: React.FC<ISidebarProps> = ({className}: ISidebarProps): JSX.Eleme
         setCollapsed((prevState) => !prevState);
     }
     return (
-        <div className={classNames(cls.Sidebar, {[cls.collapsed]: collapsed}, [className])}>
-            <Button className={cls.burger} theme={ThemeButton.CLEAR} onClick={onToggle}>{
+        <div data-testid={'sidebar'} className={classNames(cls.Sidebar, {[cls.collapsed]: collapsed}, [className])}>
+            <Button data-testid={'sidebar-toggle'} className={cls.burger} theme={ThemeButton.CLEAR} onClick={onToggle}>{
                 theme == Themes.DARK ? <DarkIcon/> : <LightIcon/>
             }</Button>
             <div className={cls.switchers}>
