@@ -5,8 +5,8 @@ import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer';
 import {IBuildOptions} from './types/config';
 
 export function buildPlugins({paths, isDev}: IBuildOptions): webpack.WebpackPluginInstance[] {
-    return [
-        new HTMLWebpackPlugin({
+    const plugins =
+        [new HTMLWebpackPlugin({
             template: paths.html,
         }),
         new MiniCssExtractPlugin({
@@ -17,7 +17,15 @@ export function buildPlugins({paths, isDev}: IBuildOptions): webpack.WebpackPlug
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
         }),
-        new webpack.HotModuleReplacementPlugin(),
-        new BundleAnalyzerPlugin(),
-    ];
+        ];
+
+    if (isDev) {
+        plugins.push(new webpack.HotModuleReplacementPlugin());
+        plugins.push(new BundleAnalyzerPlugin({
+            openAnalyzer: false,
+        },
+        ));
+    }
+
+    return plugins;
 }
