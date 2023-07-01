@@ -3,19 +3,8 @@ module.exports = {
         browser: true,
         es2021: true,
     },
-    extends: [
-        'plugin:@typescript-eslint/recommended',
-        'plugin:react-hooks/recommended',
-        'plugin:react/recommended',
-        'plugin:i18next/recommended',
-        'plugin:import/errors',
-        'plugin:import/warnings',
-        'plugin:import/typescript',
-        'google',
-    ],
-    overrides: [
-
-    ],
+    extends: ['plugin:@typescript-eslint/recommended', 'plugin:react-hooks/recommended', 'plugin:react/recommended', 'plugin:i18next/recommended', 'plugin:import/errors', 'plugin:import/warnings', 'plugin:import/typescript', 'google', 'plugin:storybook/recommended'],
+    overrides: [],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         parser: '@typescript-eslint/parser',
@@ -26,11 +15,7 @@ module.exports = {
         sourceType: 'module',
         tsconfigRootDir: __dirname,
     },
-    plugins: [
-        'react',
-        '@typescript-eslint',
-        'i18next',
-    ],
+    plugins: ['react', '@typescript-eslint', 'i18next'],
     rules: {
         'indent': ['warn', 4],
         'import/no-unresolved': 'off',
@@ -45,7 +30,9 @@ module.exports = {
         'new-cap': 'warn',
         'no-unused-vars': 'warn',
         'react/react-in-jsx-scope': 'warn',
-        'i18next/no-literal-string': ['error', {markupOnly: true}],
+        'i18next/no-literal-string': ['error', {
+            markupOnly: true,
+        }],
     },
     globals: {
         __IS_DEV__: true,

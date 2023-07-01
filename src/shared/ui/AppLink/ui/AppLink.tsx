@@ -6,7 +6,6 @@ import AppLinkThemes from 'shared/ui/AppLink/consts/AppLinkThemes';
 
 interface IAppLinkProps extends LinkProps{
     className?: string;
-    children?: React.ReactNode;
     theme?: AppLinkThemes
 }
 

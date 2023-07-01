@@ -10,7 +10,7 @@ import ThemeSwitcher from 'widgets/ThemeSwitcher';
 import LangSwitcher from 'widgets/LangSwitcher';
 
 interface ISidebarProps {
-    className?: string
+    className?: string;
 }
 
 const Sidebar: React.FC<ISidebarProps> = ({className}: ISidebarProps): JSX.Element => {
