@@ -4,6 +4,7 @@ import ThemeButton from '../consts/ThemeButton';
 import 'app/styles/index.scss';
 import themeDecorator from '../../../config/storybook/themeDecorator/themeDecorator';
 import {Themes} from '../../../../app/providers/ThemeProvider';
+import SizeButton from '../consts/SizeButton';
 
 const meta = {
     title: 'shared/Button',
@@ -34,6 +35,63 @@ export const Outline: Story = {
     args: {
         children: 'Text',
         theme: ThemeButton.OUTLINE,
+    },
+};
+
+export const OutlineSizeL: Story = {
+    args: {
+        children: 'Text',
+        theme: ThemeButton.OUTLINE,
+        size: SizeButton.L,
+    },
+};
+
+export const OutlineSizeXL: Story = {
+    args: {
+        children: 'Text',
+        theme: ThemeButton.OUTLINE,
+        size: SizeButton.XL,
+    },
+};
+
+export const BackgroundTheme: Story = {
+    args: {
+        children: 'Text',
+        theme: ThemeButton.BACKGROUND,
+    },
+};
+
+export const BackgroundInvertedTheme: Story = {
+    args: {
+        children: 'Text',
+        theme: ThemeButton.BACKGROUND_INVERTED,
+    },
+};
+
+export const SquareSizeM: Story = {
+    args: {
+        children: 'Text',
+        theme: ThemeButton.BACKGROUND,
+        square: true,
+        size: SizeButton.M,
+    },
+};
+
+export const SquareSizeL: Story = {
+    args: {
+        children: 'Text',
+        theme: ThemeButton.BACKGROUND,
+        square: true,
+        size: SizeButton.L,
+    },
+};
+
+export const SquareSizeXL: Story = {
+    args: {
+        children: 'Text',
+        theme: ThemeButton.BACKGROUND,
+        square: true,
+        size: SizeButton.XL,
     },
 };
 

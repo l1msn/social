@@ -33,6 +33,7 @@ module.exports = {
         'i18next/no-literal-string': ['error', {
             markupOnly: true,
         }],
+        '@typescript-eslint/no-var-requires': 'off',
     },
     globals: {
         __IS_DEV__: true,
