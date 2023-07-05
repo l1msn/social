@@ -19,4 +19,10 @@
       "module": "CommonJS"
     }
   },
+  "include": [
+    "config/jest/setupTest.ts",
+    "src/app/types/global.d.ts",
+    "./src/**/*.ts",
+    "./src/**/*.ts"
+  ]
 }
