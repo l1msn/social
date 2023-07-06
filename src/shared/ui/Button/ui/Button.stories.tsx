@@ -103,3 +103,10 @@ export const OutlineDark: Story = {
     decorators: [themeDecorator(Themes.DARK)],
 };
 
+export const WithlineDark: Story = {
+    args: {
+        children: 'Text',
+        theme: ThemeButton.WITHLINE,
+    },
+};
+

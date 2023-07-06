@@ -11,6 +11,12 @@
     outline: none;
 }
 
+.withline{
+    border: 1px solid var(--inverted-primary-color);
+    color: var(--inverted-primary-color);
+    background: none;
+}
+
 .outline {
     border: none;
     color: var(--primary-color);

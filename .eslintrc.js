@@ -15,7 +15,7 @@ module.exports = {
         sourceType: 'module',
         tsconfigRootDir: __dirname,
     },
-    plugins: ['react', '@typescript-eslint', 'i18next'],
+    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
     rules: {
         'indent': ['warn', 4],
         'import/no-unresolved': 'off',
@@ -34,6 +34,8 @@ module.exports = {
             markupOnly: true,
         }],
         '@typescript-eslint/no-var-requires': 'off',
+        'react-hooks/rules-of-hooks': 'warn',
+        'react-hooks/exhaustive-deps': 'error',
     },
     globals: {
         __IS_DEV__: true,
