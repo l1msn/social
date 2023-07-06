@@ -8,7 +8,7 @@ describe('Sidebar component test', (): void => {
         expect(screen.getByTestId('sidebar')).toBeInTheDocument();
     });
 
-    test('', (): void => {
+    test('click event collapse', (): void => {
         componentRender(<Sidebar />);
         const toggleBtn: HTMLElement = screen.getByTestId('sidebar-toggle');
         expect(screen.getByTestId('sidebar')).toBeInTheDocument();
