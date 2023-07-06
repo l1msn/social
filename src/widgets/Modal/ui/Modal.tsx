@@ -1,6 +1,8 @@
 import React, {JSX, useCallback, useEffect, useRef, useState} from 'react';
 import classNames from 'shared/lib/classNames/classNames';
 import cls from './Modal.module.scss';
+import {useTheme} from 'app/providers/ThemeProvider';
+import Portal from 'widgets/Portal';
 
 interface IModalProps {
     className?: string,
@@ -19,6 +21,8 @@ const Modal: React.FC<IModalProps> = ({className, children, isOpen, onClose}: IM
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
     };
+
+    const {theme} = useTheme();
 
     function onContentClick(e: React.MouseEvent) {
         e.stopPropagation();
@@ -56,13 +60,15 @@ const Modal: React.FC<IModalProps> = ({className, children, isOpen, onClose}: IM
     }, [isOpen, onKeyDown]);
 
     return (
-        <div className={classNames(cls.modal, mods, [className])}>
-            <div className={cls.overlay} onClick={closeHandler}>
-                <div className={cls.content} onClick={onContentClick}>
-                    {children}
+        <Portal>
+            <div className={classNames(cls.modal, mods, [className, theme, 'app_modal'])}>
+                <div className={cls.overlay} onClick={closeHandler}>
+                    <div className={cls.content} onClick={onContentClick}>
+                        {children}
+                    </div>
                 </div>
             </div>
-        </div>
+        </Portal>
     );
 };
 
