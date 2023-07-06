@@ -30,7 +30,8 @@ module.exports = {
         'new-cap': 'warn',
         'no-unused-vars': 'warn',
         'react/react-in-jsx-scope': 'warn',
-        'i18next/no-literal-string': ['error', {
+        'import/namespace': 'warn',
+        'i18next/no-literal-string': ['warn', {
             markupOnly: true,
         }],
         '@typescript-eslint/no-var-requires': 'off',
