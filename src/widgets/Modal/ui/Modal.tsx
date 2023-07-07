@@ -8,12 +8,16 @@ interface IModalProps {
     className?: string,
     children?: React.ReactNode,
     isOpen?: boolean,
-    onClose?: () => void;
+    onClose?: () => void,
+    lazy?: boolean;
 }
 
 const ANIMATION_DELAY: number = 300;
 
-const Modal: React.FC<IModalProps> = ({className, children, isOpen, onClose}: IModalProps): JSX.Element => {
+const Modal: React.FC<IModalProps> = (props: IModalProps): JSX.Element => {
+    const {className, children, isOpen, onClose, lazy} = props;
+
+    const [isMounted, setIsMounted] = useState<boolean>(false);
     const [isClosing, setIsClosing] = useState<boolean>(false);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
@@ -49,6 +53,10 @@ const Modal: React.FC<IModalProps> = ({className, children, isOpen, onClose}: IM
 
 
     useEffect(() => {
+        isOpen && setIsMounted(true);
+    }, [isOpen]);
+
+    useEffect(() => {
         if (isOpen) {
             window.addEventListener('keydown', onKeyDown);
         }
@@ -58,6 +66,10 @@ const Modal: React.FC<IModalProps> = ({className, children, isOpen, onClose}: IM
             window.removeEventListener('keydown', onKeyDown);
         };
     }, [isOpen, onKeyDown]);
+
+    if (lazy && !isMounted) {
+        return null;
+    }
 
     return (
         <Portal>

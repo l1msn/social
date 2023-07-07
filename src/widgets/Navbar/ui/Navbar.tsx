@@ -5,6 +5,7 @@ import {useTranslation} from 'react-i18next';
 import Button from 'shared/ui/Button';
 import ThemeButton from 'shared/ui/Button/consts/ThemeButton';
 import Modal from 'widgets/Modal';
+import LoginModal from 'features/AuthByUsername';
 
 interface INavbarProps {
     className?: string
@@ -27,7 +28,10 @@ const Navbar: React.FC<INavbarProps> = ({className}: INavbarProps): JSX.Element 
             >
                 {t('Enter')}
             </Button>
-            <Modal isOpen={isAuthModal} onClose={onToggleModal}>here!</Modal>
+            <LoginModal
+                isOpen={isAuthModal}
+                onClose={onToggleModal}
+            ></LoginModal>
         </div>
     );
 };
