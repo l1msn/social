@@ -1,4 +1,4 @@
-import {IStateSchema} from './config/StateSchema';
+import IStateSchema from './config/IStateSchema';
 import createReduxStore from './config/store';
 import StoreProvider from './ui/StoreProvider';
 

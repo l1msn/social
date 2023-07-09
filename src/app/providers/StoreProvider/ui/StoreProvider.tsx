@@ -1,6 +1,6 @@
 import React, {JSX} from 'react';
 import {Provider} from 'react-redux';
-import {IStateSchema} from '../config/StateSchema';
+import IStateSchema from '../config/IStateSchema';
 import {createReduxStore} from 'app/providers/StoreProvider';
 import {DeepPartial} from '@reduxjs/toolkit';
 

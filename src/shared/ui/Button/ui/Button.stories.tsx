@@ -110,3 +110,11 @@ export const WithlineDark: Story = {
     },
 };
 
+export const WithlineDarkDisabled: Story = {
+    args: {
+        children: 'Text',
+        theme: ThemeButton.WITHLINE,
+        disabled: true,
+    },
+};
+
