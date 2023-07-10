@@ -9,7 +9,7 @@ type loginByUsernameProps = Omit<ILoginSchema, 'isLoading' | 'error'>
 const loginByUsername = createAsyncThunk<IUser, loginByUsernameProps>('login/loginByUsername',
     async (userData, thunkAPI) => {
         try {
-            const response = await axios.post('http://localhost:8000/login', userData);
+            const response = await axios.post<IUser>('http://localhost:8000/login', userData);
             if (!response.data) {
                 throw new Error('No data!');
             }
