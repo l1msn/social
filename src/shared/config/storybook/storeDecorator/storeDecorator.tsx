@@ -1,12 +1,17 @@
 import {Story} from '@storybook/react';
 import {StoreProvider, IStateSchema} from 'app/providers/StoreProvider';
-import {DeepPartial} from '@reduxjs/toolkit';
+import {DeepPartial, ReducersMapObject} from '@reduxjs/toolkit';
+import {loginReducer} from 'features/AuthByUsername/model/slice/loginSlice';
 
-function storeDecorator(state: DeepPartial<IStateSchema>) {
+const defaultAsyncReducers: DeepPartial<ReducersMapObject<IStateSchema>> = {
+    loginForm: loginReducer,
+};
+
+function storeDecorator(state: DeepPartial<IStateSchema>, asyncReducer?: DeepPartial<ReducersMapObject<IStateSchema>>) {
     // eslint-disable-next-line react/display-name
     return (StoryComponent: Story) => {
         return (
-            <StoreProvider initialState={state}>
+            <StoreProvider initialState={state} asyncReducers={{...defaultAsyncReducers, ...asyncReducer}}>
                 <StoryComponent/>
             </StoreProvider>
         );

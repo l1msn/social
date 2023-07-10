@@ -52,10 +52,10 @@ const Navbar: React.FC<INavbarProps> = ({className}: INavbarProps): JSX.Element 
             >
                 {t('Enter')}
             </Button>
-            <LoginModal
+            {isAuthModal && <LoginModal
                 isOpen={isAuthModal}
                 onClose={onToggleModal}
-            ></LoginModal>
+            ></LoginModal>}
         </div>
     );
 };
