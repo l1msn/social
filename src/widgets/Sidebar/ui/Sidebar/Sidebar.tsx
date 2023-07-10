@@ -20,7 +20,7 @@ interface ISidebarProps {
 const Sidebar: React.FC<ISidebarProps> = ({className}: ISidebarProps): JSX.Element => {
     const [collapsed, setCollapsed] = useState<boolean>(false);
 
-    const {t} = useTranslation();
+    const {t} = useTranslation('sidebar');
 
     function onToggle(): void {
         setCollapsed((prevState) => !prevState);

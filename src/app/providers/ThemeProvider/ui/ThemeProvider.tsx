@@ -8,10 +8,17 @@ interface IThemeContextProps {
     setTheme?: (theme: Themes) => void;
 }
 
+interface IThemeProviderProps {
+    children?: React.ReactNode
+    initialTheme?: Themes;
+}
+
 const defaultTheme: Themes = localStorage.getItem(LocalStorageThemeKey) as Themes || Themes.LIGHT;
 
-const ThemeProvider: React.FC<IThemeContextProps> = ({children}): JSX.Element => {
-    const [theme, setTheme] = useState<Themes>(defaultTheme);
+const ThemeProvider: React.FC<IThemeProviderProps> = (props): JSX.Element => {
+    const {initialTheme, children} = props;
+
+    const [theme, setTheme] = useState<Themes>(initialTheme || defaultTheme);
 
     const defaultProps = useMemo(() => ({
         theme: theme,
