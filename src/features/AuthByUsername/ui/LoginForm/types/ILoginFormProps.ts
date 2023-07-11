@@ -1,5 +1,6 @@
 interface ILoginFormProps {
-    className?: string
+    className?: string,
+    onSuccess: () => void;
 }
 
 export default ILoginFormProps;

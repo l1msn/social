@@ -1,4 +1,4 @@
-import React, {JSX, useCallback, useState} from 'react';
+import React, {JSX, memo, useCallback, useState} from 'react';
 import classNames from 'shared/lib/classNames/classNames';
 import cls from './Navbar.module.scss';
 import {useTranslation} from 'react-i18next';
@@ -12,7 +12,7 @@ interface INavbarProps {
     className?: string
 }
 
-const Navbar: React.FC<INavbarProps> = ({className}: INavbarProps): JSX.Element => {
+const Navbar: React.FC<INavbarProps> = memo(({className}: INavbarProps): JSX.Element => {
     const {t} = useTranslation('auth');
     const [isAuthModal, setIsAuthModal] = useState<boolean>(false);
 
@@ -36,10 +36,6 @@ const Navbar: React.FC<INavbarProps> = ({className}: INavbarProps): JSX.Element 
             >
                 {t('Logout')}
             </Button>
-            <LoginModal
-                isOpen={isAuthModal}
-                onClose={onToggleModal}
-            ></LoginModal>
         </div>);
     }
 
@@ -58,7 +54,7 @@ const Navbar: React.FC<INavbarProps> = ({className}: INavbarProps): JSX.Element 
             ></LoginModal>}
         </div>
     );
-};
+});
 
 export default Navbar;
 

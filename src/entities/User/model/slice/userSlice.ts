@@ -1,9 +1,10 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {IUser, IUserScheme} from '../types/user';
+import {IUser, IUserScheme} from 'entities/User';
 import USER_LOCALSTORAGE_KEY from 'shared/consts/localStorage';
 
 
 const initialState: IUserScheme = {
+    authData: undefined,
 };
 
 export const userSlice = createSlice({

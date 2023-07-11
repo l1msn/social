@@ -1,4 +1,4 @@
-import React, {JSX} from 'react';
+import React, {JSX, memo} from 'react';
 import classNames from 'shared/lib/classNames/classNames';
 import cls from './LangSwitcher.module.scss';
 import ThemeButton from 'shared/ui/Button/consts/ThemeButton';
@@ -13,7 +13,7 @@ interface ILangSwitcherProps {
     className?: string
 }
 
-const LangSwitcher: React.FC<ILangSwitcherProps> = ({className}: ILangSwitcherProps): JSX.Element => {
+const LangSwitcher: React.FC<ILangSwitcherProps> = memo(({className}: ILangSwitcherProps): JSX.Element => {
     const {i18n} = useTranslation();
 
     function toggleLang(): void {
@@ -29,6 +29,6 @@ const LangSwitcher: React.FC<ILangSwitcherProps> = ({className}: ILangSwitcherPr
             {i18n.language == LangButton.EN ? <EnIcon/> : <RuIcon/>}
         </Button>
     );
-};
+});
 
 export default LangSwitcher;

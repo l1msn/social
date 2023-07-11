@@ -1,4 +1,4 @@
-import React, {type ButtonHTMLAttributes, type JSX} from 'react';
+import React, {memo, type ButtonHTMLAttributes, type JSX} from 'react';
 import classNames from 'shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 import type ThemeButton from 'shared/ui/Button/consts/ThemeButton';
@@ -9,10 +9,11 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     theme?: ThemeButton;
     square?: boolean;
     size?: SizeButton;
-    disabled?: boolean;
+    disabled?: boolean,
+    children?: React.ReactNode;
 }
 
-const Button: React.FC<IButtonProps> = (props: IButtonProps): JSX.Element => {
+const Button: React.FC<IButtonProps> = memo((props: IButtonProps): JSX.Element => {
     const {className, disabled, size, children, square, theme, ...otherProps} = props;
 
     return (
@@ -20,6 +21,6 @@ const Button: React.FC<IButtonProps> = (props: IButtonProps): JSX.Element => {
             {children}
         </button>
     );
-};
+});
 
 export default Button;
