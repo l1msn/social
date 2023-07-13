@@ -2,5 +2,7 @@ import IStateSchema from './types/IStateSchema';
 import createReduxStore from './config/store';
 import StoreProvider from './ui/StoreProvider';
 import IReduxStoreWithManager from './types/IReduxStoreWithManager';
+import IThunkExtraArg from './types/IThunkExtraArg';
+import IThunkConfig from './types/IThunkConfig';
 
-export {StoreProvider, createReduxStore, IStateSchema, IReduxStoreWithManager};
+export {StoreProvider, createReduxStore, IStateSchema, IReduxStoreWithManager, IThunkExtraArg, IThunkConfig};

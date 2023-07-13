@@ -20,7 +20,7 @@ const LoginModal: React.FC<ILoginModalProps> = ({className, isOpen, onClose}: IL
             lazy
         >
             <Suspense fallback={<Loader/>}>
-                <LoginFormLazy/>
+                <LoginFormLazy onSuccess={onClose}/>
             </Suspense>
         </Modal>
     );

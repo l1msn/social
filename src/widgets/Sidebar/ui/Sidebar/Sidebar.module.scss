@@ -10,6 +10,10 @@
     margin-left: 6px;
 }
 
+.icon {
+    fill: var(--inverted-primary-color)
+}
+
 .switchers {
     position: absolute;
     bottom: 20px;
@@ -18,26 +22,11 @@
     width: 100%;
 }
 
-.link {
-    margin-left: 10px;
-    opacity: 1;
-}
-
-.item {
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-}
-
 .items {
     margin-left: 13px;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-}
-
-.icon {
-    fill: var(--inverted-primary-color)
 }
 
 .collapsed {

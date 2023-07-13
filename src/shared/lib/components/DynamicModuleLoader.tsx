@@ -1,14 +1,13 @@
 import React, {JSX, useEffect} from 'react';
-import {useDispatch, useStore} from 'react-redux';
-import {IReduxStoreWithManager} from 'app/providers/StoreProvider';
+import {useStore} from 'react-redux';
+import {IReduxStoreWithManager, IStateSchema} from 'app/providers/StoreProvider';
 import {StateSchemaKey} from 'app/providers/StoreProvider/config/reducerManager';
 import {Reducer} from '@reduxjs/toolkit';
+import useAppDispatch from '../hooks/useAppDispatch/useAppDispatch';
 
 type ReducersList = {
     [name in StateSchemaKey]?: Reducer
 }
-
-type ReducersListEntry = [StateSchemaKey, Reducer];
 
 interface IDynamicModuleLoaderProps {
     children?: React.ReactNode,
@@ -17,22 +16,22 @@ interface IDynamicModuleLoaderProps {
 }
 
 const DynamicModuleLoader: React.FC<IDynamicModuleLoaderProps> = (props): JSX.Element => {
-    const {children, removeAfterAmount, reducers} = props;
+    const {children, removeAfterAmount, reducers = {}} = props;
 
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const store = useStore() as IReduxStoreWithManager;
 
     useEffect(() => {
-        Object.entries(reducers).forEach(([name, reducer]: ReducersListEntry) => {
-            store.reducerManager.add(name, reducer);
+        Object.entries(reducers).forEach(([name, reducer]) => {
+            store.reducerManager.add(name as keyof IStateSchema, reducer);
             dispatch({type: `@INIT ${name} reducer`});
         });
 
         return () => {
             if (removeAfterAmount) {
-                Object.entries(reducers).forEach(([name, reducer]: ReducersListEntry) => {
-                    store.reducerManager.remove(name);
+                Object.entries(reducers).forEach(([name, reducer]) => {
+                    store.reducerManager.remove(name as keyof IStateSchema);
                     dispatch({type: `@DESTROY ${name} reducer`});
                 });
             }

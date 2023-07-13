@@ -12,13 +12,15 @@ interface IBuildOptions {
     paths: IBuildPaths;
     isDev: boolean;
     port: number;
+    apiUrl: string;
 }
 
 interface IBuildEnv {
-    mode: BuildMode,
-    port: number
+    mode: BuildMode;
+    port: number;
+    apiUrl: string;
 }
 
-export type { BuildMode };
-export { IBuildPaths, IBuildOptions, IBuildEnv};
+export type {BuildMode};
+export {IBuildPaths, IBuildOptions, IBuildEnv};
 

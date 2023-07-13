@@ -12,23 +12,25 @@ function webpackConfigStorybook({config}: {config: webpack.Configuration}) {
     };
 
 
-    config.resolve.modules.push(paths.src);
-    config.resolve.extensions.push('.ts', '.tsx', '.svg');
+    config!.resolve!.modules!.push(paths.src);
+    config!.resolve!.extensions!.push('.ts', '.tsx', '.svg');
 
-    config.module.rules = config.module.rules.map((rule: RuleSetRule) => {
+    // @ts-ignore
+    config!.module!.rules = config!.module!.rules!.map((rule: RuleSetRule) => {
         if (/svg/.test(rule.test as string)) {
             return {...rule, exclude: /\.svg$/};
         }
         return rule;
     });
 
-    config.module.rules.push({
+    config!.module!.rules.push({
         test: /\.svg$/,
         loader: '@svgr/webpack',
     });
-    config.module.rules.push(buildCSSLoader(true));
-    config.plugins.push(new webpack.DefinePlugin({
+    config!.module!.rules!.push(buildCSSLoader(true));
+    config!.plugins!.push(new webpack.DefinePlugin({
         __IS_DEV__: true,
+        __API__: true,
     }));
 
     return config;

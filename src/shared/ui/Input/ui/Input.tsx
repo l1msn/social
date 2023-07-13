@@ -1,4 +1,4 @@
-import React, {InputHTMLAttributes, JSX, memo, useEffect, useRef, useState} from 'react';
+import React, {InputHTMLAttributes, JSX, memo, MutableRefObject, useEffect, useRef, useState} from 'react';
 import classNames from 'shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
@@ -22,7 +22,8 @@ const Input: React.FC<IInputProps> = memo((props: IInputProps): JSX.Element => {
     const [isFocus, setIsFocus] = useState<boolean>(false);
     const [caretPosition, setCaretPosition] = useState<number>(0);
 
-    const refInput = useRef<HTMLInputElement>();
+    const refInput = useRef() as MutableRefObject<HTMLInputElement>;
+    const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
 
     useEffect(() => {
         if (autofocus) {

@@ -1,23 +1,36 @@
-import {configureStore, DeepPartial, ReducersMapObject} from '@reduxjs/toolkit';
+import {Action, CombinedState, configureStore, Reducer, ReducersMapObject, ThunkDispatch} from '@reduxjs/toolkit';
 import IStateSchema from '../types/IStateSchema';
-import {counterReducer} from 'entities/Counter';
 import {userReducer} from 'entities/User';
 import {createReducerManager} from 'app/providers/StoreProvider/config/reducerManager';
+import {useDispatch} from 'react-redux';
+import $api from 'shared/api/api';
+import {NavigateOptions, To} from 'react-router-dom';
+import {profileReducer} from 'entities/Profile/model/slice/profileSlice';
+import {ReducersList} from 'shared/lib/components/DynamicModuleLoader';
 
 function createReduxStore(initialState?: IStateSchema,
-    asyncReducers?: ReducersMapObject<IStateSchema>) {
-    const rootReducers: ReducersMapObject<IStateSchema> = {
+    asyncReducers?: ReducersMapObject<IStateSchema>,
+    navigate?: (to: To, options?: NavigateOptions) => void) {
+    const rootReducers: ReducersList = {
         ...asyncReducers,
-        counter: counterReducer,
         user: userReducer,
+        profile: profileReducer,
     };
 
     const reducerManager = createReducerManager(rootReducers);
 
-    const store = configureStore<IStateSchema>({
-        reducer: reducerManager.reduce,
+    const store = configureStore({
+        reducer: reducerManager.reduce as Reducer<CombinedState<IStateSchema>>,
         devTools: __IS_DEV__,
         preloadedState: initialState,
+        middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+            thunk: {
+                extraArgument: {
+                    api: $api,
+                    navigate,
+                },
+            },
+        }),
     });
 
 
@@ -28,9 +41,11 @@ function createReduxStore(initialState?: IStateSchema,
 }
 
 const store = createReduxStore();
+const useAppThunkDispatch = () => useDispatch<ThunkAppDispatch>();
 
 type RootState = ReturnType<typeof store.getState>
-type AppDispatch = typeof store.dispatch
+type AppDispatch = ReturnType<typeof createReduxStore>['dispatch']
+type ThunkAppDispatch = ThunkDispatch<RootState, void, Action>;
 
 export default createReduxStore;
 export type {RootState, AppDispatch};
