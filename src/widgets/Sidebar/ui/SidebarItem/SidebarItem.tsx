@@ -8,7 +8,7 @@ import classNames from 'shared/lib/classNames/classNames';
 
 
 interface ISidebarItemProps {
-    item?: ISidebarItemType,
+    item: ISidebarItemType,
     collapsed: boolean;
 }
 

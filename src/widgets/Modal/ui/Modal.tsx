@@ -1,4 +1,4 @@
-import React, {JSX, useCallback, useEffect, useRef, useState} from 'react';
+import React, {JSX, MutableRefObject, useCallback, useEffect, useRef, useState} from 'react';
 import classNames from 'shared/lib/classNames/classNames';
 import cls from './Modal.module.scss';
 import {useTheme} from 'app/providers/ThemeProvider';
@@ -14,14 +14,14 @@ interface IModalProps {
 
 const ANIMATION_DELAY: number = 300;
 
-const Modal: React.FC<IModalProps> = (props: IModalProps): JSX.Element => {
+const Modal: React.FC<IModalProps> = (props: IModalProps): JSX.Element | null => {
     const {className, children, isOpen, onClose, lazy} = props;
 
     const [isMounted, setIsMounted] = useState<boolean>(false);
     const [isClosing, setIsClosing] = useState<boolean>(false);
-    const timerRef = useRef<ReturnType<typeof setTimeout>>();
+    const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
 
-    const mods: Record<string, boolean> = {
+    const mods: Record<string, boolean | undefined> = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
     };

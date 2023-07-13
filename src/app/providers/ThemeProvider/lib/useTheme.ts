@@ -8,11 +8,11 @@ interface IUseThemeResult {
 }
 
 function useTheme(): IUseThemeResult {
-    const {theme, setTheme} = useContext(ThemeContext);
+    const {theme = Themes.LIGHT, setTheme} = useContext(ThemeContext);
 
     function toggleTheme(): void {
         const newTheme: Themes = theme === Themes.DARK ? Themes.LIGHT : Themes.DARK;
-        setTheme(newTheme);
+        setTheme?.(newTheme);
         localStorage.setItem(LocalStorageThemeKey, newTheme);
     }
 

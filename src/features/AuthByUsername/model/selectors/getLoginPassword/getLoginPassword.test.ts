@@ -1,5 +1,4 @@
 import {IStateSchema} from 'app/providers/StoreProvider';
-import {DeepPartial} from '@reduxjs/toolkit';
 import getLoginPassword from './getLoginPassword';
 
 describe('testing getLoginPassword functional', () => {

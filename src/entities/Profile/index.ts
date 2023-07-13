@@ -1,5 +1,7 @@
-import getProfileData from './model/selectors/getProfileData';
+import getProfileData from './model/selectors/getProfileData/getProfileData';
+import fetchProfileData from './model/services/fetchProfileData/fetchProfileData';
 import {profileSlice} from './model/slice/profileSlice';
-import {IProfile, IProfileSchema} from './model/types/IProfile';
+import {IProfileSchema} from './model/types/IProfile';
+import ProfileCard from './ui/ProfileCard/ProfileCard';
 
-export {IProfile, IProfileSchema, profileSlice, getProfileData};
+export {IProfileSchema, profileSlice, getProfileData, fetchProfileData, ProfileCard};

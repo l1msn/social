@@ -3,6 +3,7 @@ import classNames from 'shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 import type ThemeButton from 'shared/ui/Button/consts/ThemeButton';
 import SizeButton from 'shared/ui/Button/consts/SizeButton';
+import {Themes} from 'app/providers/ThemeProvider';
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string
@@ -14,7 +15,7 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const Button: React.FC<IButtonProps> = memo((props: IButtonProps): JSX.Element => {
-    const {className, disabled, size, children, square, theme, ...otherProps} = props;
+    const {className, disabled, size = SizeButton.L, children, square, theme = Themes.LIGHT, ...otherProps} = props;
 
     return (
         <button disabled={disabled} {...otherProps} className={classNames(cls.Button, {[cls.square]: square, [cls.disabled]: disabled}, [className, cls[theme], cls[size]])}>
