@@ -29,8 +29,8 @@ const LoginForm: React.FC<ILoginFormProps> = memo(({className, onSuccess}: ILogi
 
     const username = useSelector(getLoginUsername);
     const password = useSelector(getLoginPassword);
-    const error = useSelector(getLoginError);
     const isLoading = useSelector(getLoginIsLoading);
+    const error = useSelector(getLoginError);
 
 
     const onChangeUsername = useCallback((value: string) => {
@@ -42,10 +42,11 @@ const LoginForm: React.FC<ILoginFormProps> = memo(({className, onSuccess}: ILogi
     }, [dispatch]);
 
     const onLoginClick = useCallback(async () => {
-        const result = await dispatch(loginByUsername({username, password}));
+        const result = await dispatch(loginByUsername({username: username, password: password}));
         if (result.meta.requestStatus === 'fulfilled') {
             onSuccess();
         }
+        window.location.reload();
     }, [onSuccess, dispatch, password, username]);
 
     return (

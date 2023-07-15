@@ -17,6 +17,12 @@
     background: none;
 }
 
+.withline_red{
+    border: 1px solid var(--red-light);
+    color: var(--red-light);
+    background: none;
+}
+
 .outline {
     border: none;
     color: var(--primary-color);

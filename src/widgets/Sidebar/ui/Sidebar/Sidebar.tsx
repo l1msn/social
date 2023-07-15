@@ -6,7 +6,6 @@ import MenuIcon from 'shared/assets/icons/menu-icon.svg';
 import ThemeButton from 'shared/ui/Button/consts/ThemeButton';
 import ThemeSwitcher from 'widgets/ThemeSwitcher';
 import LangSwitcher from 'widgets/LangSwitcher';
-import {useTranslation} from 'react-i18next';
 import {SidebarItemsList} from 'widgets/Sidebar/model/ISidebarItemType';
 import SidebarItem from 'widgets/Sidebar/ui/SidebarItem/SidebarItem';
 
@@ -17,9 +16,11 @@ interface ISidebarProps {
 const Sidebar: React.FC<ISidebarProps> = memo(({className}: ISidebarProps): JSX.Element => {
     const [collapsed, setCollapsed] = useState<boolean>(false);
 
-    function onToggle(): void {
+    const onToggle = () => {
+        console.log('init onToggle1');
         setCollapsed((prevState) => !prevState);
-    }
+    };
+
     return (
         <div data-testid={'sidebar'} className={classNames(cls.Sidebar, {[cls.collapsed]: collapsed}, [className])}>
             <Button data-testid={'sidebar-toggle'} className={cls.burger} theme={ThemeButton.OUTLINE} onClick={onToggle}>

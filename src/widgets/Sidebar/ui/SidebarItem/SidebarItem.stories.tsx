@@ -6,6 +6,7 @@ import {Themes} from '../../../../app/providers/ThemeProvider';
 // @ts-ignore
 import UserIcon from 'shared/assets/icons/user-icon.svg';
 import {RoutePath} from '../../../../shared/config/routeConfig/routeConfig';
+import storeDecorator from 'shared/config/storybook/storeDecorator/storeDecorator';
 
 const meta = {
     title: 'widget/SidebarItem',
@@ -28,6 +29,9 @@ export const LightProfile: Story = {
         },
         collapsed: false,
     },
+    decorators: [storeDecorator({
+        loginForm: {username: '123', password: 'asd'},
+    })],
 };
 
 export const DarkProfile: Story = {
@@ -39,7 +43,9 @@ export const DarkProfile: Story = {
         },
         collapsed: false,
     },
-    decorators: [themeDecorator(Themes.DARK)],
+    decorators: [themeDecorator(Themes.DARK), storeDecorator({
+        loginForm: {username: '123', password: 'asd'},
+    })],
 };
 
 export const DarkProfileCollapsed: Story = {
@@ -51,7 +57,9 @@ export const DarkProfileCollapsed: Story = {
         },
         collapsed: true,
     },
-    decorators: [themeDecorator(Themes.DARK)],
+    decorators: [themeDecorator(Themes.DARK), storeDecorator({
+        loginForm: {username: '123', password: 'asd'},
+    })],
 };
 
 

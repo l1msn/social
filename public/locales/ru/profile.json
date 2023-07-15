@@ -2,5 +2,14 @@
   "Profile": "Профиль",
   "Edit" : "Редактировать",
   "Firstname": "Имя",
-  "Lastname": "Фамилия"
+  "Lastname": "Фамилия",
+  "City": "Город",
+  "Age": "Возраст",
+  "Avatar": "Аватар",
+  "Username": "Псевдоним",
+  "Currency": "Валюта",
+  "Country": "Страна",
+  "Error on loading profile page": "Ошибка загрузки профиля",
+  "Cancel": "Отменить",
+  "Save": "Сохранить"
 }

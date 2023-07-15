@@ -1,4 +1,4 @@
-import React, {JSX, memo, useCallback, useState} from 'react';
+import React, {JSX, memo, useCallback, useEffect, useState} from 'react';
 import classNames from 'shared/lib/classNames/classNames';
 import cls from './Navbar.module.scss';
 import {useTranslation} from 'react-i18next';
@@ -25,6 +25,7 @@ const Navbar: React.FC<INavbarProps> = memo(({className}: INavbarProps): JSX.Ele
 
     const onLogout = useCallback(() => {
         dispatch(userActions.logout());
+        window.location.reload();
     }, [dispatch]);
 
     if (authData) {

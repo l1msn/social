@@ -3,15 +3,13 @@ import {IUser, IUserScheme} from 'entities/User';
 import USER_LOCALSTORAGE_KEY from 'shared/consts/localStorage';
 
 
-const initialState: IUserScheme = {
-    authData: undefined,
-};
+const initialState: IUserScheme = {};
 
 export const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers: {
-        setAuthData: (state: IUserScheme = initialState, action: PayloadAction<IUser>) => {
+        setAuthData: (state, action: PayloadAction<IUser>) => {
             state.authData = action.payload;
         },
         initAuthData: (state: IUserScheme) => {
@@ -21,8 +19,8 @@ export const userSlice = createSlice({
             }
         },
         logout: (state: IUserScheme) => {
-            localStorage.removeItem(USER_LOCALSTORAGE_KEY);
             state.authData = undefined;
+            localStorage.removeItem(USER_LOCALSTORAGE_KEY);
         },
     },
 });
