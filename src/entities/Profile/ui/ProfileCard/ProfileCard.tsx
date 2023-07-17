@@ -74,7 +74,7 @@ const ProfileCard: React.FC<IProfileCardProps> = memo((props: IProfileCardProps)
                 <Input readonly={readonly} onChange={onChangeFirstName} value={data?.first} placeholder={t('Firstname')} className={cls.input}/>
                 <Input readonly={readonly} onChange={onChangeLastName} value={data?.lastname} placeholder={t('Lastname')} className={cls.input}/>
                 <Input readonly={readonly} onChange={onChangeUsername} value={data?.username} placeholder={t('Username')} className={cls.input}/>
-                <Input readonly={readonly} onChange={onChangeAvatar} value={data?.avatar} placeholder={t('Avatar')} className={cls.input}/>
+                <Input type={'url'} readonly={readonly} onChange={onChangeAvatar} value={data?.avatar} placeholder={t('Avatar')} className={cls.input}/>
                 <Input
                     onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}
                     readonly={readonly} onChange={onChangeAge} value={data?.age} placeholder={t('Age')}

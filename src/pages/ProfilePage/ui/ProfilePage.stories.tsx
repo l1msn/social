@@ -17,13 +17,13 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const LightError: Story = {
+export const Light: Story = {
     args: {
     },
     decorators: [StoreDecorator({})],
 };
 
-export const DarkError: Story = {
+export const Dark: Story = {
     args: {
     },
     decorators: [themeDecorator(Themes.DARK), StoreDecorator({})],

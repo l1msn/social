@@ -10,6 +10,11 @@
   "Currency": "Currency",
   "Country": "Country",
   "Error on loading profile page": "Error on loading profile page",
+  "Server from error!": "Server from error!",
+  "Incorrect country of user!":"Incorrect country of user!",
+  "No data from server!":"No data from server!",
+  "Incorrect user data of user!": "Incorrect user data of user!",
+  "Incorrect age of user!": "Incorrect age of user!",
   "Cancel": "Cancel",
   "Save": "Save"
 }

@@ -22,6 +22,7 @@ function config(env: IBuildEnv): webpack.Configuration {
         isDev: isDev,
         port: port,
         apiUrl: apiUrl,
+        project: 'frontend',
     });
 
     return config;
