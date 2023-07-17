@@ -2,5 +2,19 @@
   "Profile": "Профиль",
   "Edit" : "Редактировать",
   "Firstname": "Имя",
-  "Lastname": "Фамилия"
+  "Lastname": "Фамилия",
+  "City": "Город",
+  "Age": "Возраст",
+  "Avatar": "Аватар",
+  "Username": "Псевдоним",
+  "Currency": "Валюта",
+  "Country": "Страна",
+  "Server from error!": "Ошибка со стороны сервера!",
+  "Incorrect country of user!": "Неверно введенная страна пользователя!",
+  "No data from server!": "Нет данных с сервера!",
+  "Incorrect user data of user!": "Неверно введенные данные пользователя!",
+  "Incorrect age of user!": "Неверно введенный возраст пользователя!",
+  "Error on loading profile page": "Ошибка загрузки профиля",
+  "Cancel": "Отменить",
+  "Save": "Сохранить"
 }

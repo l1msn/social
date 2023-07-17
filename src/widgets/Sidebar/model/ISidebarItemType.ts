@@ -7,7 +7,8 @@ import UserIcon from 'shared/assets/icons/user-icon.svg';
 interface ISidebarItemType {
     path: string,
     text: string,
-    Icon: React.VFC<React.SVGProps<SVGSVGElement>>
+    Icon: React.VFC<React.SVGProps<SVGSVGElement>>,
+    authOnly?: boolean;
 }
 
 const SidebarItemsList: ISidebarItemType[] = [
@@ -20,6 +21,7 @@ const SidebarItemsList: ISidebarItemType[] = [
         path: RoutePath.profile,
         Icon: UserIcon,
         text: 'Profile',
+        authOnly: true,
     },
     {
         path: RoutePath.about,

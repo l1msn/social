@@ -15,7 +15,7 @@ interface IDynamicModuleLoaderProps {
     removeAfterAmount?: boolean;
 }
 
-const DynamicModuleLoader: React.FC<IDynamicModuleLoaderProps> = (props): JSX.Element => {
+const DynamicModuleLoader: React.FC<IDynamicModuleLoaderProps> = (props: IDynamicModuleLoaderProps): JSX.Element => {
     const {children, removeAfterAmount, reducers = {}} = props;
 
     const dispatch = useAppDispatch();

@@ -1,23 +1,33 @@
 {
   "posts": [
-    {"id": 1, "title": "json-server", "autor": "typicode"}
+    {
+      "id": 1,
+      "title": "json-server",
+      "autor": "typicode"
+    }
   ],
   "comments": [
-    {"id": 1, "body": "some content", "postId": 1}
+    {
+      "id": 1,
+      "body": "some content",
+      "postId": 1
+    }
   ],
   "users": [
-    {"id": 1, "username": "username", "password": "password"}
-  ],
-  "profile":
     {
-      "first": "Alex",
-      "lastname": "Sadykov",
-      "age": 23,
-      "currency": "RUB",
-      "country": "Russia",
-      "city": "Saint-Petersburg",
-      "username": "Darlingg",
-      "avatar": "https://sun9-41.userapi.com/impg/xWupIr7eSZMBvcGAdCPDu1EbkzSDVX7VDM8mKw/wczpsRC_UFk.jpg?size=720x1080&quality=95&sign=76d7d6c245dba7faab008048a657c0ba&type=album"
+      "id": 1,
+      "username": "username",
+      "password": "password"
     }
-
+  ],
+  "profile": {
+    "first": "Alex",
+    "lastname": "Sadykov",
+    "age": 23,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Saint-Petersburg",
+    "username": "Darlingg",
+    "avatar": "https://imgur.com/IyES7O4.png"
+  }
 }

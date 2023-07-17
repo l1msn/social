@@ -1,9 +1,3 @@
-enum Currency {
-    RUB = 'RUB',
-    EUR = 'EUR',
-    USD = 'USD',
-}
-
 enum Country {
     RUSSIA = 'Russia',
     BELARUS = 'Belarus',
@@ -12,4 +6,4 @@ enum Country {
     ARMENIA = 'Armenia',
 }
 
-export {Currency, Country};
+export default Country;

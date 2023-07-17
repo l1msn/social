@@ -1,4 +1,4 @@
-import React, {JSX} from 'react';
+import React, {JSX, memo} from 'react';
 import classNames from 'shared/lib/classNames/classNames';
 import cls from './PageError.module.scss';
 import {useTranslation} from 'react-i18next';
@@ -8,7 +8,7 @@ interface IPageErrorProps {
     className?: string
 }
 
-const PageError: React.FC<IPageErrorProps> = ({className}: IPageErrorProps): JSX.Element => {
+const PageError: React.FC<IPageErrorProps> = memo(({className}: IPageErrorProps): JSX.Element => {
     const {t} = useTranslation();
 
     function reloadPage(): void {
@@ -23,6 +23,6 @@ const PageError: React.FC<IPageErrorProps> = ({className}: IPageErrorProps): JSX
             </Button>
         </div>
     );
-};
+});
 
 export default PageError;

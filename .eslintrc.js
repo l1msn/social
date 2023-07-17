@@ -40,9 +40,11 @@ module.exports = {
         'react/display-name': 'warn',
         'no-undef': 'off',
         '@typescript-eslint/no-non-null-assertion': 'off',
+        'no-invalid-this': 'off',
     },
     globals: {
         __IS_DEV__: true,
         __API__: true,
+        __PROJECT__: true,
     },
 };

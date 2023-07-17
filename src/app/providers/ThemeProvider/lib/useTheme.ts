@@ -11,7 +11,20 @@ function useTheme(): IUseThemeResult {
     const {theme = Themes.LIGHT, setTheme} = useContext(ThemeContext);
 
     function toggleTheme(): void {
-        const newTheme: Themes = theme === Themes.DARK ? Themes.LIGHT : Themes.DARK;
+        let newTheme: Themes;
+        switch (theme) {
+        case Themes.DARK:
+            newTheme = Themes.LIGHT;
+            break;
+        case Themes.LIGHT:
+            newTheme = Themes.BREEZE;
+            break;
+        case Themes.BREEZE:
+            newTheme = Themes.DARK;
+            break;
+        default:
+            newTheme = Themes.LIGHT;
+        }
         setTheme?.(newTheme);
         localStorage.setItem(LocalStorageThemeKey, newTheme);
     }

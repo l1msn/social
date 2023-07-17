@@ -20,11 +20,15 @@ type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
     args: {
+        placeholder: 'input',
+        value: 'input',
     },
 };
 
 export const Dark: Story = {
     args: {
+        placeholder: 'input',
+        value: 'input',
     },
     decorators: [ThemeDecorator(Themes.DARK)],
 };

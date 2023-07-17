@@ -10,10 +10,22 @@
 
 .error {
     .title {
-        color: var(--red-light)
+        color: var(--red-light);
     }
 
     .text {
-        color: var(--red-dark)
+        color: var(--red-dark);
     }
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
 }

@@ -11,8 +11,6 @@ import useAppDispatch from '../shared/lib/hooks/useAppDispatch/useAppDispatch';
 const App: React.FC = (): JSX.Element => {
     const {theme} = useTheme();
 
-    const [isOpen, setIsOpen] = useState<boolean>(false);
-
     const dispatch = useAppDispatch();
 
     useEffect(() => {
