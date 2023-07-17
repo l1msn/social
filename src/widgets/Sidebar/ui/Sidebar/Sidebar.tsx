@@ -17,7 +17,6 @@ const Sidebar: React.FC<ISidebarProps> = memo(({className}: ISidebarProps): JSX.
     const [collapsed, setCollapsed] = useState<boolean>(false);
 
     const onToggle = () => {
-        console.log('init onToggle1');
         setCollapsed((prevState) => !prevState);
     };
 
