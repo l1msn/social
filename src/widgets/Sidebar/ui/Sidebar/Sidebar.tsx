@@ -1,4 +1,4 @@
-import React, {JSX, memo, useState} from 'react';
+import React, {JSX, memo, useMemo, useState} from 'react';
 import classNames from 'shared/lib/classNames/classNames';
 import cls from './Sidebar.module.scss';
 import Button from 'shared/ui/Button';
@@ -20,15 +20,21 @@ const Sidebar: React.FC<ISidebarProps> = memo(({className}: ISidebarProps): JSX.
         setCollapsed((prevState) => !prevState);
     };
 
+    const itemsList = useMemo(() => SidebarItemsList.map((item) => (
+        <SidebarItem
+            item={item}
+            collapsed={collapsed}
+            key={item.path}
+        />
+    )), [collapsed]);
+
     return (
         <div data-testid={'sidebar'} className={classNames(cls.Sidebar, {[cls.collapsed]: collapsed}, [className])}>
             <Button data-testid={'sidebar-toggle'} className={cls.burger} theme={ThemeButton.OUTLINE} onClick={onToggle}>
                 <MenuIcon className={cls.icon}/>
             </Button>
             <div className={cls.items}>
-                {SidebarItemsList.map((item) =>
-                    <SidebarItem key={item.path} item={item} collapsed={collapsed} />,
-                )}
+                {itemsList}
             </div>
             <div className={cls.switchers}>
                 <LangSwitcher className={cls.lang}/>

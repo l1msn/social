@@ -1,4 +1,4 @@
-import React, {type JSX, Suspense, useEffect, useState} from 'react';
+import React, {type JSX, Suspense, useEffect} from 'react';
 import {useTheme} from 'app/providers/ThemeProvider';
 import classNames from 'shared/lib/classNames/classNames';
 import AppRouter from 'app/providers/Router';
@@ -7,13 +7,18 @@ import Sidebar from 'widgets/Sidebar';
 import Portal from 'widgets/Portal';
 import {userActions} from '../entities/User';
 import useAppDispatch from '../shared/lib/hooks/useAppDispatch/useAppDispatch';
+import {useSelector} from 'react-redux';
+import {getUserInit} from 'entities/User';
 
 const App: React.FC = (): JSX.Element => {
     const {theme} = useTheme();
 
     const dispatch = useAppDispatch();
 
+    const init = useSelector(getUserInit);
+
     useEffect(() => {
+        console.log('init auth data');
         dispatch(userActions.initAuthData());
     }, [dispatch]);
 
@@ -24,7 +29,7 @@ const App: React.FC = (): JSX.Element => {
                     <Navbar />
                     <div className="content-page">
                         <Sidebar/>
-                        <AppRouter />
+                        {init && <AppRouter />}
                     </div>
                 </Suspense>
             </div>

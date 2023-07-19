@@ -25,7 +25,6 @@ const Navbar: React.FC<INavbarProps> = memo(({className}: INavbarProps): JSX.Ele
 
     const onLogout = useCallback(() => {
         dispatch(userActions.logout());
-        window.location.reload();
     }, [dispatch]);
 
     if (authData) {
