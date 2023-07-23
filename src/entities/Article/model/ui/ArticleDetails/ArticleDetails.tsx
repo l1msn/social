@@ -1,4 +1,4 @@
-import React, {JSX, memo, useEffect} from 'react';
+import React, {JSX, memo, useCallback, useEffect} from 'react';
 import classNames from 'shared/lib/classNames/classNames';
 import cls from './ArticleDetails.module.scss';
 import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/DynamicModuleLoader';
@@ -9,9 +9,17 @@ import {useSelector} from 'react-redux';
 import getArticleIsLoading from 'entities/Article/model/selectors/getArticleIsLoading/getArticleIsLoading';
 import getArticleError from '../../selectors/getArticleError/getArticleError';
 import getArticleData from '../../selectors/getArticleData/getArticleData';
-import {AlignText, Text} from 'shared/ui/Text';
+import {AlignText, SizeText, Text} from 'shared/ui/Text';
 import {useTranslation} from 'react-i18next';
 import Skeleton from 'widgets/Skeleton';
+import Avatar from 'widgets/Avatar';
+import DateIcon from '../../../../../shared/assets/icons/date-icon.svg';
+import ViewsIcon from '../../../../../shared/assets/icons/views-icon.svg';
+import Icon from 'widgets/Icon';
+import {ArticleBlock, ArticleBlockType} from '../../types/IArticle';
+import ArticleCode from '../ArticleCode/ArticleCode';
+import ArticleText from '../ArticleText/ArticleText';
+import ArticleImage from '../ArticleImage/ArticleImage';
 
 interface IArticleDetailsProps {
     className?: string
@@ -34,13 +42,26 @@ const ArticleDetails: React.FC<IArticleDetailsProps> = memo(({className, id}: IA
 
     const isLoading = useSelector(getArticleIsLoading);
     const error = useSelector(getArticleError);
-    const data = useSelector(getArticleData);
+    const article = useSelector(getArticleData);
+
+    const renderBlock = useCallback((block: ArticleBlock) => {
+        switch (block.type) {
+        case ArticleBlockType.CODE:
+            return <ArticleCode key={block.id} block={block} className={cls.block}/>;
+        case ArticleBlockType.TEXT:
+            return <ArticleText key={block.id} block={block} className={cls.block}/>;
+        case ArticleBlockType.IMAGE:
+            return <ArticleImage key={block.id} block={block} className={cls.block}/>;
+        default:
+            return null;
+        }
+    }, []);
 
     let content;
 
     if (isLoading) {
         content = (
-            <div>
+            <>
                 <Skeleton
                     className={cls.avatar}
                     width={200}
@@ -67,7 +88,7 @@ const ArticleDetails: React.FC<IArticleDetailsProps> = memo(({className, id}: IA
                     width={'100%'}
                     height={200}
                 />
-            </div>
+            </>
         );
     } else if (error) {
         content = (
@@ -78,7 +99,29 @@ const ArticleDetails: React.FC<IArticleDetailsProps> = memo(({className, id}: IA
         );
     } else {
         content = (
-            <div>{JSON.stringify(data)}</div>
+            <>
+                <div className={cls.avatarWrapper}>
+                    <Avatar size={200} src={article?.img} className={cls.avatar}/>
+                </div>
+                <Text size={SizeText.L}
+                    className={cls.title}
+                    title={article?.title}
+                    text={article?.subtitle}
+                />
+                <div className={cls.articleInfo}>
+                    <Icon className={cls.icon} Svg={DateIcon}/>
+                    <Text
+                        text={article?.createAt}
+                    />
+                </div>
+                <div className={cls.articleInfo}>
+                    <Icon className={cls.icon} Svg={ViewsIcon}/>
+                    <Text
+                        text={article?.views}
+                    />
+                </div>
+                {article?.blocks.map(renderBlock)}
+            </>
         );
     }
 

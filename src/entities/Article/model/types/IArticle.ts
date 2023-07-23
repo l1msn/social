@@ -29,7 +29,7 @@ interface IArticleImageBlock extends IArticleBlockBase{
 interface IArticleTextBlock extends IArticleBlockBase{
     type: ArticleBlockType.TEXT,
     title?: string,
-    paragraphs: string[]
+    paragraphs: string[];
 }
 
 type ArticleBlock =
@@ -46,7 +46,7 @@ interface IArticle {
     createAt: string,
     type: ArticleType[],
     blocks: ArticleBlock[],
-    move: () => void;
+    move?: () => void;
 }
 
-export {IArticle, ArticleType, ArticleBlockType};
+export {IArticle, ArticleType, ArticleBlockType, ArticleBlock, IArticleCodeBlock, IArticleImageBlock, IArticleTextBlock};

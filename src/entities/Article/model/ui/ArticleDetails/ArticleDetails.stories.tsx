@@ -76,4 +76,64 @@ export const Dark: Story = {
     })],
 };
 
+export const Loading: Story = {
+    args: {
+        id: 1,
+    },
+    decorators: [themeDecorator(Themes.DARK), StoreDecorator({
+        article: {
+            isLoading: true,
+            data: {
+                'id': '1',
+                'title': 'TypeScript 5.0 and 4.9',
+                'subtitle': 'Actual features',
+                'img': 'https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/',
+                'views': '1022',
+                'createAt': '26.02.2022',
+                'type': [ArticleType.IT],
+                'blocks': [
+                    {
+                        'id': '1',
+                        'type': ArticleBlockType.TEXT,
+                        'title': 'TypeScript 5.0 and 4.9: evaluate and compare changes',
+                        'paragraphs': [
+                            'In mid-March 2023, Microsoft announced the release of TypeScript version 5.0. The developers expect a 10-20% performance boost from it, but since it all depends on the codebase and hardware characteristics, they strongly recommend trying these changes.',
+                            'In this article, we\'ll take a look at some of the changes in TypeScript 4.9 and 5.0 and compare what\'s new with previous versions. Using code examples, we will try to understand why they were added and how they simplify our life. The article will be useful for experienced developers who often use TypeScript in their work, and for beginners, as we will analyze in detail the solutions to some problems.',
+                        ],
+                    }],
+            },
+        },
+    })],
+};
+
+export const Error: Story = {
+    args: {
+        id: 1,
+    },
+    decorators: [themeDecorator(Themes.DARK), StoreDecorator({
+        article: {
+            error: 'Error',
+            data: {
+                'id': '1',
+                'title': 'TypeScript 5.0 and 4.9',
+                'subtitle': 'Actual features',
+                'img': 'https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/',
+                'views': '1022',
+                'createAt': '26.02.2022',
+                'type': [ArticleType.IT],
+                'blocks': [
+                    {
+                        'id': '1',
+                        'type': ArticleBlockType.TEXT,
+                        'title': 'TypeScript 5.0 and 4.9: evaluate and compare changes',
+                        'paragraphs': [
+                            'In mid-March 2023, Microsoft announced the release of TypeScript version 5.0. The developers expect a 10-20% performance boost from it, but since it all depends on the codebase and hardware characteristics, they strongly recommend trying these changes.',
+                            'In this article, we\'ll take a look at some of the changes in TypeScript 4.9 and 5.0 and compare what\'s new with previous versions. Using code examples, we will try to understand why they were added and how they simplify our life. The article will be useful for experienced developers who often use TypeScript in their work, and for beginners, as we will analyze in detail the solutions to some problems.',
+                        ],
+                    }],
+            },
+        },
+    })],
+};
+
 

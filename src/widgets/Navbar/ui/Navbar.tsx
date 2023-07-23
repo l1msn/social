@@ -1,4 +1,4 @@
-import React, {JSX, memo, useCallback, useEffect, useState} from 'react';
+import React, {JSX, memo, useCallback, useState} from 'react';
 import classNames from 'shared/lib/classNames/classNames';
 import cls from './Navbar.module.scss';
 import {useTranslation} from 'react-i18next';
@@ -30,7 +30,7 @@ const Navbar: React.FC<INavbarProps> = memo(({className}: INavbarProps): JSX.Ele
     if (authData) {
         return (<div className={classNames(cls.navbar, {}, [className])}>
             <Button
-                theme={ThemeButton.WITHLINE}
+                theme={ThemeButton.CLEAR}
                 className={cls.links}
                 onClick={onLogout}
             >
@@ -42,7 +42,7 @@ const Navbar: React.FC<INavbarProps> = memo(({className}: INavbarProps): JSX.Ele
     return (
         <div className={classNames(cls.navbar, {}, [className])}>
             <Button
-                theme={ThemeButton.WITHLINE}
+                theme={ThemeButton.CLEAR}
                 className={cls.links}
                 onClick={onToggleModal}
             >

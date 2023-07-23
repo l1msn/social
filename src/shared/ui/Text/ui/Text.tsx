@@ -3,13 +3,15 @@ import classNames from 'shared/lib/classNames/classNames';
 import cls from './Text.module.scss';
 import ThemeText from '../consts/ThemeText';
 import AlignText from '../consts/AlignText';
+import SizeText from '../consts/SizeText';
 
 
 interface ITextProps {
     className?: string,
-    title?: string,
-    text?: string;
-    theme?: ThemeText;
+    title?: string | number,
+    text?: string | number,
+    size?: SizeText,
+    theme?: ThemeText,
     align?: AlignText;
 }
 
@@ -19,9 +21,10 @@ const Text: React.FC<ITextProps> = memo((props: ITextProps): JSX.Element => {
         title,
         text,
         theme = ThemeText.PRIMARY,
+        size = SizeText.M,
     } = props;
     return (
-        <div className={classNames(cls.Text, {}, [className, cls[align], cls[theme]])}>
+        <div className={classNames(cls.Text, {}, [className, cls[size], cls[align], cls[theme]])}>
             {title && <p className={cls.title}>{title}</p>}
             {text && <p className={cls.text}>{text}</p>}
         </div>

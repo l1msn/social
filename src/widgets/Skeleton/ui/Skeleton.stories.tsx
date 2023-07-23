@@ -45,13 +45,4 @@ export const LightCircle: Story = {
     },
 };
 
-export const BreezeCircle: Story = {
-    args: {
-        borderRadius: '50%',
-        width: 100,
-        height: 100,
-    },
-    decorators: [themeDecorator(Themes.BREEZE)],
-};
-
 

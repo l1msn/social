@@ -2,11 +2,18 @@
     cursor: pointer;
     color: var(--primary-color);
     padding: 6px;
+
+    &:hover {
+        opacity: 0.8;
+        fill-opacity: 0.8;
+        stroke-opacity: 0.8;
+    }
 }
 
 .clear {
     padding: 0;
     border: none;
+    color: var(--inverted-primary-color);
     background: none;
     outline: none;
 }

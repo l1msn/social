@@ -121,13 +121,15 @@
       "id": "1",
       "username": "admin",
       "password": "admin",
-      "role": "admin"
+      "role": "admin",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/2304/2304226.png"
     },
     {
       "id": "2",
       "username": "username",
       "password": "password",
-      "role": "user"
+      "role": "user",
+      "avatar": "https://imgur.com/IyES7O4.png"
     }
   ],
   "profile": {
