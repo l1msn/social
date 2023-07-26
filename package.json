@@ -17,6 +17,7 @@
     "test:ui": "npx loki test",
     "test:ui:ok": "npx loki update && npx loki approve",
     "test:ui:ci:local": "npm run storybook:build && loki --requireReference --reactUri file:./storybook-static",
+    "test:ui:ci:local:ok": "npm run storybook:build && loki --requireReference --reactUri file:./storybook-static && npm run test:ui:ci:ok",
     "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static",
     "test:ui:report": "npm run test:ui:report:json && npm run test:ui:report:html",
     "test:ui:report:json": "node scripts/generate-visual-json-report.js",
