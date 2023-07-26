@@ -12,6 +12,7 @@ const mockedAxios = jest.mocked(axios, {
 });
 
 const mockForm: IProfile = {
+    'id': 1,
     'first': 'Alex',
     'lastname': 'Sadykov',
     'age': 23,

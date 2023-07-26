@@ -1,0 +1,19 @@
+.LangSwitcher {
+    transition: 0.2s;
+
+    &:hover {
+        transform: scale(1.01);
+        opacity: 0.8;
+        animation: animate 0.3s linear;
+    }
+
+    @keyframes animate {
+        0% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0.8;
+        }
+    }
+}

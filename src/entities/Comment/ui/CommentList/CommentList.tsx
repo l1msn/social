@@ -16,6 +16,16 @@ interface ICommentListProps {
 const CommentList: React.FC<ICommentListProps> = memo(({className, comments, isLoading}: ICommentListProps): JSX.Element => {
     const {t} = useTranslation('comment');
 
+    if (isLoading) {
+        return (
+            <div className={classNames(cls.CommentCard, {}, [className])}>
+                <CommentCard comment={{} as IComment} isLoading/>
+                <CommentCard comment={{} as IComment} isLoading/>
+                <CommentCard comment={{} as IComment} isLoading/>
+            </div>
+        );
+    }
+
     return (
         <div className={classNames(cls.CommentCard, {}, [className])}>
             {comments?.length ?

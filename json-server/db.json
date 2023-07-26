@@ -7,7 +7,10 @@
       "img": "https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/",
       "views": "1022",
       "createAt": "26.02.2022",
-      "type": ["News"],
+      "userId": "2",
+      "type": [
+        "News"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -114,6 +117,30 @@
       "text": "not bad",
       "articleId": "1",
       "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "userId": 2,
+      "text": "new comment",
+      "id": "C6JhxR_"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "success",
+      "id": "JIGdjQA"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "123",
+      "id": "87VGqtL"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "1",
+      "id": "gESb_AA"
     }
   ],
   "users": [
@@ -132,14 +159,28 @@
       "avatar": "https://imgur.com/IyES7O4.png"
     }
   ],
-  "profile": {
-    "first": "Alex",
-    "lastname": "Sadykov",
-    "age": 23,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Saint-Petersburg",
-    "username": "Darlingg",
-    "avatar": "https://imgur.com/IyES7O4.png"
-  }
+  "profile": [
+    {
+      "id": "2",
+      "first": "Alex",
+      "lastname": "Sadykov",
+      "age": 23,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Saint-Petersburg",
+      "username": "Darlingg",
+      "avatar": "https://imgur.com/IyES7O4.png"
+    },
+    {
+      "id": "1",
+      "first": "admin",
+      "lastname": "superuser",
+      "age": 2,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Saint-Petersburg",
+      "username": "Admin",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/2304/2304226.png"
+    }
+  ]
 }

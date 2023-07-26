@@ -6,8 +6,9 @@ import MenuIcon from 'shared/assets/icons/menu-icon.svg';
 import ThemeButton from 'shared/ui/Button/consts/ThemeButton';
 import ThemeSwitcher from 'widgets/ThemeSwitcher';
 import LangSwitcher from 'widgets/LangSwitcher';
-import {SidebarItemsList} from 'widgets/Sidebar/model/ISidebarItemType';
 import SidebarItem from 'widgets/Sidebar/ui/SidebarItem/SidebarItem';
+import {useSelector} from 'react-redux';
+import getSidebarItems from 'widgets/Sidebar/model/selectors/getSidebarItems';
 
 interface ISidebarProps {
     className?: string;
@@ -20,13 +21,15 @@ const Sidebar: React.FC<ISidebarProps> = memo(({className}: ISidebarProps): JSX.
         setCollapsed((prevState) => !prevState);
     };
 
-    const itemsList = useMemo(() => SidebarItemsList.map((item) => (
+    const sidebarItemsList = useSelector(getSidebarItems);
+
+    const itemsList = useMemo(() => sidebarItemsList.map((item) => (
         <SidebarItem
             item={item}
             collapsed={collapsed}
             key={item.path}
         />
-    )), [collapsed]);
+    )), [sidebarItemsList, collapsed]);
 
     return (
         <div data-testid={'sidebar'} className={classNames(cls.Sidebar, {[cls.collapsed]: collapsed}, [className])}>

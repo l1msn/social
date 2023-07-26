@@ -10,6 +10,11 @@ const mockData: IArticle = {
     'img': 'https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/',
     'views': '1022',
     'createAt': '26.02.2022',
+    'user': {
+        id: '2',
+        avatar: 'https://imgur.com/IyES7O4.png',
+        username: 'username',
+    },
     'type': [ArticleType.IT],
     'blocks': [
         {

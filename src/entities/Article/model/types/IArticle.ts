@@ -1,3 +1,5 @@
+import {IUser} from 'entities/User';
+
 enum ArticleBlockType {
     CODE = 'code',
     TEXT = 'text',
@@ -42,6 +44,7 @@ interface IArticle {
     title: string,
     subtitle: string,
     img: string,
+    user: IUser;
     views: number | string,
     createAt: string,
     type: ArticleType[],

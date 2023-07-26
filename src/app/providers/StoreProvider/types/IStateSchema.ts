@@ -3,6 +3,7 @@ import {ILoginSchema} from 'features/AuthByUsername';
 import {IProfileSchema} from 'entities/Profile';
 import {IArticleSchema} from 'entities/Article/model';
 import {IArticleDetailsCommentsSchema} from 'pages/ArticleDetailsPage';
+import {IAddCommentFormSchema} from 'features/AddCommentForm';
 
 
 interface IStateSchema {
@@ -11,6 +12,7 @@ interface IStateSchema {
     profile?: IProfileSchema;
     article?: IArticleSchema;
     articleDetailsComments?: IArticleDetailsCommentsSchema;
+    addCommentForm?: IAddCommentFormSchema;
 }
 
 export default IStateSchema;

@@ -16,7 +16,7 @@ interface IDynamicModuleLoaderProps {
 }
 
 const DynamicModuleLoader: React.FC<IDynamicModuleLoaderProps> = (props: IDynamicModuleLoaderProps): JSX.Element => {
-    const {children, removeAfterAmount, reducers = {}} = props;
+    const {children, removeAfterAmount = true, reducers = {}} = props;
 
     const dispatch = useAppDispatch();
 
