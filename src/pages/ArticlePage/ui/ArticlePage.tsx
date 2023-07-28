@@ -13,10 +13,8 @@ import getArticlePageIsLoading from '../model/selectors/getArticlePageIsLoading/
 import getArticlePageView from '../model/selectors/getArticlePageView/getArticlePageView';
 import PageError from 'widgets/PageError/ui/PageError';
 import Page from 'shared/ui/Page';
-import getArticlePageNumber from 'pages/ArticlePage/model/selectors/getArticlePageNumber/getArticlePageNumber';
-import fetchArticlesList from '../model/services/fetchArticlesList/fetchArticlesList';
-import getArticlePageHasMore from 'pages/ArticlePage/model/selectors/getArticlePageHasMore/getArticlePageHasMore';
-import fetchNextArticlesPage from 'pages/ArticlePage/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import initArticlesPage from '../model/services/initArticlesPage/initArticlesPage';
+import fetchNextArticlesPage from '../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 
 interface IArticlePageProps {
     className?: string
@@ -28,8 +26,6 @@ const reducers: ReducersList = {
 
 
 const ArticlePage: React.FC<IArticlePageProps> = memo(({className}: IArticlePageProps): JSX.Element => {
-    const {t} = useTranslation('article');
-
     const dispatch = useAppDispatch();
 
     const articles = useSelector(getArticles.selectAll);
@@ -38,10 +34,7 @@ const ArticlePage: React.FC<IArticlePageProps> = memo(({className}: IArticlePage
     const view = useSelector(getArticlePageView);
 
     useInitialEffect(() => {
-        dispatch(articlePageActions.initState());
-        dispatch(fetchArticlesList({
-            page: 1,
-        }));
+        dispatch(initArticlesPage());
     });
 
     const onChangeView = useCallback((view: ArticleView) => {
@@ -61,7 +54,7 @@ const ArticlePage: React.FC<IArticlePageProps> = memo(({className}: IArticlePage
     }
 
     return (
-        <DynamicModuleLoader reducers={reducers} removeAfterAmount>
+        <DynamicModuleLoader reducers={reducers} removeAfterAmount={false}>
             <Page onScrollEnd={onLoadNextPartPages} className={classNames(cls.article, {}, [className])}>
                 <ArticleViewSelector onViewClick={onChangeView} view={view}/>
                 <ArticleList isLoading={isLoading} view={view} articles={articles}/>
