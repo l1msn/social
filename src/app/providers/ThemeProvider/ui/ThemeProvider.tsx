@@ -2,11 +2,6 @@ import React, {JSX, useMemo, useState} from 'react';
 import Themes from '../consts/Themes';
 import {LocalStorageThemeKey, ThemeContext} from '../lib/ThemeContext';
 
-interface IThemeContextProps {
-    children?: React.ReactNode,
-    theme?: Themes,
-    setTheme?: (theme: Themes) => void;
-}
 
 interface IThemeProviderProps {
     children?: React.ReactNode

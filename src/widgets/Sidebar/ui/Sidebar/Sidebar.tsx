@@ -32,7 +32,7 @@ const Sidebar: React.FC<ISidebarProps> = memo(({className}: ISidebarProps): JSX.
     )), [sidebarItemsList, collapsed]);
 
     return (
-        <div data-testid={'sidebar'} className={classNames(cls.Sidebar, {[cls.collapsed]: collapsed}, [className])}>
+        <menu data-testid={'sidebar'} className={classNames(cls.Sidebar, {[cls.collapsed]: collapsed}, [className])}>
             <Button data-testid={'sidebar-toggle'} className={cls.burger} theme={ThemeButton.OUTLINE} onClick={onToggle}>
                 <MenuIcon className={cls.icon}/>
             </Button>
@@ -43,7 +43,7 @@ const Sidebar: React.FC<ISidebarProps> = memo(({className}: ISidebarProps): JSX.
                 <LangSwitcher className={cls.lang}/>
                 <ThemeSwitcher/>
             </div>
-        </div>
+        </menu>
     );
 });
 

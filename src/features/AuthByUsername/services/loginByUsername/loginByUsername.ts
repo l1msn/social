@@ -1,7 +1,7 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import ILoginSchema from '../../model/types/ILoginSchema';
 import {IUser, userActions} from 'entities/User';
-import USER_LOCALSTORAGE_KEY from 'shared/consts/localStorage';
+import {USER_LOCALSTORAGE_KEY} from 'shared/consts/localStorage';
 import {IThunkConfig} from 'app/providers/StoreProvider';
 
 type loginByUsernameProps = Omit<ILoginSchema, 'isLoading' | 'error'>

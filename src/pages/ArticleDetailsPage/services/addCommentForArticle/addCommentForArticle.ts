@@ -32,7 +32,7 @@ const addCommentForArticle = createAsyncThunk<IComment, string, IThunkConfig<str
             return response.data;
         } catch (e) {
             console.log(e);
-            return thunkAPI.rejectWithValue('Cant get a article!');
+            return thunkAPI.rejectWithValue('Cant add a comment for article!');
         }
     });
 

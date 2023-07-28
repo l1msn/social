@@ -6,6 +6,7 @@ import {IArticle} from './types/IArticle';
 import IArticleSchema from './types/IArticleSchema';
 import ArticleDetails from './ui/ArticleDetails/ArticleDetails';
 import ArticleList from './ui/ArticleList/ArticleList';
+import ArticleViewSelector from './ui/ArticleViewSelector/ArticleViewSelector';
 
-export {ArticleDetails, IArticleSchema, getArticleData, getArticleIsLoading, getArticleError, ArticleView, ArticleList};
+export {ArticleDetails, IArticleSchema, getArticleData, getArticleIsLoading, getArticleError, ArticleView, ArticleViewSelector, ArticleList};
 export type {IArticle};

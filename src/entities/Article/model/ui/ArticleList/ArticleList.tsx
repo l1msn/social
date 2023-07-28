@@ -15,6 +15,12 @@ interface IArticleListProps {
     view?: ArticleView;
 }
 
+const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SHELF ? 9 : 3)
+    .fill(0)
+    .map((item, index) => (
+        <ArticleListItemSkeleton className={cls.card} key={index} view={view} />
+    ));
+
 const ArticleList: React.FC<IArticleListProps> = memo((props: IArticleListProps): JSX.Element => {
     const {className, articles, view = ArticleView.LIST, isLoading} = props;
 
@@ -26,21 +32,10 @@ const ArticleList: React.FC<IArticleListProps> = memo((props: IArticleListProps)
         );
     }
 
-    if (isLoading) {
-        return (
-            <div className={classNames(cls.articleList, {}, [className, cls[view]])}>
-                {new Array(view === ArticleView.SHELF ? 9 : 3)
-                    .fill(0)
-                    .map((item, index) => (
-                        <ArticleListItemSkeleton className={cls.card} key={index} view={view}/>
-                    ))}
-            </div>
-        );
-    }
-
     return (
         <div className={classNames(cls.articleList, {}, [className, cls[view]])} >
-            {articles.length > 0 ? articles.map(renderArticle) : <Text title={'No titles'}/>}
+            {articles.length > 0 ? articles.map(renderArticle) : null}
+            {isLoading && getSkeletons(view)}
         </div>
     );
 });

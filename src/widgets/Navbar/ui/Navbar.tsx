@@ -28,19 +28,21 @@ const Navbar: React.FC<INavbarProps> = memo(({className}: INavbarProps): JSX.Ele
     }, [dispatch]);
 
     if (authData) {
-        return (<div className={classNames(cls.navbar, {}, [className])}>
-            <Button
-                theme={ThemeButton.CLEAR}
-                className={cls.links}
-                onClick={onLogout}
-            >
-                {t('Logout')}
-            </Button>
-        </div>);
+        return (
+            <header className={classNames(cls.navbar, {}, [className])}>
+                <Button
+                    theme={ThemeButton.CLEAR}
+                    className={cls.links}
+                    onClick={onLogout}
+                >
+                    {t('Logout')}
+                </Button>
+            </header>
+        );
     }
 
     return (
-        <div className={classNames(cls.navbar, {}, [className])}>
+        <header className={classNames(cls.navbar, {}, [className])}>
             <Button
                 theme={ThemeButton.CLEAR}
                 className={cls.links}
@@ -52,7 +54,7 @@ const Navbar: React.FC<INavbarProps> = memo(({className}: INavbarProps): JSX.Ele
                 isOpen={isAuthModal}
                 onClose={onToggleModal}
             ></LoginModal>}
-        </div>
+        </header>
     );
 });
 

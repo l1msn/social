@@ -15,7 +15,7 @@ const fetchArticleById = createAsyncThunk<IArticle, number | string, IThunkConfi
             return response.data;
         } catch (e) {
             console.log(e);
-            return thunkAPI.rejectWithValue('Cant get a article!');
+            return thunkAPI.rejectWithValue('Cant get a article by id!');
         }
     });
 

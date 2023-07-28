@@ -4,6 +4,7 @@ import {IProfileSchema} from 'entities/Profile';
 import {IArticleSchema} from 'entities/Article/model';
 import {IArticleDetailsCommentsSchema} from 'pages/ArticleDetailsPage';
 import {IAddCommentFormSchema} from 'features/AddCommentForm';
+import {IArticlePageSchema} from 'pages/ArticlePage';
 
 
 interface IStateSchema {
@@ -13,6 +14,7 @@ interface IStateSchema {
     article?: IArticleSchema;
     articleDetailsComments?: IArticleDetailsCommentsSchema;
     addCommentForm?: IAddCommentFormSchema;
+    articlesPage?: IArticlePageSchema;
 }
 
 export default IStateSchema;

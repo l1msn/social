@@ -1,53 +1,72 @@
-import React, {JSX, memo} from 'react';
+import React, {JSX, memo, useCallback} from 'react';
 import classNames from 'shared/lib/classNames/classNames';
 import cls from './ArticlePage.module.scss';
 import {useTranslation} from 'react-i18next';
-import {ArticleList, IArticle} from 'entities/Article/model';
-import {ArticleBlockType, ArticleType} from 'entities/Article/model/types/IArticle';
+import {ArticleList, ArticleView, ArticleViewSelector} from 'entities/Article/model';
+import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/DynamicModuleLoader';
+import {articlePageActions, articlePageReducer, getArticles} from '../model/slice/articlePageSlice';
+import useInitialEffect from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import useAppDispatch from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import {useSelector} from 'react-redux';
+import getArticlePageError from '../model/selectors/getArticlePageError/getArticlePageError';
+import getArticlePageIsLoading from '../model/selectors/getArticlePageIsLoading/getArticlePageIsLoading';
+import getArticlePageView from '../model/selectors/getArticlePageView/getArticlePageView';
+import PageError from 'widgets/PageError/ui/PageError';
+import Page from 'shared/ui/Page';
+import getArticlePageNumber from 'pages/ArticlePage/model/selectors/getArticlePageNumber/getArticlePageNumber';
+import fetchArticlesList from '../model/services/fetchArticlesList/fetchArticlesList';
+import getArticlePageHasMore from 'pages/ArticlePage/model/selectors/getArticlePageHasMore/getArticlePageHasMore';
+import fetchNextArticlesPage from 'pages/ArticlePage/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 
 interface IArticlePageProps {
     className?: string
 }
 
-const mockData: IArticle = {
-    'id': '1',
-    'title': 'TypeScript 5.0 and 4.9',
-    'subtitle': 'Actual features',
-    'img': 'https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/',
-    'views': '1022',
-    'createAt': '26.02.2022',
-    'user': {
-        id: '2',
-        avatar: 'https://imgur.com/IyES7O4.png',
-        username: 'username',
-    },
-    'type': [ArticleType.IT],
-    'blocks': [
-        {
-            'id': '1',
-            'type': ArticleBlockType.TEXT,
-            'title': 'TypeScript 5.0 and 4.9: evaluate and compare changes',
-            'paragraphs': [
-                'In mid-March 2023, Microsoft announced the release of TypeScript version 5.0. The developers expect a 10-20% performance boost from it, but since it all depends on the codebase and hardware characteristics, they strongly recommend trying these changes.',
-                'In this article, we\'ll take a look at some of the changes in TypeScript 4.9 and 5.0 and compare what\'s new with previous versions. Using code examples, we will try to understand why they were added and how they simplify our life. The article will be useful for experienced developers who often use TypeScript in their work, and for beginners, as we will analyze in detail the solutions to some problems.',
-            ],
-        }],
-} as IArticle;
+const reducers: ReducersList = {
+    articlesPage: articlePageReducer,
+};
+
 
 const ArticlePage: React.FC<IArticlePageProps> = memo(({className}: IArticlePageProps): JSX.Element => {
     const {t} = useTranslation('article');
 
+    const dispatch = useAppDispatch();
+
+    const articles = useSelector(getArticles.selectAll);
+    const error = useSelector(getArticlePageError);
+    const isLoading = useSelector(getArticlePageIsLoading);
+    const view = useSelector(getArticlePageView);
+
+    useInitialEffect(() => {
+        dispatch(articlePageActions.initState());
+        dispatch(fetchArticlesList({
+            page: 1,
+        }));
+    });
+
+    const onChangeView = useCallback((view: ArticleView) => {
+        dispatch(articlePageActions.setView(view));
+    }, [dispatch]);
+
+    const onLoadNextPartPages = useCallback(() => {
+        if (__PROJECT__ !== 'storybook' ) {
+            dispatch(fetchNextArticlesPage());
+        }
+    }, [dispatch]);
+
+    if (error) {
+        return (
+            <PageError/>
+        );
+    }
+
     return (
-        <div className={classNames(cls.article, {}, [className])}>
-            <ArticleList isLoading={true} articles={
-                new Array(16).fill(0).map(
-                    (item, index) => ({
-                        ...mockData,
-                        id: index.toString(),
-                    }),
-                )
-            }/>
-        </div>
+        <DynamicModuleLoader reducers={reducers} removeAfterAmount>
+            <Page onScrollEnd={onLoadNextPartPages} className={classNames(cls.article, {}, [className])}>
+                <ArticleViewSelector onViewClick={onChangeView} view={view}/>
+                <ArticleList isLoading={isLoading} view={view} articles={articles}/>
+            </Page>
+        </DynamicModuleLoader>
     );
 });
 

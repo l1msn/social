@@ -22,6 +22,7 @@ import addCommentForArticle from '../../services/addCommentForArticle/addComment
 import Button from 'shared/ui/Button';
 import ThemeButton from 'shared/ui/Button/consts/ThemeButton';
 import {RoutePath} from 'shared/config/routeConfig/routeConfig';
+import Page from 'shared/ui/Page';
 
 interface IArticleDetailsPageProps {
     className?: string
@@ -69,7 +70,7 @@ const ArticleDetailsPage: React.FC<IArticleDetailsPageProps> = memo(({className}
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterAmount>
-            <div className={classNames(cls.articleDetailsPage, {}, [className])}>
+            <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
                 <Button theme={ThemeButton.WITHLINE} onClick={onBackToList}>
                     {t('Back to list')}
                 </Button>
@@ -77,7 +78,7 @@ const ArticleDetailsPage: React.FC<IArticleDetailsPageProps> = memo(({className}
                 <Text className={cls.commentTitle} title={t('Comments')}/>
                 <AddCommentForm onSendComment={onSendComment}/>
                 <CommentList isLoading={isLoading} comments={comments}/>
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 });

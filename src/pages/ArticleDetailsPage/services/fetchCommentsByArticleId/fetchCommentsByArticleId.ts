@@ -24,7 +24,7 @@ const fetchCommentsByArticleId = createAsyncThunk<IComment[], number | string | 
             return response.data;
         } catch (e) {
             console.log(e);
-            return thunkAPI.rejectWithValue('Cant get a article!');
+            return thunkAPI.rejectWithValue('Cant fetch comments for article!');
         }
     });
 

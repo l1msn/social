@@ -19,7 +19,7 @@ const fetchProfileData = createAsyncThunk<IProfile, string | number | undefined,
             return response.data;
         } catch (e) {
             console.log(e);
-            return thunkAPI.rejectWithValue('Cant get a data!');
+            return thunkAPI.rejectWithValue('Cant get a profile data!');
         }
     });
 
