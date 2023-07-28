@@ -10,8 +10,9 @@ const updateProfileData = createAsyncThunk <IProfile,
     IThunkConfig< ValidateProfileError[] | string>
 >('profile/updateProfileData',
     async (_, thunkAPI) => {
-        const formData = getProfileForm(thunkAPI.getState());
         try {
+            const formData = getProfileForm(thunkAPI.getState());
+
             const errors = validateProfileData(formData);
 
             if (errors.length) {
@@ -19,7 +20,7 @@ const updateProfileData = createAsyncThunk <IProfile,
                 return thunkAPI.rejectWithValue(errors);
             }
 
-            const response = await thunkAPI.extra.api.put<IProfile>('/profile', formData);
+            const response = await thunkAPI.extra.api.put<IProfile>('/profile/' + formData.id?.toString(), formData);
 
             if (!response.data) {
                 throw new Error('No update!');

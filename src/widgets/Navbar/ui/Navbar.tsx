@@ -1,4 +1,4 @@
-import React, {JSX, memo, useCallback, useEffect, useState} from 'react';
+import React, {JSX, memo, useCallback, useState} from 'react';
 import classNames from 'shared/lib/classNames/classNames';
 import cls from './Navbar.module.scss';
 import {useTranslation} from 'react-i18next';
@@ -25,25 +25,26 @@ const Navbar: React.FC<INavbarProps> = memo(({className}: INavbarProps): JSX.Ele
 
     const onLogout = useCallback(() => {
         dispatch(userActions.logout());
-        window.location.reload();
     }, [dispatch]);
 
     if (authData) {
-        return (<div className={classNames(cls.navbar, {}, [className])}>
-            <Button
-                theme={ThemeButton.WITHLINE}
-                className={cls.links}
-                onClick={onLogout}
-            >
-                {t('Logout')}
-            </Button>
-        </div>);
+        return (
+            <header className={classNames(cls.navbar, {}, [className])}>
+                <Button
+                    theme={ThemeButton.CLEAR}
+                    className={cls.links}
+                    onClick={onLogout}
+                >
+                    {t('Logout')}
+                </Button>
+            </header>
+        );
     }
 
     return (
-        <div className={classNames(cls.navbar, {}, [className])}>
+        <header className={classNames(cls.navbar, {}, [className])}>
             <Button
-                theme={ThemeButton.WITHLINE}
+                theme={ThemeButton.CLEAR}
                 className={cls.links}
                 onClick={onToggleModal}
             >
@@ -53,7 +54,7 @@ const Navbar: React.FC<INavbarProps> = memo(({className}: INavbarProps): JSX.Ele
                 isOpen={isAuthModal}
                 onClose={onToggleModal}
             ></LoginModal>}
-        </div>
+        </header>
     );
 });
 

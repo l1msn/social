@@ -1,9 +1,15 @@
-:root {
+.app_light_theme {
+    transition: 0.2s linear;
+
     --bg-color: #e8e8ea;
     --inverted-bg-color: #0a0a57;
     --primary-color: #072fac;
     --secondary-color: #0449e0;
     --inverted-primary-color: #04ff04;
     --inverted-secondary-color: #049604;
+    --skeleton-color: #03cc03;
+    --skeleton-shadow: #037703;
+    --code-bg: #fff;
+    --card-bg: #c6c6c7;
 }
 

@@ -3,19 +3,23 @@ import {IThunkConfig} from 'app/providers/StoreProvider';
 import {IProfile} from '../../types/IProfile';
 
 
-const fetchProfileData = createAsyncThunk<IProfile, void, IThunkConfig<string>>('profile/fetchProfileData',
-    async (_, thunkAPI) => {
+const fetchProfileData = createAsyncThunk<IProfile, string | number | undefined, IThunkConfig<string>>('profile/fetchProfileData',
+    async (profileId, thunkAPI) => {
         try {
-            const response = await thunkAPI.extra.api.get<IProfile>('/profile');
+            const response = await thunkAPI.extra.api.get<IProfile>('/profile/' + profileId?.toString());
+
+            if (!profileId) {
+                return thunkAPI.rejectWithValue('Cant get a data with that id!');
+            }
 
             if (!response.data) {
-                throw new Error('No data!');
+                return thunkAPI.rejectWithValue('No data!');
             }
 
             return response.data;
         } catch (e) {
             console.log(e);
-            return thunkAPI.rejectWithValue('Cant get a data!');
+            return thunkAPI.rejectWithValue('Cant get a profile data!');
         }
     });
 

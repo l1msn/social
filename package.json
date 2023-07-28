@@ -1,6 +1,6 @@
 {
   "name": "social",
-  "version": "0.4.2",
+  "version": "0.4.9",
   "description": "",
   "main": "src/index.tsx",
   "scripts": {
@@ -17,6 +17,7 @@
     "test:ui": "npx loki test",
     "test:ui:ok": "npx loki update && npx loki approve",
     "test:ui:ci:local": "npm run storybook:build && loki --requireReference --reactUri file:./storybook-static",
+    "test:ui:ci:local:ok": "npm run storybook:build && loki --requireReference --reactUri file:./storybook-static && npm run test:ui:ci:ok",
     "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static",
     "test:ui:report": "npm run test:ui:report:json && npm run test:ui:report:html",
     "test:ui:report:json": "node scripts/generate-visual-json-report.js",
@@ -106,8 +107,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^13.0.1",
-    "react-redux": "^8.1.1",
-    "react-router-dom": "^6.13.0"
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^6.14.2"
   },
   "loki": {
     "configurations": {

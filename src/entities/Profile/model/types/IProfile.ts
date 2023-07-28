@@ -11,6 +11,7 @@ enum ValidateProfileError {
 
 
 interface IProfile {
+    id?: string | number,
     first?: string,
     lastname?: string,
     age?: number | string,

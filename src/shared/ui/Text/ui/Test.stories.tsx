@@ -4,6 +4,7 @@ import ThemeDecorator from 'shared/config/storybook/themeDecorator/themeDecorato
 import {Themes} from 'app/providers/ThemeProvider';
 import Text from './Text';
 import ThemeText from '../consts/ThemeText';
+import {SizeText} from 'shared/ui/Text';
 
 
 const meta = {
@@ -36,6 +37,24 @@ export const LightError: Story = {
 
 export const Dark: Story = {
     args: {
+        text: 'text',
+        title: 'title',
+    },
+    decorators: [ThemeDecorator(Themes.DARK)],
+};
+
+export const DarkL: Story = {
+    args: {
+        size: SizeText.L,
+        text: 'text',
+        title: 'title',
+    },
+    decorators: [ThemeDecorator(Themes.DARK)],
+};
+
+export const DarkXL: Story = {
+    args: {
+        size: SizeText.XL,
         text: 'text',
         title: 'title',
     },

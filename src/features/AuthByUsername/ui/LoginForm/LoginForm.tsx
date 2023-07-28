@@ -46,7 +46,6 @@ const LoginForm: React.FC<ILoginFormProps> = memo(({className, onSuccess}: ILogi
         if (result.meta.requestStatus === 'fulfilled') {
             onSuccess();
         }
-        window.location.reload();
     }, [onSuccess, dispatch, password, username]);
 
     return (

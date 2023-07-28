@@ -3,7 +3,7 @@
     "outDir": "./build/",
     "noImplicitAny": true,
     "module": "ESNext",
-    "target": "ESNext",
+    "target": "es5",
     "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "node",
@@ -24,6 +24,5 @@
     "./config/jest/setupTest.ts",
     "./src/**/*.ts",
     "./src/**/*.tsx",
-    "./src/app/types/global.d.ts"
   ]
 }

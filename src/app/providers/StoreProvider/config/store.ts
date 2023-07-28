@@ -1,23 +1,21 @@
 import {Action, CombinedState, configureStore, Reducer, ReducersMapObject, ThunkDispatch} from '@reduxjs/toolkit';
 import IStateSchema from '../types/IStateSchema';
 import {userReducer} from 'entities/User';
-import {createReducerManager} from 'app/providers/StoreProvider/config/reducerManager';
-import {useDispatch} from 'react-redux';
+import {createReducerManager} from './reducerManager';
 import $api from 'shared/api/api';
 import {NavigateOptions, To} from 'react-router-dom';
-import {profileReducer} from 'entities/Profile/model/slice/profileSlice';
-import {ReducersList} from 'shared/lib/components/DynamicModuleLoader';
+
 
 function createReduxStore(initialState?: IStateSchema,
     asyncReducers?: ReducersMapObject<IStateSchema>,
     navigate?: (to: To, options?: NavigateOptions) => void) {
-    const rootReducers: ReducersList = {
+    const rootReducers: ReducersMapObject<IStateSchema> = {
         ...asyncReducers,
         user: userReducer,
-        profile: profileReducer,
     };
 
     const reducerManager = createReducerManager(rootReducers);
+
 
     const store = configureStore({
         reducer: reducerManager.reduce as Reducer<CombinedState<IStateSchema>>,
@@ -41,7 +39,6 @@ function createReduxStore(initialState?: IStateSchema,
 }
 
 const store = createReduxStore();
-const useAppThunkDispatch = () => useDispatch<ThunkAppDispatch>();
 
 type RootState = ReturnType<typeof store.getState>
 type AppDispatch = ReturnType<typeof createReduxStore>['dispatch']
