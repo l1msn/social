@@ -2,12 +2,14 @@ import {AnyAction, CombinedState, combineReducers, Reducer, ReducersMapObject} f
 import IStateSchema from '../types/IStateSchema';
 
 type StateSchemaKey = keyof IStateSchema;
+type MountedReducers = OptionalRecord<StateSchemaKey, boolean>;
 
 interface IReducerManager {
     getReducerMap: () => ReducersMapObject<IStateSchema>,
     reduce: (state: IStateSchema, action: AnyAction) => CombinedState<IStateSchema>;
     add: (key: StateSchemaKey, reducer: Reducer) => void;
-    remove: (key: StateSchemaKey) => void
+    remove: (key: StateSchemaKey) => void;
+    getMountedReducers: () => MountedReducers;
 }
 
 function createReducerManager(initialReducers: ReducersMapObject<IStateSchema>): IReducerManager {
@@ -17,8 +19,11 @@ function createReducerManager(initialReducers: ReducersMapObject<IStateSchema>):
 
     let keysToRemove: Array<StateSchemaKey> = [];
 
+    const mountedReducers: MountedReducers = {};
+
     return {
         getReducerMap: () => reducers,
+        getMountedReducers: () => mountedReducers,
         reduce: (state: IStateSchema, action: AnyAction) => {
             if (keysToRemove.length > 0) {
                 state = {...state};
@@ -34,7 +39,7 @@ function createReducerManager(initialReducers: ReducersMapObject<IStateSchema>):
                 return;
             }
             reducers[key] = reducer;
-
+            mountedReducers[key] = true;
             combinedReducer = combineReducers(reducers);
         },
         remove: (key: StateSchemaKey) => {
@@ -43,9 +48,10 @@ function createReducerManager(initialReducers: ReducersMapObject<IStateSchema>):
             }
             delete reducers[key];
             keysToRemove.push(key);
+            mountedReducers[key] = false;
             combinedReducer = combineReducers(reducers);
         },
     };
 }
 
-export {IReducerManager, createReducerManager, StateSchemaKey};
+export {IReducerManager, createReducerManager, StateSchemaKey, MountedReducers};
