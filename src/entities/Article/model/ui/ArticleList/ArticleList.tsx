@@ -4,7 +4,7 @@ import cls from './ArticleList.module.scss';
 import {IArticle} from '../../types/IArticle';
 import ArticleView from '../../types/ArticleView';
 import ArticleListItem from '../ArticleListItem/ArticleListItem';
-import {Text} from 'shared/ui/Text';
+import {SizeText, Text} from 'shared/ui/Text';
 import {useTranslation} from 'react-i18next';
 import ArticleListItemSkeleton from 'entities/Article/model/ui/ArticleListItem/ArticleListItemSkeleton';
 
@@ -29,6 +29,14 @@ const ArticleList: React.FC<IArticleListProps> = memo((props: IArticleListProps)
     function renderArticle(article: IArticle) {
         return (
             <ArticleListItem key={article.id} className={cls.card} article={article} view={view}/>
+        );
+    }
+
+    if (!isLoading && !articles.length) {
+        return (
+            <div className={classNames(cls.articleList, {}, [className, cls[view]])} >
+                <Text size={SizeText.L} title={t('No titles')}/>
+            </div>
         );
     }
 

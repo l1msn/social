@@ -1,5 +1,5 @@
 import {IStateSchema} from 'app/providers/StoreProvider';
 
-const getAddCommentFormText = (state: IStateSchema) => state.addCommentForm?.text;
+const getAddCommentFormText = (state: IStateSchema) => state.addCommentForm?.text ?? '';
 
 export default getAddCommentFormText;

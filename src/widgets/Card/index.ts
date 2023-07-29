@@ -1,3 +1,4 @@
+import CardTheme from './consts/CardTheme';
 import Card from './ui/Card';
 
-export default Card;
+export {Card, CardTheme};

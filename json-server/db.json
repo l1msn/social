@@ -2,14 +2,14 @@
   "articles": [
     {
       "id": "1",
-      "title": "TypeScript 5.0 and 4.9",
+      "title": "TypeScript 5.0 and 4.9 1 new",
       "subtitle": "Actual features",
       "img": "https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/",
       "views": "1022",
       "createAt": "26.02.2022",
       "userId": "2",
       "type": [
-        "News"
+        "IT"
       ],
       "blocks": [
         {
@@ -106,14 +106,14 @@
     },
     {
       "id": "2",
-      "title": "TypeScript 5.0 and 4.9 2",
+      "title": "TypeScript 5.0 and 4.9 2 old Science",
       "subtitle": "Actual features",
       "img": "https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/",
       "views": "1022",
-      "createAt": "26.02.2022",
+      "createAt": "23.02.2022",
       "userId": "2",
       "type": [
-        "News"
+        "Science"
       ],
       "blocks": [
         {
@@ -210,14 +210,14 @@
     },
     {
       "id": "3",
-      "title": "TypeScript 5.0 and 4.9 3",
+      "title": "TypeScript 5.0 and 4.9 3 a lot of views",
       "subtitle": "Actual features",
       "img": "https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/",
-      "views": "1022",
-      "createAt": "26.02.2022",
+      "views": "10220",
+      "createAt": "20.02.2022",
       "userId": "2",
       "type": [
-        "News"
+        "IT"
       ],
       "blocks": [
         {
@@ -321,7 +321,7 @@
       "createAt": "26.02.2022",
       "userId": "2",
       "type": [
-        "News"
+        "IT"
       ],
       "blocks": [
         {
@@ -425,7 +425,7 @@
       "createAt": "26.02.2022",
       "userId": "2",
       "type": [
-        "News"
+        "IT"
       ],
       "blocks": [
         {
@@ -529,7 +529,7 @@
       "createAt": "26.02.2022",
       "userId": "2",
       "type": [
-        "News"
+        "IT"
       ],
       "blocks": [
         {
@@ -633,7 +633,7 @@
       "createAt": "26.02.2022",
       "userId": "2",
       "type": [
-        "News"
+        "IT"
       ],
       "blocks": [
         {
@@ -737,7 +737,7 @@
       "createAt": "26.02.2022",
       "userId": "2",
       "type": [
-        "News"
+        "IT"
       ],
       "blocks": [
         {
@@ -841,7 +841,7 @@
       "createAt": "26.02.2022",
       "userId": "2",
       "type": [
-        "News"
+        "IT"
       ],
       "blocks": [
         {

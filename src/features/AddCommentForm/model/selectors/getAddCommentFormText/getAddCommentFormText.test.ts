@@ -15,6 +15,6 @@ describe('testing getProfileError functional', () => {
 
     test('return empty', () => {
         const state: DeepPartial<IStateSchema> = {};
-        expect(getAddCommentFormText(state as IStateSchema)).toEqual(undefined);
+        expect(getAddCommentFormText(state as IStateSchema)).toEqual('');
     });
 });

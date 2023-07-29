@@ -3,17 +3,38 @@ import {IThunkConfig} from 'app/providers/StoreProvider';
 import {articlePageActions} from '../../slice/articlePageSlice';
 import fetchArticlesList from '../../services/fetchArticlesList/fetchArticlesList';
 import getArticlePageInit from '../../selectors/getArticlePageInit/getArticlePageInit';
+import {ArticleSortField, ArticleType} from 'entities/Article/model';
+import SortOrder from 'shared/types';
 
-const initArticlesPage = createAsyncThunk<void, void, IThunkConfig<string>>('articlePage/initArticlesPage',
-    async (_, thunkAPI) => {
+const initArticlesPage = createAsyncThunk<void, URLSearchParams, IThunkConfig<string>>('articlePage/initArticlesPage',
+    async (searchParams, thunkAPI) => {
         try {
             const init = getArticlePageInit(thunkAPI.getState());
 
             if (!init) {
+                const orderFromUrl = searchParams.get('order') as SortOrder;
+                const sortFromUrl = searchParams.get('sort') as ArticleSortField;
+                const typeFromUrl = searchParams.get('type') as ArticleType;
+                const searchFromUrl = searchParams.get('search');
+
+                if (orderFromUrl) {
+                    thunkAPI.dispatch(articlePageActions.setOrder(orderFromUrl));
+                }
+
+                if (sortFromUrl) {
+                    thunkAPI.dispatch(articlePageActions.setSort(sortFromUrl));
+                }
+
+                if (searchFromUrl) {
+                    thunkAPI.dispatch(articlePageActions.setSearch(searchFromUrl));
+                }
+
+                if (typeFromUrl) {
+                    thunkAPI.dispatch(articlePageActions.setType(typeFromUrl));
+                }
+
                 thunkAPI.dispatch(articlePageActions.initState());
-                thunkAPI.dispatch(fetchArticlesList({
-                    page: 1,
-                }));
+                thunkAPI.dispatch(fetchArticlesList({replace: false}));
             }
         } catch (e) {
             console.log(e);

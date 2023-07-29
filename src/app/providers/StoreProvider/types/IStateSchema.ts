@@ -5,10 +5,13 @@ import {IArticleSchema} from 'entities/Article/model';
 import {IArticleDetailsCommentsSchema} from 'pages/ArticleDetailsPage';
 import {IAddCommentFormSchema} from 'features/AddCommentForm';
 import {IArticlePageSchema} from 'pages/ArticlePage';
+import {IScrollSchema} from 'features/scrollRestore';
 
 
 interface IStateSchema {
     user: IUserScheme;
+    scrollRestore: IScrollSchema;
+
     loginForm?: ILoginSchema;
     profile?: IProfileSchema;
     article?: IArticleSchema;

@@ -6,7 +6,7 @@ import {ArticleView} from 'entities/Article/model';
 import {Text} from 'shared/ui/Text';
 import Icon from 'widgets/Icon';
 import ViewsIcon from 'shared/assets/icons/views-icon.svg';
-import Card from 'widgets/Card';
+import {Card} from 'widgets/Card';
 import useHover from 'shared/lib/hooks/useHover/useHover';
 import Avatar from 'widgets/Avatar';
 import Button from 'shared/ui/Button';

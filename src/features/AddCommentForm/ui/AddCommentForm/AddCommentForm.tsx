@@ -25,7 +25,6 @@ const AddCommentForm: React.FC<IAddCommentFormProps> = ({className, onSendCommen
     const {t} = useTranslation('comment');
 
     const text = useSelector(getAddCommentFormText);
-    const error = useSelector(getAddCommentFormError);
 
     const dispatch = useAppDispatch();
 
