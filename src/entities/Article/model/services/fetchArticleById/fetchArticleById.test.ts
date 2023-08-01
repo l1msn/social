@@ -1,6 +1,6 @@
 import axios from 'axios';
 import TestAsyncThunk from 'shared/lib/tests/testAsyncThunk/TestAsyncThunk';
-import {IArticle} from 'entities/Article/model';
+import {IArticle} from 'entities/Article';
 import {ArticleBlockType, ArticleType} from 'entities/Article/model/types/IArticle';
 import fetchArticleById from './fetchArticleById';
 

@@ -2,33 +2,42 @@ import React, {JSX, memo, useCallback} from 'react';
 import classNames from 'shared/lib/classNames/classNames';
 import cls from './ArticleDetailsPage.module.scss';
 import {useTranslation} from 'react-i18next';
-import {ArticleDetails} from 'entities/Article/model';
 import {useNavigate, useParams} from 'react-router-dom';
 import NotFoundPage from 'pages/NotFoundPage';
-import {Text} from 'shared/ui/Text';
+import {SizeText, Text} from 'shared/ui/Text';
 import {CommentList} from 'entities/Comment';
 import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/DynamicModuleLoader';
-import {articleDetailsCommentsReducer, getArticleComments} from '../../model/slice/articleDetailsCommentsSlice';
+import {getArticleComments} from '../../model/slice/articleDetailsCommentsSlice';
 import {useSelector} from 'react-redux';
-import getArticleCommentsIsLoading from '../../selectors/getArticleCommentsIsLoading/getArticleCommentsIsLoading';
-import getArticleCommentsError from '../../selectors/getArticleCommentsError/getArticleCommentsError';
+import getArticleCommentsIsLoading
+    from 'pages/ArticleDetailsPage/model/selectors/getArticleCommentsIsLoading/getArticleCommentsIsLoading';
+import getArticleCommentsError
+    from 'pages/ArticleDetailsPage/model/selectors/getArticleCommentsError/getArticleCommentsError';
 import PageError from 'widgets/PageError/ui/PageError';
 import useInitialEffect from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import useAppDispatch from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import fetchCommentsByArticleId
-    from '../../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+    from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import {AddCommentForm} from 'features/AddCommentForm';
-import addCommentForArticle from '../../services/addCommentForArticle/addCommentForArticle';
-import Button from 'shared/ui/Button';
-import ThemeButton from 'shared/ui/Button/consts/ThemeButton';
-import {RoutePath} from 'shared/config/routeConfig/routeConfig';
+import addCommentForArticle from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
 import Page from 'shared/ui/Page';
+import {
+    getArticleRecommendations,
+} from '../../model/slice/articleDetailsRecommendationsSlice';
+import getArticleDetailsRecommendationsIsLoading
+    from '../../model/selectors/getArticleDetailsRecommendationsIsLoading/getArticleDetailsRecommendationsIsLoading';
+import getArticleDetailsRecommendationsError
+    from '../../model/selectors/getArticleDetailsRecommendationsError/getArticleDetailsRecommendationsError';
+import fetchArticleRecommendations from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
+import articleDetailsPageReducer from 'pages/ArticleDetailsPage/model/slice';
+import ArticleDetailsPageHeader from 'pages/ArticleDetailsPage/ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import {ArticleDetails, ArticleList, ArticleView} from 'entities/Article';
 
 interface IArticleDetailsPageProps {
     className?: string
 }
 const reducers: ReducersList = {
-    articleDetailsComments: articleDetailsCommentsReducer,
+    articleDetailsPage: articleDetailsPageReducer,
 };
 
 const ArticleDetailsPage: React.FC<IArticleDetailsPageProps> = memo(({className}: IArticleDetailsPageProps): JSX.Element => {
@@ -37,23 +46,23 @@ const ArticleDetailsPage: React.FC<IArticleDetailsPageProps> = memo(({className}
     const {id} = useParams<string>();
 
     const comments = useSelector(getArticleComments.selectAll);
+    const recommendations = useSelector(getArticleRecommendations.selectAll);
 
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
 
-    const isLoading = useSelector(getArticleCommentsIsLoading);
-    const error = useSelector(getArticleCommentsError);
+    const isLoadingComments = useSelector(getArticleCommentsIsLoading);
+    const errorComments = useSelector(getArticleCommentsError);
+    const isLoadingRecommendations = useSelector(getArticleDetailsRecommendationsIsLoading);
+    const errorRecommendations = useSelector(getArticleDetailsRecommendationsError);
 
     const onSendComment = useCallback((text: string) => {
         dispatch(addCommentForArticle(text));
     }, [dispatch]);
 
-    const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles);
-    }, [navigate]);
-
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
+        dispatch(fetchArticleRecommendations());
     });
 
     if (!id) {
@@ -62,7 +71,7 @@ const ArticleDetailsPage: React.FC<IArticleDetailsPageProps> = memo(({className}
         );
     }
 
-    if (error) {
+    if (errorComments || errorRecommendations) {
         return (
             <PageError/>
         );
@@ -71,13 +80,23 @@ const ArticleDetailsPage: React.FC<IArticleDetailsPageProps> = memo(({className}
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterAmount>
             <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
-                <Button theme={ThemeButton.WITHLINE} onClick={onBackToList}>
-                    {t('Back to list')}
-                </Button>
+                <ArticleDetailsPageHeader/>
                 <ArticleDetails id={id} />
-                <Text className={cls.commentTitle} title={t('Comments')}/>
+                <Text size={SizeText.L}
+                    className={cls.commentTitle}
+                    title={t('Recommendations')}/>
+                <ArticleList
+                    target={'_blank'}
+                    className={cls.recommendations}
+                    view={ArticleView.SHELF}
+                    articles={recommendations}
+                    isLoading={isLoadingRecommendations}
+                />
+                <Text size={SizeText.L}
+                    className={cls.commentTitle}
+                    title={t('Comments')}/>
                 <AddCommentForm onSendComment={onSendComment}/>
-                <CommentList isLoading={isLoading} comments={comments}/>
+                <CommentList isLoading={isLoadingComments} comments={comments}/>
             </Page>
         </DynamicModuleLoader>
     );

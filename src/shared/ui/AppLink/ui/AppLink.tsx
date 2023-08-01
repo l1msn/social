@@ -11,10 +11,10 @@ interface IAppLinkProps extends LinkProps{
 }
 
 const AppLink: React.FC<IAppLinkProps> = memo((props: IAppLinkProps): JSX.Element => {
-    const {to, className, children, theme = AppLinkThemes.PRIMARY} = props;
+    const {to, className, children, theme = AppLinkThemes.PRIMARY, ...otherProps} = props;
 
     return (
-        <Link to={to} className={classNames(cls.applink, {}, [className, cls[theme]])}>
+        <Link {...otherProps} to={to} className={classNames(cls.applink, {}, [className, cls[theme]])}>
             {children}
         </Link>
     );

@@ -6,7 +6,7 @@ import {
     ArticleTypeTabs,
     ArticleView,
     ArticleViewSelector,
-} from 'entities/Article/model';
+} from 'entities/Article';
 import {useSelector} from 'react-redux';
 import getArticlePageView from '../../model/selectors/getArticlePageView/getArticlePageView';
 import {articlePageActions} from '../../model/slice/articlePageSlice';
@@ -23,8 +23,6 @@ import fetchArticlesList from '../../model/services/fetchArticlesList/fetchArtic
 import useDebounce from 'shared/lib/hooks/useDebounce/useDebounce';
 import Button from 'shared/ui/Button';
 import ThemeButton from 'shared/ui/Button/consts/ThemeButton';
-import Tabs from 'widgets/Tabs/ui/Tabs';
-import {ITabItem} from 'widgets/Tabs';
 import {ArticleType} from 'entities/Article/model/types/IArticle';
 import getArticlePageType from '../../model/selectors/getArticlePageType/getArticlePageType';
 

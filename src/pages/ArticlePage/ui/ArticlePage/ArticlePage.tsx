@@ -1,7 +1,7 @@
 import React, {JSX, memo, useCallback} from 'react';
 import classNames from 'shared/lib/classNames/classNames';
 import cls from './ArticlePage.module.scss';
-import {ArticleList} from 'entities/Article/model';
+import {ArticleList} from 'entities/Article';
 import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/DynamicModuleLoader';
 import {articlePageReducer, getArticles} from '../../model/slice/articlePageSlice';
 import useInitialEffect from 'shared/lib/hooks/useInitialEffect/useInitialEffect';

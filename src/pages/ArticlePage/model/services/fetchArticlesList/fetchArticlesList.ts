@@ -1,6 +1,6 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import {IThunkConfig} from 'app/providers/StoreProvider';
-import {ArticleType, IArticle} from 'entities/Article/model';
+import {ArticleType, IArticle} from 'entities/Article';
 import getArticlePageLimit from '../../selectors/getArticlePageLimit/getArticlePageLimit';
 import getArticlePageOrder from '../../selectors/getArticlePageOrder/getArticlePageOrder';
 import getArticlePageSort from '../../selectors/getArticlePageSort/getArticlePageSort';
