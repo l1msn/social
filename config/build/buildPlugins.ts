@@ -4,6 +4,8 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer';
 import {IBuildOptions} from './types/config';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+// eslint-disable-next-line import/default
+import CopyPlugin from 'copy-webpack-plugin';
 
 export function buildPlugins({paths, isDev, apiUrl, project}: IBuildOptions): webpack.WebpackPluginInstance[] {
     const plugins =
@@ -19,6 +21,11 @@ export function buildPlugins({paths, isDev, apiUrl, project}: IBuildOptions): we
             __IS_DEV__: JSON.stringify(isDev),
             __API__: JSON.stringify(apiUrl),
             __PROJECT__: JSON.stringify(project),
+        }),
+        new CopyPlugin({
+            patterns: [
+                {from: paths.locales, to: paths.buildLocales},
+            ],
         }),
         ];
 

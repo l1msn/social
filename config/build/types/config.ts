@@ -5,6 +5,8 @@ interface IBuildPaths {
     build: string;
     html: string;
     src: string;
+    locales: string,
+    buildLocales: string,
 }
 
 interface IBuildOptions {

@@ -2,7 +2,7 @@ import React, {JSX, memo, useCallback} from 'react';
 import classNames from 'shared/lib/classNames/classNames';
 import cls from './ArticleDetailsPage.module.scss';
 import {useTranslation} from 'react-i18next';
-import {useNavigate, useParams} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import NotFoundPage from 'pages/NotFoundPage';
 import {SizeText, Text} from 'shared/ui/Text';
 import {CommentList} from 'entities/Comment';
@@ -49,7 +49,6 @@ const ArticleDetailsPage: React.FC<IArticleDetailsPageProps> = memo(({className}
     const recommendations = useSelector(getArticleRecommendations.selectAll);
 
     const dispatch = useAppDispatch();
-    const navigate = useNavigate();
 
     const isLoadingComments = useSelector(getArticleCommentsIsLoading);
     const errorComments = useSelector(getArticleCommentsError);
