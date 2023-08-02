@@ -1,30 +1,27 @@
-import React, {ChangeEvent, JSX, memo, useMemo} from 'react';
+import React, {ChangeEvent, JSX, useMemo} from 'react';
 import classNames from 'shared/lib/classNames/classNames';
 import cls from './Select.module.scss';
+import ISelectOptions from '../types/ISelectOptions';
 
-interface ISelectOptions {
-    value: string,
-    content: string;
-}
 
-interface ISelectProps {
+interface ISelectProps<T extends string> {
     className?: string,
     label?: string,
-    options?: ISelectOptions[],
-    value?: string,
-    onChange?: (value: string) => void,
+    options?: ISelectOptions<T>[],
+    value?: T,
+    onChange?: (value: T) => void,
     readonly?: boolean;
 }
 
-const Select: React.FC<ISelectProps> = memo((props: ISelectProps): JSX.Element => {
+const Select = <T extends string>(props: ISelectProps<T>): JSX.Element => {
     const {className, readonly, label, value, onChange, options} = props;
 
     function onChangeHandler(e: ChangeEvent<HTMLSelectElement>) {
-        onChange?.(e.target.value);
+        onChange?.(e.target.value as T);
     }
 
     const optionList = useMemo(() =>
-        options?.map((option: ISelectOptions) => (
+        options?.map((option: ISelectOptions<T>) => (
             <option className={cls.option} key={option.value} value={option.value}>
                 {option.content}
             </option>
@@ -39,7 +36,7 @@ const Select: React.FC<ISelectProps> = memo((props: ISelectProps): JSX.Element =
             </select>
         </div>
     );
-});
+};
 
 export default Select;
 

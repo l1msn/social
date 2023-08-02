@@ -1,6 +1,6 @@
 import React, {JSX, memo, useCallback} from 'react';
 import classNames from 'shared/lib/classNames/classNames';
-import Select from 'shared/ui/Select';
+import {Select} from 'shared/ui/Select';
 import Currency from '../model/types/currency';
 import {useTranslation} from 'react-i18next';
 

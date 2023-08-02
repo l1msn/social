@@ -1,6 +1,6 @@
 import {IStateSchema} from 'app/providers/StoreProvider';
+import {ArticleBlockType, ArticleType, IArticle} from '../../types/IArticle';
 import getArticleData from './getArticleData';
-import {ArticleBlockType, ArticleType, IArticle} from 'entities/Article/model/types/IArticle';
 
 const mockData: IArticle = {
     'id': '1',

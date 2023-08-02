@@ -6,3 +6,4 @@ import IThunkExtraArg from './types/IThunkExtraArg';
 import IThunkConfig from './types/IThunkConfig';
 
 export {StoreProvider, createReduxStore, IStateSchema, IReduxStoreWithManager, IThunkExtraArg, IThunkConfig};
+

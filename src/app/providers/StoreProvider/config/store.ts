@@ -1,8 +1,9 @@
-import {Action, CombinedState, configureStore, Reducer, ReducersMapObject, ThunkDispatch} from '@reduxjs/toolkit';
+import {CombinedState, configureStore, Reducer, ReducersMapObject} from '@reduxjs/toolkit';
 import IStateSchema from '../types/IStateSchema';
 import {userReducer} from 'entities/User';
 import {createReducerManager} from './reducerManager';
 import $api from 'shared/api/api';
+import {scrollRestoreReducer} from 'features/scrollRestore';
 
 
 function createReduxStore(initialState?: IStateSchema,
@@ -10,6 +11,7 @@ function createReduxStore(initialState?: IStateSchema,
     const rootReducers: ReducersMapObject<IStateSchema> = {
         ...asyncReducers,
         user: userReducer,
+        scrollRestore: scrollRestoreReducer,
     };
 
     const reducerManager = createReducerManager(rootReducers);

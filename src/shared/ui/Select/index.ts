@@ -1,3 +1,4 @@
+import ISelectOptions from './types/ISelectOptions';
 import Select from './ui/Select';
 
-export default Select;
+export {Select, ISelectOptions};

@@ -3,5 +3,21 @@
   "Comments": "Комментарии",
   "No titles": "Нет статей",
   "Read more...": "Читать далее...",
-  "Back to list": "Назад к списку"
+  "Back to list": "Назад к списку",
+  "Sort by": "Сортировка",
+  "by": "по",
+  "Search": "Поиск",
+  "ascending": "возрастание",
+  "descending": "убывание",
+  "date": "дата",
+  "title": "заголовок",
+  "views": "просмотры",
+  "All": "Все",
+  "IT": "Айти",
+  "Economics": "Экономика",
+  "Science": "Наука",
+  "Recommendations": "Рекомендации",
+  "Edit": "Редактировать",
+  "Edit article": "Редактирование статьи",
+  "Creating new Article": "Создание новой Статьи"
 }

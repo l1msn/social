@@ -1,0 +1,11 @@
+.LIST {
+    .card {
+        margin-bottom: 30px;
+    }
+}
+
+.SHELF {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}

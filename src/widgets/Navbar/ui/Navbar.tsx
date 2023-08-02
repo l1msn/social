@@ -7,6 +7,10 @@ import ThemeButton from 'shared/ui/Button/consts/ThemeButton';
 import {LoginModal} from 'features/AuthByUsername';
 import {useDispatch, useSelector} from 'react-redux';
 import {getUserAuthData, userActions} from 'entities/User';
+import {Text, ThemeText} from 'shared/ui/Text';
+import AppLink from 'shared/ui/AppLink';
+import {RoutePath} from 'shared/config/routeConfig/routeConfig';
+import AppLinkThemes from 'shared/ui/AppLink/consts/AppLinkThemes';
 
 interface INavbarProps {
     className?: string
@@ -30,6 +34,12 @@ const Navbar: React.FC<INavbarProps> = memo(({className}: INavbarProps): JSX.Ele
     if (authData) {
         return (
             <header className={classNames(cls.navbar, {}, [className])}>
+                <AppLink to={RoutePath.main}>
+                    <Text theme={ThemeText.INVERTED} title={'Social'} className={cls.appName}/>
+                </AppLink>
+                <AppLink className={cls.createBtn} theme={AppLinkThemes.SECONDARY} to={RoutePath.articles_create}>
+                    {t('Create new article')}
+                </AppLink>
                 <Button
                     theme={ThemeButton.CLEAR}
                     className={cls.links}

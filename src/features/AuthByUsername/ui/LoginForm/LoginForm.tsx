@@ -54,7 +54,7 @@ const LoginForm: React.FC<ILoginFormProps> = memo(({className, onSuccess}: ILogi
                 <Text title={t('Auth')} />
                 {error && <Text text={t('Invalid username or password')} theme={ThemeText.ERROR} />}
                 <Input onChange={onChangeUsername} value={username} autofocus placeholder={t('Username')} type="text" className={cls.input}/>
-                <Input onChange={onChangePassword} value={password} placeholder={t('Password')} type="text" className={cls.input}/>
+                <Input type="password" onChange={onChangePassword} value={password} placeholder={t('Password')} className={cls.input}/>
                 <Button disabled={isLoading} onClick={onLoginClick} theme={ThemeButton.WITHLINE} className={cls.loginBtn}>
                     {t('Login')}
                 </Button>
