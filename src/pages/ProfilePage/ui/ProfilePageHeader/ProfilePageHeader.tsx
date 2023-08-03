@@ -1,6 +1,5 @@
 import React, {JSX, memo, useCallback} from 'react';
 import classNames from 'shared/lib/classNames/classNames';
-import cls from './ProfilePageHeader.module.scss';
 import {Text} from 'shared/ui/Text';
 import Button from 'shared/ui/Button';
 import ThemeButton from 'shared/ui/Button/consts/ThemeButton';
@@ -9,7 +8,7 @@ import {useSelector} from 'react-redux';
 import {getProfileData, getProfileReadonly, profileActions, updateProfileData} from 'entities/Profile';
 import useAppDispatch from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {getUserAuthData} from 'entities/User';
-import {useParams} from 'react-router-dom';
+import {HStack} from 'widgets/Stack';
 
 interface IProfilePageHeaderProps {
     className?: string
@@ -40,27 +39,27 @@ const ProfilePageHeader: React.FC<IProfilePageHeaderProps> = memo(({className}: 
 
 
     return (
-        <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+        <HStack max justify={'between'} className={classNames('', {}, [className])}>
             <Text title={t('Profile')}/>
             {canEdit && (
-                <div className={cls.btnsWrapper}>
+                <>
                     {readonly ? (
-                        <Button className={cls.editBtn} theme={ThemeButton.WITHLINE} onClick={onEdit}>
+                        <Button theme={ThemeButton.WITHLINE} onClick={onEdit}>
                             {t('Edit')}
                         </Button>
                     ) : (
-                        <>
-                            <Button className={cls.editBtn} theme={ThemeButton.WITHLINE_RED} onClick={onCancelEdit}>
+                        <HStack gap={'8'}>
+                            <Button theme={ThemeButton.WITHLINE_RED} onClick={onCancelEdit}>
                                 {t('Cancel')}
                             </Button>
-                            <Button className={cls.saveBtn} theme={ThemeButton.WITHLINE} onClick={onSave}>
+                            <Button theme={ThemeButton.WITHLINE} onClick={onSave}>
                                 {t('Save')}
                             </Button>
-                        </>
+                        </HStack>
                     )}
-                </div>
+                </>
             )}
-        </div>
+        </HStack>
     );
 });
 

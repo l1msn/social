@@ -78,7 +78,7 @@ const ArticleList: React.FC<IArticleListProps> = memo((props: IArticleListProps)
                     <List
                         height={height ?? 700}
                         rowCount={rowCount}
-                        rowHeight={isList ? 620 : 330}
+                        rowHeight={isList ? 700 : 330}
                         rowRenderer={rowRender}
                         width={width ? width - 80 : 640}
                         autoHeight

@@ -15,6 +15,14 @@ interface ITextProps {
     align?: AlignText;
 }
 
+type HeaderTagType = 'h1' | 'h2' | 'h3';
+
+const mapSizeToHeaderTag: Record<SizeText, HeaderTagType> = {
+    [SizeText.S]: 'h3',
+    [SizeText.M]: 'h2',
+    [SizeText.L]: 'h1',
+};
+
 const Text: React.FC<ITextProps> = memo((props: ITextProps): JSX.Element => {
     const {className,
         align = AlignText.LEFT,
@@ -23,9 +31,14 @@ const Text: React.FC<ITextProps> = memo((props: ITextProps): JSX.Element => {
         theme = ThemeText.PRIMARY,
         size = SizeText.M,
     } = props;
+
+
+    const HeaderTag = mapSizeToHeaderTag[size];
+
     return (
-        <div className={classNames(cls.Text, {}, [className, cls[size], cls[align], cls[theme]])}>
-            {title && <p className={cls.title}>{title}</p>}
+        <div className={classNames(cls.Text, {},
+            [className, cls[size], cls[align], cls[theme]])}>
+            {title && <HeaderTag className={cls.title}>{title}</HeaderTag>}
             {text && <p className={cls.text}>{text}</p>}
         </div>
     );

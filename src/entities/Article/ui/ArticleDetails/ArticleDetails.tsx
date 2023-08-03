@@ -20,6 +20,7 @@ import {ArticleBlock, ArticleBlockType} from '../../model/types/IArticle';
 import ArticleCode from '../ArticleCode/ArticleCode';
 import ArticleText from '../ArticleText/ArticleText';
 import ArticleImage from '../ArticleImage/ArticleImage';
+import {HStack, VStack} from 'widgets/Stack';
 
 interface IArticleDetailsProps {
     className?: string
@@ -100,26 +101,28 @@ const ArticleDetails: React.FC<IArticleDetailsProps> = memo(({className, id}: IA
     } else {
         content = (
             <>
-                <div className={cls.avatarWrapper}>
+                <HStack justify={'center'} max className={cls.avatarWrapper}>
                     <Avatar size={200} src={article?.img} className={cls.avatar}/>
-                </div>
-                <Text size={SizeText.L}
-                    className={cls.title}
-                    title={article?.title}
-                    text={article?.subtitle}
-                />
-                <div className={cls.articleInfo}>
-                    <Icon className={cls.icon} Svg={DateIcon}/>
-                    <Text
-                        text={article?.createAt}
+                </HStack>
+                <VStack gap={'4'} max>
+                    <Text size={SizeText.L}
+                        className={cls.title}
+                        title={article?.title}
+                        text={article?.subtitle}
                     />
-                </div>
-                <div className={cls.articleInfo}>
-                    <Icon className={cls.icon} Svg={ViewsIcon}/>
-                    <Text
-                        text={article?.views}
-                    />
-                </div>
+                    <HStack gap={'8'} className={cls.articleInfo}>
+                        <Icon className={cls.icon} Svg={DateIcon}/>
+                        <Text
+                            text={article?.createAt}
+                        />
+                    </HStack>
+                    <HStack gap={'8'} className={cls.articleInfo}>
+                        <Icon className={cls.icon} Svg={ViewsIcon}/>
+                        <Text
+                            text={article?.views}
+                        />
+                    </HStack>
+                </VStack>
                 {article?.blocks.map(renderBlock)}
             </>
         );
@@ -128,9 +131,9 @@ const ArticleDetails: React.FC<IArticleDetailsProps> = memo(({className, id}: IA
 
     return (
         <DynamicModuleLoader removeAfterAmount reducers={reducers}>
-            <div className={classNames(cls.article, {}, [className])}>
+            <VStack gap={'16'} className={classNames(cls.article, {}, [className])}>
                 {content}
-            </div>
+            </VStack>
         </DynamicModuleLoader>
     );
 });

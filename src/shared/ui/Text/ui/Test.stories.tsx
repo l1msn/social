@@ -35,8 +35,18 @@ export const LightError: Story = {
     },
 };
 
-export const Dark: Story = {
+export const DarkS: Story = {
     args: {
+        size: SizeText.S,
+        text: 'text',
+        title: 'title',
+    },
+    decorators: [ThemeDecorator(Themes.DARK)],
+};
+
+export const DarkM: Story = {
+    args: {
+        size: SizeText.M,
         text: 'text',
         title: 'title',
     },
@@ -46,15 +56,6 @@ export const Dark: Story = {
 export const DarkL: Story = {
     args: {
         size: SizeText.L,
-        text: 'text',
-        title: 'title',
-    },
-    decorators: [ThemeDecorator(Themes.DARK)],
-};
-
-export const DarkXL: Story = {
-    args: {
-        size: SizeText.XL,
         text: 'text',
         title: 'title',
     },

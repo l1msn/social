@@ -1,6 +1,5 @@
 import React, {JSX, useCallback} from 'react';
 import classNames from 'shared/lib/classNames/classNames';
-import cls from './ArticleDetailsPageHeader.module.scss';
 import {RoutePath} from 'shared/config/routeConfig/routeConfig';
 import ThemeButton from 'shared/ui/Button/consts/ThemeButton';
 import Button from 'shared/ui/Button';
@@ -9,6 +8,7 @@ import {useNavigate} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import {getArticleData} from 'entities/Article';
 import getCanEditArticle from '../../model/selectors/getCanEditArticle/getCanEditArticle';
+import {HStack} from 'widgets/Stack';
 
 interface IArticleDetailsPageHeaderProps {
     className?: string
@@ -31,15 +31,15 @@ const ArticleDetailsPageHeader: React.FC<IArticleDetailsPageHeaderProps> = ({cla
     }, [article?.id, navigate]);
 
     return (
-        <div className={classNames(cls.articleDetailsPageHeader, {}, [className])}>
+        <HStack max justify={'between'} className={classNames('', {}, [className])}>
             <Button theme={ThemeButton.WITHLINE} onClick={onBackToList}>
                 {t('Back to list')}
             </Button>
-            {canEdit && <Button className={cls.editBtn} theme={ThemeButton.WITHLINE} onClick={onEditArticle}>
+            {canEdit && <Button theme={ThemeButton.WITHLINE} onClick={onEditArticle}>
                 {t('Edit')}
             </Button>
             }
-        </div>
+        </HStack>
     );
 };
 

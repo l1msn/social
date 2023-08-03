@@ -9,6 +9,8 @@ function webpackConfigStorybook({config}: {config: webpack.Configuration}) {
         html: '',
         entry: '',
         src: path.resolve(__dirname, '..', '..', 'src'),
+        locales: '',
+        buildLocales: '',
     };
 
 

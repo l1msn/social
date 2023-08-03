@@ -47,7 +47,7 @@ const Page: React.FC<IPageProps> = ({className, children, onScrollEnd}: IPagePro
     });
 
     return (
-        <section
+        <main
             onScroll={onScroll}
             ref={wrapperRef}
             className={classNames(cls.page, {}, [className])}
@@ -55,7 +55,7 @@ const Page: React.FC<IPageProps> = ({className, children, onScrollEnd}: IPagePro
         >
             {children}
             {onScrollEnd ? <div className={cls.trigger} ref={triggerRef}/> : null}
-        </section>
+        </main>
     );
 };
 
