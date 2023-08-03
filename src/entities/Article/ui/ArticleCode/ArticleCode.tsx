@@ -2,7 +2,7 @@ import React, {JSX, memo} from 'react';
 import classNames from 'shared/lib/classNames/classNames';
 import cls from './ArticleCode.module.scss';
 import Code from 'widgets/Code';
-import {IArticleCodeBlock} from 'entities/Article/model/types/IArticle';
+import {IArticleCodeBlock} from '../../model/types/IArticle';
 
 interface IArticleCodeProps {
     className?: string

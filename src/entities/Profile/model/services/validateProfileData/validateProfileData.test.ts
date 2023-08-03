@@ -1,6 +1,6 @@
 import validateProfileData from './validateProfileData';
-import {IProfile, ValidateProfileError} from 'entities/Profile/model/types/IProfile';
 import {Country} from 'entities/Country';
+import {IProfile, ValidateProfileError} from '../../types/IProfile';
 
 const mockData: IProfile = {
     'first': 'Alex',

@@ -10,16 +10,16 @@ import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/DynamicMo
 import {getArticleComments} from '../../model/slice/articleDetailsCommentsSlice';
 import {useSelector} from 'react-redux';
 import getArticleCommentsIsLoading
-    from 'pages/ArticleDetailsPage/model/selectors/getArticleCommentsIsLoading/getArticleCommentsIsLoading';
+    from '../../model/selectors/getArticleCommentsIsLoading/getArticleCommentsIsLoading';
 import getArticleCommentsError
-    from 'pages/ArticleDetailsPage/model/selectors/getArticleCommentsError/getArticleCommentsError';
+    from '../../model/selectors/getArticleCommentsError/getArticleCommentsError';
 import PageError from 'widgets/PageError/ui/PageError';
 import useInitialEffect from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import useAppDispatch from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import fetchCommentsByArticleId
-    from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+    from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import {AddCommentForm} from 'features/AddCommentForm';
-import addCommentForArticle from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
+import addCommentForArticle from '../../model/services/addCommentForArticle/addCommentForArticle';
 import Page from 'shared/ui/Page';
 import {
     getArticleRecommendations,
@@ -29,8 +29,8 @@ import getArticleDetailsRecommendationsIsLoading
 import getArticleDetailsRecommendationsError
     from '../../model/selectors/getArticleDetailsRecommendationsError/getArticleDetailsRecommendationsError';
 import fetchArticleRecommendations from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
-import articleDetailsPageReducer from 'pages/ArticleDetailsPage/model/slice';
-import ArticleDetailsPageHeader from 'pages/ArticleDetailsPage/ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import articleDetailsPageReducer from '../../model/slice/index';
+import ArticleDetailsPageHeader from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import {ArticleDetails, ArticleList, ArticleView} from 'entities/Article';
 
 interface IArticleDetailsPageProps {

@@ -6,7 +6,7 @@ import {articleReducer} from '../../model/slice/articleSlice';
 import useAppDispatch from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import fetchArticleById from '../../model/services/fetchArticleById/fetchArticleById';
 import {useSelector} from 'react-redux';
-import getArticleIsLoading from 'entities/Article/model/selectors/getArticleIsLoading/getArticleIsLoading';
+import getArticleIsLoading from '../../model/selectors/getArticleIsLoading/getArticleIsLoading';
 import getArticleError from '../../model/selectors/getArticleError/getArticleError';
 import getArticleData from '../../model/selectors/getArticleData/getArticleData';
 import {AlignText, SizeText, Text} from 'shared/ui/Text';

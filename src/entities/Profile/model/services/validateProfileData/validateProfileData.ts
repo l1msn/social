@@ -1,4 +1,4 @@
-import {IProfile, ValidateProfileError} from 'entities/Profile/model/types/IProfile';
+import {IProfile, ValidateProfileError} from '../../types/IProfile';
 
 function validateProfileData(profile: IProfile) {
     if (!profile) {

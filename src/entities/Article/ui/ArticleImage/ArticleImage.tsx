@@ -1,7 +1,7 @@
 import React, {JSX, memo} from 'react';
 import classNames from 'shared/lib/classNames/classNames';
 import cls from './ArticleImage.module.scss';
-import {IArticleImageBlock} from 'entities/Article/model/types/IArticle';
+import {IArticleImageBlock} from '../../model/types/IArticle';
 import {AlignText, Text} from 'shared/ui/Text';
 
 interface IArticleImageProps {

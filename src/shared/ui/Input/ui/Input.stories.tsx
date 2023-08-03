@@ -2,7 +2,7 @@ import type {Meta, StoryObj} from '@storybook/react';
 import 'app/styles/index.scss';
 import ThemeDecorator from 'shared/config/storybook/themeDecorator/themeDecorator';
 import {Themes} from 'app/providers/ThemeProvider';
-import {Input} from 'shared/ui/Input';
+import Input from './Input';
 
 
 const meta = {

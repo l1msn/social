@@ -1,8 +1,8 @@
-import React, {HTMLAttributeAnchorTarget, JSX, memo, useCallback} from 'react';
+import React, {HTMLAttributeAnchorTarget, JSX, memo} from 'react';
 import classNames from 'shared/lib/classNames/classNames';
 import cls from './ArticleListItem.module.scss';
 import {ArticleBlockType, IArticle, IArticleTextBlock} from '../../model/types/IArticle';
-import {ArticleView} from 'entities/Article';
+import ArticleView from '../../model/types/ArticleView';
 import {Text} from 'shared/ui/Text';
 import Icon from 'widgets/Icon';
 import ViewsIcon from 'shared/assets/icons/views-icon.svg';

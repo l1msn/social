@@ -1,8 +1,8 @@
 import axios from 'axios';
 import TestAsyncThunk from 'shared/lib/tests/testAsyncThunk/TestAsyncThunk';
-import {IProfile, ValidateProfileError} from 'entities/Profile/model/types/IProfile';
 import {Country} from 'entities/Country';
 import updateProfileData from './updateProfileData';
+import {IProfile, ValidateProfileError} from '../../types/IProfile';
 
 
 jest.mock('axios');

@@ -6,7 +6,7 @@ import {IStateSchema} from 'app/providers/StoreProvider';
 import IArticleDetailsRecommendationsSchema
     from '../types/IArticleDetailsRecommendationsSchema';
 import {IArticle} from 'entities/Article';
-import fetchArticleRecommendations from 'pages/ArticleDetailsPage/model/services/fetchArticleRecommendations/fetchArticleRecommendations';
+import fetchArticleRecommendations from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 
 const recommendationsAdapter = createEntityAdapter<IArticle>({
     selectId: (article) => article.id,

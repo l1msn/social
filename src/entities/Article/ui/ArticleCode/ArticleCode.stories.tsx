@@ -4,7 +4,7 @@ import 'app/styles/index.scss';
 import ArticleCode from './ArticleCode';
 import StoreDecorator from 'shared/config/storybook/storeDecorator/storeDecorator';
 import themeDecorator from 'shared/config/storybook/themeDecorator/themeDecorator';
-import {ArticleBlockType} from 'entities/Article/model/types/IArticle';
+import {ArticleBlockType} from '../../model/types/IArticle';
 
 
 const meta = {

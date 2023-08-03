@@ -1,7 +1,7 @@
-import {ArticleBlockType, ArticleType, IArticle} from 'entities/Article/model/types/IArticle';
+import {ArticleBlockType, ArticleType, IArticle} from '../types/IArticle';
 import IArticleSchema from '../types/IArticleSchema';
 import {articleReducer} from './articleSlice';
-import fetchArticleById from 'entities/Article/model/services/fetchArticleById/fetchArticleById';
+import fetchArticleById from '../services/fetchArticleById/fetchArticleById';
 
 const mockData: IArticle = {
     'id': '1',

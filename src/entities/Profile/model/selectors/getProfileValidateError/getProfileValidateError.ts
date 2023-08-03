@@ -1,6 +1,5 @@
 import {IStateSchema} from 'app/providers/StoreProvider';
-import {ValidateProfileError} from 'entities/Profile/model/types/IProfile';
-
+import {ValidateProfileError} from '../../types/IProfile';
 
 const getProfileValidateError = (state: IStateSchema) => state?.profile?.validateError || [] as ValidateProfileError[];
 

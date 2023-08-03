@@ -6,9 +6,9 @@ import MenuIcon from 'shared/assets/icons/menu-icon.svg';
 import ThemeButton from 'shared/ui/Button/consts/ThemeButton';
 import ThemeSwitcher from 'widgets/ThemeSwitcher';
 import LangSwitcher from 'widgets/LangSwitcher';
-import SidebarItem from 'widgets/Sidebar/ui/SidebarItem/SidebarItem';
+import SidebarItem from '../SidebarItem/SidebarItem';
 import {useSelector} from 'react-redux';
-import getSidebarItems from 'widgets/Sidebar/model/selectors/getSidebarItems';
+import getSidebarItems from '../../model/selectors/getSidebarItems';
 
 interface ISidebarProps {
     className?: string;

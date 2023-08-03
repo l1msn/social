@@ -14,7 +14,7 @@ import PageError from 'widgets/PageError/ui/PageError';
 import Page from 'shared/ui/Page';
 import initArticlesPage from '../../model/services/initArticlesPage/initArticlesPage';
 import fetchNextArticlesPage from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
-import ArticlePageFilter from 'pages/ArticlePage/ui/ArticlePageFilter/ArticlePageFilter';
+import ArticlePageFilter from '../ArticlePageFilter/ArticlePageFilter';
 import {useSearchParams} from 'react-router-dom';
 
 interface IArticlePageProps {

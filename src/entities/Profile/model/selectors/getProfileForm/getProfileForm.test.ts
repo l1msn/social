@@ -1,6 +1,6 @@
 import {IStateSchema} from 'app/providers/StoreProvider';
+import {IProfile} from '../../types/IProfile';
 import getProfileForm from './getProfileForm';
-import {IProfile} from 'entities/Profile/model/types/IProfile';
 
 const mockForm: IProfile = {
     'first': 'Alex',

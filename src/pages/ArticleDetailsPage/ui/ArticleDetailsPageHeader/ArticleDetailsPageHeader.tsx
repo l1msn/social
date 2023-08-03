@@ -8,7 +8,7 @@ import {useTranslation} from 'react-i18next';
 import {useNavigate} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import {getArticleData} from 'entities/Article';
-import getCanEditArticle from 'pages/ArticleDetailsPage/model/selectors/getCanEditArticle/getCanEditArticle';
+import getCanEditArticle from '../../model/selectors/getCanEditArticle/getCanEditArticle';
 
 interface IArticleDetailsPageHeaderProps {
     className?: string

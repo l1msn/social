@@ -1,11 +1,7 @@
 import axios from 'axios';
 import TestAsyncThunk from 'shared/lib/tests/testAsyncThunk/TestAsyncThunk';
 import {IComment} from 'entities/Comment';
-import fetchCommentsByArticleId
-    from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import addCommentForArticle from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
-import {loginByUsername} from 'features/AuthByUsername';
-import {userActions} from 'entities/User';
+import addCommentForArticle from './addCommentForArticle';
 
 
 jest.mock('axios');

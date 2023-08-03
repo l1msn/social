@@ -1,12 +1,7 @@
-import {
-    IProfileSchema,
-    profileActions,
-    profileReducer,
-    updateProfileData,
-    ValidateProfileError,
-} from 'entities/Profile';
-import {IProfile} from 'entities/Profile/model/types/IProfile';
+import {IProfile, IProfileSchema, ValidateProfileError} from '../types/IProfile';
 import {Country} from 'entities/Country';
+import {profileActions, profileReducer} from './profileSlice';
+import updateProfileData from '../services/updateProfileData/updateProfileData';
 
 const mockData: IProfile = {
     'first': 'Alex',

@@ -7,7 +7,7 @@ import {Input} from 'shared/ui/Input';
 import ThemeButton from 'shared/ui/Button/consts/ThemeButton';
 import {useSelector} from 'react-redux';
 import {loginActions, loginReducer} from '../../model/slice/loginSlice';
-import {loginByUsername} from 'features/AuthByUsername';
+import loginByUsername from '../../services/loginByUsername/loginByUsername';
 import ThemeText from 'shared/ui/Text/consts/ThemeText';
 import {Text} from 'shared/ui/Text';
 import ILoginFormProps from './types/ILoginFormProps';

@@ -9,6 +9,7 @@ import useInitialEffect from 'shared/lib/hooks/useInitialEffect/useInitialEffect
 import {useSelector} from 'react-redux';
 import {IStateSchema} from 'app/providers/StoreProvider';
 import useThrottle from 'shared/lib/hooks/useThrottle/useThrottle';
+import PAGE_ID from 'shared/consts/ids';
 
 interface IPageProps {
     className?: string
@@ -46,7 +47,12 @@ const Page: React.FC<IPageProps> = ({className, children, onScrollEnd}: IPagePro
     });
 
     return (
-        <section onScroll={onScroll} ref={wrapperRef} className={classNames(cls.page, {}, [className])}>
+        <section
+            onScroll={onScroll}
+            ref={wrapperRef}
+            className={classNames(cls.page, {}, [className])}
+            id={PAGE_ID}
+        >
             {children}
             {onScrollEnd ? <div className={cls.trigger} ref={triggerRef}/> : null}
         </section>

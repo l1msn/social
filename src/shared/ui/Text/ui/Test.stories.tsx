@@ -4,7 +4,7 @@ import ThemeDecorator from 'shared/config/storybook/themeDecorator/themeDecorato
 import {Themes} from 'app/providers/ThemeProvider';
 import Text from './Text';
 import ThemeText from '../consts/ThemeText';
-import {SizeText} from 'shared/ui/Text';
+import SizeText from '../consts/SizeText';
 
 
 const meta = {
