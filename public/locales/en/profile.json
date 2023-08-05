@@ -16,5 +16,6 @@
   "Incorrect user data of user!": "Incorrect user data of user!",
   "Incorrect age of user!": "Incorrect age of user!",
   "Cancel": "Cancel",
-  "Save": "Save"
+  "Save": "Save",
+  "Profile not found!": "Profile not found!"
 }

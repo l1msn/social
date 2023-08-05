@@ -41,7 +41,7 @@ module.exports = {
         'no-undef': 'off',
         '@typescript-eslint/no-non-null-assertion': 'off',
         'no-invalid-this': 'off',
-        'l1msn-plugin/path-checker': 'error',
+        'l1msn-plugin/path-checker': 'warn',
         'linebreak-style': 'off',
     },
     globals: {

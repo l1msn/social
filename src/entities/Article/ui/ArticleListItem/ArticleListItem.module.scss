@@ -1,3 +1,7 @@
+.articleListItem {
+    margin: 10px;
+}
+
 .SHELF {
     width: 230px;
     transition: 0.2s;
@@ -45,10 +49,6 @@
     .infoWrapper {
         display: flex;
         align-items: center;
-        margin-top: 8px;
-    }
-
-    .title {
         margin-top: 8px;
     }
 
@@ -132,6 +132,5 @@
 
     .textBlock {
         max-height: 200px;
-        overflow-y: hidden;
     }
 }

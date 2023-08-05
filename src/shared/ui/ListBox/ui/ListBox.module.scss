@@ -8,6 +8,7 @@
     outline: none;
     padding: 0;
     margin: 0;
+    cursor: pointer;
 }
 
 .options {
@@ -16,7 +17,7 @@
     z-index: 10000;
     border-radius: 12px;
     box-shadow: 4px 4px 8px var(--card-bg);
-    width: 100%;
+    cursor: pointer;
 }
 
 .label{
@@ -25,6 +26,7 @@
 
 .readonly {
     opacity: 0.7;
+    cursor: not-allowed;
 }
 
 .item {
@@ -58,8 +60,25 @@
 
 .disabled {
     opacity: 0.7;
+    cursor: not-allowed;
 }
 
-.optionsTop {
+.optionsBottomLeft {
+    top: 100%;
+    right: 0;
+}
+
+.optionsBottomRight {
+    top: 100%;
+    left: 0;
+}
+
+.optionsTopRight {
+    bottom: 100%;
+    left: 0;
+}
+
+.optionsTopLeft {
+    right: 0;
     bottom: 100%;
 }

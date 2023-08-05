@@ -34,6 +34,7 @@ const CurrencySelect: React.FC<ICurrencySelectProps> = memo((props: ICurrencySel
             onChange={onChangeHandler}
             defaultValue={t('Currency')}
             label={t('Currency')}
+            direction={'top right'}
         />
     );
 });

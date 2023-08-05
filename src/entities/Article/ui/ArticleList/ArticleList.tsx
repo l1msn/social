@@ -3,12 +3,11 @@ import classNames from 'shared/lib/classNames/classNames';
 import cls from './ArticleList.module.scss';
 import ArticleView from '../../model/types/ArticleView';
 import ArticleListItem from '../ArticleListItem/ArticleListItem';
-import {SizeText, Text} from 'shared/ui/Text';
-import {useTranslation} from 'react-i18next';
 import ArticleListItemSkeleton from '../ArticleListItem/ArticleListItemSkeleton';
 import {List, ListRowProps, WindowScroller} from 'react-virtualized';
 import PAGE_ID from 'shared/consts/ids';
 import {IArticle} from '../../model/types/IArticle';
+import Loader from 'widgets/Loader';
 
 interface IArticleListProps {
     className?: string,
@@ -27,15 +26,13 @@ const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SHELF
 const ArticleList: React.FC<IArticleListProps> = memo((props: IArticleListProps): JSX.Element => {
     const {className, target, articles, view = ArticleView.LIST, isLoading} = props;
 
-    const {t} = useTranslation('article');
-
     const isList = view === ArticleView.LIST;
 
     const itemsPerRow = isList ? 1 : 4;
 
     const rowCount = isList ? articles.length : Math.ceil(articles.length / itemsPerRow);
 
-    function rowRender({index, isScrolling, key, style}: ListRowProps) {
+    function rowRender({index, key, style}: ListRowProps) {
         const items = [];
         const fromIndex = index * itemsPerRow;
         const toIndex = Math.min(fromIndex + itemsPerRow, articles.length);
@@ -59,11 +56,9 @@ const ArticleList: React.FC<IArticleListProps> = memo((props: IArticleListProps)
         );
     }
 
-    if (!isLoading && !articles.length) {
+    if (isLoading) {
         return (
-            <div className={classNames(cls.articleList, {}, [className, cls[view]])} >
-                <Text size={SizeText.L} title={t('No titles')}/>
-            </div>
+            <Loader/>
         );
     }
 

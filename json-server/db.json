@@ -1020,7 +1020,7 @@
       "first": "admin",
       "lastname": "superuser",
       "age": 2,
-      "currency": "RUB",
+      "currency": "USD",
       "country": "Russia",
       "city": "Saint-Petersburg",
       "username": "Admin",

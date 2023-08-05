@@ -1,12 +1,11 @@
-import {JSX, Fragment} from 'react';
+import {Fragment, JSX, memo} from 'react';
 import {Listbox as HListBox} from '@headlessui/react';
 import cls from './ListBox.module.scss';
+import Button from 'shared/ui/Button';
 import classNames from 'shared/lib/classNames/classNames';
 import IListBoxItems from '../consts/IListBoxItems';
 import {HStack} from 'widgets/Stack';
-import Button from 'shared/ui/Button';
-
-type DropDownDirection = 'top' | 'bottom'
+import {DropDownDirection} from 'shared/types/ui';
 
 interface IListBoxProps {
     className?: string,
@@ -20,11 +19,13 @@ interface IListBoxProps {
 }
 
 const mapDirectionClass: Record<DropDownDirection, string> = {
-    bottom: cls.optionsBottom,
-    top: cls.optionsTop,
+    'bottom left': cls.optionsBottomLeft,
+    'bottom right': cls.optionsBottomRight,
+    'top right': cls.optionsTopRight,
+    'top left': cls.optionsTopLeft,
 };
 
-const Listbox: React.FC<IListBoxProps> = (props: IListBoxProps): JSX.Element => {
+const Listbox: React.FC<IListBoxProps> = memo((props: IListBoxProps): JSX.Element => {
     const {className
         , items
         , value
@@ -32,7 +33,7 @@ const Listbox: React.FC<IListBoxProps> = (props: IListBoxProps): JSX.Element => 
         , onChange
         , readonly
         , label
-        , direction = 'bottom',
+        , direction = 'bottom left',
     } = props;
 
     return (
@@ -61,7 +62,6 @@ const Listbox: React.FC<IListBoxProps> = (props: IListBoxProps): JSX.Element => 
                                 <li className={classNames(cls.item, {[cls.active]: active,
                                     [cls.disabled]: item.disabled,
                                 }, [])}>
-                                    {selected && '!!!'}
                                     {item.content}
                                 </li>
                             )}
@@ -71,6 +71,6 @@ const Listbox: React.FC<IListBoxProps> = (props: IListBoxProps): JSX.Element => 
             </HListBox>
         </HStack>
     );
-};
+});
 
 export default Listbox;

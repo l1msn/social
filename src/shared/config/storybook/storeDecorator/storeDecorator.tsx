@@ -1,12 +1,12 @@
 import {Story} from '@storybook/react';
 import {StoreProvider, IStateSchema} from 'app/providers/StoreProvider';
 import {loginReducer} from 'features/AuthByUsername/model/slice/loginSlice';
-import {profileReducer} from 'entities/Profile/model/slice/profileSlice';
 import {ReducersList} from 'shared/lib/components/DynamicModuleLoader';
 import {articleReducer} from 'entities/Article/model/slice/articleSlice';
 import {addCommentFormReducer} from 'features/AddCommentForm/model/slice/AddCommentFormSlice';
 import articleDetailsPageReducer from 'pages/ArticleDetailsPage/model/slice';
 import {articlePageReducer} from 'pages/ArticlePage/model/slice/articlePageSlice';
+import {profileReducer} from 'features/editableProfileCard/model/slice/profileSlice';
 
 const defaultAsyncReducers: ReducersList = {
     loginForm: loginReducer,

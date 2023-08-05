@@ -36,7 +36,7 @@ const CountrySelect: React.FC<ICountrySelectProps> = memo((props: ICountrySelect
             onChange={onChangeHandler}
             defaultValue={t('Country')}
             label={t('Country')}
-            direction={'top'}
+            direction={'top right'}
         />
     );
 });

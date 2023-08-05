@@ -11,6 +11,8 @@ import {Text, ThemeText} from 'shared/ui/Text';
 import AppLink from 'shared/ui/AppLink';
 import {RoutePath} from 'shared/config/routeConfig/routeConfig';
 import AppLinkThemes from 'shared/ui/AppLink/consts/AppLinkThemes';
+import Dropdown from 'shared/ui/Dropdown';
+import Avatar from 'widgets/Avatar';
 
 interface INavbarProps {
     className?: string
@@ -37,16 +39,22 @@ const Navbar: React.FC<INavbarProps> = memo(({className}: INavbarProps): JSX.Ele
                 <AppLink to={RoutePath.main}>
                     <Text theme={ThemeText.INVERTED} title={'Social'} className={cls.appName}/>
                 </AppLink>
-                <AppLink className={cls.createBtn} theme={AppLinkThemes.SECONDARY} to={RoutePath.articles_create}>
+                <AppLink theme={AppLinkThemes.SECONDARY} to={RoutePath.articles_create}>
                     {t('Create new article')}
                 </AppLink>
-                <Button
-                    theme={ThemeButton.CLEAR}
-                    className={cls.links}
-                    onClick={onLogout}
-                >
-                    {t('Logout')}
-                </Button>
+                <Dropdown direction={'bottom left'}
+                    className={cls.dropdown} items={[
+                        {
+                            content: t('Profile'),
+                            href: RoutePath.profile + authData.id,
+                        },
+                        {
+                            content: t('Logout'),
+                            onClick: onLogout,
+                        },
+                    ]}
+                    trigger={<Avatar size={30} src={authData.avatar} />}
+                />
             </header>
         );
     }
@@ -63,7 +71,8 @@ const Navbar: React.FC<INavbarProps> = memo(({className}: INavbarProps): JSX.Ele
             {isAuthModal && <LoginModal
                 isOpen={isAuthModal}
                 onClose={onToggleModal}
-            ></LoginModal>}
+            ></LoginModal>
+            }
         </header>
     );
 });

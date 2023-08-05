@@ -16,6 +16,7 @@ import initArticlesPage from '../../model/services/initArticlesPage/initArticles
 import fetchNextArticlesPage from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import ArticlePageFilter from '../ArticlePageFilter/ArticlePageFilter';
 import {useSearchParams} from 'react-router-dom';
+import ArticleInfiniteList from '../../ui/ArticleInfiniteList/ArticleInfiniteList';
 
 interface IArticlePageProps {
     className?: string
@@ -29,17 +30,11 @@ const reducers: ReducersList = {
 const ArticlePage: React.FC<IArticlePageProps> = memo(({className}: IArticlePageProps): JSX.Element => {
     const dispatch = useAppDispatch();
 
-    const articles = useSelector(getArticles.selectAll);
-    const error = useSelector(getArticlePageError);
-    const isLoading = useSelector(getArticlePageIsLoading);
-    const view = useSelector(getArticlePageView);
-
     const [searchParams] = useSearchParams();
 
     useInitialEffect(() => {
         dispatch(initArticlesPage(searchParams));
     });
-
 
     const onLoadNextPartPages = useCallback(() => {
         if (__PROJECT__ !== 'storybook' ) {
@@ -47,17 +42,11 @@ const ArticlePage: React.FC<IArticlePageProps> = memo(({className}: IArticlePage
         }
     }, [dispatch]);
 
-    if (error) {
-        return (
-            <PageError/>
-        );
-    }
-
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterAmount={false}>
-            <Page onScrollEnd={onLoadNextPartPages} className={classNames(cls.article, {}, [className])}>
+            <Page onScrollEnd={onLoadNextPartPages} className={classNames(cls.articlePage, {}, [className])}>
                 <ArticlePageFilter/>
-                <ArticleList className={cls.list} isLoading={isLoading} view={view} articles={articles}/>
+                <ArticleInfiniteList className={cls.list}/>
             </Page>
         </DynamicModuleLoader>
     );

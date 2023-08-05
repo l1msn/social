@@ -81,12 +81,12 @@ const ArticleDetails: React.FC<IArticleDetailsProps> = memo(({className, id}: IA
                 />
                 <Skeleton
                     className={cls.skeleton}
-                    width={'100%'}
+                    width='100%'
                     height={200}
                 />
                 <Skeleton
                     className={cls.skeleton}
-                    width={'100%'}
+                    width='100%'
                     height={200}
                 />
             </>
@@ -131,7 +131,7 @@ const ArticleDetails: React.FC<IArticleDetailsProps> = memo(({className, id}: IA
 
     return (
         <DynamicModuleLoader removeAfterAmount reducers={reducers}>
-            <VStack gap={'16'} className={classNames(cls.article, {}, [className])}>
+            <VStack max gap={'16'} className={classNames(cls.article, {}, [className])}>
                 {content}
             </VStack>
         </DynamicModuleLoader>
