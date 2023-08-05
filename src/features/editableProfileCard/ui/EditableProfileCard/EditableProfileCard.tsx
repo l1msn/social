@@ -1,10 +1,8 @@
 import classNames from 'shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
-import cls from './EditableProfileCard.module.scss';
 import React, {memo, useCallback} from 'react';
 import useAppDispatch from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {useSelector} from 'react-redux';
-import {useParams} from 'react-router-dom';
 import useInitialEffect from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import {Currency} from 'entities/Currency';
 import {Country} from 'entities/Country';
@@ -104,7 +102,7 @@ const EditableProfileCard: React.FC<IEditableProfileCardProps> = memo(({classNam
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterAmount>
-            <VStack gap={'8'} max className={classNames(cls.ArticleRecommendationsList, {}, [className])}>
+            <VStack gap={'8'} max className={classNames('', {}, [className])}>
                 <EditableProfileCardHeader />
                 {validateErrors && validateErrors.map((error: ValidateProfileError) => (
                     <Text
