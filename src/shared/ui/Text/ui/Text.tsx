@@ -13,6 +13,8 @@ interface ITextProps {
     size?: SizeText,
     theme?: ThemeText,
     align?: AlignText;
+
+    'data-testid'?: string;
 }
 
 type HeaderTagType = 'h1' | 'h2' | 'h3';
@@ -30,6 +32,7 @@ const Text: React.FC<ITextProps> = memo((props: ITextProps): JSX.Element => {
         text,
         theme = ThemeText.PRIMARY,
         size = SizeText.M,
+        'data-testid': dataTestId = 'Text',
     } = props;
 
 
@@ -38,8 +41,10 @@ const Text: React.FC<ITextProps> = memo((props: ITextProps): JSX.Element => {
     return (
         <div className={classNames(cls.Text, {},
             [className, cls[size], cls[align], cls[theme]])}>
-            {title && <HeaderTag className={cls.title}>{title}</HeaderTag>}
-            {text && <p className={cls.text}>{text}</p>}
+            {title && <HeaderTag data-testid={dataTestId + '.Header'}
+                className={cls.title}>{title}</HeaderTag>}
+            {text && <p data-testid={dataTestId + '.Paragraph'}
+                className={cls.text}>{text}</p>}
         </div>
     );
 });

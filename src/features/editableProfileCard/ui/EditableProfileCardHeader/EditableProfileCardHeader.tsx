@@ -47,15 +47,24 @@ const EditableProfileCardHeader: React.FC<IEditableProfileCardHeaderProps> = ({c
             {canEdit && (
                 <>
                     {readonly ? (
-                        <Button theme={ThemeButton.WITHLINE} onClick={onEdit}>
+                        <Button
+                            theme={ThemeButton.WITHLINE}
+                            data-testid={'EditableProfileCardHeader.EditButton'}
+                            onClick={onEdit}>
                             {t('Edit')}
                         </Button>
                     ) : (
                         <HStack gap={'8'}>
-                            <Button theme={ThemeButton.WITHLINE_RED} onClick={onCancelEdit}>
+                            <Button
+                                theme={ThemeButton.WITHLINE_RED}
+                                data-testid={'EditableProfileCardHeader.CancelButton'}
+                                onClick={onCancelEdit}>
                                 {t('Cancel')}
                             </Button>
-                            <Button theme={ThemeButton.WITHLINE} onClick={onSave}>
+                            <Button
+                                theme={ThemeButton.WITHLINE}
+                                data-testid={'EditableProfileCardHeader.SaveButton'}
+                                onClick={onSave}>
                                 {t('Save')}
                             </Button>
                         </HStack>

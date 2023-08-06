@@ -992,14 +992,21 @@
       "id": "1",
       "username": "admin",
       "password": "admin",
-      "role": "admin",
+      "roles": ["ADMIN"],
       "avatar": "https://cdn-icons-png.flaticon.com/512/2304/2304226.png"
     },
     {
       "id": "2",
       "username": "username",
       "password": "password",
-      "role": "user",
+      "roles": ["USER"],
+      "avatar": "https://imgur.com/IyES7O4.png"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "manager",
+      "roles": ["MANAGER"],
       "avatar": "https://imgur.com/IyES7O4.png"
     }
   ],

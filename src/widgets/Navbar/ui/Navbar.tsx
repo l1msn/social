@@ -6,7 +6,7 @@ import Button from 'shared/ui/Button';
 import ThemeButton from 'shared/ui/Button/consts/ThemeButton';
 import {LoginModal} from 'features/AuthByUsername';
 import {useDispatch, useSelector} from 'react-redux';
-import {getUserAuthData, userActions} from 'entities/User';
+import {getUserAuthData, isUserAdmin, isUserManager, userActions} from 'entities/User';
 import {Text, ThemeText} from 'shared/ui/Text';
 import AppLink from 'shared/ui/AppLink';
 import {RoutePath} from 'shared/config/routeConfig/routeConfig';
@@ -21,6 +21,9 @@ interface INavbarProps {
 const Navbar: React.FC<INavbarProps> = memo(({className}: INavbarProps): JSX.Element => {
     const {t} = useTranslation('auth');
     const [isAuthModal, setIsAuthModal] = useState<boolean>(false);
+
+    const isAdmin = useSelector(isUserAdmin);
+    const isManager = useSelector(isUserManager);
 
     const authData = useSelector(getUserAuthData);
     const dispatch = useDispatch();
@@ -44,6 +47,10 @@ const Navbar: React.FC<INavbarProps> = memo(({className}: INavbarProps): JSX.Ele
                 </AppLink>
                 <Dropdown direction={'bottom left'}
                     className={cls.dropdown} items={[
+                        ...(isAdmin || isManager ? [{
+                            content: t('Admin Panel'),
+                            href: RoutePath.admin_panel,
+                        }] : []),
                         {
                             content: t('Profile'),
                             href: RoutePath.profile + authData.id,

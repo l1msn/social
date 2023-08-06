@@ -109,6 +109,7 @@ const EditableProfileCard: React.FC<IEditableProfileCardProps> = memo(({classNam
                         key={error}
                         theme={ThemeText.ERROR}
                         text={validateErrorTranslates[error]}
+                        data-testid={'EditableProfileCard.Error'}
                     />
                 ))}
                 <ProfileCard

@@ -1,15 +1,36 @@
-import React, {JSX} from 'react';
+import React, {JSX, useMemo} from 'react';
 import {useSelector} from 'react-redux';
-import {getUserAuthData} from 'entities/User';
+import {getUserAuthData, getUserRoles, UserRole} from 'entities/User';
 import {Navigate, useLocation} from 'react-router-dom';
 import {RoutePath} from 'shared/config/routeConfig/routeConfig';
 
-function RequireAuth({children}: { children: JSX.Element}) {
+interface IRequireAuth {
+    children: JSX.Element,
+    roles?: UserRole[]
+}
+
+function RequireAuth({children, roles}: IRequireAuth) {
     const location = useLocation();
     const auth = useSelector(getUserAuthData);
-    console.log(auth);
 
-    return auth ? children : <Navigate to={RoutePath.main} state={{from: location}} replace />;
+    const userRoles = useSelector(getUserRoles);
+
+    const hasRequiredRoles = useMemo(() => {
+        if (!roles) {
+            return true;
+        }
+        return roles.some((requiredRole) => userRoles?.includes(requiredRole));
+    }, [roles, userRoles]);
+
+    if (!auth) {
+        return <Navigate to={RoutePath.main} state={{from: location}} replace />;
+    }
+
+    if (!hasRequiredRoles) {
+        return <Navigate to={RoutePath.forbidden_page} state={{from: location}} replace />;
+    }
+
+    return children;
 }
 
 export default RequireAuth;
