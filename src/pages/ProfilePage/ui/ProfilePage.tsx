@@ -12,13 +12,8 @@ interface IProfilePageProps {
 }
 
 const ProfilePage: React.FC<IProfilePageProps> = ({className}: IProfilePageProps): JSX.Element => {
-    const {t} = useTranslation('profile');
-
     const {id} = useParams<string>();
 
-    if (!id) {
-        return <Text text={t('Profile not found!')} />;
-    }
 
     return (
         <Page className={classNames('', {}, [className])}>

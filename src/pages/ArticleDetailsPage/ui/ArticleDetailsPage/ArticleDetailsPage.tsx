@@ -31,11 +31,6 @@ const ArticleDetailsPage: React.FC<IArticleDetailsPageProps> = memo(({className}
     const errorComments = useSelector(getArticleCommentsError);
     const errorRecommendations = useSelector(getArticleDetailsRecommendationsError);
 
-    if (!id) {
-        return (
-            <NotFoundPage/>
-        );
-    }
 
     if (errorComments || errorRecommendations) {
         return (

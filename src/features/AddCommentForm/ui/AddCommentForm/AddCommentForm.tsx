@@ -7,7 +7,6 @@ import Button from 'shared/ui/Button';
 import ThemeButton from 'shared/ui/Button/consts/ThemeButton';
 import {useSelector} from 'react-redux';
 import getAddCommentFormText from '../../model/selectors/getAddCommentFormText/getAddCommentFormText';
-import getAddCommentFormError from '../../model/selectors/getAddCommentFormError/getAddCommentFormError';
 import useAppDispatch from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {addCommentFormActions, addCommentFormReducer} from '../../model/slice/AddCommentFormSlice';
 import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/DynamicModuleLoader';

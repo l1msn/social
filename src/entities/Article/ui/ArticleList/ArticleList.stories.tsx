@@ -46,6 +46,7 @@ const mockData: IArticle[] = [{
 
 export const Light: Story = {
     args: {
+        virtualized: false,
         articles: mockData,
     },
     decorators: [StoreDecorator({})],
@@ -53,6 +54,7 @@ export const Light: Story = {
 
 export const Dark: Story = {
     args: {
+        virtualized: false,
         articles: mockData,
     },
     decorators: [themeDecorator(Themes.DARK), StoreDecorator({})],

@@ -8,7 +8,6 @@ import {List, ListRowProps, WindowScroller} from 'react-virtualized';
 import PAGE_ID from 'shared/consts/ids';
 import {IArticle} from '../../model/types/IArticle';
 import Loader from 'widgets/Loader';
-
 interface IArticleListProps {
     className?: string,
     articles: IArticle[];

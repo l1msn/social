@@ -1,4 +1,4 @@
-import React, {JSX, useCallback} from 'react';
+import React, {JSX, Suspense, useCallback} from 'react';
 import {SizeText, Text} from 'shared/ui/Text';
 import {AddCommentForm} from 'features/AddCommentForm';
 import {CommentList} from 'entities/Comment';
@@ -18,7 +18,7 @@ import {VStack} from 'widgets/Stack';
 
 interface IArticleDetailsCommentsProps {
     className?: string
-    id: string | number;
+    id?: string | number;
 }
 
 const ArticleDetailsComments: React.FC<IArticleDetailsCommentsProps> = ({className, id}: IArticleDetailsCommentsProps): JSX.Element => {
@@ -38,16 +38,14 @@ const ArticleDetailsComments: React.FC<IArticleDetailsCommentsProps> = ({classNa
         dispatch(addCommentForArticle(text));
     }, [dispatch]);
 
-    if (isLoadingComments) {
-        return <Loader/>;
-    }
-
     return (
         <VStack gap={'8'} max className={classNames('', {}, [className])}>
             <Text size={SizeText.L}
                 title={t('Comments')}/>
-            <AddCommentForm onSendComment={onSendComment}/>
-            <CommentList isLoading={isLoadingComments} comments={comments}/>
+            <Suspense fallback={<Loader/>}>
+                <AddCommentForm onSendComment={onSendComment}/>
+                <CommentList isLoading={isLoadingComments} comments={comments}/>
+            </Suspense>
         </VStack>
     );
 };

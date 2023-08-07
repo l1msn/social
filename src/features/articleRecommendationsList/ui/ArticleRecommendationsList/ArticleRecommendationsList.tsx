@@ -3,9 +3,10 @@ import {useTranslation} from 'react-i18next';
 import React, {JSX, memo} from 'react';
 import {SizeText, Text} from 'shared/ui/Text';
 import {ArticleList, ArticleView} from 'entities/Article';
-import {VStack} from 'widgets/Stack';
+import {HStack, VStack} from 'widgets/Stack';
 import useArticleRecommendationsList from '../../api/articleRecommendationsApi';
-import Loader from 'widgets/Loader';
+import Skeleton from 'widgets/Skeleton';
+import cls from './ArticleRecommendationsList.module.scss';
 
 interface IArticleRecommendationsListProps {
     className?: string;
@@ -14,10 +15,21 @@ interface IArticleRecommendationsListProps {
 const ArticleRecommendationsList: React.FC<IArticleRecommendationsListProps> = memo((props: IArticleRecommendationsListProps): JSX.Element | null => {
     const {className} = props;
     const {t} = useTranslation();
-    const {data, isLoading} = useArticleRecommendationsList(4);
+    const {data, isLoading, error} = useArticleRecommendationsList(4);
+
+    if (error || !data) {
+        return null;
+    }
 
     if (isLoading) {
-        return <Loader/>;
+        return (
+            <HStack max gap={'16'} className={classNames(cls.recommend, {}, [className])}>
+                <Skeleton height={300} width={230}/>
+                <Skeleton height={300} width={230}/>
+                <Skeleton height={300} width={230}/>
+                <Skeleton height={300} width={230}/>
+            </HStack>
+        );
     }
 
     if (!data) {

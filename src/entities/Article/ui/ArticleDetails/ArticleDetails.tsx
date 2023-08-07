@@ -24,7 +24,7 @@ import {HStack, VStack} from 'widgets/Stack';
 
 interface IArticleDetailsProps {
     className?: string
-    id: number | string;
+    id?: number | string;
 }
 
 const reducers: ReducersList = {

@@ -3,6 +3,7 @@ import styleDecorator from '../../src/shared/config/storybook/styleDecorator/sty
 import themeDecorator from '../../src/shared/config/storybook/themeDecorator/themeDecorator';
 import {Themes} from '../../src/app/providers/ThemeProvider';
 import routerDecorator from '../../src/shared/config/storybook/routerDecorator/routerDecorator';
+import suspenseDecorator from '../../src/shared/config/storybook/suspenseDecorator/suspenseDecorator';
 
 // @ts-ignore
 const preview: Preview = {
@@ -17,7 +18,7 @@ const preview: Preview = {
     },
     decorators: [
         // @ts-ignore
-        styleDecorator, themeDecorator(Themes.LIGHT), routerDecorator,
+        styleDecorator, themeDecorator(Themes.LIGHT), routerDecorator, suspenseDecorator,
     ],
 };
 

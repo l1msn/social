@@ -2,10 +2,21 @@ import type {Meta, StoryObj} from '@storybook/react';
 import {Themes} from 'app/providers/ThemeProvider';
 import 'app/styles/index.scss';
 import themeDecorator from '../../../../shared/config/storybook/themeDecorator/themeDecorator';
-import ArticleDetailsPage from './ArticleDetailsPage';
+import ArticleDetailsComments from './ArticleDetailsComments';
 import StoreDecorator from '../../../../shared/config/storybook/storeDecorator/storeDecorator';
 import {ArticleType, ArticleBlockType, IArticle} from 'entities/Article';
 
+
+const meta = {
+    title: 'pages/ArticleDetailsComments',
+    component: ArticleDetailsComments,
+    tags: ['autodocs'],
+    argTypes: {
+    },
+} satisfies Meta<typeof ArticleDetailsComments>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 const article: IArticle = {
     id: '1',
@@ -46,28 +57,6 @@ const article: IArticle = {
         },
     ],
 };
-
-const meta = {
-    title: 'pages/ArticleDetailsPage',
-    component: ArticleDetailsPage,
-    tags: ['autodocs'],
-    argTypes: {
-    },
-    parameters: {
-        mockData: [
-            {
-                url: __API__ + '/articles?_limit=4',
-                method: 'GET',
-                status: 200,
-                response: [{...article, id: '4'}, {...article, id: '3'}, {...article, id: '5'}, {...article, id: '6'}],
-            },
-        ],
-    },
-} satisfies Meta<typeof ArticleDetailsPage>;
-
-export default meta;
-type Story = StoryObj<typeof meta>;
-
 
 export const Light: Story = {
     args: {

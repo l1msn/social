@@ -1,11 +1,9 @@
-import type {Meta, StoryObj} from '@storybook/react';
+import {Meta, StoryObj} from '@storybook/react';
+import StoreDecorator from 'shared/config/storybook/storeDecorator/storeDecorator';
+import themeDecorator from 'shared/config/storybook/themeDecorator/themeDecorator';
 import {Themes} from 'app/providers/ThemeProvider';
-import 'app/styles/index.scss';
-import themeDecorator from '../../../../shared/config/storybook/themeDecorator/themeDecorator';
-import ArticleDetailsPage from './ArticleDetailsPage';
-import StoreDecorator from '../../../../shared/config/storybook/storeDecorator/storeDecorator';
-import {ArticleType, ArticleBlockType, IArticle} from 'entities/Article';
-
+import ArticleRecommendationsList from './ArticleRecommendationsList';
+import {ArticleBlockType, ArticleType, IArticle} from 'entities/Article';
 
 const article: IArticle = {
     id: '1',
@@ -48,8 +46,8 @@ const article: IArticle = {
 };
 
 const meta = {
-    title: 'pages/ArticleDetailsPage',
-    component: ArticleDetailsPage,
+    title: 'features/ArticleRecommendationsList',
+    component: ArticleRecommendationsList,
     tags: ['autodocs'],
     argTypes: {
     },
@@ -63,30 +61,19 @@ const meta = {
             },
         ],
     },
-} satisfies Meta<typeof ArticleDetailsPage>;
+} satisfies Meta<typeof ArticleRecommendationsList>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-
 export const Light: Story = {
     args: {
     },
-    decorators: [StoreDecorator({
-        article: {
-            data: article,
-        },
-    })],
+    decorators: [StoreDecorator({})],
 };
 
 export const Dark: Story = {
     args: {
     },
-    decorators: [themeDecorator(Themes.DARK), StoreDecorator({
-        article: {
-            data: article,
-        },
-    })],
+    decorators: [themeDecorator(Themes.DARK), StoreDecorator({})],
 };
-
-

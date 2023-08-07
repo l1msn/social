@@ -2,12 +2,10 @@ import 'app/styles/index.scss';
 import {Story} from '@storybook/react';
 import {BrowserRouter} from 'react-router-dom';
 
-const routerDecorator = (story: () => Story<any>) => {
+const routerDecorator = (StoryComponent: Story) => {
     return (
         <BrowserRouter>
-            {// @ts-ignore
-                story()
-            }
+            <StoryComponent/>
         </BrowserRouter>
     );
 };
