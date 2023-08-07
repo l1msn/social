@@ -59,5 +59,6 @@ interface IArticle {
     move?: () => void;
 }
 
-export {IArticle, ArticleType, ArticleBlockType, ArticleBlock,
-    IArticleCodeBlock, IArticleImageBlock, IArticleTextBlock, ArticleSortField};
+export {ArticleType, ArticleBlockType, ArticleSortField};
+
+export type {IArticle, ArticleBlock, IArticleCodeBlock, IArticleImageBlock, IArticleTextBlock};

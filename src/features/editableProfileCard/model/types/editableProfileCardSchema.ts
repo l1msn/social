@@ -17,4 +17,4 @@ interface IProfileSchema {
     validateError?: ValidateProfileError[];
 }
 
-export {ValidateProfileError, IProfileSchema};
+export {ValidateProfileError, type IProfileSchema};

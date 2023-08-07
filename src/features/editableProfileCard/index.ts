@@ -7,10 +7,9 @@ import EditableProfileCard from './ui/EditableProfileCard/EditableProfileCard';
 
 
 export {
-    EditableProfileCard,
-    IProfileSchema,
-    getProfileReadonly,
-    getProfileData,
-    updateProfileData,
+    EditableProfileCard, getProfileReadonly,
+    getProfileData, updateProfileData,
     profileActions,
 };
+
+export type {IProfileSchema};

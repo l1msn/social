@@ -50,6 +50,6 @@ const DynamicModuleLoader: React.FC<IDynamicModuleLoaderProps> = (props: IDynami
     );
 };
 
-export {DynamicModuleLoader, ReducersList};
+export {DynamicModuleLoader, type ReducersList};
 
 

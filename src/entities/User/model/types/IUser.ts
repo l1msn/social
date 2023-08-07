@@ -12,4 +12,4 @@ interface IUserScheme {
     init: boolean;
 }
 
-export {IUser, IUserScheme};
+export type {IUser, IUserScheme};

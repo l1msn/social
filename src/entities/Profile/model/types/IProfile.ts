@@ -14,4 +14,4 @@ interface IProfile {
     avatar?: string;
 }
 
-export {IProfile};
+export type {IProfile};

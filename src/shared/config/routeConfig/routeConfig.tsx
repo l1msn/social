@@ -91,4 +91,5 @@ const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     },
 };
 
-export {AppRoutes, RoutePath, routeConfig, AppRoutesProps};
+export {AppRoutes, RoutePath, routeConfig};
+export type {AppRoutesProps};

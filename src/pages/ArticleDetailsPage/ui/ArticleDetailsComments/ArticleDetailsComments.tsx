@@ -11,7 +11,7 @@ import addCommentForArticle from '../../model/services/addCommentForArticle/addC
 import {useTranslation} from 'react-i18next';
 import useInitialEffect from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import fetchCommentsByArticleId
-    from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+    from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import Loader from 'widgets/Loader';
 import classNames from 'shared/lib/classNames/classNames';
 import {VStack} from 'widgets/Stack';

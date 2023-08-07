@@ -54,4 +54,5 @@ function createReducerManager(initialReducers: ReducersMapObject<IStateSchema>):
     };
 }
 
-export {IReducerManager, createReducerManager, StateSchemaKey, MountedReducers};
+export {createReducerManager};
+export type {IReducerManager, StateSchemaKey, MountedReducers};

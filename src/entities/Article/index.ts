@@ -10,11 +10,12 @@ import ArticleSortSelector from './ui/ArticleSortSelector/ArticleSortSelector';
 import ArticleTypeTabs from './ui/ArticleTypeTabs/ArticleTypeTabs';
 import ArticleViewSelector from './ui/ArticleViewSelector/ArticleViewSelector';
 
-export {ArticleDetails, IArticleSchema,
+export {ArticleDetails, ArticleBlockType,
     getArticleData, getArticleIsLoading,
     getArticleError, ArticleView,
     ArticleViewSelector, ArticleList,
     ArticleSortField, ArticleSortSelector,
     ArticleType, ArticleTypeTabs,
-    ArticleBlockType, IArticle,
 };
+
+export type {IArticleSchema, IArticle};

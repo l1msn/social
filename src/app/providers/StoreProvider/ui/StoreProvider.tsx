@@ -1,7 +1,7 @@
 import React, {JSX} from 'react';
 import {Provider} from 'react-redux';
 import IStateSchema from '../types/IStateSchema';
-import {createReduxStore} from 'app/providers/StoreProvider';
+import createReduxStore from '../config/store';
 import {ReducersMapObject} from '@reduxjs/toolkit';
 import {ReducersList} from 'shared/lib/components/DynamicModuleLoader';
 

@@ -5,6 +5,10 @@ import {userActions, userReducer} from './model/slice/userSlice';
 import {IUser, IUserScheme} from './model/types/IUser';
 import UserRole from './model/types/UserRole';
 
-export {userReducer, userActions, IUser, UserRole,
-    IUserScheme, getUserAuthData, getUserInit,
-    isUserAdmin, isUserManager, getUserRoles};
+export {
+    userReducer, userActions, UserRole,
+    getUserAuthData, getUserInit, isUserAdmin,
+    isUserManager, getUserRoles,
+};
+
+export type {IUser, IUserScheme};
