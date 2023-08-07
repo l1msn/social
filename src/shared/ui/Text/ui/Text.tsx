@@ -13,7 +13,17 @@ interface ITextProps {
     size?: SizeText,
     theme?: ThemeText,
     align?: AlignText;
+
+    'data-testid'?: string;
 }
+
+type HeaderTagType = 'h1' | 'h2' | 'h3';
+
+const mapSizeToHeaderTag: Record<SizeText, HeaderTagType> = {
+    [SizeText.S]: 'h3',
+    [SizeText.M]: 'h2',
+    [SizeText.L]: 'h1',
+};
 
 const Text: React.FC<ITextProps> = memo((props: ITextProps): JSX.Element => {
     const {className,
@@ -22,11 +32,19 @@ const Text: React.FC<ITextProps> = memo((props: ITextProps): JSX.Element => {
         text,
         theme = ThemeText.PRIMARY,
         size = SizeText.M,
+        'data-testid': dataTestId = 'Text',
     } = props;
+
+
+    const HeaderTag = mapSizeToHeaderTag[size];
+
     return (
-        <div className={classNames(cls.Text, {}, [className, cls[size], cls[align], cls[theme]])}>
-            {title && <p className={cls.title}>{title}</p>}
-            {text && <p className={cls.text}>{text}</p>}
+        <div className={classNames(cls.Text, {},
+            [className, cls[size], cls[align], cls[theme]])}>
+            {title && <HeaderTag data-testid={dataTestId + '.Header'}
+                className={cls.title}>{title}</HeaderTag>}
+            {text && <p data-testid={dataTestId + '.Paragraph'}
+                className={cls.text}>{text}</p>}
         </div>
     );
 });

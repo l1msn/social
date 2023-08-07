@@ -1,4 +1,4 @@
-import Button from 'shared/ui/Button';
+import Button from './Button';
 import {render, screen} from '@testing-library/react';
 import ThemeButton from '../consts/ThemeButton';
 

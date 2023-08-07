@@ -4,12 +4,14 @@ import {userReducer} from 'entities/User';
 import {createReducerManager} from './reducerManager';
 import $api from 'shared/api/api';
 import {scrollRestoreReducer} from 'features/scrollRestore';
+import rtkApi from 'shared/api/rtkApi';
 
 
 function createReduxStore(initialState?: IStateSchema,
     asyncReducers?: ReducersMapObject<IStateSchema>) {
     const rootReducers: ReducersMapObject<IStateSchema> = {
         ...asyncReducers,
+        [rtkApi.reducerPath]: rtkApi.reducer,
         user: userReducer,
         scrollRestore: scrollRestoreReducer,
     };
@@ -27,7 +29,7 @@ function createReduxStore(initialState?: IStateSchema,
                     api: $api,
                 },
             },
-        }),
+        }).concat(rtkApi.middleware),
     });
 
 

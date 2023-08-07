@@ -1,7 +1,10 @@
+import UserRole from '../types/UserRole';
+
 interface IUser {
     id: string | number,
     username: string
     avatar?: string;
+    roles?: UserRole[];
 }
 
 interface IUserScheme {
@@ -9,4 +12,4 @@ interface IUserScheme {
     init: boolean;
 }
 
-export {IUser, IUserScheme};
+export type {IUser, IUserScheme};

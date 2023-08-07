@@ -7,10 +7,10 @@ import Button from 'shared/ui/Button';
 import ThemeButton from 'shared/ui/Button/consts/ThemeButton';
 import {useSelector} from 'react-redux';
 import getAddCommentFormText from '../../model/selectors/getAddCommentFormText/getAddCommentFormText';
-import getAddCommentFormError from '../../model/selectors/getAddCommentFormError/getAddCommentFormError';
 import useAppDispatch from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {addCommentFormActions, addCommentFormReducer} from '../../model/slice/AddCommentFormSlice';
 import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/DynamicModuleLoader';
+import {HStack} from 'widgets/Stack';
 
 interface IAddCommentFormProps {
     className?: string,
@@ -39,10 +39,10 @@ const AddCommentForm: React.FC<IAddCommentFormProps> = ({className, onSendCommen
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterAmount>
-            <div className={classNames(cls.commentForm, {}, [className])}>
+            <HStack justify={'between'} max className={classNames(cls.commentForm, {}, [className])}>
                 <Input className={cls.input} value={text} onChange={onCommentTextChange} placeholder={t('Your comment...')}/>
                 <Button onClick={onSendHandler} theme={ThemeButton.WITHLINE}>{t('Send')}</Button>
-            </div>
+            </HStack>
         </DynamicModuleLoader>
     );
 };

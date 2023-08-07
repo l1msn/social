@@ -1,4 +1,4 @@
-import AppLink from 'shared/ui/AppLink/ui/AppLink';
+import AppLink from './ui/AppLink';
 
 
 export default AppLink;

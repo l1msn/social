@@ -1,11 +1,15 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import {IThunkConfig} from 'app/providers/StoreProvider';
-import {IArticle} from 'entities/Article';
+import {IArticle} from '../../types/IArticle';
 
 
-const fetchArticleById = createAsyncThunk<IArticle, number | string, IThunkConfig<string>>('article/fetchArticleById',
-    async (articleId: number | string, thunkAPI) => {
+const fetchArticleById = createAsyncThunk<IArticle, number | string | undefined, IThunkConfig<string>>('article/fetchArticleById',
+    async (articleId: number | string | undefined, thunkAPI) => {
         try {
+            if (!articleId) {
+                return thunkAPI.rejectWithValue('No id!');
+            }
+
             const response = await thunkAPI.extra.api.get<IArticle>('/articles/' + articleId.toString(), {
                 params: {
                     _expand: 'user',
@@ -13,7 +17,7 @@ const fetchArticleById = createAsyncThunk<IArticle, number | string, IThunkConfi
             });
 
             if (!response.data) {
-                throw new Error('No data!');
+                return thunkAPI.rejectWithValue('No data!');
             }
 
             return response.data;

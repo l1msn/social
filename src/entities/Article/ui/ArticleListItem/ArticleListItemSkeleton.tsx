@@ -1,7 +1,7 @@
 import React, {JSX, memo} from 'react';
 import classNames from 'shared/lib/classNames/classNames';
 import cls from './ArticleListItem.module.scss';
-import {ArticleView} from 'entities/Article';
+import ArticleView from '../../model/types/ArticleView';
 import Skeleton from 'widgets/Skeleton';
 import {Card} from 'widgets/Card';
 

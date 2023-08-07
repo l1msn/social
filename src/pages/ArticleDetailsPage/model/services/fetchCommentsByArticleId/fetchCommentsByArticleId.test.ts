@@ -2,7 +2,7 @@ import axios from 'axios';
 import TestAsyncThunk from 'shared/lib/tests/testAsyncThunk/TestAsyncThunk';
 import {IComment} from 'entities/Comment';
 import fetchCommentsByArticleId
-    from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+    from './fetchCommentsByArticleId';
 
 
 jest.mock('axios');

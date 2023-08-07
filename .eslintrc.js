@@ -15,7 +15,7 @@ module.exports = {
         sourceType: 'module',
         tsconfigRootDir: __dirname,
     },
-    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
+    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'l1msn-plugin'],
     rules: {
         'indent': ['warn', 4],
         'import/no-unresolved': 'off',
@@ -41,6 +41,8 @@ module.exports = {
         'no-undef': 'off',
         '@typescript-eslint/no-non-null-assertion': 'off',
         'no-invalid-this': 'off',
+        'l1msn-plugin/path-checker': 'warn',
+        'linebreak-style': 'off',
     },
     globals: {
         __IS_DEV__: true,

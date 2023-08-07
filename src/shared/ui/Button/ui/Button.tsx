@@ -1,8 +1,8 @@
 import React, {memo, type ButtonHTMLAttributes, type JSX} from 'react';
 import classNames from 'shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
-import ThemeButton from 'shared/ui/Button/consts/ThemeButton';
-import SizeButton from 'shared/ui/Button/consts/SizeButton';
+import ThemeButton from '../consts/ThemeButton';
+import SizeButton from '../consts/SizeButton';
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string

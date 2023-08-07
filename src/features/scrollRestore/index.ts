@@ -3,4 +3,8 @@ import getScrollPositionByPath from './model/selectors/getScrollPositionByPath/g
 import {scrollRestoreActions, scrollRestoreReducer} from './model/slice/scrollRestoreSlice';
 import IScrollSchema from './model/types/IScrollSchema';
 
-export {IScrollSchema, getScrollPosition, getScrollPositionByPath, scrollRestoreReducer, scrollRestoreActions};
+export {
+    getScrollPosition, getScrollPositionByPath,
+    scrollRestoreReducer, scrollRestoreActions,
+};
+export type {IScrollSchema};

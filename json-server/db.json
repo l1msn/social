@@ -985,6 +985,24 @@
       "userId": "1",
       "text": "3333",
       "id": "3bSnlK7"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "123",
+      "id": "7uMSiPi"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "222",
+      "id": "Sv4IBUt"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "43",
+      "id": "a9lebzF"
     }
   ],
   "users": [
@@ -992,14 +1010,27 @@
       "id": "1",
       "username": "admin",
       "password": "admin",
-      "role": "admin",
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://cdn-icons-png.flaticon.com/512/2304/2304226.png"
     },
     {
       "id": "2",
       "username": "username",
       "password": "password",
-      "role": "user",
+      "roles": [
+        "USER"
+      ],
+      "avatar": "https://imgur.com/IyES7O4.png"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "manager",
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "https://imgur.com/IyES7O4.png"
     }
   ],
@@ -1020,7 +1051,7 @@
       "first": "admin",
       "lastname": "superuser",
       "age": 2,
-      "currency": "RUB",
+      "currency": "USD",
       "country": "Russia",
       "city": "Saint-Petersburg",
       "username": "Admin",

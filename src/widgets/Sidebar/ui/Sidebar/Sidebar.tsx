@@ -6,9 +6,10 @@ import MenuIcon from 'shared/assets/icons/menu-icon.svg';
 import ThemeButton from 'shared/ui/Button/consts/ThemeButton';
 import ThemeSwitcher from 'widgets/ThemeSwitcher';
 import LangSwitcher from 'widgets/LangSwitcher';
-import SidebarItem from 'widgets/Sidebar/ui/SidebarItem/SidebarItem';
+import SidebarItem from '../SidebarItem/SidebarItem';
 import {useSelector} from 'react-redux';
-import getSidebarItems from 'widgets/Sidebar/model/selectors/getSidebarItems';
+import getSidebarItems from '../../model/selectors/getSidebarItems';
+import {VStack} from 'widgets/Stack';
 
 interface ISidebarProps {
     className?: string;
@@ -32,18 +33,18 @@ const Sidebar: React.FC<ISidebarProps> = memo(({className}: ISidebarProps): JSX.
     )), [sidebarItemsList, collapsed]);
 
     return (
-        <menu data-testid={'sidebar'} className={classNames(cls.Sidebar, {[cls.collapsed]: collapsed}, [className])}>
+        <aside data-testid={'sidebar'} className={classNames(cls.Sidebar, {[cls.collapsed]: collapsed}, [className])}>
             <Button data-testid={'sidebar-toggle'} className={cls.burger} theme={ThemeButton.OUTLINE} onClick={onToggle}>
                 <MenuIcon className={cls.icon}/>
             </Button>
-            <div className={cls.items}>
+            <VStack role={'navigation'} gap={'8'} className={cls.items}>
                 {itemsList}
-            </div>
+            </VStack>
             <div className={cls.switchers}>
                 <LangSwitcher className={cls.lang}/>
                 <ThemeSwitcher/>
             </div>
-        </menu>
+        </aside>
     );
 });
 

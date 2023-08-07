@@ -4,8 +4,8 @@ import 'app/styles/index.scss';
 import ArticleListItem from './ArticleListItem';
 import StoreDecorator from 'shared/config/storybook/storeDecorator/storeDecorator';
 import themeDecorator from 'shared/config/storybook/themeDecorator/themeDecorator';
-import {ArticleBlockType, ArticleType, IArticle} from 'entities/Article/model/types/IArticle';
-import {ArticleView} from 'entities/Article';
+import {ArticleBlockType, ArticleType, IArticle} from '../../model/types/IArticle';
+import ArticleView from '../../model/types/ArticleView';
 
 
 const meta = {

@@ -16,5 +16,6 @@
   "Incorrect age of user!": "Неверно введенный возраст пользователя!",
   "Error on loading profile page": "Ошибка загрузки профиля",
   "Cancel": "Отменить",
-  "Save": "Сохранить"
+  "Save": "Сохранить",
+  "Profile not found!": "Профиль не найден!"
 }

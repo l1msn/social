@@ -1,10 +1,14 @@
+.articleListItem {
+    margin: 10px;
+}
+
 .SHELF {
     width: 230px;
     transition: 0.2s;
     cursor: pointer;
 
     &:hover {
-        opacity: 0.8;
+        opacity: 0.9;
         transform: scale(1.05);
 
         .date {
@@ -48,10 +52,6 @@
         margin-top: 8px;
     }
 
-    .title {
-        margin-top: 8px;
-    }
-
     .types p {
         width: 115px;
         white-space: nowrap;
@@ -77,7 +77,7 @@
     cursor: pointer;
 
     &:hover {
-        opacity: 0.8;
+        opacity: 0.9;
         transform: scale(1.01);
 
         .date {
@@ -132,6 +132,5 @@
 
     .textBlock {
         max-height: 200px;
-        overflow-y: hidden;
     }
 }

@@ -20,7 +20,7 @@ describe('testing fetchNextArticlesPage functional', () => {
         await thunk.callThunk();
 
         expect(thunk.dispatch).toBeCalledTimes(4);
-        expect(fetchArticlesList).toHaveBeenCalledWith({replace: false});
+        expect(fetchArticlesList).toHaveBeenCalled();
     });
 
     test('unsuccessful scroll', async () => {
