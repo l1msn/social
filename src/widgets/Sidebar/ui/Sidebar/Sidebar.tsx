@@ -16,7 +16,7 @@ interface ISidebarProps {
 }
 
 const Sidebar: React.FC<ISidebarProps> = memo(({className}: ISidebarProps): JSX.Element => {
-    const [collapsed, setCollapsed] = useState<boolean>(false);
+    const [collapsed, setCollapsed] = useState<boolean>(true);
 
     const onToggle = () => {
         setCollapsed((prevState) => !prevState);

@@ -1,6 +1,6 @@
 import React, {JSX, Suspense, useCallback} from 'react';
 import {SizeText, Text} from 'shared/ui/Text';
-import {AddCommentForm} from 'features/AddCommentForm';
+import {AddCommentForm} from 'features/addCommentForm';
 import {CommentList} from 'entities/Comment';
 import {useSelector} from 'react-redux';
 import {getArticleComments} from '../../model/slice/articleDetailsCommentsSlice';

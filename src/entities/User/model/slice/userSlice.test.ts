@@ -1,5 +1,5 @@
-import {ILoginSchema} from 'features/AuthByUsername';
-import {loginActions, loginReducer} from 'features/AuthByUsername/model/slice/loginSlice';
+import {ILoginSchema} from 'features/authByUsername';
+import {loginActions, loginReducer} from 'features/authByUsername/model/slice/loginSlice';
 
 describe('testing userSlice functional', () => {
     test('test set username', () => {
