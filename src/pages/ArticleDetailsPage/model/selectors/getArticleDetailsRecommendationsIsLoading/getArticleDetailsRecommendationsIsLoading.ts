@@ -1,4 +1,4 @@
-import {IStateSchema} from 'app/providers/StoreProvider';
+import {IStateSchema} from '@/app/providers/StoreProvider';
 
 const getArticleDetailsRecommendationsIsLoading = (state: IStateSchema) => state?.articleDetailsPage?.recommendations?.isLoading || false;
 

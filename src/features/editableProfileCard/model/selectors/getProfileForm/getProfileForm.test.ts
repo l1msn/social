@@ -1,4 +1,4 @@
-import {IStateSchema} from 'app/providers/StoreProvider';
+import {IStateSchema} from '@/app/providers/StoreProvider';
 import {IProfile} from '../../../../../entities/Profile/model/types/IProfile';
 import getProfileForm from './getProfileForm';
 

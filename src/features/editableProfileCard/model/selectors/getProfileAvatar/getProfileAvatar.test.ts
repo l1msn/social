@@ -1,4 +1,4 @@
-import {IStateSchema} from 'app/providers/StoreProvider';
+import {IStateSchema} from '@/app/providers/StoreProvider';
 import getProfileAvatar from './getProfileAvatar';
 
 const mockAvatar: string = 'url avatar';

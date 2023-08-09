@@ -1,14 +1,25 @@
-import {ILoginSchema} from 'features/authByUsername';
-import {loginActions, loginReducer} from 'features/authByUsername/model/slice/loginSlice';
+import {userActions, userReducer} from './userSlice';
+import {IUser, IUserScheme} from '@/entities/User';
+
+const mockUser: IUser = {
+    id: 1,
+    username: 'admin',
+};
 
 describe('testing userSlice functional', () => {
-    test('test set username', () => {
-        const state: DeepPartial<ILoginSchema> = {username: '123'};
-        expect(loginReducer(state as ILoginSchema, loginActions.setUsername('321'))).toEqual({username: '321'});
+    test('test set auth data', () => {
+        const state: DeepPartial<IUserScheme> = {authData: {id: 1, username: 'not admin'}};
+        expect(userReducer(state as IUserScheme, userActions.setAuthData(mockUser))).toEqual({
+            authData: {
+                id: 1,
+                username: mockUser.username,
+            }});
     });
 
-    test('test set password', () => {
-        const state: DeepPartial<ILoginSchema> = {password: '123'};
-        expect(loginReducer(state as ILoginSchema, loginActions.setPassword('321'))).toEqual({password: '321'});
+    test('test logout', () => {
+        const state: DeepPartial<IUserScheme> = {authData: {id: 1, username: 'not admin'}};
+        expect(userReducer(state as IUserScheme, userActions.logout())).toEqual({
+            authData: undefined,
+        });
     });
 });

@@ -1,19 +1,19 @@
 import React, {HTMLAttributeAnchorTarget, JSX, memo} from 'react';
-import classNames from 'shared/lib/classNames/classNames';
+import classNames from '@/shared/lib/classNames/classNames';
 import cls from './ArticleListItem.module.scss';
 import {ArticleBlockType, IArticle, IArticleTextBlock} from '../../model/types/IArticle';
 import ArticleView from '../../model/types/ArticleView';
-import {Text} from 'shared/ui/Text';
-import Icon from 'widgets/Icon';
-import ViewsIcon from 'shared/assets/icons/views-icon.svg';
-import {Card} from 'widgets/Card';
-import Avatar from 'widgets/Avatar';
-import Button from 'shared/ui/Button';
-import ThemeButton from 'shared/ui/Button/consts/ThemeButton';
+import {Text} from '@/shared/ui/Text';
+import Icon from '@/widgets/Icon';
+import ViewsIcon from '@/shared/assets/icons/views-icon.svg';
+import {Card} from '@/widgets/Card';
+import Avatar from '@/widgets/Avatar';
+import Button from '@/shared/ui/Button';
+import ThemeButton from '@/shared/ui/Button/consts/ThemeButton';
 import {useTranslation} from 'react-i18next';
 import ArticleText from '../ArticleText/ArticleText';
-import {RoutePath} from 'shared/config/routeConfig/routeConfig';
-import AppLink from 'shared/ui/AppLink';
+import {RoutePath} from '@/shared/config/routeConfig/routeConfig';
+import AppLink from '@/shared/ui/AppLink';
 
 interface IArticleListItemProps {
     className?: string

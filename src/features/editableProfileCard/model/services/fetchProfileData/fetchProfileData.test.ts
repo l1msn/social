@@ -1,5 +1,5 @@
 import axios from 'axios';
-import TestAsyncThunk from 'shared/lib/tests/testAsyncThunk/TestAsyncThunk';
+import TestAsyncThunk from '@/shared/lib/tests/testAsyncThunk/TestAsyncThunk';
 import {IProfile} from '../../../../../entities/Profile/model/types/IProfile';
 import fetchProfileData from './fetchProfileData';
 

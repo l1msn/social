@@ -1,4 +1,4 @@
-import {IProfile} from 'entities/Profile';
+import {IProfile} from '@/entities/Profile';
 
 enum ValidateProfileError {
     INCORRECT_USER_DATA = 'INCORRECT_USER_DATA',

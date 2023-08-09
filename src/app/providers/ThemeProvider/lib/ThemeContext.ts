@@ -1,5 +1,5 @@
 import React, {createContext} from 'react';
-import Themes from 'app/providers/ThemeProvider/consts/Themes';
+import Themes from '@/app/providers/ThemeProvider/consts/Themes';
 
 interface IThemeContextProps {
     children?: React.ReactNode,

@@ -1,4 +1,4 @@
-import {IStateSchema} from 'app/providers/StoreProvider';
+import {IStateSchema} from '@/app/providers/StoreProvider';
 import getProfileIsLoading from './getProfileIsLoading';
 
 const mockLoading: boolean = true;

@@ -2,8 +2,8 @@ import {render} from '@testing-library/react';
 import {MemoryRouter} from 'react-router-dom';
 import i18nForTest from '../../../config/i18n/i18nForTest';
 import {I18nextProvider} from 'react-i18next';
-import {IStateSchema, StoreProvider} from 'app/providers/StoreProvider';
-import {ReducersList} from 'shared/lib/components/DynamicModuleLoader';
+import {IStateSchema, StoreProvider} from '@/app/providers/StoreProvider';
+import {ReducersList} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
 interface IComponentRenderOptions {
     route?: string,

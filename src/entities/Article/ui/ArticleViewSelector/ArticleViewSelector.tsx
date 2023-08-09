@@ -1,12 +1,12 @@
 import React, {JSX, memo, useCallback} from 'react';
-import classNames from 'shared/lib/classNames/classNames';
+import classNames from '@/shared/lib/classNames/classNames';
 import cls from './ArticleViewSelector.module.scss';
 import ArticleView from '../../model/types/ArticleView';
-import ShelfViewIcon from 'shared/assets/icons/shelf-view-icon.svg';
-import ListViewIcon from 'shared/assets/icons/list-view-icon.svg';
-import Button from 'shared/ui/Button';
-import Icon from 'widgets/Icon';
-import ThemeButton from 'shared/ui/Button/consts/ThemeButton';
+import ShelfViewIcon from '@/shared/assets/icons/shelf-view-icon.svg';
+import ListViewIcon from '@/shared/assets/icons/list-view-icon.svg';
+import Button from '@/shared/ui/Button';
+import Icon from '@/widgets/Icon';
+import ThemeButton from '@/shared/ui/Button/consts/ThemeButton';
 
 interface IArticleViewSelectorProps {
     className?: string

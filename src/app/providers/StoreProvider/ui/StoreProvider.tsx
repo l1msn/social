@@ -3,7 +3,7 @@ import {Provider} from 'react-redux';
 import IStateSchema from '../types/IStateSchema';
 import createReduxStore from '../config/store';
 import {ReducersMapObject} from '@reduxjs/toolkit';
-import {ReducersList} from 'shared/lib/components/DynamicModuleLoader';
+import {ReducersList} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
 interface IStoreProviderProps {
     children?: React.ReactNode,

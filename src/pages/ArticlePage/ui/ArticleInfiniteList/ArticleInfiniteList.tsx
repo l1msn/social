@@ -4,8 +4,8 @@ import {getArticles} from '../../model/slice/articlePageSlice';
 import getArticlePageError from '../../model/selectors/getArticlePageError/getArticlePageError';
 import getArticlePageIsLoading from '../../model/selectors/getArticlePageIsLoading/getArticlePageIsLoading';
 import getArticlePageView from '../../model/selectors/getArticlePageView/getArticlePageView';
-import {ArticleList} from 'entities/Article';
-import {Text, ThemeText} from 'shared/ui/Text';
+import {ArticleList} from '@/entities/Article';
+import {Text, ThemeText} from '@/shared/ui/Text';
 
 interface IArticleInfiniteListProps {
     className?: string

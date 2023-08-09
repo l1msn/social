@@ -1,16 +1,16 @@
 import React, {JSX, useCallback} from 'react';
-import classNames from 'shared/lib/classNames/classNames';
-import {Input} from 'shared/ui/Input';
+import classNames from '@/shared/lib/classNames/classNames';
+import {Input} from '@/shared/ui/Input';
 import cls from './AddCommentForm.module.scss';
 import {useTranslation} from 'react-i18next';
-import Button from 'shared/ui/Button';
-import ThemeButton from 'shared/ui/Button/consts/ThemeButton';
+import Button from '@/shared/ui/Button';
+import ThemeButton from '@/shared/ui/Button/consts/ThemeButton';
 import {useSelector} from 'react-redux';
 import getAddCommentFormText from '../../model/selectors/getAddCommentFormText/getAddCommentFormText';
-import useAppDispatch from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import useAppDispatch from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {addCommentFormActions, addCommentFormReducer} from '../../model/slice/AddCommentFormSlice';
-import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/DynamicModuleLoader';
-import {HStack} from 'widgets/Stack';
+import {DynamicModuleLoader, ReducersList} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {HStack} from '@/widgets/Stack';
 
 interface IAddCommentFormProps {
     className?: string,

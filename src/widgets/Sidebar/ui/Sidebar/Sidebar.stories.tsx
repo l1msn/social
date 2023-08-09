@@ -1,9 +1,9 @@
 import type {Meta, StoryObj} from '@storybook/react';
-import 'app/styles/index.scss';
+
 import Sidebar from './Sidebar';
 import themeDecorator from '../../../../shared/config/storybook/themeDecorator/themeDecorator';
 import {Themes} from '../../../../app/providers/ThemeProvider';
-import storeDecorator from 'shared/config/storybook/storeDecorator/storeDecorator';
+import storeDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
 
 const meta = {
     title: 'widget/Sidebar',

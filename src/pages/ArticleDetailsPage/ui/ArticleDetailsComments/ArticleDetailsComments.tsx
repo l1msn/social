@@ -1,20 +1,20 @@
 import React, {JSX, Suspense, useCallback} from 'react';
-import {SizeText, Text} from 'shared/ui/Text';
-import {AddCommentForm} from 'features/addCommentForm';
-import {CommentList} from 'entities/Comment';
+import {SizeText, Text} from '@/shared/ui/Text';
+import {AddCommentForm} from '@/features/addCommentForm';
+import {CommentList} from '@/entities/Comment';
 import {useSelector} from 'react-redux';
 import {getArticleComments} from '../../model/slice/articleDetailsCommentsSlice';
-import useAppDispatch from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import useAppDispatch from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import getArticleCommentsIsLoading
     from '../../model/selectors/getArticleCommentsIsLoading/getArticleCommentsIsLoading';
 import addCommentForArticle from '../../model/services/addCommentForArticle/addCommentForArticle';
 import {useTranslation} from 'react-i18next';
-import useInitialEffect from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import useInitialEffect from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import fetchCommentsByArticleId
     from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import Loader from 'widgets/Loader';
-import classNames from 'shared/lib/classNames/classNames';
-import {VStack} from 'widgets/Stack';
+import Loader from '@/widgets/Loader';
+import classNames from '@/shared/lib/classNames/classNames';
+import {VStack} from '@/widgets/Stack';
 
 interface IArticleDetailsCommentsProps {
     className?: string

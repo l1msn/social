@@ -1,8 +1,9 @@
 import {Meta, StoryObj} from '@storybook/react';
-import StoreDecorator from 'shared/config/storybook/storeDecorator/storeDecorator';
-import themeDecorator from 'shared/config/storybook/themeDecorator/themeDecorator';
-import {Themes} from 'app/providers/ThemeProvider';
+import StoreDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
+import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
+import {Themes} from '@/app/providers/ThemeProvider';
 import EditableProfileCard from './EditableProfileCard';
+import '@/app/styles/index.scss';
 
 const meta = {
     title: 'features/EditableProfileCard',

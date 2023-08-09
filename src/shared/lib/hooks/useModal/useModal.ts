@@ -1,5 +1,5 @@
 import {MutableRefObject, useCallback, useEffect, useRef, useState} from 'react';
-import cls from 'widgets/Modal/ui/Modal.module.scss';
+import cls from '@/widgets/Modal/ui/Modal.module.scss';
 
 interface IUseModalProps {
     onClose?: () => void;

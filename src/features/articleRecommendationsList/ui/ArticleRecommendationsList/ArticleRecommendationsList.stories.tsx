@@ -1,9 +1,10 @@
 import {Meta, StoryObj} from '@storybook/react';
-import StoreDecorator from 'shared/config/storybook/storeDecorator/storeDecorator';
-import themeDecorator from 'shared/config/storybook/themeDecorator/themeDecorator';
-import {Themes} from 'app/providers/ThemeProvider';
+import StoreDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
+import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
+import {Themes} from '@/app/providers/ThemeProvider';
 import ArticleRecommendationsList from './ArticleRecommendationsList';
-import {ArticleBlockType, ArticleType, IArticle} from 'entities/Article';
+import {ArticleBlockType, ArticleType, IArticle} from '@/entities/Article';
+import '@/app/styles/index.scss';
 
 const article: IArticle = {
     id: '1',

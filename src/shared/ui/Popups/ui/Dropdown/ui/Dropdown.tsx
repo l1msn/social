@@ -1,11 +1,11 @@
 import React, {Fragment, JSX} from 'react';
 import cls from './Dropdown.module.scss';
 import popupCls from '../../../styles/popup.module.scss';
-import classNames from 'shared/lib/classNames/classNames';
+import classNames from '@/shared/lib/classNames/classNames';
 import {Menu, Transition} from '@headlessui/react';
 import IDropdownItem from '../types/IDropdownItem';
-import {DropDownDirection} from 'shared/types/ui';
-import AppLink from 'shared/ui/AppLink';
+import {DropDownDirection} from '@/shared/types/ui';
+import AppLink from '@/shared/ui/AppLink';
 import mapDirectionClass from '../../../styles/consts';
 
 interface IDropdownProps {

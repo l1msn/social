@@ -1,12 +1,12 @@
 import type {Meta, StoryObj} from '@storybook/react';
-import 'app/styles/index.scss';
+
 import SidebarItem from './SidebarItem';
 import themeDecorator from '../../../../shared/config/storybook/themeDecorator/themeDecorator';
 import {Themes} from '../../../../app/providers/ThemeProvider';
 // @ts-ignore
-import UserIcon from 'shared/assets/icons/user-icon.svg';
+import UserIcon from '@/shared/assets/icons/user-icon.svg';
 import {RoutePath} from '../../../../shared/config/routeConfig/routeConfig';
-import storeDecorator from 'shared/config/storybook/storeDecorator/storeDecorator';
+import storeDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
 
 const meta = {
     title: 'widget/SidebarItem',

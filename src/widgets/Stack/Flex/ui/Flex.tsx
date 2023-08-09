@@ -1,5 +1,5 @@
 import React, {JSX} from 'react';
-import classNames from 'shared/lib/classNames/classNames';
+import classNames from '@/shared/lib/classNames/classNames';
 import FlexAlign from '../consts/FlexAlign';
 import FlexDirection from '../consts/FlexDirection';
 import FlexJustify from '../consts/FlexJustify';

@@ -1,9 +1,9 @@
 import React, {JSX, memo, useCallback} from 'react';
-import classNames from 'shared/lib/classNames/classNames';
-import Button from 'shared/ui/Button';
+import classNames from '@/shared/lib/classNames/classNames';
+import Button from '@/shared/ui/Button';
 import cls from './Code.module.scss';
 import CopyIcon from '../../../shared/assets/icons/copy-icon.svg';
-import ThemeButton from 'shared/ui/Button/consts/ThemeButton';
+import ThemeButton from '@/shared/ui/Button/consts/ThemeButton';
 
 interface ICodeProps {
     className?: string,

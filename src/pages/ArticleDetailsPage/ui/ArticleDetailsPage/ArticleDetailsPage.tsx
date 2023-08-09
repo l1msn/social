@@ -1,22 +1,22 @@
 import React, {JSX, memo} from 'react';
-import classNames from 'shared/lib/classNames/classNames';
+import classNames from '@/shared/lib/classNames/classNames';
 import cls from './ArticleDetailsPage.module.scss';
 import {useParams} from 'react-router-dom';
-import NotFoundPage from 'pages/NotFoundPage';
-import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/DynamicModuleLoader';
+import NotFoundPage from '@/pages/NotFoundPage';
+import {DynamicModuleLoader, ReducersList} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {useSelector} from 'react-redux';
 import getArticleCommentsError
     from '../../model/selectors/getArticleCommentsError/getArticleCommentsError';
-import PageError from 'widgets/PageError/ui/PageError';
-import Page from 'shared/ui/Page';
+import PageError from '@/widgets/PageError/ui/PageError';
+import Page from '@/shared/ui/Page';
 import getArticleDetailsRecommendationsError
     from '../../model/selectors/getArticleDetailsRecommendationsError/getArticleDetailsRecommendationsError';
 import articleDetailsPageReducer from '../../model/slice/index';
 import ArticleDetailsPageHeader from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
-import {ArticleDetails} from 'entities/Article';
-import {VStack} from 'widgets/Stack';
-import {ArticleRecommendationsList} from 'features/articleRecommendationsList';
-import {ArticleDetailsComments} from 'pages/ArticleDetailsPage';
+import {ArticleDetails} from '@/entities/Article';
+import {VStack} from '@/widgets/Stack';
+import {ArticleRecommendationsList} from '@/features/articleRecommendationsList';
+import {ArticleDetailsComments} from '@/pages/ArticleDetailsPage';
 
 interface IArticleDetailsPageProps {
     className?: string

@@ -1,4 +1,4 @@
-import {IStateSchema} from 'app/providers/StoreProvider';
+import {IStateSchema} from '@/app/providers/StoreProvider';
 import {addQueryParams, getQueryParams} from './addQueryParams';
 
 describe('testing addQueryParams functional', () => {

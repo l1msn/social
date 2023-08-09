@@ -2,7 +2,7 @@ import IArticleDetailsCommentsSchema from '../types/IArticleDetailsCommentsSchem
 import {articleDetailsCommentsReducer} from './articleDetailsCommentsSlice';
 import fetchCommentsByArticleId
     from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import {IComment} from 'entities/Comment';
+import {IComment} from '@/entities/Comment';
 
 const mockData: IComment[] = [
     {

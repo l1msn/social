@@ -1,10 +1,10 @@
 import {Transition, Popover as PopoverHeadless} from '@headlessui/react';
 import React, {JSX} from 'react';
-import {DropDownDirection} from 'shared/types/ui';
+import {DropDownDirection} from '@/shared/types/ui';
 import cls from './Popover.module.scss';
 import mapDirectionClass from '../../../styles/consts';
 import popupCls from '../../../styles/popup.module.scss';
-import classNames from 'shared/lib/classNames/classNames';
+import classNames from '@/shared/lib/classNames/classNames';
 
 
 interface IPopoverProps {

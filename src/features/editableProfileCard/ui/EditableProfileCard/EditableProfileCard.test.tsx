@@ -1,12 +1,12 @@
 import {screen} from '@testing-library/react';
 import EditableProfileCard from './EditableProfileCard';
-import componentRender from 'shared/lib/tests/componentRender/componentRender';
-import {IProfile} from 'entities/Profile';
-import {Country} from 'entities/Country';
-import {Currency} from 'entities/Currency';
+import componentRender from '@/shared/lib/tests/componentRender/componentRender';
+import {IProfile} from '@/entities/Profile';
+import {Country} from '@/entities/Country';
+import {Currency} from '@/entities/Currency';
 import {profileReducer} from '../../model/slice/profileSlice';
 import userEvent from '@testing-library/user-event';
-import $api from 'shared/api/api';
+import $api from '@/shared/api/api';
 
 const mockData: IProfile = {
     'id': '2',

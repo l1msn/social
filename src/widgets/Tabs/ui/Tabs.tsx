@@ -1,8 +1,8 @@
 import React, {JSX, useCallback} from 'react';
-import classNames from 'shared/lib/classNames/classNames';
+import classNames from '@/shared/lib/classNames/classNames';
 import cls from './Tabs.module.scss';
-import {Card} from 'widgets/Card';
-import CardTheme from 'widgets/Card/consts/CardTheme';
+import {Card} from '@/widgets/Card';
+import CardTheme from '@/widgets/Card/consts/CardTheme';
 import ITabItem from '../types/ITabItem';
 
 interface ITabsProps {

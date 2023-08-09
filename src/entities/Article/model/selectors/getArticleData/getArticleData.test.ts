@@ -1,4 +1,4 @@
-import {IStateSchema} from 'app/providers/StoreProvider';
+import {IStateSchema} from '@/app/providers/StoreProvider';
 import {ArticleBlockType, ArticleType, IArticle} from '../../types/IArticle';
 import getArticleData from './getArticleData';
 

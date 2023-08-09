@@ -1,6 +1,6 @@
 import validateProfileData from './validateProfileData';
-import {Country} from 'entities/Country';
-import {IProfile} from 'entities/Profile';
+import {Country} from '@/entities/Country';
+import {IProfile} from '@/entities/Profile';
 import {ValidateProfileError} from '../../types/editableProfileCardSchema';
 
 const mockData: IProfile = {

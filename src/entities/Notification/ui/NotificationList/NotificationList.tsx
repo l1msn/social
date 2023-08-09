@@ -1,10 +1,10 @@
 import React, {JSX} from 'react';
-import classNames from 'shared/lib/classNames/classNames';
-import useNotifications from 'entities/Notification/api/notificationApi';
-import {VStack} from 'widgets/Stack';
+import classNames from '@/shared/lib/classNames/classNames';
+import useNotifications from '@/entities/Notification/api/notificationApi';
+import {VStack} from '@/widgets/Stack';
 import INotification from '../../model/types/INotification';
 import NotificationItem from '../../ui/NotificationItem/NotificationItem';
-import Skeleton from 'widgets/Skeleton';
+import Skeleton from '@/widgets/Skeleton';
 
 interface INotificationListProps {
     className?: string

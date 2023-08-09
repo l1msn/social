@@ -1,5 +1,5 @@
 import React, {memo, type ButtonHTMLAttributes, type JSX} from 'react';
-import classNames from 'shared/lib/classNames/classNames';
+import classNames from '@/shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 import ThemeButton from '../consts/ThemeButton';
 import SizeButton from '../consts/SizeButton';

@@ -1,11 +1,11 @@
-import classNames from 'shared/lib/classNames/classNames';
+import classNames from '@/shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
 import React, {JSX, memo} from 'react';
-import {SizeText, Text} from 'shared/ui/Text';
-import {ArticleList, ArticleView} from 'entities/Article';
-import {HStack, VStack} from 'widgets/Stack';
+import {SizeText, Text} from '@/shared/ui/Text';
+import {ArticleList, ArticleView} from '@/entities/Article';
+import {HStack, VStack} from '@/widgets/Stack';
 import useArticleRecommendationsList from '../../api/articleRecommendationsApi';
-import Skeleton from 'widgets/Skeleton';
+import Skeleton from '@/widgets/Skeleton';
 import cls from './ArticleRecommendationsList.module.scss';
 
 interface IArticleRecommendationsListProps {
@@ -41,7 +41,6 @@ const ArticleRecommendationsList: React.FC<IArticleRecommendationsListProps> = m
             <Text size={SizeText.L}
                 title={t('Recommendations')}/>
             <ArticleList
-                virtualized={false}
                 target={'_blank'}
                 view={ArticleView.SHELF}
                 articles={data}

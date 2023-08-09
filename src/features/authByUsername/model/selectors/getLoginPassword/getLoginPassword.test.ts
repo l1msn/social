@@ -1,4 +1,4 @@
-import {IStateSchema} from 'app/providers/StoreProvider';
+import {IStateSchema} from '@/app/providers/StoreProvider';
 import getLoginPassword from './getLoginPassword';
 
 describe('testing getLoginPassword functional', () => {

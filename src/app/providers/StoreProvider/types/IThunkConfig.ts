@@ -1,4 +1,4 @@
-import {IStateSchema, IThunkExtraArg} from 'app/providers/StoreProvider';
+import {IStateSchema, IThunkExtraArg} from '@/app/providers/StoreProvider';
 
 interface IThunkConfig<T> {
     state: IStateSchema,

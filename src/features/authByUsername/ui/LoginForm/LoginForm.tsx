@@ -1,22 +1,22 @@
 import React, {JSX, memo, useCallback} from 'react';
-import classNames from 'shared/lib/classNames/classNames';
+import classNames from '@/shared/lib/classNames/classNames';
 import cls from './LoginForm.module.scss';
 import {useTranslation} from 'react-i18next';
-import Button from 'shared/ui/Button';
-import {Input} from 'shared/ui/Input';
-import ThemeButton from 'shared/ui/Button/consts/ThemeButton';
+import Button from '@/shared/ui/Button';
+import {Input} from '@/shared/ui/Input';
+import ThemeButton from '@/shared/ui/Button/consts/ThemeButton';
 import {useSelector} from 'react-redux';
 import {loginActions, loginReducer} from '../../model/slice/loginSlice';
 import loginByUsername from '../../services/loginByUsername/loginByUsername';
-import ThemeText from 'shared/ui/Text/consts/ThemeText';
-import {Text} from 'shared/ui/Text';
+import ThemeText from '@/shared/ui/Text/consts/ThemeText';
+import {Text} from '@/shared/ui/Text';
 import ILoginFormProps from './types/ILoginFormProps';
 import getLoginUsername from '../../model/selectors/getLoginUsername/getLoginUsername';
 import getLoginPassword from '../../model/selectors/getLoginPassword/getLoginPassword';
 import getLoginError from '../../model/selectors/getLoginError/getLoginError';
 import getLoginIsLoading from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
-import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/DynamicModuleLoader';
-import useAppDispatch from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import {DynamicModuleLoader, ReducersList} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import useAppDispatch from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 const initialReducers: ReducersList = {
     loginForm: loginReducer,

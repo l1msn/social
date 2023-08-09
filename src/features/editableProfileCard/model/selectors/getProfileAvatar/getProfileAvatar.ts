@@ -1,4 +1,4 @@
-import {IStateSchema} from 'app/providers/StoreProvider';
+import {IStateSchema} from '@/app/providers/StoreProvider';
 
 const getProfileAvatar = (state: IStateSchema) => state?.profile?.data?.avatar || '';
 

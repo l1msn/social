@@ -1,10 +1,10 @@
 import React, {JSX, useCallback} from 'react';
-import classNames from 'shared/lib/classNames/classNames';
-import {Dropdown} from 'shared/ui/Popups';
-import {RoutePath} from 'shared/config/routeConfig/routeConfig';
-import Avatar from 'widgets/Avatar';
+import classNames from '@/shared/lib/classNames/classNames';
+import {Dropdown} from '@/shared/ui/Popups';
+import {RoutePath} from '@/shared/config/routeConfig/routeConfig';
+import Avatar from '@/widgets/Avatar';
 import {useDispatch, useSelector} from 'react-redux';
-import {getUserAuthData, isUserAdmin, isUserManager, userActions} from 'entities/User';
+import {getUserAuthData, isUserAdmin, isUserManager, userActions} from '@/entities/User';
 import {useTranslation} from 'react-i18next';
 
 interface IAvatarDropdownProps {

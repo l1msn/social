@@ -1,4 +1,4 @@
-import {IStateSchema} from 'app/providers/StoreProvider';
+import {IStateSchema} from '@/app/providers/StoreProvider';
 import getAddCommentFormText from './getAddCommentFormText';
 
 const mockError: string = 'text here!';

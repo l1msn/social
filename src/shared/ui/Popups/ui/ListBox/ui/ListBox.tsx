@@ -2,11 +2,11 @@ import {Fragment, JSX, memo} from 'react';
 import {Listbox as HListBox, Transition} from '@headlessui/react';
 import cls from './ListBox.module.scss';
 import popupCls from '../../../styles/popup.module.scss';
-import Button from 'shared/ui/Button';
-import classNames from 'shared/lib/classNames/classNames';
+import Button from '@/shared/ui/Button';
+import classNames from '@/shared/lib/classNames/classNames';
 import IListBoxItems from '../consts/IListBoxItems';
-import {HStack} from 'widgets/Stack';
-import {DropDownDirection} from 'shared/types/ui';
+import {HStack} from '@/widgets/Stack';
+import {DropDownDirection} from '@/shared/types/ui';
 import mapDirectionClass from '../../../styles/consts';
 
 interface IListBoxProps {

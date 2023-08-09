@@ -1,12 +1,12 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
-import {IThunkConfig} from 'app/providers/StoreProvider';
-import {ArticleType, IArticle} from 'entities/Article';
+import {IThunkConfig} from '@/app/providers/StoreProvider';
+import {ArticleType, IArticle} from '@/entities/Article';
 import getArticlePageLimit from '../../selectors/getArticlePageLimit/getArticlePageLimit';
 import getArticlePageOrder from '../../selectors/getArticlePageOrder/getArticlePageOrder';
 import getArticlePageSort from '../../selectors/getArticlePageSort/getArticlePageSort';
 import getArticlePageSearch from '../../selectors/getArticlePageSearch/getArticlePageSearch';
 import getArticlePageNumber from '../../selectors/getArticlePageNumber/getArticlePageNumber';
-import {addQueryParams} from 'shared/lib/url/addQueryParams/addQueryParams';
+import {addQueryParams} from '@/shared/lib/url/addQueryParams/addQueryParams';
 import getArticlePageType from '../../selectors/getArticlePageType/getArticlePageType';
 
 interface IFetchArticlesList {

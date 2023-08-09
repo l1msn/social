@@ -1,7 +1,7 @@
 import type {Meta, StoryObj} from '@storybook/react';
-import {Themes} from 'app/providers/ThemeProvider';
-import 'app/styles/index.scss';
-import themeDecorator from 'shared/config/storybook/themeDecorator/themeDecorator';
+import {Themes} from '@/app/providers/ThemeProvider';
+import '@/app/styles/index.scss';
+import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
 import Flex from './Flex';
 
 

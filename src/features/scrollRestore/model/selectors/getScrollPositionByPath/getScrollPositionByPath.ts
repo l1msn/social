@@ -1,4 +1,4 @@
-import {IStateSchema} from 'app/providers/StoreProvider';
+import {IStateSchema} from '@/app/providers/StoreProvider';
 import {createSelector} from '@reduxjs/toolkit';
 import getScrollPosition from '../getScrollPosition/getScrollPosition';
 

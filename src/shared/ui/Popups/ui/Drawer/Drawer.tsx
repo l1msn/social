@@ -1,20 +1,24 @@
-import React, {JSX} from 'react';
-import classNames from 'shared/lib/classNames/classNames';
+import React, {JSX, memo, useCallback, useEffect} from 'react';
+import classNames from '@/shared/lib/classNames/classNames';
 import cls from './Drawer.module.scss';
-import {useTheme} from 'app/providers/ThemeProvider';
-import Portal from 'widgets/Portal';
-import Overlay from 'widgets/Overlay';
-import useModal from 'shared/lib/hooks/useModal/useModal';
+import {useTheme} from '@/app/providers/ThemeProvider';
+import Portal from '@/widgets/Portal';
+import Overlay from '@/widgets/Overlay';
+import {AnimationProvider, useAnimationLibs} from '@/shared/lib/components/AnimationProvider/AnimationProvider';
+import Loader from '@/widgets/Loader';
 
 interface IDrawerProps {
     className?: string,
-    children: React.ReactNode,
+    children?: React.ReactNode,
     isOpen?: boolean,
     onClose?: () => void,
     lazy?: boolean;
 }
 
-const Drawer: React.FC<IDrawerProps> = (props: IDrawerProps): JSX.Element | null => {
+const height = window.innerHeight - 100;
+
+const DrawerContent: React.FC<IDrawerProps> = (props: IDrawerProps): JSX.Element | null => {
+    const {Spring, Gesture} = useAnimationLibs();
     const {className,
         children,
         isOpen,
@@ -22,28 +26,93 @@ const Drawer: React.FC<IDrawerProps> = (props: IDrawerProps): JSX.Element | null
         lazy,
     } = props;
 
-    const {onCloseHandler, isClosing, isMounted} = useModal({onClose, isOpen, animationDelay: 300});
+    const [{y}, api] = Spring.useSpring(() => ({y: height}));
 
-    const mods: Record<string, boolean | undefined> = {
-        [cls.opened]: isOpen,
-        [cls.isClosing]: isClosing,
-    };
+    const openDrawer = useCallback(() => {
+        api.start({y: 0, immediate: false});
+    }, [api]);
 
-    if (lazy && !isMounted) {
+    function close(velocity: number = 0) {
+        api.start({
+            y: height,
+            immediate: false,
+            config: {
+                ...Spring.config.stiff,
+                velocity,
+            },
+            onResolve: onClose,
+        });
+    }
+
+    const bind = Gesture.useDrag(
+        ({
+            last,
+            velocity: [, vy],
+            direction: [, dy],
+            movement: [, my],
+            cancel,
+        }) => {
+            if (my < -70) cancel();
+
+            if (last) {
+                if (my > height * 0.5 || (vy > 0.5 && dy > 0)) {
+                    close();
+                } else {
+                    openDrawer();
+                }
+            } else {
+                api.start({y: my, immediate: true});
+            }
+        }, {
+            from: () => [0, y.get()], filterTaps: true, bounds: {top: 0}, rubberband: true,
+        },
+    );
+
+    useEffect(() => {
+        if (isOpen) {
+            openDrawer();
+        }
+    }, [api, isOpen, openDrawer]);
+
+    if (!isOpen) {
         return null;
     }
 
     const {theme} = useTheme();
 
+    const display = y.to((py) => (py < height ? 'block' : 'none'));
+
     return (
         <Portal>
-            <div className={classNames(cls.drawer, mods, [className, theme, 'app_drawer'])}>
-                <Overlay onClick={onCloseHandler}/>
-                <div className={cls.content}>
+            <div className={classNames(cls.Drawer, {}, [className, theme, 'app_drawer'])}>
+                <Overlay onClick={close}/>
+                <Spring.a.div
+                    className={cls.sheet}
+                    style={{display, bottom: `calc(-100vh + ${height - 100}px)`, y}}
+                    {...bind()}
+                >
                     {children}
-                </div>
+                </Spring.a.div>
             </div>
         </Portal>
+    );
+};
+
+const DrawerAsync: React.FC<IDrawerProps> = (props: IDrawerProps): JSX.Element => {
+    const {isLoaded} = useAnimationLibs();
+
+    if (!isLoaded) {
+        return <Loader/>;
+    }
+
+    return <DrawerContent {...props}/>;
+};
+
+const Drawer: React.FC<IDrawerProps> = (props: IDrawerProps): JSX.Element => {
+    return (
+        <AnimationProvider>
+            <DrawerAsync {...props}/>
+        </AnimationProvider>
     );
 };
 

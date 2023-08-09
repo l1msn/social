@@ -1,6 +1,6 @@
 import React, {JSX} from 'react';
-import classNames from 'shared/lib/classNames/classNames';
-import Page from 'shared/ui/Page';
+import classNames from '@/shared/lib/classNames/classNames';
+import Page from '@/shared/ui/Page';
 
 interface IAdminPanelPageProps {
     className?: string

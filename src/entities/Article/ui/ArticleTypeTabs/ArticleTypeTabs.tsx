@@ -1,6 +1,6 @@
 import React, {JSX, useCallback, useMemo} from 'react';
-import classNames from 'shared/lib/classNames/classNames';
-import {ITabItem, Tabs} from 'widgets/Tabs';
+import classNames from '@/shared/lib/classNames/classNames';
+import {ITabItem, Tabs} from '@/widgets/Tabs';
 import {ArticleType} from '../../model/types/IArticle';
 import {useTranslation} from 'react-i18next';
 

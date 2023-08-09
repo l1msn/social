@@ -1,4 +1,4 @@
-import TestAsyncThunk from 'shared/lib/tests/testAsyncThunk/TestAsyncThunk';
+import TestAsyncThunk from '@/shared/lib/tests/testAsyncThunk/TestAsyncThunk';
 import initArticlesPage from './initArticlesPage';
 import fetchArticlesList from '../fetchArticlesList/fetchArticlesList';
 import {useSearchParams} from 'react-router-dom';

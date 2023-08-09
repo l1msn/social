@@ -1,7 +1,7 @@
 import type {Meta, StoryObj} from '@storybook/react';
 import Button from './Button';
 import ThemeButton from '../consts/ThemeButton';
-import 'app/styles/index.scss';
+import '@/app/styles/index.scss';
 import themeDecorator from '../../../config/storybook/themeDecorator/themeDecorator';
 import {Themes} from '../../../../app/providers/ThemeProvider';
 import SizeButton from '../consts/SizeButton';

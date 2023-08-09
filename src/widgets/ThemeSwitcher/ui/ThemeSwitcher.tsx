@@ -1,10 +1,10 @@
 import React, {JSX, memo} from 'react';
-import classNames from 'shared/lib/classNames/classNames';
+import classNames from '@/shared/lib/classNames/classNames';
 import cls from './ThemeSwitcher.module.scss';
-import {useTheme} from 'app/providers/ThemeProvider';
-import SwitchIcon from 'shared/assets/icons/theme-icon.svg';
-import ThemeButton from 'shared/ui/Button/consts/ThemeButton';
-import Button from 'shared/ui/Button';
+import {useTheme} from '@/app/providers/ThemeProvider';
+import SwitchIcon from '@/shared/assets/icons/theme-icon.svg';
+import ThemeButton from '@/shared/ui/Button/consts/ThemeButton';
+import Button from '@/shared/ui/Button';
 
 
 interface IThemeSwitcherProps {

@@ -1,4 +1,4 @@
-import {IStateSchema} from 'app/providers/StoreProvider';
+import {IStateSchema} from '@/app/providers/StoreProvider';
 
 const getArticleCommentsIsLoading = (state: IStateSchema) => state?.articleDetailsPage?.comments?.isLoading || false;
 

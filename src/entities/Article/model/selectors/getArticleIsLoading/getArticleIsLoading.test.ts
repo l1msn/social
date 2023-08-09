@@ -1,4 +1,4 @@
-import {IStateSchema} from 'app/providers/StoreProvider';
+import {IStateSchema} from '@/app/providers/StoreProvider';
 import getArticleIsLoading from './getArticleIsLoading';
 
 describe('testing getArticleIsLoading functional', () => {

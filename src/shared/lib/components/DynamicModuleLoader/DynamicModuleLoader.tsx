@@ -1,9 +1,9 @@
 import React, {JSX, useEffect} from 'react';
 import {useStore} from 'react-redux';
-import {IReduxStoreWithManager, IStateSchema} from 'app/providers/StoreProvider';
-import {StateSchemaKey} from 'app/providers/StoreProvider/config/reducerManager';
+import {IReduxStoreWithManager, IStateSchema} from '@/app/providers/StoreProvider';
+import {StateSchemaKey} from '@/app/providers/StoreProvider/config/reducerManager';
 import {Reducer} from '@reduxjs/toolkit';
-import useAppDispatch from '../hooks/useAppDispatch/useAppDispatch';
+import useAppDispatch from '../../hooks/useAppDispatch/useAppDispatch';
 
 type ReducersList = {
     [name in StateSchemaKey]?: Reducer

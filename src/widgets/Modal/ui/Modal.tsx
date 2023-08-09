@@ -1,10 +1,11 @@
 import React, {JSX} from 'react';
-import classNames from 'shared/lib/classNames/classNames';
+import classNames from '@/shared/lib/classNames/classNames';
 import cls from './Modal.module.scss';
-import Portal from 'widgets/Portal';
-import Overlay from 'widgets/Overlay';
-import useModal from 'shared/lib/hooks/useModal/useModal';
-import {useTheme} from 'app/providers/ThemeProvider';
+import Portal from '@/widgets/Portal';
+import Overlay from '@/widgets/Overlay';
+import useModal from '@/shared/lib/hooks/useModal/useModal';
+import {useTheme} from '@/app/providers/ThemeProvider';
+
 
 interface IModalProps {
     className?: string,
@@ -15,6 +16,7 @@ interface IModalProps {
 }
 
 const ANIMATION_DELAY: number = 300;
+
 
 const Modal: React.FC<IModalProps> = (props: IModalProps): JSX.Element | null => {
     const {className, children, isOpen, onClose, lazy} = props;

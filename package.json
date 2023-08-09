@@ -104,6 +104,7 @@
     "stylelint": "^15.9.0",
     "stylelint-config-standard-scss": "^9.0.0",
     "ts-loader": "^9.2.6",
+    "ts-morph": "^19.0.0",
     "ts-node": "^10.5.0",
     "typescript": "^4.9.5",
     "webpack": "^5.86.0",
@@ -112,7 +113,9 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
+    "@react-spring/web": "^9.7.3",
     "@reduxjs/toolkit": "^1.9.5",
+    "@use-gesture/react": "^10.2.27",
     "axios": "^1.4.0",
     "concurrently": "^8.2.0",
     "i18next": "^23.2.3",
@@ -123,8 +126,7 @@
     "react-dom": "^18.2.0",
     "react-i18next": "^13.0.1",
     "react-redux": "^7.2.6",
-    "react-router-dom": "^6.14.2",
-    "react-virtualized": "^9.22.5"
+    "react-router-dom": "^6.14.2"
   },
   "peerDependencies": {
     "react": "^18.2.0",
