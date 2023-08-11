@@ -1,9 +1,9 @@
 import type {Meta, StoryObj} from '@storybook/react';
 import '@/app/styles/index.scss';
 import LoginModal from './LoginModal';
-import ThemeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
+import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
 import {Themes} from '@/app/providers/ThemeProvider';
-import StoreDecorator from '../../../../shared/config/storybook/storeDecorator/storeDecorator';
+import storeDecorator from '../../../../shared/config/storybook/storeDecorator/storeDecorator';
 
 
 const meta = {
@@ -23,7 +23,7 @@ export const Light: Story = {
     args: {
         isOpen: true,
     },
-    decorators: [StoreDecorator({
+    decorators: [storeDecorator({
         loginForm: {username: '123', password: 'asd'},
     })],
 };
@@ -32,7 +32,7 @@ export const Dark: Story = {
     args: {
         isOpen: true,
     },
-    decorators: [ThemeDecorator(Themes.DARK), StoreDecorator({
+    decorators: [themeDecorator(Themes.DARK), storeDecorator({
         loginForm: {username: '123', password: 'asd'},
     })],
 };

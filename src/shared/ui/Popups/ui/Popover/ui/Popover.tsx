@@ -23,7 +23,7 @@ const Popover: React.FC<IPopoverProps> = (props: IPopoverProps): JSX.Element => 
 
     return (
         <PopoverHeadless className={classNames(cls.popover, {}, [className, popupCls.popup])}>
-            <PopoverHeadless.Button className={popupCls.trigger}>
+            <PopoverHeadless.Button as={'div'} className={popupCls.trigger}>
                 {trigger}
             </PopoverHeadless.Button>
             <Transition

@@ -3,7 +3,7 @@ import {Themes} from '@/app/providers/ThemeProvider';
 
 import themeDecorator from '../../../../shared/config/storybook/themeDecorator/themeDecorator';
 import ArticleDetailsComments from './ArticleDetailsComments';
-import StoreDecorator from '../../../../shared/config/storybook/storeDecorator/storeDecorator';
+import storeDecorator from '../../../../shared/config/storybook/storeDecorator/storeDecorator';
 import {ArticleType, ArticleBlockType, IArticle} from '@/entities/Article';
 
 
@@ -61,7 +61,7 @@ const article: IArticle = {
 export const Light: Story = {
     args: {
     },
-    decorators: [StoreDecorator({
+    decorators: [storeDecorator({
         article: {
             data: article,
         },
@@ -71,7 +71,7 @@ export const Light: Story = {
 export const Dark: Story = {
     args: {
     },
-    decorators: [themeDecorator(Themes.DARK), StoreDecorator({
+    decorators: [themeDecorator(Themes.DARK), storeDecorator({
         article: {
             data: article,
         },

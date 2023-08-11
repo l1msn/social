@@ -3,29 +3,31 @@
     cursor: pointer;
     color: var(--primary-color);
     padding: 6px;
+    border-radius: 10px;
 
     &:not(.disabled) {
         &:hover {
-            transform: scale(1.01);
+            transform: scale(1.05);
             opacity: 0.8;
             fill-opacity: 0.8;
             stroke-opacity: 0.8;
             animation: animate 0.3s linear;
-            border-radius: 10px;
         }
 
         @keyframes animate {
             0% {
                 opacity: 1;
-                border-radius: 0;
             }
 
             100% {
                 opacity: 0.8;
-                border-radius: 10px;
             }
         }
     }
+}
+
+.fullWidth {
+    width: 100%;
 }
 
 .clear {

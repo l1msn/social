@@ -1,4 +1,4 @@
-import React, {JSX, memo, useCallback, useMemo} from 'react';
+import React, {JSX, memo, useCallback} from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
 import {
     ArticleSortField,
@@ -6,7 +6,7 @@ import {
     ArticleTypeTabs,
     ArticleView,
     ArticleViewSelector,
-} from '@/entities/Article';
+    ArticleType} from '@/entities/Article';
 import {useSelector} from 'react-redux';
 import getArticlePageView from '../../model/selectors/getArticlePageView/getArticlePageView';
 import {articlePageActions} from '../../model/slice/articlePageSlice';
@@ -23,7 +23,6 @@ import fetchArticlesList from '../../model/services/fetchArticlesList/fetchArtic
 import useDebounce from '@/shared/lib/hooks/useDebounce/useDebounce';
 import Button from '@/shared/ui/Button';
 import ThemeButton from '@/shared/ui/Button/consts/ThemeButton';
-import {ArticleType} from '@/entities/Article/model/types/IArticle';
 import getArticlePageType from '../../model/selectors/getArticlePageType/getArticlePageType';
 
 

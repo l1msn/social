@@ -25,5 +25,5 @@ interface IBuildEnv {
 }
 
 export type {BuildMode};
-export {IBuildPaths, IBuildOptions, IBuildEnv};
+export type {IBuildPaths, IBuildOptions, IBuildEnv};
 

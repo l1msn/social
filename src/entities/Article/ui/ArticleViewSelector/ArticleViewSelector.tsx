@@ -32,14 +32,10 @@ const ArticleViewSelector: React.FC<IArticleViewSelectorProps> = memo(({classNam
         };
     }, [onViewClick]);
 
-    function toggleView() {
-        return;
-    }
-
     return (
         <div className={classNames(cls.articleViewSelector, {}, [className])}>
             {viewTypes.map((viewType) => (
-                <Button key={viewType.view} theme={ThemeButton.OUTLINE} onClick={onClick(viewType.view)}>
+                <Button key={viewType.view} theme={ThemeButton.CLEAR} onClick={onClick(viewType.view)}>
                     <Icon Svg={viewType.icon} className={classNames('', {[cls.notSelected]: viewType.view !== view})}/>
                 </Button>
             ))}

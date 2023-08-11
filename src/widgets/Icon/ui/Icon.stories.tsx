@@ -1,7 +1,7 @@
 import type {Meta, StoryObj} from '@storybook/react';
 import '@/app/styles/index.scss';
 import Icon from './Icon';
-import ThemeDecorator from '../../../shared/config/storybook/themeDecorator/themeDecorator';
+import themeDecorator from '../../../shared/config/storybook/themeDecorator/themeDecorator';
 import {Themes} from '../../../app/providers/ThemeProvider';
 import UserIcon from '../../../shared/assets/icons/date-icon.svg';
 
@@ -28,5 +28,5 @@ export const Dark: Story = {
     args: {
         Svg: UserIcon,
     },
-    decorators: [ThemeDecorator(Themes.DARK)],
+    decorators: [themeDecorator(Themes.DARK)],
 };

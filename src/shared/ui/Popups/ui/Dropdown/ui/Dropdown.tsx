@@ -7,7 +7,6 @@ import IDropdownItem from '../types/IDropdownItem';
 import {DropDownDirection} from '@/shared/types/ui';
 import AppLink from '@/shared/ui/AppLink';
 import mapDirectionClass from '../../../styles/consts';
-
 interface IDropdownProps {
     className?: string,
     items: IDropdownItem[],
@@ -34,7 +33,7 @@ const Dropdown: React.FC<IDropdownProps> = (props: IDropdownProps): JSX.Element 
                 leaveTo="transform scale-95 opacity-0"
             >
                 <Menu.Items className={classNames(cls.menu, {}, [mapDirectionClass[direction]])}>
-                    {items.map((item) => {
+                    {items.map((item, index) => {
                         const content = ({active}: {active: boolean}) => (
                             <button
                                 type={'button'}
@@ -51,7 +50,7 @@ const Dropdown: React.FC<IDropdownProps> = (props: IDropdownProps): JSX.Element 
                                     disabled={item.disabled}
                                     as={AppLink}
                                     to={item.href}
-                                    key={item.href}
+                                    key={'dropdown-key' + index}
                                 >
                                     {content}
                                 </Menu.Item>
@@ -59,7 +58,7 @@ const Dropdown: React.FC<IDropdownProps> = (props: IDropdownProps): JSX.Element 
                         }
 
                         return (
-                            <Menu.Item key={item.content as string} disabled={item.disabled} as={Fragment}>
+                            <Menu.Item key={'dropdown-key' + index} disabled={item.disabled} as={Fragment}>
                                 {content}
                             </Menu.Item>
                         );

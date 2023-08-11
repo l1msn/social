@@ -1,5 +1,4 @@
-import {IStateSchema} from '@/app/providers/StoreProvider';
-import {addQueryParams, getQueryParams} from './addQueryParams';
+import {getQueryParams} from './addQueryParams';
 
 describe('testing addQueryParams functional', () => {
     test('return one param', () => {

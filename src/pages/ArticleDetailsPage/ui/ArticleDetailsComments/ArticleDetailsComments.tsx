@@ -15,6 +15,8 @@ import fetchCommentsByArticleId
 import Loader from '@/widgets/Loader';
 import classNames from '@/shared/lib/classNames/classNames';
 import {VStack} from '@/widgets/Stack';
+import {getArticleIsLoading} from '@/entities/Article';
+import Skeleton from '@/widgets/Skeleton';
 
 interface IArticleDetailsCommentsProps {
     className?: string
@@ -28,6 +30,8 @@ const ArticleDetailsComments: React.FC<IArticleDetailsCommentsProps> = ({classNa
 
     const dispatch = useAppDispatch();
 
+    const isLoading = useSelector(getArticleIsLoading);
+
     const isLoadingComments = useSelector(getArticleCommentsIsLoading);
 
     useInitialEffect(() => {
@@ -37,6 +41,10 @@ const ArticleDetailsComments: React.FC<IArticleDetailsCommentsProps> = ({classNa
     const onSendComment = useCallback((text: string) => {
         dispatch(addCommentForArticle(text));
     }, [dispatch]);
+
+    if (isLoading) {
+        return <Skeleton width={'100%'} height={'120px'}/>;
+    }
 
     return (
         <VStack gap={'8'} max className={classNames('', {}, [className])}>

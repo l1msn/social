@@ -10,14 +10,30 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     square?: boolean;
     size?: SizeButton;
     disabled?: boolean,
-    children?: React.ReactNode;
+    children?: React.ReactNode,
+    fullWidth?: boolean,
 }
 
 const Button: React.FC<IButtonProps> = memo((props: IButtonProps): JSX.Element => {
-    const {className, disabled, size = SizeButton.L, children, square, theme = ThemeButton.WITHLINE, ...otherProps} = props;
+    const {className,
+        disabled,
+        size = SizeButton.L,
+        children,
+        square,
+        fullWidth,
+        theme = ThemeButton.WITHLINE,
+        ...otherProps
+    } = props;
 
     return (
-        <button disabled={disabled} {...otherProps} className={classNames(cls.Button, {[cls.square]: square, [cls.disabled]: disabled}, [className, cls[theme], cls[size]])}>
+        <button disabled={disabled} {...otherProps} className={
+            classNames(cls.Button,
+                {
+                    [cls.square]: square,
+                    [cls.disabled]: disabled,
+                    [cls.fullWidth]: fullWidth,
+                },
+                [className, cls[theme], cls[size]])}>
             {children}
         </button>
     );

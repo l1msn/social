@@ -2,7 +2,7 @@ import type {Meta, StoryObj} from '@storybook/react';
 import {Themes} from '@/app/providers/ThemeProvider';
 import '@/app/styles/index.scss';
 import ArticleText from './ArticleText';
-import StoreDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
+import storeDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
 import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
 import {ArticleBlockType} from '../../model/types/IArticle';
 
@@ -27,7 +27,7 @@ export const Light: Story = {
             paragraphs: ['paragraphs 1', 'paragraphs 2'],
         },
     },
-    decorators: [StoreDecorator({})],
+    decorators: [storeDecorator({})],
 };
 
 export const Dark: Story = {
@@ -39,7 +39,7 @@ export const Dark: Story = {
             paragraphs: ['paragraphs 1', 'paragraphs 2'],
         },
     },
-    decorators: [themeDecorator(Themes.DARK), StoreDecorator({})],
+    decorators: [themeDecorator(Themes.DARK), storeDecorator({})],
 };
 
 

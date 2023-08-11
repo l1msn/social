@@ -1,5 +1,5 @@
 import {Meta, StoryObj} from '@storybook/react';
-import StoreDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
+import storeDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
 import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
 import {Themes} from '@/app/providers/ThemeProvider';
 import ArticleRecommendationsList from './ArticleRecommendationsList';
@@ -70,11 +70,11 @@ type Story = StoryObj<typeof meta>;
 export const Light: Story = {
     args: {
     },
-    decorators: [StoreDecorator({})],
+    decorators: [storeDecorator({})],
 };
 
 export const Dark: Story = {
     args: {
     },
-    decorators: [themeDecorator(Themes.DARK), StoreDecorator({})],
+    decorators: [themeDecorator(Themes.DARK), storeDecorator({})],
 };

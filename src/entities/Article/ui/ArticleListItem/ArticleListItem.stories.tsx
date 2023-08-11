@@ -2,7 +2,7 @@ import type {Meta, StoryObj} from '@storybook/react';
 import {Themes} from '@/app/providers/ThemeProvider';
 import '@/app/styles/index.scss';
 import ArticleListItem from './ArticleListItem';
-import StoreDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
+import storeDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
 import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
 import {ArticleBlockType, ArticleType, IArticle} from '../../model/types/IArticle';
 import ArticleView from '../../model/types/ArticleView';
@@ -49,7 +49,7 @@ export const LightList: Story = {
         article: mockData,
         view: ArticleView.LIST,
     },
-    decorators: [StoreDecorator({})],
+    decorators: [storeDecorator({})],
 };
 
 export const DarkList: Story = {
@@ -57,7 +57,7 @@ export const DarkList: Story = {
         article: mockData,
         view: ArticleView.LIST,
     },
-    decorators: [themeDecorator(Themes.DARK), StoreDecorator({})],
+    decorators: [themeDecorator(Themes.DARK), storeDecorator({})],
 };
 
 export const LightShelf: Story = {
@@ -65,7 +65,7 @@ export const LightShelf: Story = {
         article: mockData,
         view: ArticleView.SHELF,
     },
-    decorators: [StoreDecorator({})],
+    decorators: [storeDecorator({})],
 };
 
 export const DarkShelf: Story = {
@@ -73,5 +73,5 @@ export const DarkShelf: Story = {
         article: mockData,
         view: ArticleView.SHELF,
     },
-    decorators: [themeDecorator(Themes.DARK), StoreDecorator({})],
+    decorators: [themeDecorator(Themes.DARK), storeDecorator({})],
 };

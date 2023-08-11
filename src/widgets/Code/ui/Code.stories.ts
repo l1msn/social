@@ -1,7 +1,7 @@
 import type {Meta, StoryObj} from '@storybook/react';
 import '@/app/styles/index.scss';
 import Code from './Code';
-import ThemeDecorator from '../../../shared/config/storybook/themeDecorator/themeDecorator';
+import themeDecorator from '../../../shared/config/storybook/themeDecorator/themeDecorator';
 import {Themes} from '../../../app/providers/ThemeProvider';
 
 const meta = {
@@ -22,7 +22,7 @@ export const Light: Story = {
             '    args: {\n' +
             '        children: \'console.log(123)\',\n' +
             '    },\n' +
-            '    decorators: [ThemeDecorator(Themes.DARK)],\n' +
+            '    decorators: [themeDecorator(Themes.DARK)],\n' +
             '};',
     },
 };
@@ -34,8 +34,8 @@ export const Dark: Story = {
             '    args: {\n' +
             '        children: \'console.log(123)\',\n' +
             '    },\n' +
-            '    decorators: [ThemeDecorator(Themes.DARK)],\n' +
+            '    decorators: [themeDecorator(Themes.DARK)],\n' +
             '};',
     },
-    decorators: [ThemeDecorator(Themes.DARK)],
+    decorators: [themeDecorator(Themes.DARK)],
 };

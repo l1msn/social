@@ -1,7 +1,7 @@
 import type {Meta, StoryObj} from '@storybook/react';
 import '@/app/styles/index.scss';
 import Card from './Card';
-import ThemeDecorator from '../../../shared/config/storybook/themeDecorator/themeDecorator';
+import themeDecorator from '../../../shared/config/storybook/themeDecorator/themeDecorator';
 import {Themes} from '../../../app/providers/ThemeProvider';
 import {Text} from '@/shared/ui/Text';
 
@@ -28,5 +28,5 @@ export const Dark: Story = {
     args: {
         children: <Text title={'Title'} text={'text'} />,
     },
-    decorators: [ThemeDecorator(Themes.DARK)],
+    decorators: [themeDecorator(Themes.DARK)],
 };

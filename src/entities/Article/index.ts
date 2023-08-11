@@ -1,6 +1,7 @@
 import getArticleData from './model/selectors/getArticleData/getArticleData';
 import getArticleError from './model/selectors/getArticleError/getArticleError';
 import getArticleIsLoading from './model/selectors/getArticleIsLoading/getArticleIsLoading';
+import {articleReducer} from './model/slice/articleSlice';
 import ArticleView from './model/types/ArticleView';
 import {ArticleBlockType, ArticleSortField, ArticleType, IArticle} from './model/types/IArticle';
 import IArticleSchema from './model/types/IArticleSchema';
@@ -16,6 +17,7 @@ export {ArticleDetails, ArticleBlockType,
     ArticleViewSelector, ArticleList,
     ArticleSortField, ArticleSortSelector,
     ArticleType, ArticleTypeTabs,
+    articleReducer,
 };
 
 export type {IArticleSchema, IArticle};

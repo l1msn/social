@@ -4,8 +4,6 @@ import cls from './ArticleList.module.scss';
 import ArticleView from '../../model/types/ArticleView';
 import ArticleListItem from '../ArticleListItem/ArticleListItem';
 import ArticleListItemSkeleton from '../ArticleListItem/ArticleListItemSkeleton';
-import {List, ListRowProps, WindowScroller} from 'react-virtualized';
-import PAGE_ID from '@/shared/consts/ids';
 import {IArticle} from '../../model/types/IArticle';
 import Loader from '@/widgets/Loader';
 
@@ -14,7 +12,7 @@ interface IArticleListProps {
     articles: IArticle[];
     isLoading?: boolean,
     view?: ArticleView,
-    target?: HTMLAttributeAnchorTarget,
+    target?: HTMLAttributeAnchorTarget;
 }
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SHELF ? 9 : 3)
@@ -25,17 +23,12 @@ const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SHELF
 
 const ArticleList: React.FC<IArticleListProps> = memo((props: IArticleListProps): JSX.Element => {
     const {className,
-        target,
         articles,
         view = ArticleView.LIST,
         isLoading,
+        target,
     } = props;
 
-    if (isLoading) {
-        return (
-            <Loader/>
-        );
-    }
 
     return (
         <div
@@ -46,9 +39,9 @@ const ArticleList: React.FC<IArticleListProps> = memo((props: IArticleListProps)
                     <ArticleListItem
                         article={item}
                         view={view}
-                        target={target}
                         key={item.id}
                         className={cls.card}
+                        target={target}
                     />,
                 )
             }

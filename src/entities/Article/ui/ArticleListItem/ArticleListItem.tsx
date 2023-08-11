@@ -12,8 +12,8 @@ import Button from '@/shared/ui/Button';
 import ThemeButton from '@/shared/ui/Button/consts/ThemeButton';
 import {useTranslation} from 'react-i18next';
 import ArticleText from '../ArticleText/ArticleText';
-import {RoutePath} from '@/shared/config/routeConfig/routeConfig';
 import AppLink from '@/shared/ui/AppLink';
+import {RoutePath} from '@/shared/consts/routerPaths';
 
 interface IArticleListItemProps {
     className?: string

@@ -1,7 +1,7 @@
 import type {Meta, StoryObj} from '@storybook/react';
 import '@/app/styles/index.scss';
 import ListBox from './ListBox';
-import ThemeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
+import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
 import {Themes} from '@/app/providers/ThemeProvider';
 
 
@@ -43,7 +43,7 @@ export const Dark: Story = {
             {value: '3', content: 'content 3'},
         ],
     },
-    decorators: [ThemeDecorator(Themes.DARK)],
+    decorators: [themeDecorator(Themes.DARK)],
 };
 
 export const DarkTopLeft: Story = {
@@ -58,7 +58,7 @@ export const DarkTopLeft: Story = {
             {value: '3', content: 'content 3'},
         ],
     },
-    decorators: [ThemeDecorator(Themes.DARK)],
+    decorators: [themeDecorator(Themes.DARK)],
 };
 
 export const DarkTopRight: Story = {
@@ -73,7 +73,7 @@ export const DarkTopRight: Story = {
             {value: '3', content: 'content 3'},
         ],
     },
-    decorators: [ThemeDecorator(Themes.DARK)],
+    decorators: [themeDecorator(Themes.DARK)],
 };
 
 export const DarkBottomLeft: Story = {
@@ -88,7 +88,7 @@ export const DarkBottomLeft: Story = {
             {value: '3', content: 'content 3'},
         ],
     },
-    decorators: [ThemeDecorator(Themes.DARK)],
+    decorators: [themeDecorator(Themes.DARK)],
 };
 
 export const DarkBottomRight: Story = {
@@ -103,5 +103,5 @@ export const DarkBottomRight: Story = {
             {value: '3', content: 'content 3'},
         ],
     },
-    decorators: [ThemeDecorator(Themes.DARK)],
+    decorators: [themeDecorator(Themes.DARK)],
 };

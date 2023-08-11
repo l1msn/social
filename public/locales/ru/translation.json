@@ -3,5 +3,9 @@
   "Unknown error!": "Неизвестная ошибка!",
   "Reload page": "Перезапустить страницу",
   "Invalid username or password": "Неверный пароль или имя пользователя",
-  "No access": "Нет доступа"
+  "No access": "Нет доступа",
+  "Your review": "Ваш отзыв",
+  "Thanks for review": "Спасибо за отзыв",
+  "Close": "Закрыть",
+  "Send": "Отправить"
 }

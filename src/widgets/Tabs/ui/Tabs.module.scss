@@ -1,4 +1,41 @@
 .tabs {
     display: flex;
-    gap: 8px
+    gap: 8px;
+    cursor: pointer;
+}
+
+.tab {
+    transition: 0.2s;
+
+    &:hover {
+        transform: scale(1.05);
+        animation: animate 0.3s;
+        border: 1px solid var(--inverted-primary-color);
+    }
+
+    @keyframes animate {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1.5;
+        }
+    }
+}
+
+.selected {
+    border: 1px solid var(--primary-color);
+
+    @keyframes animateSelect {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    animation: animateSelect 0.5s linear;
 }

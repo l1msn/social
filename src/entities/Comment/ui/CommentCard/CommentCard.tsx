@@ -6,8 +6,8 @@ import Avatar from '@/widgets/Avatar';
 import {Text} from '@/shared/ui/Text';
 import Skeleton from '@/widgets/Skeleton';
 import AppLink from '@/shared/ui/AppLink';
-import {RoutePath} from '@/shared/config/routeConfig/routeConfig';
 import {VStack} from '@/widgets/Stack';
+import {RoutePath} from '@/shared/consts/routerPaths';
 
 interface ICommentCardProps {
     className?: string;

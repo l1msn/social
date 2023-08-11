@@ -1,4 +1,4 @@
-import React, {JSX, memo, useCallback, useEffect} from 'react';
+import React, {JSX, useCallback, useEffect} from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
 import cls from './Drawer.module.scss';
 import {useTheme} from '@/app/providers/ThemeProvider';

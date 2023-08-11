@@ -2,8 +2,8 @@ import axios from 'axios';
 import TestAsyncThunk from '@/shared/lib/tests/testAsyncThunk/TestAsyncThunk';
 import {Country} from '@/entities/Country';
 import updateProfileData from './updateProfileData';
-import {IProfile} from '../../../../../entities/Profile/model/types/IProfile';
-import {ValidateProfileError} from '@/features/editableProfileCard/model/types/editableProfileCardSchema';
+import {ValidateProfileError} from '@/features/editableProfileCard';
+import {IProfile} from '@/entities/Profile';
 
 
 jest.mock('axios');

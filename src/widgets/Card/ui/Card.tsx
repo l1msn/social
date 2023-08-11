@@ -5,14 +5,20 @@ import cls from './Card.module.scss';
 
 interface ICardProps extends HTMLAttributes<HTMLDivElement>{
     className?: string,
-    children?: React.ReactNode;
-    theme?: CardTheme;
+    children?: React.ReactNode,
+    theme?: CardTheme,
+    max?: boolean;
 }
 
 const Card: React.FC<ICardProps> = memo((props: ICardProps): JSX.Element => {
-    const {className, children, theme = CardTheme.NORMAL, ...otherProps} = props;
+    const {className,
+        children,
+        max,
+        theme = CardTheme.NORMAL,
+        ...otherProps
+    } = props;
     return (
-        <div {...otherProps} className={classNames(cls.card, {}, [className, cls[theme]])}>
+        <div {...otherProps} className={classNames(cls.card, {[cls.max]: max}, [className, cls[theme]])}>
             {children}
         </div>
     );

@@ -10,7 +10,6 @@ import {loginActions, loginReducer} from '../../model/slice/loginSlice';
 import loginByUsername from '../../services/loginByUsername/loginByUsername';
 import ThemeText from '@/shared/ui/Text/consts/ThemeText';
 import {Text} from '@/shared/ui/Text';
-import ILoginFormProps from './types/ILoginFormProps';
 import getLoginUsername from '../../model/selectors/getLoginUsername/getLoginUsername';
 import getLoginPassword from '../../model/selectors/getLoginPassword/getLoginPassword';
 import getLoginError from '../../model/selectors/getLoginError/getLoginError';
@@ -21,6 +20,11 @@ import useAppDispatch from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 const initialReducers: ReducersList = {
     loginForm: loginReducer,
 };
+
+interface ILoginFormProps {
+    className?: string,
+    onSuccess: () => void;
+}
 
 
 const LoginForm: React.FC<ILoginFormProps> = memo(({className, onSuccess}: ILoginFormProps): JSX.Element => {

@@ -5,18 +5,14 @@ import {useTranslation} from 'react-i18next';
 import Button from '@/shared/ui/Button';
 import ThemeButton from '@/shared/ui/Button/consts/ThemeButton';
 import {LoginModal} from '@/features/authByUsername';
-import {useDispatch, useSelector} from 'react-redux';
-import {getUserAuthData, isUserAdmin, isUserManager, userActions} from '@/entities/User';
+import {useSelector} from 'react-redux';
+import {getUserAuthData} from '@/entities/User';
 import {Text, ThemeText} from '@/shared/ui/Text';
 import AppLink from '@/shared/ui/AppLink';
-import {RoutePath} from '@/shared/config/routeConfig/routeConfig';
-import AppLinkThemes from '@/shared/ui/AppLink/consts/AppLinkThemes';
-import Avatar from '@/widgets/Avatar';
 import {HStack} from '@/widgets/Stack';
-import {Drawer, Dropdown} from '@/shared/ui/Popups';
 import {NotificationButton} from '@/features/notificationButton';
 import {AvatarDropdown} from '@/features/avatarDropdown';
-import {NotificationList} from '@/entities/Notification';
+import {RoutePath} from '@/shared/consts/routerPaths';
 
 interface INavbarProps {
     className?: string
@@ -39,9 +35,9 @@ const Navbar: React.FC<INavbarProps> = memo(({className}: INavbarProps): JSX.Ele
                 <AppLink to={RoutePath.main}>
                     <Text theme={ThemeText.INVERTED} title={'Social'} className={cls.appName}/>
                 </AppLink>
-                <AppLink theme={AppLinkThemes.SECONDARY} to={RoutePath.articles_create}>
-                    {t('Create new article')}
-                </AppLink>
+                {/* <AppLink theme={AppLinkThemes.SECONDARY} to={RoutePath.articles_create}>*/}
+                {/*    {t('Create new article')}*/}
+                {/* </AppLink>*/}
                 <HStack gap={'16'} className={cls.actions}>
                     <NotificationButton />
                     <AvatarDropdown />

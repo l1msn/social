@@ -1,4 +1,4 @@
-import React, {JSX, useCallback} from 'react';
+import React, {JSX, memo, useCallback} from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
 import {Input} from '@/shared/ui/Input';
 import cls from './AddCommentForm.module.scss';
@@ -21,7 +21,7 @@ const reducers: ReducersList = {
     addCommentForm: addCommentFormReducer,
 };
 
-const AddCommentForm: React.FC<IAddCommentFormProps> = ({className, onSendComment}: IAddCommentFormProps): JSX.Element => {
+const AddCommentForm: React.FC<IAddCommentFormProps> = memo(({className, onSendComment}: IAddCommentFormProps): JSX.Element => {
     const {t} = useTranslation('comment');
 
     const text = useSelector(getAddCommentFormText);
@@ -45,7 +45,7 @@ const AddCommentForm: React.FC<IAddCommentFormProps> = ({className, onSendCommen
             </HStack>
         </DynamicModuleLoader>
     );
-};
+});
 
 export default AddCommentForm;
 

@@ -1,8 +1,3 @@
-.icon path {
-    stroke: var(--inverted-primary-color);
-    fill: var(--primary-color)
-}
-
 .notificationList {
     padding: 0 3px;
     min-height: 150px;
@@ -23,6 +18,14 @@
 
     transition: 0.5s transform;
     animation: animate 0.5s linear;
+}
+
+.icon  {
+    fill: none;
+}
+
+.icon path {
+    stroke: var(--inverted-primary-color);
 }
 
 

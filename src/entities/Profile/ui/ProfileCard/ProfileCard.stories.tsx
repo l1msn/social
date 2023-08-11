@@ -1,6 +1,6 @@
 import type {Meta, StoryObj} from '@storybook/react';
 
-import ThemeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
+import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
 import {Themes} from '@/app/providers/ThemeProvider';
 import ProfileCard from './ProfileCard';
 
@@ -42,5 +42,5 @@ export const Dark: Story = {
             'avatar': 'https://i.imgur.com/IyES7O4.png',
         },
     },
-    decorators: [ThemeDecorator(Themes.DARK)],
+    decorators: [themeDecorator(Themes.DARK)],
 };

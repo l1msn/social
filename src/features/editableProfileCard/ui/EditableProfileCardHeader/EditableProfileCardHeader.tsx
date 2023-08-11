@@ -13,6 +13,7 @@ import {profileActions} from '../../model/slice/profileSlice';
 import updateProfileData from '../../model/services/updateProfileData/updateProfileData';
 import useAppDispatch from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
+
 interface IEditableProfileCardHeaderProps {
     className?: string
 }

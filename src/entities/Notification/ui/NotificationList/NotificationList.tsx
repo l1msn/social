@@ -1,6 +1,6 @@
 import React, {JSX} from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
-import useNotifications from '@/entities/Notification/api/notificationApi';
+import {useNotifications} from '@/entities/Notification';
 import {VStack} from '@/widgets/Stack';
 import INotification from '../../model/types/INotification';
 import NotificationItem from '../../ui/NotificationItem/NotificationItem';

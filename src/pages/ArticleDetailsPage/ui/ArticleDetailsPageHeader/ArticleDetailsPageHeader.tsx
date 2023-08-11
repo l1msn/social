@@ -1,6 +1,5 @@
 import React, {JSX, useCallback} from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
-import {RoutePath} from '@/shared/config/routeConfig/routeConfig';
 import ThemeButton from '@/shared/ui/Button/consts/ThemeButton';
 import Button from '@/shared/ui/Button';
 import {useTranslation} from 'react-i18next';
@@ -9,6 +8,7 @@ import {useSelector} from 'react-redux';
 import {getArticleData} from '@/entities/Article';
 import getCanEditArticle from '../../model/selectors/getCanEditArticle/getCanEditArticle';
 import {HStack} from '@/widgets/Stack';
+import {RoutePath} from '@/shared/consts/routerPaths';
 
 interface IArticleDetailsPageHeaderProps {
     className?: string

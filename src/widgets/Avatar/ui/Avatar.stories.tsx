@@ -1,7 +1,7 @@
 import type {Meta, StoryObj} from '@storybook/react';
 import '@/app/styles/index.scss';
 import Avatar from './Avatar';
-import ThemeDecorator from '../../../shared/config/storybook/themeDecorator/themeDecorator';
+import themeDecorator from '../../../shared/config/storybook/themeDecorator/themeDecorator';
 import {Themes} from '../../../app/providers/ThemeProvider';
 
 const meta = {
@@ -38,5 +38,5 @@ export const Dark: Story = {
         size: 150,
         src: 'https://i.imgur.com/IyES7O4.png',
     },
-    decorators: [ThemeDecorator(Themes.DARK)],
+    decorators: [themeDecorator(Themes.DARK)],
 };
