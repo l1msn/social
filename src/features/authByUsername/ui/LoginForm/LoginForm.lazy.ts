@@ -1,7 +1,6 @@
 import React from 'react';
-import ILoginFormProps from './types/ILoginFormProps';
 
-const LoginFormLazy = React.lazy<React.FC<ILoginFormProps>>(
+const LoginFormLazy = React.lazy(
     () => import('./LoginForm'));
 
 export default LoginFormLazy;
