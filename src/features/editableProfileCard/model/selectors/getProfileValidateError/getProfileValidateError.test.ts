@@ -1,6 +1,6 @@
 import {IStateSchema} from '@/app/providers/StoreProvider';
 import getProfileValidateError from './getProfileValidateError';
-import {ValidateProfileError} from '@/features/editableProfileCard';
+import {ValidateProfileError} from '@/features/editableProfileCard/testing';
 
 const mockValidateErrors: ValidateProfileError[] = [
     ValidateProfileError.INCORRECT_AGE,

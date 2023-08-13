@@ -2,11 +2,11 @@ import React, {JSX, memo} from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
 import cls from './CommentCard.module.scss';
 import IComment from '../../model/types/IComment';
-import Avatar from '@/widgets/Avatar';
+import Avatar from '@/shared/ui/Avatar';
 import {Text} from '@/shared/ui/Text';
-import Skeleton from '@/widgets/Skeleton';
+import Skeleton from '@/shared/ui/Skeleton';
 import AppLink from '@/shared/ui/AppLink';
-import {VStack} from '@/widgets/Stack';
+import {VStack} from '@/shared/ui/Stack';
 import {RoutePath} from '@/shared/consts/routerPaths';
 
 interface ICommentCardProps {

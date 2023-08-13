@@ -12,11 +12,11 @@ import {useTranslation} from 'react-i18next';
 import useInitialEffect from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import fetchCommentsByArticleId
     from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import Loader from '@/widgets/Loader';
+import Loader from '@/shared/ui/Loader';
 import classNames from '@/shared/lib/classNames/classNames';
-import {VStack} from '@/widgets/Stack';
+import {VStack} from '@/shared/ui/Stack';
 import {getArticleIsLoading} from '@/entities/Article';
-import Skeleton from '@/widgets/Skeleton';
+import Skeleton from '@/shared/ui/Skeleton';
 
 interface IArticleDetailsCommentsProps {
     className?: string

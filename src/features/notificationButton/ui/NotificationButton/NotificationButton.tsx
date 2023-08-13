@@ -3,7 +3,7 @@ import classNames from '@/shared/lib/classNames/classNames';
 import cls from './NotificationButton.module.scss';
 import Button from '@/shared/ui/Button';
 import ThemeButton from '@/shared/ui/Button/consts/ThemeButton';
-import Icon from '@/widgets/Icon';
+import Icon from '@/shared/ui/Icon';
 import NotificationIcon from '@/shared/assets/icons/notification-icon.svg';
 import {NotificationList} from '@/entities/Notification';
 import {Drawer, Popover} from '@/shared/ui/Popups';

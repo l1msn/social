@@ -1,5 +1,4 @@
-import useTheme from './lib/useTheme';
 import ThemeProvider from './ui/ThemeProvider';
-import Themes from './consts/Themes';
+import Themes from '@/shared/consts/theme';
 
-export {ThemeProvider, useTheme, Themes};
+export {ThemeProvider, Themes};

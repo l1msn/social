@@ -1,8 +1,7 @@
-
 import {Country} from '@/entities/Country';
 import {profileActions, profileReducer} from './profileSlice';
 import updateProfileData from '../services/updateProfileData/updateProfileData';
-import {IProfileSchema, ValidateProfileError} from '@/features/editableProfileCard';
+import {IProfileSchema, ValidateProfileError} from '@/features/editableProfileCard/testing';
 import {IProfile} from '@/entities/Profile';
 
 const mockData: IProfile = {

@@ -7,17 +7,17 @@ import {useSelector} from 'react-redux';
 import getArticleCommentsError
     from '../../model/selectors/getArticleCommentsError/getArticleCommentsError';
 import PageError from '@/widgets/PageError';
-import Page from '@/shared/ui/Page';
+import Page from '@/widgets/Page';
 import getArticleDetailsRecommendationsError
     from '../../model/selectors/getArticleDetailsRecommendationsError/getArticleDetailsRecommendationsError';
 import articleDetailsPageReducer from '../../model/slice/index';
 import ArticleDetailsPageHeader from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import {ArticleDetails} from '@/entities/Article';
-import {VStack} from '@/widgets/Stack';
+import {VStack} from '@/shared/ui/Stack';
 import {ArticleRecommendationsList} from '@/features/articleRecommendationsList';
-import {ArticleDetailsComments} from '@/pages/ArticleDetailsPage';
 import {ArticleRating} from '@/features/articleRating';
-import Loader from '@/widgets/Loader';
+import Loader from '@/shared/ui/Loader';
+import ArticleDetailsComments from '../ArticleDetailsComments/ArticleDetailsComments';
 
 interface IArticleDetailsPageProps {
     className?: string

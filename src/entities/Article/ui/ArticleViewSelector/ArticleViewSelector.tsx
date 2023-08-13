@@ -5,7 +5,7 @@ import ArticleView from '../../model/types/ArticleView';
 import ShelfViewIcon from '@/shared/assets/icons/shelf-view-icon.svg';
 import ListViewIcon from '@/shared/assets/icons/list-view-icon.svg';
 import Button from '@/shared/ui/Button';
-import Icon from '@/widgets/Icon';
+import Icon from '@/shared/ui/Icon';
 import ThemeButton from '@/shared/ui/Button/consts/ThemeButton';
 
 interface IArticleViewSelectorProps {

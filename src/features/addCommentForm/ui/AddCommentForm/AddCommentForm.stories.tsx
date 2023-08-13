@@ -1,10 +1,10 @@
 import type {Meta, StoryObj} from '@storybook/react';
 
 import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
-import {Themes} from '@/app/providers/ThemeProvider';
 import AddCommentForm from './AddCommentForm';
 import {action} from '@storybook/addon-actions';
 import storeDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
+import Themes from '@/shared/consts/theme';
 
 
 const meta = {

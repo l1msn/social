@@ -1,5 +1,4 @@
 import {MutableRefObject, useCallback, useEffect, useRef, useState} from 'react';
-import {clsModal} from '@/widgets/Modal';
 
 interface IUseModalProps {
     onClose?: () => void;
@@ -12,11 +11,6 @@ function useModal(props: IUseModalProps) {
     const [isMounted, setIsMounted] = useState<boolean>(false);
     const [isClosing, setIsClosing] = useState<boolean>(false);
     const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
-
-    const mods: Record<string, boolean | undefined> = {
-        [clsModal.opened]: isOpen,
-        [clsModal.isClosing]: isClosing,
-    };
 
     const onCloseHandler =
         useCallback(() => {

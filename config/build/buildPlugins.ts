@@ -41,7 +41,7 @@ export function buildPlugins({paths, isDev, apiUrl, project}: IBuildOptions): we
         // new CircularDependencyPlugin({
         //     exclude: /node_modules/,
         //     failOnError: false,
-        // }),
+        // };
         ];
 
     if (isDev) {

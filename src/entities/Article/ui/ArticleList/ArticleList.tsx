@@ -5,7 +5,6 @@ import ArticleView from '../../model/types/ArticleView';
 import ArticleListItem from '../ArticleListItem/ArticleListItem';
 import ArticleListItemSkeleton from '../ArticleListItem/ArticleListItemSkeleton';
 import {IArticle} from '../../model/types/IArticle';
-import Loader from '@/widgets/Loader';
 
 interface IArticleListProps {
     className?: string,

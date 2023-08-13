@@ -1,5 +1,5 @@
 import rtkApi from '@/shared/api/rtkApi';
-import {IArticleRating} from '@/features/articleRating';
+import IArticleRating from '../model/types/IArticleRating';
 
 interface IGetArticleRatingProps {
     userId: string | number,

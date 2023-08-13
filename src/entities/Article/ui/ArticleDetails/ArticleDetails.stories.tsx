@@ -1,10 +1,10 @@
 import type {Meta, StoryObj} from '@storybook/react';
-import {Themes} from '@/app/providers/ThemeProvider';
 import '@/app/styles/index.scss';
 import storeDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
 import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
 import {ArticleBlockType, ArticleType} from '../../model/types/IArticle';
 import ArticleDetails from './ArticleDetails';
+import Themes from '@/shared/consts/theme';
 
 
 const meta = {

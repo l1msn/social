@@ -1,7 +1,6 @@
 import React, {JSX, useEffect} from 'react';
 import {useStore} from 'react-redux';
-import {IReduxStoreWithManager, IStateSchema} from '@/app/providers/StoreProvider';
-import {StateSchemaKey} from '@/app/providers/StoreProvider/config/reducerManager';
+import {IReduxStoreWithManager, IStateSchema, StateSchemaKey} from '@/app/providers/StoreProvider';
 import {Reducer} from '@reduxjs/toolkit';
 import useAppDispatch from '../../hooks/useAppDispatch/useAppDispatch';
 

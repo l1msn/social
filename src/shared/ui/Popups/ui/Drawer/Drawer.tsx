@@ -1,11 +1,11 @@
 import React, {JSX, useCallback, useEffect} from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
 import cls from './Drawer.module.scss';
-import {useTheme} from '@/app/providers/ThemeProvider';
-import Portal from '@/widgets/Portal';
-import Overlay from '@/widgets/Overlay';
+import useTheme from '@/shared/lib/hooks/useTheme/useTheme';
 import {AnimationProvider, useAnimationLibs} from '@/shared/lib/components/AnimationProvider/AnimationProvider';
-import Loader from '@/widgets/Loader';
+import Portal from '@/shared/ui/Portal';
+import Overlay from '@/shared/ui/Overlay';
+import Loader from '@/shared/ui/Loader';
 
 interface IDrawerProps {
     className?: string,

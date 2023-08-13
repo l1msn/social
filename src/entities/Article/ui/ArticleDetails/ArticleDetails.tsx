@@ -11,16 +11,16 @@ import getArticleError from '../../model/selectors/getArticleError/getArticleErr
 import getArticleData from '../../model/selectors/getArticleData/getArticleData';
 import {AlignText, SizeText, Text} from '@/shared/ui/Text';
 import {useTranslation} from 'react-i18next';
-import Skeleton from '@/widgets/Skeleton';
-import Avatar from '@/widgets/Avatar';
+import Skeleton from '@/shared/ui/Skeleton';
+import Avatar from '@/shared/ui/Avatar';
 import DateIcon from '../../../../shared/assets/icons/date-icon.svg';
 import ViewsIcon from '../../../../shared/assets/icons/views-icon.svg';
-import Icon from '@/widgets/Icon';
+import Icon from '@/shared/ui/Icon';
 import {ArticleBlock, ArticleBlockType} from '../../model/types/IArticle';
 import ArticleCode from '../ArticleCode/ArticleCode';
 import ArticleText from '../ArticleText/ArticleText';
 import ArticleImage from '../ArticleImage/ArticleImage';
-import {HStack, VStack} from '@/widgets/Stack';
+import {HStack, VStack} from '@/shared/ui/Stack';
 
 interface IArticleDetailsProps {
     className?: string

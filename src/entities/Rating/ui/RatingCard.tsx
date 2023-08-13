@@ -1,9 +1,9 @@
 import React, {JSX, useCallback, useState} from 'react';
-import {Card} from '@/widgets/Card';
-import {HStack, VStack} from '@/widgets/Stack';
-import StarRating from '@/widgets/StarRating';
+import {Card} from '@/shared/ui/Card';
+import {HStack, VStack} from '@/shared/ui/Stack';
+import StarRating from '@/shared/ui/StarRating';
 import {Text} from '@/shared/ui/Text';
-import {Modal} from '@/widgets/Modal';
+import {Modal} from '@/shared/ui/Modal';
 import {Input} from '@/shared/ui/Input';
 import {useTranslation} from 'react-i18next';
 import Button from '@/shared/ui/Button';

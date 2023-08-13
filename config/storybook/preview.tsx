@@ -1,9 +1,9 @@
 import type {Preview} from '@storybook/react';
 import styleDecorator from '../../src/shared/config/storybook/styleDecorator/styleDecorator';
 import themeDecorator from '../../src/shared/config/storybook/themeDecorator/themeDecorator';
-import {Themes} from '../../src/app/providers/ThemeProvider';
 import routerDecorator from '../../src/shared/config/storybook/routerDecorator/routerDecorator';
 import suspenseDecorator from '../../src/shared/config/storybook/suspenseDecorator/suspenseDecorator';
+import Themes from "../../src/shared/consts/theme";
 
 // @ts-ignore
 const preview: Preview = {

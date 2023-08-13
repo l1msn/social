@@ -10,7 +10,7 @@ import getAddCommentFormText from '../../model/selectors/getAddCommentFormText/g
 import useAppDispatch from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {addCommentFormActions, addCommentFormReducer} from '../../model/slice/AddCommentFormSlice';
 import {DynamicModuleLoader, ReducersList} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import {HStack} from '@/widgets/Stack';
+import {HStack} from '@/shared/ui/Stack';
 
 interface IAddCommentFormProps {
     className?: string,

@@ -2,7 +2,7 @@ import axios from 'axios';
 import TestAsyncThunk from '@/shared/lib/tests/testAsyncThunk/TestAsyncThunk';
 import {Country} from '@/entities/Country';
 import updateProfileData from './updateProfileData';
-import {ValidateProfileError} from '@/features/editableProfileCard';
+import {ValidateProfileError} from '@/features/editableProfileCard/testing';
 import {IProfile} from '@/entities/Profile';
 
 

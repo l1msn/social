@@ -1,8 +1,8 @@
 import type {Meta, StoryObj} from '@storybook/react';
 import '@/app/styles/index.scss';
 import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
-import {Themes} from '@/app/providers/ThemeProvider';
 import CountrySelect from './CountrySelect';
+import Themes from '@/shared/consts/theme';
 
 
 const meta = {

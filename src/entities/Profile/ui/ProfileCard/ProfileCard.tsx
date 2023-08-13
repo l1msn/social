@@ -5,11 +5,11 @@ import {useTranslation} from 'react-i18next';
 import {AlignText, Text, ThemeText} from '@/shared/ui/Text';
 import {Input} from '@/shared/ui/Input';
 import {IProfile} from '../../model/types/IProfile';
-import Loader from '@/widgets/Loader';
-import Avatar from '@/widgets/Avatar';
+import Loader from '@/shared/ui/Loader';
+import Avatar from '@/shared/ui/Avatar';
 import {Currency, CurrencySelect} from '@/entities/Currency';
 import {Country, CountrySelect} from '@/entities/Country';
-import {HStack, VStack} from '@/widgets/Stack';
+import {HStack, VStack} from '@/shared/ui/Stack';
 
 interface IProfileCardProps {
     className?: string,

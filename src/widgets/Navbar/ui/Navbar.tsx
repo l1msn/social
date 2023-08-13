@@ -9,10 +9,10 @@ import {useSelector} from 'react-redux';
 import {getUserAuthData} from '@/entities/User';
 import {Text, ThemeText} from '@/shared/ui/Text';
 import AppLink from '@/shared/ui/AppLink';
-import {HStack} from '@/widgets/Stack';
 import {NotificationButton} from '@/features/notificationButton';
 import {AvatarDropdown} from '@/features/avatarDropdown';
 import {RoutePath} from '@/shared/consts/routerPaths';
+import {HStack} from '@/shared/ui/Stack';
 
 interface INavbarProps {
     className?: string

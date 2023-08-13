@@ -1,10 +1,10 @@
 import React, {JSX, memo, useCallback} from 'react';
 import RatingCard from '@/entities/Rating';
 import {useTranslation} from 'react-i18next';
-import {useGetArticleRating, useRateArticle} from '@/features/articleRating';
 import {useSelector} from 'react-redux';
 import {getUserAuthData} from '@/entities/User';
-import Skeleton from '@/widgets/Skeleton';
+import Skeleton from '@/shared/ui/Skeleton';
+import {useGetArticleRating, useRateArticle} from '../../api/articleRatingApi';
 
 
 interface IArticleRatingProps {

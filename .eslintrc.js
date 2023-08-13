@@ -15,7 +15,7 @@ module.exports = {
         sourceType: 'module',
         tsconfigRootDir: __dirname,
     },
-    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'l1msn-plugin'],
+    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'l1msn-plugin', 'unused-imports'],
     rules: {
         'indent': ['warn', 4],
         'import/no-unresolved': 'off',
@@ -42,9 +42,16 @@ module.exports = {
         '@typescript-eslint/no-non-null-assertion': 'off',
         'no-invalid-this': 'off',
         'l1msn-plugin/path-checker': ['warn', {alias: '@'}],
-        'l1msn-plugin/public-api-imports': ['error', {alias: '@', testFilesPatterns: ['**/*.test.*',
+        'l1msn-plugin/public-api-imports': ['warn', {alias: '@', testFilesPatterns: ['**/*.test.*',
             '**/*.stories.*, **/storeDecorator.tsx']}],
+        'l1msn-plugin/layer-imports': ['error', {alias: '@', ignoreImportPatterns: ['**/storeDecorator', '**/index.scss',
+            '**/StoreProvider', '**/IStateSchema', '**/store', '**/ThemeProvider', '**/testing']}],
         'linebreak-style': 'off',
+        'unused-imports/no-unused-imports': 'error',
+        'unused-imports/no-unused-vars': [
+            'warn',
+            {'vars': 'all', 'varsIgnorePattern': '^_', 'args': 'after-used', 'argsIgnorePattern': '^_'},
+        ],
     },
     globals: {
         __IS_DEV__: true,

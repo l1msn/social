@@ -3,7 +3,7 @@ import classNames from '@/shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
 import {useSelector} from 'react-redux';
 import {getUserAuthData} from '@/entities/User';
-import {HStack} from '@/widgets/Stack';
+import {HStack} from '@/shared/ui/Stack';
 import {Text} from '@/shared/ui/Text';
 import Button from '@/shared/ui/Button';
 import ThemeButton from '@/shared/ui/Button/consts/ThemeButton';

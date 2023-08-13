@@ -1,13 +1,13 @@
 import React, {JSX, useCallback} from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
 import {Dropdown} from '@/shared/ui/Popups';
-import Avatar from '@/widgets/Avatar';
 import {useDispatch, useSelector} from 'react-redux';
 import {getUserAuthData, isUserAdmin, isUserManager, userActions} from '@/entities/User';
 import {useTranslation} from 'react-i18next';
 import Button from '@/shared/ui/Button';
 import ThemeButton from '@/shared/ui/Button/consts/ThemeButton';
 import {RoutePath} from '@/shared/consts/routerPaths';
+import Avatar from '@/shared/ui/Avatar';
 
 interface IAvatarDropdownProps {
     className?: string

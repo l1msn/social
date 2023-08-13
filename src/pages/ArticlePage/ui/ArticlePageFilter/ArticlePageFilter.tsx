@@ -13,7 +13,7 @@ import {articlePageActions} from '../../model/slice/articlePageSlice';
 import useAppDispatch from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {useTranslation} from 'react-i18next';
 import cls from './ArticlePageFilter.module.scss';
-import {Card} from '@/widgets/Card';
+import {Card} from '@/shared/ui/Card';
 import {Input} from '@/shared/ui/Input';
 import SortOrder from '@/shared/types';
 import getArticlePageOrder from '../../model/selectors/getArticlePageOrder/getArticlePageOrder';
