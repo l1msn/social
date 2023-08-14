@@ -2,7 +2,7 @@
 
 ```
 npm install - устанавливаем зависимости
-npm run start:dev или npm run start:dev:vite - запуск сервера + frontend проекта в dev режиме
+npm run start:dev - запуск сервера + frontend проекта в dev режиме
 ```
 
 ----
@@ -99,32 +99,44 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 Пример:
 
 ```typescript jsx
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react';
+import Button from './Button';
+import ThemeButton from '../consts/ThemeButton';
+import '@/app/styles/index.scss';
+import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
+import SizeButton from '../consts/SizeButton';
+import Themes from '@/shared/consts/theme';
 
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Button, ButtonSize, ButtonTheme } from './Button';
-import { Theme } from '@/shared/const/theme';
-
-export default {
+const meta = {
     title: 'shared/Button',
     component: Button,
+    tags: ['autodocs'],
     argTypes: {
-        backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof Button>;
+} satisfies Meta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Primary = Template.bind({});
-Primary.args = {
-    children: 'Text',
+
+export const Primary: Story = {
+    args: {
+        children: 'Text',
+    },
 };
 
-export const Clear = Template.bind({});
-Clear.args = {
-    children: 'Text',
-    theme: ButtonTheme.CLEAR,
+export const Clear: Story = {
+    args: {
+        children: 'Text',
+        theme: ThemeButton.CLEAR,
+    },
+};
+
+export const Outline: Story = {
+    args: {
+        children: 'Text',
+        theme: ThemeButton.OUTLINE,
+    },
 };
 ```
 
