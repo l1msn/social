@@ -25,7 +25,8 @@
     "test:ui:report:html": "reg-cli --from .loki/report.json --report reports/ui/report.html",
     "generate:slice": "node ./scripts/createSlice/index.js",
     "storybook": "storybook dev -p 6006 -c ./config/storybook --quiet",
-    "storybook:build": "storybook build -c ./config/storybook"
+    "storybook:build": "storybook build -c ./config/storybook",
+    "postinstall": "rmdir /s /q .\\node_modules\\.cache"
   },
   "keywords": [],
   "author": "l1msn",
