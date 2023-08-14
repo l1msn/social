@@ -1,0 +1,36 @@
+.Dropdown {
+    position: relative;
+}
+
+.menu {
+    background: var(--card-bg);
+    position: absolute;
+    z-index: 10000;
+    border-radius: 8px;
+    border: 1px solid var(--primary-color);
+    flex-direction: column;
+    display: flex;
+
+    @keyframes animate {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    animation: animate 0.3s linear;
+}
+
+.item {
+    padding: 10px 25px;
+    width: 100px;
+    border: none;
+    background: none;
+    outline: none;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+

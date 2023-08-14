@@ -1,11 +1,11 @@
 import type {Meta, StoryObj} from '@storybook/react';
-import {Themes} from 'app/providers/ThemeProvider';
-import 'app/styles/index.scss';
+import '@/app/styles/index.scss';
 import ArticleList from './ArticleList';
-import StoreDecorator from 'shared/config/storybook/storeDecorator/storeDecorator';
-import themeDecorator from 'shared/config/storybook/themeDecorator/themeDecorator';
+import storeDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
+import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
 import {ArticleBlockType, ArticleType, IArticle} from '../../model/types/IArticle';
 import ArticleView from '../../model/types/ArticleView';
+import Themes from '@/shared/consts/theme';
 
 
 const meta = {
@@ -46,18 +46,16 @@ const mockData: IArticle[] = [{
 
 export const Light: Story = {
     args: {
-        virtualized: false,
         articles: mockData,
     },
-    decorators: [StoreDecorator({})],
+    decorators: [storeDecorator({})],
 };
 
 export const Dark: Story = {
     args: {
-        virtualized: false,
         articles: mockData,
     },
-    decorators: [themeDecorator(Themes.DARK), StoreDecorator({})],
+    decorators: [themeDecorator(Themes.DARK), storeDecorator({})],
 };
 
 export const DarkIsLoading: Story = {
@@ -65,7 +63,7 @@ export const DarkIsLoading: Story = {
         isLoading: true,
         articles: mockData,
     },
-    decorators: [themeDecorator(Themes.DARK), StoreDecorator({})],
+    decorators: [themeDecorator(Themes.DARK), storeDecorator({})],
 };
 
 export const DarkIsLoadingShelf: Story = {
@@ -74,7 +72,7 @@ export const DarkIsLoadingShelf: Story = {
         isLoading: true,
         articles: mockData,
     },
-    decorators: [themeDecorator(Themes.DARK), StoreDecorator({})],
+    decorators: [themeDecorator(Themes.DARK), storeDecorator({})],
 };
 
 export const DarkIsLoadingList: Story = {
@@ -83,7 +81,7 @@ export const DarkIsLoadingList: Story = {
         isLoading: true,
         articles: mockData,
     },
-    decorators: [themeDecorator(Themes.DARK), StoreDecorator({})],
+    decorators: [themeDecorator(Themes.DARK), storeDecorator({})],
 };
 
 

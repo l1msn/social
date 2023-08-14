@@ -1,6 +1,7 @@
 import React, {JSX, useMemo, useState} from 'react';
-import Themes from '../consts/Themes';
-import {LocalStorageThemeKey, ThemeContext} from '../lib/ThemeContext';
+import Themes from '@/shared/consts/theme';
+import {LocalStorageThemeKey} from '@/shared/consts/localStorage';
+import {ThemeContext} from '@/shared/lib/context/ThemeContext';
 
 
 interface IThemeProviderProps {

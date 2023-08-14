@@ -1,5 +1,5 @@
 import axios from 'axios';
-import TestAsyncThunk from 'shared/lib/tests/testAsyncThunk/TestAsyncThunk';
+import TestAsyncThunk from '@/shared/lib/tests/testAsyncThunk/TestAsyncThunk';
 import {ArticleBlockType, ArticleType, IArticle} from '../../types/IArticle';
 import fetchArticleById from './fetchArticleById';
 

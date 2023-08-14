@@ -1,5 +1,5 @@
 import React, {ChangeEvent, JSX, useMemo} from 'react';
-import classNames from 'shared/lib/classNames/classNames';
+import classNames from '@/shared/lib/classNames/classNames';
 import cls from './Select.module.scss';
 import ISelectOptions from '../types/ISelectOptions';
 

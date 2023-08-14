@@ -1,9 +1,9 @@
 import type {Meta, StoryObj} from '@storybook/react';
-import 'app/styles/index.scss';
+import '@/app/styles/index.scss';
 import LoginForm from './LoginForm';
-import ThemeDecorator from 'shared/config/storybook/themeDecorator/themeDecorator';
-import {Themes} from 'app/providers/ThemeProvider';
-import StoreDecorator from 'shared/config/storybook/storeDecorator/storeDecorator';
+import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
+import storeDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
+import Themes from '@/shared/consts/theme';
 
 
 const meta = {
@@ -21,7 +21,7 @@ type Story = StoryObj<typeof meta>;
 export const Light: Story = {
     args: {
     },
-    decorators: [StoreDecorator({
+    decorators: [storeDecorator({
         loginForm: {username: '123', password: 'asd'},
     })],
 };
@@ -29,7 +29,7 @@ export const Light: Story = {
 export const Dark: Story = {
     args: {
     },
-    decorators: [ThemeDecorator(Themes.DARK), StoreDecorator({
+    decorators: [themeDecorator(Themes.DARK), storeDecorator({
         loginForm: {username: '123', password: 'asd'},
     })],
 };
@@ -37,7 +37,7 @@ export const Dark: Story = {
 export const DarkError: Story = {
     args: {
     },
-    decorators: [ThemeDecorator(Themes.DARK), StoreDecorator({
+    decorators: [themeDecorator(Themes.DARK), storeDecorator({
         loginForm: {username: '123', password: 'asd', error: 'ERROR!'},
     })],
 };
@@ -45,7 +45,7 @@ export const DarkError: Story = {
 export const DarkLoading: Story = {
     args: {
     },
-    decorators: [ThemeDecorator(Themes.DARK), StoreDecorator({
+    decorators: [themeDecorator(Themes.DARK), storeDecorator({
         loginForm: {username: '123', password: 'asd', isLoading: true},
     })],
 };

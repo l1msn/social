@@ -1,12 +1,11 @@
 import type {Meta, StoryObj} from '@storybook/react';
-import 'app/styles/index.scss';
+
 import SidebarItem from './SidebarItem';
-import themeDecorator from '../../../../shared/config/storybook/themeDecorator/themeDecorator';
-import {Themes} from '../../../../app/providers/ThemeProvider';
-// @ts-ignore
-import UserIcon from 'shared/assets/icons/user-icon.svg';
-import {RoutePath} from '../../../../shared/config/routeConfig/routeConfig';
-import storeDecorator from 'shared/config/storybook/storeDecorator/storeDecorator';
+import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
+import UserIcon from '@/shared/assets/icons/user-icon.svg';
+import storeDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
+
+import Themes from '@/shared/consts/theme';
 
 const meta = {
     title: 'widget/SidebarItem',
@@ -23,7 +22,7 @@ type Story = StoryObj<typeof meta>;
 export const LightProfile: Story = {
     args: {
         item: {
-            path: RoutePath.profile,
+            path: '#',
             Icon: UserIcon,
             text: 'Profile',
         },
@@ -37,7 +36,7 @@ export const LightProfile: Story = {
 export const DarkProfile: Story = {
     args: {
         item: {
-            path: RoutePath.profile,
+            path: '#',
             Icon: UserIcon,
             text: 'Profile',
         },
@@ -51,7 +50,7 @@ export const DarkProfile: Story = {
 export const DarkProfileCollapsed: Story = {
     args: {
         item: {
-            path: RoutePath.profile,
+            path: '#',
             Icon: UserIcon,
             text: 'Profile',
         },

@@ -1,10 +1,10 @@
 import IComment from '../../model/types/IComment';
 import React, {JSX, memo} from 'react';
-import classNames from 'shared/lib/classNames/classNames';
-import {Text} from 'shared/ui/Text';
+import classNames from '@/shared/lib/classNames/classNames';
+import {Text} from '@/shared/ui/Text';
 import {useTranslation} from 'react-i18next';
 import CommentCard from '../CommentCard/CommentCard';
-import {VStack} from 'widgets/Stack';
+import {VStack} from '@/shared/ui/Stack';
 
 interface ICommentListProps {
     className?: string,

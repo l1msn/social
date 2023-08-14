@@ -1,12 +1,12 @@
 import React, {memo} from 'react';
 import cls from './SidebarItem.module.scss';
-import AppLinkThemes from 'shared/ui/AppLink/consts/AppLinkThemes';
-import AppLink from 'shared/ui/AppLink';
+import AppLinkThemes from '@/shared/ui/AppLink/consts/AppLinkThemes';
+import AppLink from '@/shared/ui/AppLink';
 import ISidebar from '../../model/types/ISidebar';
 import {useTranslation} from 'react-i18next';
-import classNames from 'shared/lib/classNames/classNames';
+import classNames from '@/shared/lib/classNames/classNames';
 import {useSelector} from 'react-redux';
-import {getUserAuthData} from 'entities/User';
+import {UserSelectors} from '@/entities/User';
 
 
 interface ISidebarItemProps {
@@ -17,7 +17,7 @@ interface ISidebarItemProps {
 const SidebarItem: React.FC<ISidebarItemProps> = memo(({item, collapsed}: ISidebarItemProps): React.JSX.Element | null => {
     const {t} = useTranslation('sidebar');
 
-    const isAuth = useSelector(getUserAuthData);
+    const isAuth = useSelector(UserSelectors.getUserAuthData);
 
     if (item.authOnly && !isAuth) {
         return null;

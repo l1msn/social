@@ -1,8 +1,8 @@
 import type {Meta, StoryObj} from '@storybook/react';
-import 'app/styles/index.scss';
-import ThemeDecorator from 'shared/config/storybook/themeDecorator/themeDecorator';
-import {Themes} from 'app/providers/ThemeProvider';
+import '@/app/styles/index.scss';
+import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
 import CurrencySelect from './CurrencySelect';
+import Themes from '@/shared/consts/theme';
 
 
 const meta = {
@@ -28,5 +28,5 @@ export const Dark: Story = {
     args: {
 
     },
-    decorators: [ThemeDecorator(Themes.DARK)],
+    decorators: [themeDecorator(Themes.DARK)],
 };

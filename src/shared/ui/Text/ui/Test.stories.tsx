@@ -1,10 +1,10 @@
 import type {Meta, StoryObj} from '@storybook/react';
-import 'app/styles/index.scss';
-import ThemeDecorator from 'shared/config/storybook/themeDecorator/themeDecorator';
-import {Themes} from 'app/providers/ThemeProvider';
+
+import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
 import Text from './Text';
 import ThemeText from '../consts/ThemeText';
 import SizeText from '../consts/SizeText';
+import Themes from '@/shared/consts/theme';
 
 
 const meta = {
@@ -41,7 +41,7 @@ export const DarkS: Story = {
         text: 'text',
         title: 'title',
     },
-    decorators: [ThemeDecorator(Themes.DARK)],
+    decorators: [themeDecorator(Themes.DARK)],
 };
 
 export const DarkM: Story = {
@@ -50,7 +50,7 @@ export const DarkM: Story = {
         text: 'text',
         title: 'title',
     },
-    decorators: [ThemeDecorator(Themes.DARK)],
+    decorators: [themeDecorator(Themes.DARK)],
 };
 
 export const DarkL: Story = {
@@ -59,5 +59,5 @@ export const DarkL: Story = {
         text: 'text',
         title: 'title',
     },
-    decorators: [ThemeDecorator(Themes.DARK)],
+    decorators: [themeDecorator(Themes.DARK)],
 };

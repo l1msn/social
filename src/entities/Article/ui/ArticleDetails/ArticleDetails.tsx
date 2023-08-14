@@ -1,26 +1,24 @@
 import React, {JSX, memo, useCallback, useEffect} from 'react';
-import classNames from 'shared/lib/classNames/classNames';
+import classNames from '@/shared/lib/classNames/classNames';
 import cls from './ArticleDetails.module.scss';
-import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/DynamicModuleLoader';
+import {DynamicModuleLoader, ReducersList} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {articleReducer} from '../../model/slice/articleSlice';
-import useAppDispatch from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import useAppDispatch from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import fetchArticleById from '../../model/services/fetchArticleById/fetchArticleById';
 import {useSelector} from 'react-redux';
-import getArticleIsLoading from '../../model/selectors/getArticleIsLoading/getArticleIsLoading';
-import getArticleError from '../../model/selectors/getArticleError/getArticleError';
-import getArticleData from '../../model/selectors/getArticleData/getArticleData';
-import {AlignText, SizeText, Text} from 'shared/ui/Text';
+import ArticleSelectors from '../../model/selectors/ArticleSelectors';
+import {AlignText, SizeText, Text} from '@/shared/ui/Text';
 import {useTranslation} from 'react-i18next';
-import Skeleton from 'widgets/Skeleton';
-import Avatar from 'widgets/Avatar';
+import Skeleton from '@/shared/ui/Skeleton';
+import Avatar from '@/shared/ui/Avatar';
 import DateIcon from '../../../../shared/assets/icons/date-icon.svg';
 import ViewsIcon from '../../../../shared/assets/icons/views-icon.svg';
-import Icon from 'widgets/Icon';
+import Icon from '@/shared/ui/Icon';
 import {ArticleBlock, ArticleBlockType} from '../../model/types/IArticle';
 import ArticleCode from '../ArticleCode/ArticleCode';
 import ArticleText from '../ArticleText/ArticleText';
 import ArticleImage from '../ArticleImage/ArticleImage';
-import {HStack, VStack} from 'widgets/Stack';
+import {HStack, VStack} from '@/shared/ui/Stack';
 
 interface IArticleDetailsProps {
     className?: string
@@ -41,9 +39,9 @@ const ArticleDetails: React.FC<IArticleDetailsProps> = memo(({className, id}: IA
         }
     }, [id, dispatch]);
 
-    const isLoading = useSelector(getArticleIsLoading);
-    const error = useSelector(getArticleError);
-    const article = useSelector(getArticleData);
+    const isLoading = useSelector(ArticleSelectors.getArticleIsLoading);
+    const error = useSelector(ArticleSelectors.getArticleError);
+    const article = useSelector(ArticleSelectors.getArticleData);
 
     const renderBlock = useCallback((block: ArticleBlock) => {
         switch (block.type) {

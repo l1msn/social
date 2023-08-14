@@ -1,17 +1,16 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
-import {IThunkConfig} from 'app/providers/StoreProvider';
-import getArticlePageHasMore from '../../selectors/getArticlePageHasMore/getArticlePageHasMore';
-import getArticlePageNumber from '../../selectors/getArticlePageNumber/getArticlePageNumber';
+import {IThunkConfig} from '@/app/providers/StoreProvider';
 import {articlePageActions} from '../../slice/articlePageSlice';
 import fetchArticlesList from '../fetchArticlesList/fetchArticlesList';
-import getArticlePageIsLoading from '../../selectors/getArticlePageIsLoading/getArticlePageIsLoading';
+import ArticlePageSelectors from '../../selectors/ArticlePageSelectors';
+
 
 const fetchNextArticlesPage = createAsyncThunk<void, void, IThunkConfig<string>>('articlePage/fetchNextArticlesPage',
     async (_, thunkAPI) => {
         try {
-            const hasMore = getArticlePageHasMore(thunkAPI.getState());
-            const page = getArticlePageNumber(thunkAPI.getState());
-            const isLoading = getArticlePageIsLoading(thunkAPI.getState());
+            const hasMore = ArticlePageSelectors.getArticlePageHasMore(thunkAPI.getState());
+            const page = ArticlePageSelectors.getArticlePageNumber(thunkAPI.getState());
+            const isLoading = ArticlePageSelectors.getArticlePageIsLoading(thunkAPI.getState());
 
             if (hasMore && !isLoading) {
                 thunkAPI.dispatch(articlePageActions.setPage(page + 1));

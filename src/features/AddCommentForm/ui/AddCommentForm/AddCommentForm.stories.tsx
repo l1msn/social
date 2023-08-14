@@ -1,10 +1,10 @@
 import type {Meta, StoryObj} from '@storybook/react';
-import 'app/styles/index.scss';
-import ThemeDecorator from 'shared/config/storybook/themeDecorator/themeDecorator';
-import {Themes} from 'app/providers/ThemeProvider';
+
+import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
 import AddCommentForm from './AddCommentForm';
 import {action} from '@storybook/addon-actions';
-import StoreDecorator from 'shared/config/storybook/storeDecorator/storeDecorator';
+import storeDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
+import Themes from '@/shared/consts/theme';
 
 
 const meta = {
@@ -23,7 +23,7 @@ export const Light: Story = {
     args: {
         onSendComment: action('onSendComment'),
     },
-    decorators: [StoreDecorator({})],
+    decorators: [storeDecorator({})],
 };
 
 
@@ -31,5 +31,5 @@ export const Dark: Story = {
     args: {
         onSendComment: action('onSendComment'),
     },
-    decorators: [ThemeDecorator(Themes.DARK), StoreDecorator({})],
+    decorators: [themeDecorator(Themes.DARK), storeDecorator({})],
 };

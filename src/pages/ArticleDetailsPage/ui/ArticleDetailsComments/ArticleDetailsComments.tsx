@@ -1,20 +1,22 @@
 import React, {JSX, Suspense, useCallback} from 'react';
-import {SizeText, Text} from 'shared/ui/Text';
-import {AddCommentForm} from 'features/AddCommentForm';
-import {CommentList} from 'entities/Comment';
+import {SizeText, Text} from '@/shared/ui/Text';
+import {AddCommentForm} from '@/features/AddCommentForm';
+import {CommentList} from '@/entities/Comment';
 import {useSelector} from 'react-redux';
 import {getArticleComments} from '../../model/slice/articleDetailsCommentsSlice';
-import useAppDispatch from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import getArticleCommentsIsLoading
-    from '../../model/selectors/getArticleCommentsIsLoading/getArticleCommentsIsLoading';
+import useAppDispatch from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import addCommentForArticle from '../../model/services/addCommentForArticle/addCommentForArticle';
 import {useTranslation} from 'react-i18next';
-import useInitialEffect from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import useInitialEffect from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import fetchCommentsByArticleId
     from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import Loader from 'widgets/Loader';
-import classNames from 'shared/lib/classNames/classNames';
-import {VStack} from 'widgets/Stack';
+import Loader from '@/shared/ui/Loader';
+import classNames from '@/shared/lib/classNames/classNames';
+import {VStack} from '@/shared/ui/Stack';
+import ArticleDetailsSelectors from '../../model/selectors/ArticleDetailsSelectors';
+import {ArticleSelectors} from '@/entities/Article';
+
+import Skeleton from '@/shared/ui/Skeleton';
 
 interface IArticleDetailsCommentsProps {
     className?: string
@@ -28,7 +30,9 @@ const ArticleDetailsComments: React.FC<IArticleDetailsCommentsProps> = ({classNa
 
     const dispatch = useAppDispatch();
 
-    const isLoadingComments = useSelector(getArticleCommentsIsLoading);
+    const isLoading = useSelector(ArticleSelectors.getArticleIsLoading);
+
+    const isLoadingComments = useSelector(ArticleDetailsSelectors.getArticleCommentsIsLoading);
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
@@ -37,6 +41,10 @@ const ArticleDetailsComments: React.FC<IArticleDetailsCommentsProps> = ({classNa
     const onSendComment = useCallback((text: string) => {
         dispatch(addCommentForArticle(text));
     }, [dispatch]);
+
+    if (isLoading) {
+        return <Skeleton width={'100%'} height={'120px'}/>;
+    }
 
     return (
         <VStack gap={'8'} max className={classNames('', {}, [className])}>

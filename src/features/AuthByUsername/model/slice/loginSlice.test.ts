@@ -1,6 +1,6 @@
-import {IUser} from 'entities/User';
+import {IUser} from '@/entities/User';
 import ILoginSchema from '../types/ILoginSchema';
-import {loginActions, loginReducer} from './loginSlice';
+import {loginReducer} from './loginSlice';
 import loginByUsername from '../../services/loginByUsername/loginByUsername';
 
 const mockData: IUser = {

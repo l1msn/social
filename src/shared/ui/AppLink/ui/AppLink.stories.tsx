@@ -1,5 +1,5 @@
 import type {Meta, StoryObj} from '@storybook/react';
-import 'app/styles/index.scss';
+
 import AppLink from './AppLink';
 import AppLinkThemes from '../consts/AppLinkThemes';
 

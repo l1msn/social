@@ -1,6 +1,6 @@
 import axios from 'axios';
-import TestAsyncThunk from 'shared/lib/tests/testAsyncThunk/TestAsyncThunk';
-import {IComment} from 'entities/Comment';
+import TestAsyncThunk from '@/shared/lib/tests/testAsyncThunk/TestAsyncThunk';
+import {IComment} from '@/entities/Comment';
 import fetchCommentsByArticleId
     from './fetchCommentsByArticleId';
 

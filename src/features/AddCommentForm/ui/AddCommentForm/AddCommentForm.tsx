@@ -1,16 +1,16 @@
-import React, {JSX, useCallback} from 'react';
-import classNames from 'shared/lib/classNames/classNames';
-import {Input} from 'shared/ui/Input';
+import React, {JSX, memo, useCallback} from 'react';
+import classNames from '@/shared/lib/classNames/classNames';
+import {Input} from '@/shared/ui/Input';
 import cls from './AddCommentForm.module.scss';
 import {useTranslation} from 'react-i18next';
-import Button from 'shared/ui/Button';
-import ThemeButton from 'shared/ui/Button/consts/ThemeButton';
+import Button from '@/shared/ui/Button';
+import ThemeButton from '@/shared/ui/Button/consts/ThemeButton';
 import {useSelector} from 'react-redux';
-import getAddCommentFormText from '../../model/selectors/getAddCommentFormText/getAddCommentFormText';
-import useAppDispatch from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import AddCommentFormSelectors from '../../model/selectors/AddCommentFormSelectors';
+import useAppDispatch from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {addCommentFormActions, addCommentFormReducer} from '../../model/slice/AddCommentFormSlice';
-import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/DynamicModuleLoader';
-import {HStack} from 'widgets/Stack';
+import {DynamicModuleLoader, ReducersList} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {HStack} from '@/shared/ui/Stack';
 
 interface IAddCommentFormProps {
     className?: string,
@@ -21,10 +21,10 @@ const reducers: ReducersList = {
     addCommentForm: addCommentFormReducer,
 };
 
-const AddCommentForm: React.FC<IAddCommentFormProps> = ({className, onSendComment}: IAddCommentFormProps): JSX.Element => {
+const AddCommentForm: React.FC<IAddCommentFormProps> = memo(({className, onSendComment}: IAddCommentFormProps): JSX.Element => {
     const {t} = useTranslation('comment');
 
-    const text = useSelector(getAddCommentFormText);
+    const text = useSelector(AddCommentFormSelectors.getAddCommentFormText);
 
     const dispatch = useAppDispatch();
 
@@ -45,7 +45,7 @@ const AddCommentForm: React.FC<IAddCommentFormProps> = ({className, onSendCommen
             </HStack>
         </DynamicModuleLoader>
     );
-};
+});
 
 export default AddCommentForm;
 

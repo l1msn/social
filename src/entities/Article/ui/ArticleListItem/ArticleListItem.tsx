@@ -1,19 +1,19 @@
 import React, {HTMLAttributeAnchorTarget, JSX, memo} from 'react';
-import classNames from 'shared/lib/classNames/classNames';
+import classNames from '@/shared/lib/classNames/classNames';
 import cls from './ArticleListItem.module.scss';
 import {ArticleBlockType, IArticle, IArticleTextBlock} from '../../model/types/IArticle';
 import ArticleView from '../../model/types/ArticleView';
-import {Text} from 'shared/ui/Text';
-import Icon from 'widgets/Icon';
-import ViewsIcon from 'shared/assets/icons/views-icon.svg';
-import {Card} from 'widgets/Card';
-import Avatar from 'widgets/Avatar';
-import Button from 'shared/ui/Button';
-import ThemeButton from 'shared/ui/Button/consts/ThemeButton';
+import {Text} from '@/shared/ui/Text';
+import Icon from '@/shared/ui/Icon';
+import ViewsIcon from '@/shared/assets/icons/views-icon.svg';
+import {Card} from '@/shared/ui/Card';
+import Avatar from '@/shared/ui/Avatar';
+import Button from '@/shared/ui/Button';
+import ThemeButton from '@/shared/ui/Button/consts/ThemeButton';
 import {useTranslation} from 'react-i18next';
 import ArticleText from '../ArticleText/ArticleText';
-import {RoutePath} from 'shared/config/routeConfig/routeConfig';
-import AppLink from 'shared/ui/AppLink';
+import AppLink from '@/shared/ui/AppLink';
+import {RoutePaths} from '@/shared/consts/routerPaths';
 
 interface IArticleListItemProps {
     className?: string
@@ -37,7 +37,7 @@ const ArticleListItem: React.FC<IArticleListItemProps> = memo((props: IArticleLi
             <AppLink
                 target={target}
                 className={classNames(cls.articleListItem, {}, [className, cls[view]])}
-                to={RoutePath.articles_details + article.id}>
+                to={RoutePaths.getRouteArticleDetails(article.id)}>
                 <Card className={cls.card}>
                     <div className={cls.imageWrapper}>
                         <img src={article.img} alt={article.title} className={cls.image}/>
@@ -69,7 +69,7 @@ const ArticleListItem: React.FC<IArticleListItemProps> = memo((props: IArticleLi
                     <ArticleText block={textBlock} className={cls.textBlock}/>
                 )}
                 <div className={cls.footer}>
-                    <AppLink target={target} to={RoutePath.articles_details + article.id}>
+                    <AppLink target={target} to={RoutePaths.getRouteArticleDetails(article.id)}>
                         <Button theme={ThemeButton.CLEAR}>
                             {t('Read more...')}
                         </Button>

@@ -1,21 +1,20 @@
 import React, {type JSX, Suspense, useEffect} from 'react';
-import {useTheme} from 'app/providers/ThemeProvider';
-import classNames from 'shared/lib/classNames/classNames';
-import AppRouter from 'app/providers/Router';
-import Navbar from 'widgets/Navbar';
-import Sidebar from 'widgets/Sidebar';
-import Portal from 'widgets/Portal';
-import {userActions} from '../entities/User';
+import classNames from '@/shared/lib/classNames/classNames';
+import Navbar from '@/widgets/Navbar';
+import Sidebar from '@/widgets/Sidebar';
 import useAppDispatch from '../shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {useSelector} from 'react-redux';
-import {getUserInit} from 'entities/User';
+import AppRouter from './providers/Router';
+import useTheme from '@/shared/lib/hooks/useTheme/useTheme';
+import Portal from '@/shared/ui/Portal';
+import {userActions, UserSelectors} from '@/entities/User';
 
 const App: React.FC = (): JSX.Element => {
     const {theme} = useTheme();
 
     const dispatch = useAppDispatch();
 
-    const init = useSelector(getUserInit);
+    const init = useSelector(UserSelectors.getUserInit);
 
     useEffect(() => {
         console.log('init auth data');

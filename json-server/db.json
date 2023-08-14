@@ -1,4 +1,94 @@
 {
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Good article",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 5,
+      "feedback": "Very good article",
+      "userId": "2",
+      "articleId": "1"
+    },
+    {
+      "articleId": "3",
+      "rate": 4,
+      "userId": "1",
+      "id": "olVW3G8"
+    },
+    {
+      "articleId": "6",
+      "rate": 4,
+      "userId": "1",
+      "id": "ZGQvIuG"
+    },
+    {
+      "articleId": "4",
+      "rate": 3,
+      "userId": "1",
+      "id": "8jy1r2b"
+    },
+    {
+      "articleId": "7",
+      "rate": 4,
+      "userId": "1",
+      "id": "gCJHUeJ"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Good profile",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 5,
+      "feedback": "Very good profile",
+      "userId": "2",
+      "profileId": "1"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "1",
+      "title": "Notification 1",
+      "description": "Something new!",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "Notification 2",
+      "description": "Something new!",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "3",
+      "title": "Notification 3",
+      "description": "Something new!",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "4",
+      "title": "Notification 4",
+      "description": "Something new!",
+      "userId": "1"
+    },
+    {
+      "id": "5",
+      "title": "Notification 5",
+      "description": "Something new!",
+      "userId": "2"
+    }
+  ],
   "articles": [
     {
       "id": "1",
@@ -1003,6 +1093,12 @@
       "userId": "1",
       "text": "43",
       "id": "a9lebzF"
+    },
+    {
+      "articleId": "9",
+      "userId": "1",
+      "text": "first",
+      "id": "-TlY-_B"
     }
   ],
   "users": [
@@ -1050,7 +1146,7 @@
       "id": "1",
       "first": "admin",
       "lastname": "superuser",
-      "age": 2,
+      "age": 3,
       "currency": "USD",
       "country": "Russia",
       "city": "Saint-Petersburg",
