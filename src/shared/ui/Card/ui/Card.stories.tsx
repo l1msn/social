@@ -1,7 +1,7 @@
 import type {Meta, StoryObj} from '@storybook/react';
 import '@/app/styles/index.scss';
 import Card from './Card';
-import themeDecorator from '../../../config/storybook/themeDecorator/themeDecorator';
+import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
 import {Text} from '@/shared/ui/Text';
 import Themes from '@/shared/consts/theme';
 

@@ -1,8 +1,8 @@
 import type {Meta, StoryObj} from '@storybook/react';
 import '@/app/styles/index.scss';
-import themeDecorator from '../../../../shared/config/storybook/themeDecorator/themeDecorator';
+import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
 import ArticlePage from './ArticlePage';
-import storeDecorator from '../../../../shared/config/storybook/storeDecorator/storeDecorator';
+import storeDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
 import {ArticleBlockType, ArticleType, IArticle} from '@/entities/Article';
 import Themes from '@/shared/consts/theme';
 

@@ -11,7 +11,7 @@ import {ArticleView} from '@/entities/Article';
 interface IArticleViewSelectorProps {
     className?: string
     view: ArticleView,
-    onViewClick: (view: ArticleView) => void;
+    onViewClick?: (view: ArticleView) => void;
 }
 
 const viewTypes = [

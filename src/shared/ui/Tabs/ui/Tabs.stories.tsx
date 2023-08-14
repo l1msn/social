@@ -1,6 +1,6 @@
 import type {Meta, StoryObj} from '@storybook/react';
 
-import themeDecorator from '../../../config/storybook/themeDecorator/themeDecorator';
+import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
 import Tabs from './Tabs';
 import {action} from '@storybook/addon-actions';
 import Themes from '@/shared/consts/theme';
