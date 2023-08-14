@@ -9,7 +9,7 @@ import {useSelector} from 'react-redux';
 import useThrottle from '@/shared/lib/hooks/useThrottle/useThrottle';
 import PAGE_ID from '@/shared/consts/ids';
 import {IStateSchema} from '@/app/providers/StoreProvider';
-import {getScrollPositionByPath, scrollRestoreActions} from '@/features/scrollRestore';
+import {ScrollPositionSelectors, scrollRestoreActions} from '@/features/ScrollRestore';
 
 interface IPageProps {
     className?: string
@@ -23,7 +23,7 @@ const Page: React.FC<IPageProps> = ({className, children, onScrollEnd}: IPagePro
     const {pathname} = useLocation();
 
     const scrollPosition = useSelector((state: IStateSchema) =>
-        getScrollPositionByPath(state, pathname),
+        ScrollPositionSelectors.getScrollPositionByPath(state, pathname),
     );
 
     const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;

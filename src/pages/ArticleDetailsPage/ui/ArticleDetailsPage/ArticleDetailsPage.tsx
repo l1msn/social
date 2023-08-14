@@ -4,18 +4,15 @@ import cls from './ArticleDetailsPage.module.scss';
 import {useParams} from 'react-router-dom';
 import {DynamicModuleLoader, ReducersList} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {useSelector} from 'react-redux';
-import getArticleCommentsError
-    from '../../model/selectors/getArticleCommentsError/getArticleCommentsError';
+import ArticleDetailsSelectors from '../../model/selectors/ArticleDetailsSelectors';
 import PageError from '@/widgets/PageError';
 import Page from '@/widgets/Page';
-import getArticleDetailsRecommendationsError
-    from '../../model/selectors/getArticleDetailsRecommendationsError/getArticleDetailsRecommendationsError';
 import articleDetailsPageReducer from '../../model/slice/index';
 import ArticleDetailsPageHeader from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import {ArticleDetails} from '@/entities/Article';
 import {VStack} from '@/shared/ui/Stack';
-import {ArticleRecommendationsList} from '@/features/articleRecommendationsList';
-import {ArticleRating} from '@/features/articleRating';
+import {ArticleRecommendationsList} from '@/features/ArticleRecommendationsList';
+import {ArticleRating} from '@/features/ArticleRating';
 import Loader from '@/shared/ui/Loader';
 import ArticleDetailsComments from '../ArticleDetailsComments/ArticleDetailsComments';
 
@@ -29,8 +26,8 @@ const reducers: ReducersList = {
 const ArticleDetailsPage: React.FC<IArticleDetailsPageProps> = memo(({className}: IArticleDetailsPageProps): JSX.Element | null => {
     const {id} = useParams<string>();
 
-    const errorComments = useSelector(getArticleCommentsError);
-    const errorRecommendations = useSelector(getArticleDetailsRecommendationsError);
+    const errorComments = useSelector(ArticleDetailsSelectors.getArticleCommentsError);
+    const errorRecommendations = useSelector(ArticleDetailsSelectors.getArticleDetailsRecommendationsError);
 
 
     if (errorComments || errorRecommendations) {

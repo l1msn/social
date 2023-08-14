@@ -1,9 +1,9 @@
 import React, {JSX, useMemo} from 'react';
 import {useSelector} from 'react-redux';
-import {getUserAuthData, getUserRoles, UserRole} from '@/entities/User';
+import {UserSelectors, UserRole} from '@/entities/User';
 import {Navigate, useLocation} from 'react-router-dom';
+import {RoutePaths} from '@/shared/consts/routerPaths';
 
-import {RoutePath} from '@/shared/consts/routerPaths';
 
 interface IRequireAuth {
     children: JSX.Element,
@@ -12,9 +12,9 @@ interface IRequireAuth {
 
 function RequireAuth({children, roles}: IRequireAuth) {
     const location = useLocation();
-    const auth = useSelector(getUserAuthData);
+    const auth = useSelector(UserSelectors.getUserAuthData);
 
-    const userRoles = useSelector(getUserRoles);
+    const userRoles = useSelector(UserSelectors.getUserRoles);
 
     const hasRequiredRoles = useMemo(() => {
         if (!roles) {
@@ -24,11 +24,11 @@ function RequireAuth({children, roles}: IRequireAuth) {
     }, [roles, userRoles]);
 
     if (!auth) {
-        return <Navigate to={RoutePath.main} state={{from: location}} replace />;
+        return <Navigate to={RoutePaths.getRouteMain()} state={{from: location}} replace />;
     }
 
     if (!hasRequiredRoles) {
-        return <Navigate to={RoutePath.forbidden} state={{from: location}} replace />;
+        return <Navigate to={RoutePaths.getRouteForbidden()} state={{from: location}} replace />;
     }
 
     return children;

@@ -3,8 +3,8 @@ import IStateSchema from '../types/IStateSchema';
 import {userReducer} from '@/entities/User';
 import {createReducerManager} from './reducerManager';
 import $api from '@/shared/api/api';
-import {scrollRestoreReducer} from '@/features/scrollRestore';
 import rtkApi from '@/shared/api/rtkApi';
+import {scrollRestoreReducer} from '@/features/ScrollRestore';
 
 
 function createReduxStore(initialState?: IStateSchema,

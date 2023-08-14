@@ -1,13 +1,8 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import {IThunkConfig} from '@/app/providers/StoreProvider';
 import {ArticleType, IArticle} from '@/entities/Article';
-import getArticlePageLimit from '../../selectors/getArticlePageLimit/getArticlePageLimit';
-import getArticlePageOrder from '../../selectors/getArticlePageOrder/getArticlePageOrder';
-import getArticlePageSort from '../../selectors/getArticlePageSort/getArticlePageSort';
-import getArticlePageSearch from '../../selectors/getArticlePageSearch/getArticlePageSearch';
-import getArticlePageNumber from '../../selectors/getArticlePageNumber/getArticlePageNumber';
 import {addQueryParams} from '@/shared/lib/url/addQueryParams/addQueryParams';
-import getArticlePageType from '../../selectors/getArticlePageType/getArticlePageType';
+import ArticlePageSelectors from '../../selectors/ArticlePageSelectors';
 
 interface IFetchArticlesList {
     replace?: boolean;
@@ -17,17 +12,17 @@ interface IFetchArticlesList {
 const fetchArticlesList = createAsyncThunk<IArticle[], IFetchArticlesList, IThunkConfig<string>>('articlePage/fetchArticlesList',
     async (_, thunkAPI) => {
         try {
-            const page = getArticlePageNumber(thunkAPI.getState());
-            const order = getArticlePageOrder(thunkAPI.getState());
-            const sort = getArticlePageSort(thunkAPI.getState());
-            const search = getArticlePageSearch(thunkAPI.getState());
-            const type = getArticlePageType(thunkAPI.getState());
+            const page = ArticlePageSelectors.getArticlePageNumber(thunkAPI.getState());
+            const order = ArticlePageSelectors.getArticlePageOrder(thunkAPI.getState());
+            const sort = ArticlePageSelectors.getArticlePageSort(thunkAPI.getState());
+            const search = ArticlePageSelectors.getArticlePageSearch(thunkAPI.getState());
+            const type = ArticlePageSelectors.getArticlePageType(thunkAPI.getState());
 
             addQueryParams({
                 sort, order, search, type,
             });
 
-            const limit = getArticlePageLimit(thunkAPI.getState());
+            const limit = ArticlePageSelectors.getArticlePageLimit(thunkAPI.getState());
             const response = await thunkAPI.extra.api.get<IArticle[]>('/articles', {
                 params: {
                     _expand: 'user',

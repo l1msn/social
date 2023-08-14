@@ -1,7 +1,7 @@
 module.exports = (layer, componentName) => `import {Meta, StoryObj} from '@storybook/react';
-import storeDecorator from 'shared/config/storybook/storeDecorator/storeDecorator';
-import themeDecorator from 'shared/config/storybook/themeDecorator/themeDecorator';
-import {Themes} from 'app/providers/ThemeProvider';
+import storeDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
+import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
+import {Themes} from '@/app/providers/ThemeProvider';
 import ${componentName} from './${componentName}';
 
 const meta = {

@@ -15,6 +15,13 @@ const preview: Preview = {
                 date: /Date$/,
             },
         },
+        themes: {
+            default: 'light',
+            list: [
+                { name: 'light', class: Themes.LIGHT, color: '#ffffff' },
+                { name: 'dark', class: Themes.DARK, color: '#000000' }
+            ],
+        },
     },
     decorators: [
         // @ts-ignore

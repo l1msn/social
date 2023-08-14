@@ -5,7 +5,6 @@ import themeDecorator from '../../../../shared/config/storybook/themeDecorator/t
 import UserIcon from '@/shared/assets/icons/user-icon.svg';
 import storeDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
 
-import {RoutePath} from '@/shared/consts/routerPaths';
 import Themes from '@/shared/consts/theme';
 
 const meta = {
@@ -23,7 +22,7 @@ type Story = StoryObj<typeof meta>;
 export const LightProfile: Story = {
     args: {
         item: {
-            path: RoutePath.profile,
+            path: '#',
             Icon: UserIcon,
             text: 'Profile',
         },
@@ -37,7 +36,7 @@ export const LightProfile: Story = {
 export const DarkProfile: Story = {
     args: {
         item: {
-            path: RoutePath.profile,
+            path: '#',
             Icon: UserIcon,
             text: 'Profile',
         },
@@ -51,7 +50,7 @@ export const DarkProfile: Story = {
 export const DarkProfileCollapsed: Story = {
     args: {
         item: {
-            path: RoutePath.profile,
+            path: '#',
             Icon: UserIcon,
             text: 'Profile',
         },

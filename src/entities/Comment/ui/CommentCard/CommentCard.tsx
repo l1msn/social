@@ -7,7 +7,7 @@ import {Text} from '@/shared/ui/Text';
 import Skeleton from '@/shared/ui/Skeleton';
 import AppLink from '@/shared/ui/AppLink';
 import {VStack} from '@/shared/ui/Stack';
-import {RoutePath} from '@/shared/consts/routerPaths';
+import {RoutePaths} from '@/shared/consts/routerPaths';
 
 interface ICommentCardProps {
     className?: string;
@@ -35,7 +35,7 @@ const CommentCard: React.FC<ICommentCardProps> = memo(({className, comment, isLo
 
     return (
         <VStack gap={'8'} max className={classNames(cls.CommentCard, {}, [className])}>
-            <AppLink to={RoutePath.profile + comment.user.id} className={cls.header}>
+            <AppLink to={RoutePaths.getRouteProfile(comment.user.id)} className={cls.header}>
                 {comment.user.avatar && <Avatar src={comment.user.avatar} size={30}/>}
                 <Text className={cls.username} title={comment.user.username}/>
             </AppLink>

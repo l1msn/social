@@ -26,7 +26,7 @@ const NotificationList: React.FC<INotificationListProps> = ({className}: INotifi
     }
 
     return (
-        <VStack gap={'16'} max className={classNames('', {}, [className])}>
+        <VStack gap={'16'} className={classNames('', {}, [className])}>
             {data?.map((item: INotification) => (
                 <NotificationItem key={item.id} item={item}/>
             ))}

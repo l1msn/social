@@ -4,17 +4,17 @@ import Navbar from '@/widgets/Navbar';
 import Sidebar from '@/widgets/Sidebar';
 import useAppDispatch from '../shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {useSelector} from 'react-redux';
-import {getUserInit, userActions} from '@/entities/User';
 import AppRouter from './providers/Router';
 import useTheme from '@/shared/lib/hooks/useTheme/useTheme';
 import Portal from '@/shared/ui/Portal';
+import {userActions, UserSelectors} from '@/entities/User';
 
 const App: React.FC = (): JSX.Element => {
     const {theme} = useTheme();
 
     const dispatch = useAppDispatch();
 
-    const init = useSelector(getUserInit);
+    const init = useSelector(UserSelectors.getUserInit);
 
     useEffect(() => {
         console.log('init auth data');

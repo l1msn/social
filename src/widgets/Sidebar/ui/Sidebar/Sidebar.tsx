@@ -9,7 +9,7 @@ import {useSelector} from 'react-redux';
 import getSidebarItems from '../../model/selectors/getSidebarItems';
 import LangSwitcher from '@/features/LangSwitcher';
 import ThemeSwitcher from '@/features/ThemeSwitcher';
-import {VStack} from '../../../../shared/ui/Stack';
+import {VStack} from '@/shared/ui/Stack';
 
 interface ISidebarProps {
     className?: string;

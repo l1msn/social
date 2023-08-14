@@ -5,10 +5,10 @@ import Button from '@/shared/ui/Button';
 import {useTranslation} from 'react-i18next';
 import {useNavigate} from 'react-router-dom';
 import {useSelector} from 'react-redux';
-import {getArticleData} from '@/entities/Article';
-import getCanEditArticle from '../../model/selectors/getCanEditArticle/getCanEditArticle';
+import ArticleDetailsSelectors from '../../model/selectors/ArticleDetailsSelectors';
+import {ArticleSelectors} from '@/entities/Article';
 import {HStack} from '@/shared/ui/Stack';
-import {RoutePath} from '@/shared/consts/routerPaths';
+import {RoutePaths} from '@/shared/consts/routerPaths';
 
 interface IArticleDetailsPageHeaderProps {
     className?: string
@@ -19,16 +19,18 @@ const ArticleDetailsPageHeader: React.FC<IArticleDetailsPageHeaderProps> = ({cla
 
     const {t} = useTranslation('article');
 
-    const canEdit = useSelector(getCanEditArticle);
-    const article = useSelector(getArticleData);
+    const canEdit = useSelector(ArticleDetailsSelectors.getCanEditArticle);
+    const article = useSelector(ArticleSelectors.getArticleData);
 
     const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles);
+        navigate(RoutePaths.getRouteArticles());
     }, [navigate]);
 
     const onEditArticle = useCallback(() => {
-        navigate(RoutePath.articles_details + article?.id + '/edit');
-    }, [article?.id, navigate]);
+        if (article?.id) {
+            navigate(RoutePaths.getRouteArticleEdit(article!.id));
+        }
+    }, [article, navigate]);
 
     return (
         <HStack max justify={'between'} className={classNames('', {}, [className])}>

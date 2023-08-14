@@ -6,9 +6,7 @@ import {articleReducer} from '../../model/slice/articleSlice';
 import useAppDispatch from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import fetchArticleById from '../../model/services/fetchArticleById/fetchArticleById';
 import {useSelector} from 'react-redux';
-import getArticleIsLoading from '../../model/selectors/getArticleIsLoading/getArticleIsLoading';
-import getArticleError from '../../model/selectors/getArticleError/getArticleError';
-import getArticleData from '../../model/selectors/getArticleData/getArticleData';
+import ArticleSelectors from '../../model/selectors/ArticleSelectors';
 import {AlignText, SizeText, Text} from '@/shared/ui/Text';
 import {useTranslation} from 'react-i18next';
 import Skeleton from '@/shared/ui/Skeleton';
@@ -41,9 +39,9 @@ const ArticleDetails: React.FC<IArticleDetailsProps> = memo(({className, id}: IA
         }
     }, [id, dispatch]);
 
-    const isLoading = useSelector(getArticleIsLoading);
-    const error = useSelector(getArticleError);
-    const article = useSelector(getArticleData);
+    const isLoading = useSelector(ArticleSelectors.getArticleIsLoading);
+    const error = useSelector(ArticleSelectors.getArticleError);
+    const article = useSelector(ArticleSelectors.getArticleData);
 
     const renderBlock = useCallback((block: ArticleBlock) => {
         switch (block.type) {

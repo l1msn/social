@@ -31,6 +31,12 @@
       "rate": 3,
       "userId": "1",
       "id": "8jy1r2b"
+    },
+    {
+      "articleId": "7",
+      "rate": 4,
+      "userId": "1",
+      "id": "gCJHUeJ"
     }
   ],
   "profile-ratings": [
@@ -1140,7 +1146,7 @@
       "id": "1",
       "first": "admin",
       "lastname": "superuser",
-      "age": 2,
+      "age": 3,
       "currency": "USD",
       "country": "Russia",
       "city": "Saint-Petersburg",
