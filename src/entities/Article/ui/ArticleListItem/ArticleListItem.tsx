@@ -14,6 +14,8 @@ import {useTranslation} from 'react-i18next';
 import ArticleText from '../ArticleText/ArticleText';
 import AppLink from '@/shared/ui/AppLink';
 import {RoutePaths} from '@/shared/consts/routerPaths';
+import AppImage from '@/shared/ui/AppImage';
+import Skeleton from '@/shared/ui/Skeleton';
 
 interface IArticleListItemProps {
     className?: string
@@ -40,7 +42,8 @@ const ArticleListItem: React.FC<IArticleListItemProps> = memo((props: IArticleLi
                 to={RoutePaths.getRouteArticleDetails(article.id)}>
                 <Card className={cls.card}>
                     <div className={cls.imageWrapper}>
-                        <img src={article.img} alt={article.title} className={cls.image}/>
+                        <AppImage fallback={<Skeleton width={200} height={250}/>}
+                            src={article.img} alt={article.title} className={cls.image}/>
                         <Text text={article.createAt} className={cls.date}/>
                     </div>
                     <div className={cls.infoWrapper}>
@@ -64,7 +67,8 @@ const ArticleListItem: React.FC<IArticleListItemProps> = memo((props: IArticleLi
                 </div>
                 <Text text={article.title} className={cls.title}/>
                 <Text text={article.type.join(', ')} className={cls.types}/>
-                <img src={article.img} alt={article.title} className={cls.image}/>
+                <AppImage fallback={<Skeleton width={'100%'} height={250}/>}
+                    src={article.img} alt={article.title} className={cls.image}/>
                 {textBlock && (
                     <ArticleText block={textBlock} className={cls.textBlock}/>
                 )}

@@ -48,7 +48,7 @@ const AvatarDropdown: React.FC<IAvatarDropdownProps> = ({className}: IAvatarDrop
             ]}
             trigger={
                 <Button theme={ThemeButton.CLEAR}>
-                    <Avatar size={30} src={authData.avatar} />
+                    <Avatar fallbackUInverted size={30} src={authData.avatar} />
                 </Button>
             }
         />

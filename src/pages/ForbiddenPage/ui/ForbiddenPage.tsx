@@ -11,7 +11,7 @@ const ForbiddenPage: React.FC<IForbiddenPageProps> = ({className}: IForbiddenPag
     const {t} = useTranslation();
 
     return (
-        <Page className={classNames('', {}, [className])}>
+        <Page data-testid={'ForbiddenPage'} className={classNames('', {}, [className])}>
             {t('No access')}
         </Page>
     );

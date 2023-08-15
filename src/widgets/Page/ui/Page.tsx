@@ -10,14 +10,16 @@ import useThrottle from '@/shared/lib/hooks/useThrottle/useThrottle';
 import PAGE_ID from '@/shared/consts/ids';
 import {IStateSchema} from '@/app/providers/StoreProvider';
 import {ScrollPositionSelectors, scrollRestoreActions} from '@/features/ScrollRestore';
+import TestProps from '@/shared/types/tests';
 
-interface IPageProps {
+interface IPageProps extends TestProps {
     className?: string
     children: React.ReactNode,
     onScrollEnd?: () => void;
 }
 
-const Page: React.FC<IPageProps> = ({className, children, onScrollEnd}: IPageProps): JSX.Element => {
+const Page: React.FC<IPageProps> = (props: IPageProps): JSX.Element => {
+    const {className, children, onScrollEnd} = props;
     const dispatch = useAppDispatch();
 
     const {pathname} = useLocation();
@@ -52,6 +54,7 @@ const Page: React.FC<IPageProps> = ({className, children, onScrollEnd}: IPagePro
             ref={wrapperRef}
             className={classNames(cls.page, {}, [className])}
             id={PAGE_ID}
+            data-testid={props['data-testid'] ?? 'Page'}
         >
             {children}
             {onScrollEnd ? <div className={cls.trigger} ref={triggerRef}/> : null}
