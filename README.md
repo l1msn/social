@@ -60,9 +60,9 @@ npm run start:dev - запуск сервера + frontend проекта в dev
 2) Тесты на компоненты с React testing library -`npm run test:unit`
 3) Скриншотное тестирование с loki `npm run test:ui`
 4) e2e тестирование с Cypress `npm run test:e2e`
+5) Pages с CI (tests/build) на GitHub - [CI REPORT](https://l1msn.github.io/social/)
 
 Подробнее о тестах - [документация тестирование](/docs/tests.md)
-
 ----
 
 ## Линтинг
