@@ -1,6 +1,6 @@
 import {bindActionCreators, createSlice} from '@reduxjs/toolkit';
 import {SliceCaseReducers, CreateSliceOptions} from '@reduxjs/toolkit/dist';
-import useAppDispatch from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import useAppDispatch from '../hooks/useAppDispatch/useAppDispatch';
 import {useMemo} from 'react';
 
 function buildSlice<

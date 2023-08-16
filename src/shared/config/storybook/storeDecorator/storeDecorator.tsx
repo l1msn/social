@@ -4,7 +4,7 @@ import {loginReducer} from '@/features/AuthByUsername/testing';
 import {articleReducer} from '@/entities/Article/testing';
 import {addCommentFormReducer} from '@/features/AddCommentForm/testing';
 import {articleDetailsPageReducer} from '@/pages/ArticleDetailsPage/testing';
-import {articlePageReducer} from '@/pages/ArticlePage/testing';
+import {articlesPageReducer} from '@/pages/ArticlesPage/testing';
 // eslint-disable-next-line l1msn-plugin/layer-imports
 import {profileReducer} from '@/features/EditableProfileCard';
 import {ReducersList} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
@@ -14,7 +14,7 @@ const defaultAsyncReducers: ReducersList = {
     profile: profileReducer,
     article: articleReducer,
     addCommentForm: addCommentFormReducer,
-    articlesPage: articlePageReducer,
+    articlesPage: articlesPageReducer,
     articleDetailsPage: articleDetailsPageReducer,
 };
 

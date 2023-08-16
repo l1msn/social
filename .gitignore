@@ -6,3 +6,5 @@
 /.loki/.gitignore
 .idea
 /storybook-static
+/dist
+/build

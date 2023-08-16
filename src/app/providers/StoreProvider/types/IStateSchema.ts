@@ -3,7 +3,7 @@ import {ILoginSchema} from 'src/features/AuthByUsername';
 import {IArticleSchema} from '@/entities/Article';
 import {IArticleDetailsPageSchema} from '@/pages/ArticleDetailsPage';
 import {IAddCommentFormSchema} from 'src/features/AddCommentForm';
-import {IArticlePageSchema} from '@/pages/ArticlePage';
+import {IArticlesPageSchema} from 'src/pages/ArticlesPage';
 import {IScrollSchema} from 'src/features/ScrollRestore';
 import rtkApi from '@/shared/api/rtkApi';
 import {IProfileSchema} from 'src/features/EditableProfileCard';
@@ -19,7 +19,7 @@ interface IStateSchema {
     profile?: IProfileSchema;
     article?: IArticleSchema;
     addCommentForm?: IAddCommentFormSchema;
-    articlesPage?: IArticlePageSchema;
+    articlesPage?: IArticlesPageSchema;
     articleDetailsPage?: IArticleDetailsPageSchema;
 }
 

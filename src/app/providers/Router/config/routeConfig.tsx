@@ -7,7 +7,7 @@ import {AdminPanelPage} from '@/pages/AdminPanelPage';
 import {UserRole} from '@/entities/User';
 import {ForbiddenPage} from '@/pages/ForbiddenPage';
 import NotFoundPage from '@/pages/NotFoundPage';
-import {ArticlePage} from '@/pages/ArticlePage';
+import {ArticlesPage} from '@/pages/ArticlesPage';
 import {AppRoutes, RoutePaths} from '@/shared/consts/routerPaths';
 import {AppRoutesProps} from '@/shared/types/router';
 
@@ -27,7 +27,7 @@ const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     },
     [AppRoutes.ARTICLES]: {
         path: RoutePaths.getRouteArticles(),
-        element: <ArticlePage />,
+        element: <ArticlesPage />,
         authOnly: true,
     },
     [AppRoutes.ARTICLE_DETAILS]: {

@@ -4,3 +4,5 @@
 /scripts
 webpack.config.ts
 vite.config.ts
+/dist
+/build
