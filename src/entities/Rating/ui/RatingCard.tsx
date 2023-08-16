@@ -60,12 +60,12 @@ const RatingCard: React.FC<IRatingCardProps> = (props: IRatingCardProps): JSX.El
     const modalContent = (
         <>
             <Text title={feedbackTitle}/>
-            <Input value={feedback} onChange={setFeedback} placeholder={t('Your review')}/>
+            <Input data-testid={'RatingCard.Input'} value={feedback} onChange={setFeedback} placeholder={t('Your review')}/>
         </>
     );
 
     return (
-        <Card className={className} max>
+        <Card className={className} max data-testid={'RatingCard'}>
             <VStack align={'center'} gap={'8'}>
                 <Text title={starsCount ? t('Thanks for review') : title}/>
                 <StarRating selectedStars={starsCount} size={60} onSelect={onSelectStars}/>
@@ -75,10 +75,10 @@ const RatingCard: React.FC<IRatingCardProps> = (props: IRatingCardProps): JSX.El
                     <VStack gap={'32'} max>
                         {modalContent}
                         <HStack max gap={'16'} justify={'end'}>
-                            <Button onClick={cancelHandler} theme={ThemeButton.WITHLINE_RED}>
+                            <Button data-testid={'RatingCard.Close'} onClick={cancelHandler} theme={ThemeButton.WITHLINE_RED}>
                                 {t('Close')}
                             </Button>
-                            <Button onClick={acceptHandler} theme={ThemeButton.WITHLINE}>
+                            <Button data-testid={'RatingCard.Send'} onClick={acceptHandler} theme={ThemeButton.WITHLINE}>
                                 {t('Send')}
                             </Button>
                         </HStack>

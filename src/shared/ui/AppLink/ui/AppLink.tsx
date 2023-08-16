@@ -3,8 +3,9 @@ import classNames from '@/shared/lib/classNames/classNames';
 import cls from './AppLink.module.scss';
 import {Link, LinkProps} from 'react-router-dom';
 import AppLinkThemes from '../consts/AppLinkThemes';
+import TestProps from '@/shared/types/tests';
 
-interface IAppLinkProps extends LinkProps{
+interface IAppLinkProps extends LinkProps, TestProps{
     className?: string,
     theme?: AppLinkThemes,
     children?: React.ReactNode;

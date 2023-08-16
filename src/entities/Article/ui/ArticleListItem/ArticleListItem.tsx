@@ -36,7 +36,7 @@ const ArticleListItem: React.FC<IArticleListItemProps> = memo((props: IArticleLi
 
     if (view === ArticleView.SHELF) {
         return (
-            <AppLink
+            <AppLink data-testid={'ArticleListItem'}
                 target={target}
                 className={classNames(cls.articleListItem, {}, [className, cls[view]])}
                 to={RoutePaths.getRouteArticleDetails(article.id)}>
@@ -58,7 +58,7 @@ const ArticleListItem: React.FC<IArticleListItemProps> = memo((props: IArticleLi
     }
 
     return (
-        <div className={classNames(cls.articleListItem, {}, [className, cls[view]])} >
+        <div data-testid={'ArticleListItem'} className={classNames(cls.articleListItem, {}, [className, cls[view]])} >
             <Card className={cls.card}>
                 <div className={cls.header}>
                     <Avatar src={article.user.avatar} size={30}/>

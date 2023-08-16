@@ -39,9 +39,9 @@ const AddCommentForm: React.FC<IAddCommentFormProps> = memo(({className, onSendC
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterAmount>
-            <HStack justify={'between'} max className={classNames(cls.commentForm, {}, [className])}>
-                <Input className={cls.input} value={text} onChange={onCommentTextChange} placeholder={t('Your comment...')}/>
-                <Button onClick={onSendHandler} theme={ThemeButton.WITHLINE}>{t('Send')}</Button>
+            <HStack data-testid={'AddCommentForm'} justify={'between'} max className={classNames(cls.commentForm, {}, [className])}>
+                <Input data-testid={'AddCommentForm.Input'} className={cls.input} value={text} onChange={onCommentTextChange} placeholder={t('Your comment...')}/>
+                <Button data-testid={'AddCommentForm.Button'} onClick={onSendHandler} theme={ThemeButton.WITHLINE}>{t('Send')}</Button>
             </HStack>
         </DynamicModuleLoader>
     );

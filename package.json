@@ -5,7 +5,7 @@
   "main": "src/index.tsx",
   "scripts": {
     "start:dev:webpack": "webpack serve --env port=3000",
-    "start:dev:vite": "vite",
+    "start:dev:vite": "vite --host",
     "start:dev:server": "node ./json-server/index.js",
     "start:dev": "npx concurrently \"npm run start:dev:vite\" \"npm run start:dev:server\" \"npm run storybook\"",
     "build:prod": "webpack --env mode=production apiUrl=https://social-backend-psi.vercel.app",

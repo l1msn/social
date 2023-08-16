@@ -30,7 +30,7 @@ const ArticleList: React.FC<IArticleListProps> = memo((props: IArticleListProps)
 
 
     return (
-        <div
+        <div data-testid={'ArticleList'}
             className={classNames(cls.articleList, {}, [className, cls[view]])}
         >
             {

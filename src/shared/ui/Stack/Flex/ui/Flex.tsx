@@ -39,6 +39,7 @@ const Flex: React.FC<IFlexProps> = (props: IFlexProps): JSX.Element => {
         direction = 'row',
         gap,
         max,
+        ...otherProps
     } = props;
 
     const classes = [className,
@@ -53,7 +54,7 @@ const Flex: React.FC<IFlexProps> = (props: IFlexProps): JSX.Element => {
     };
 
     return (
-        <div className={classNames(cls.flex, mods, classes)}>
+        <div className={classNames(cls.flex, mods, classes)} {...otherProps}>
             {children}
         </div>
     );

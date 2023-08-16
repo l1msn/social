@@ -51,6 +51,8 @@ const StarRating: React.FC<IStarRatingProps> = memo((props: IStarRatingProps): J
         <div className={classNames(cls.starRating, {}, [className])}>
             {stars.map((starNumber) =>
                 <Icon
+                    data-testid={'StarRating.' + starNumber}
+                    data-selected={currentStarsCount >= starNumber}
                     key={starNumber}
                     Svg={StarIcon}
                     className={classNames(cls.starIcon, {

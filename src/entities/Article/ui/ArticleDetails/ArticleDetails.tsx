@@ -11,8 +11,8 @@ import {AlignText, SizeText, Text} from '@/shared/ui/Text';
 import {useTranslation} from 'react-i18next';
 import Skeleton from '@/shared/ui/Skeleton';
 import Avatar from '@/shared/ui/Avatar';
-import DateIcon from '../../../../shared/assets/icons/date-icon.svg';
-import ViewsIcon from '../../../../shared/assets/icons/views-icon.svg';
+import DateIcon from '@/shared/assets/icons/date-icon.svg';
+import ViewsIcon from '@/shared/assets/icons/views-icon.svg';
 import Icon from '@/shared/ui/Icon';
 import {ArticleBlock, ArticleBlockType} from '../../model/types/IArticle';
 import ArticleCode from '../ArticleCode/ArticleCode';
@@ -102,7 +102,7 @@ const ArticleDetails: React.FC<IArticleDetailsProps> = memo(({className, id}: IA
                 <HStack justify={'center'} max className={cls.avatarWrapper}>
                     <Avatar size={200} src={article?.img} className={cls.avatar}/>
                 </HStack>
-                <VStack gap={'4'} max>
+                <VStack gap={'4'} max data-testid={'ArticleDetails.Info'}>
                     <Text size={SizeText.L}
                         className={cls.title}
                         title={article?.title}
