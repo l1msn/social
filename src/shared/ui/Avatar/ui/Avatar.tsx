@@ -1,10 +1,10 @@
 import React, {JSX, memo, useMemo} from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
 import cls from './Avatar.module.scss';
-import AppImage from '@/shared/ui/AppImage';
-import Icon from '@/shared/ui/Icon';
+import AppImage from '../../AppImage';
+import Icon from '../../Icon';
 import UserIcon from '@/shared/assets/icons/user-icon.svg';
-import Skeleton from '@/shared/ui/Skeleton';
+import Skeleton from '../../Skeleton';
 
 interface IAvatarProps {
     className?: string,

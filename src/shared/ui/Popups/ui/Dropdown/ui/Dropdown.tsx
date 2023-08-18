@@ -5,7 +5,7 @@ import classNames from '@/shared/lib/classNames/classNames';
 import {Menu, Transition} from '@headlessui/react';
 import IDropdownItem from '../types/IDropdownItem';
 import {DropDownDirection} from '@/shared/types/ui';
-import AppLink from '@/shared/ui/AppLink';
+import AppLink from '../../../../AppLink';
 import mapDirectionClass from '../../../styles/consts';
 interface IDropdownProps {
     className?: string,

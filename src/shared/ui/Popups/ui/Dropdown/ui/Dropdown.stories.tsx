@@ -2,7 +2,7 @@ import type {Meta, StoryObj} from '@storybook/react';
 import '@/app/styles/index.scss';
 import Dropdown from './Dropdown';
 import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
-import Button from '@/shared/ui/Button';
+import Button from '../../../../Button';
 import Themes from '@/shared/consts/theme';
 
 

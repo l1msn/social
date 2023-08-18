@@ -1,5 +1,5 @@
 import {userActions, userReducer} from './userSlice';
-import {IUser, IUserScheme} from '@/entities/User';
+import {IUser, IUserScheme} from '../..';
 
 const mockUser: IUser = {
     id: 1,

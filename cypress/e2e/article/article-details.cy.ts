@@ -1,6 +1,6 @@
 let currentArticleId: string = '';
 
-describe('Article Details testing', () => {
+describe('Article Details testing with API', () => {
     beforeEach(() => {
         cy.login();
         cy.createArticle().then((article) => {
@@ -28,5 +28,27 @@ describe('Article Details testing', () => {
         cy.getByTestId('RatingCard').scrollIntoView();
         cy.setRate(5, 'feedback');
         cy.get('[data-selected=true]').should('have.length', 5);
+        cy.removeRate(currentArticleId);
     });
 });
+
+describe('Article Details testing on stabs', () => {
+    const stabArticleId: string = '1';
+
+    beforeEach(() => {
+        cy.login();
+        cy.removeRate('1');
+        cy.visit('/articles/' + stabArticleId);
+    });
+
+    it('Set star rating (on stabs)', () => {
+        cy.intercept('GET', '**/articles/*', {fixture: 'article-details.json'});
+        cy.getByTestId('ArticleDetails.Info').should('exist');
+        cy.getByTestId('RatingCard').scrollIntoView();
+        cy.setRate(5, 'feedback');
+        cy.get('[data-selected=true]').should('have.length', 5);
+        cy.removeRate(stabArticleId);
+    });
+});
+
+

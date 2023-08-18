@@ -1,44 +1,5 @@
 {
-  "article-ratings": [
-    {
-      "id": "1",
-      "rate": 4,
-      "feedback": "Good article",
-      "userId": "1",
-      "articleId": "1"
-    },
-    {
-      "id": "2",
-      "rate": 5,
-      "feedback": "Very good article",
-      "userId": "2",
-      "articleId": "1"
-    },
-    {
-      "articleId": "3",
-      "rate": 4,
-      "userId": "1",
-      "id": "olVW3G8"
-    },
-    {
-      "articleId": "6",
-      "rate": 4,
-      "userId": "1",
-      "id": "ZGQvIuG"
-    },
-    {
-      "articleId": "4",
-      "rate": 3,
-      "userId": "1",
-      "id": "8jy1r2b"
-    },
-    {
-      "articleId": "7",
-      "rate": 4,
-      "userId": "1",
-      "id": "gCJHUeJ"
-    }
-  ],
+  "article-ratings": [],
   "profile-ratings": [
     {
       "id": "1",
@@ -1324,6 +1285,45 @@
       ],
       "blocks": [],
       "id": "348vUut"
+    },
+    {
+      "title": "TEST title",
+      "subtitle": "TEST subtitle",
+      "img": "https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/",
+      "views": "1",
+      "createAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "pMm2Fz2"
+    },
+    {
+      "title": "TEST title",
+      "subtitle": "TEST subtitle",
+      "img": "https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/",
+      "views": "1",
+      "createAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "rlTsD8Q"
+    },
+    {
+      "title": "TEST title",
+      "subtitle": "TEST subtitle",
+      "img": "https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/",
+      "views": "1",
+      "createAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "YZEsg3z"
     }
   ],
   "comments": [
@@ -1404,6 +1404,12 @@
       "userId": "2",
       "text": "test",
       "id": "T6huInr"
+    },
+    {
+      "articleId": "rlTsD8Q",
+      "userId": "2",
+      "text": "test",
+      "id": "geGJGAq"
     }
   ],
   "users": [

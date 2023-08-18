@@ -6,6 +6,7 @@ import ArticleCommands from "./commands/article/ArticleCommands";
 import {IArticle} from "../../src/entities/Article";
 import CommentsCommands from "./commands/comments/CommentsCommands";
 import RatingCommands from "./commands/rating/RatingCommands";
+import * as process from "process";
 
 // common
 Cypress.Commands.add('getByTestId', CommonCommands.getByTestId);
@@ -21,6 +22,8 @@ Cypress.Commands.add('deleteArticle', ArticleCommands.deleteArticle);
 Cypress.Commands.add('addComment', CommentsCommands.addComment);
 // rate
 Cypress.Commands.add('setRate', RatingCommands.setRate);
+Cypress.Commands.add('removeRate', RatingCommands.removeRate);
+
 
 // @ts-ignore
 declare global {
@@ -41,6 +44,7 @@ declare global {
       addComment(comment: string): Chainable<void>
       // star
       setRate(rate: number, feedback: string): Chainable<void>
+      removeRate(articleId: string): Chainable<Response<any>>
     }
   }
 }

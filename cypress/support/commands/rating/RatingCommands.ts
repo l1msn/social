@@ -4,6 +4,13 @@ class RatingCommands {
         cy.getByTestId('RatingCard.Input').type(feedback);
         cy.getByTestId('RatingCard.Send').click();
     }
+    static removeRate(articleId: string) {
+        return cy.request({
+            method: 'DELETE',
+            url: `http://localhost:8000/article-ratings/${articleId}`,
+            headers: {Authorization: 'Authorization'},
+        });
+    }
 }
 
 export default RatingCommands;

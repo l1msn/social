@@ -3,9 +3,9 @@ import classNames from '@/shared/lib/classNames/classNames';
 import cls from './Drawer.module.scss';
 import useTheme from '@/shared/lib/hooks/useTheme/useTheme';
 import {AnimationProvider, useAnimationLibs} from '@/shared/lib/components/AnimationProvider/AnimationProvider';
-import Portal from '@/shared/ui/Portal';
-import Overlay from '@/shared/ui/Overlay';
-import Loader from '@/shared/ui/Loader';
+import Portal from '../../../Portal';
+import Overlay from '../../../Overlay';
+import Loader from '../../../Loader';
 
 interface IDrawerProps {
     className?: string,
