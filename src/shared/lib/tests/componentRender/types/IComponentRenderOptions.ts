@@ -1,5 +1,5 @@
-import {IStateSchema} from '@/app/providers/StoreProvider';
-import {ReducersList} from '../../../components/DynamicModuleLoader/DynamicModuleLoader';
+import { IStateSchema } from '@/app/providers/StoreProvider';
+import { ReducersList } from '../../../components/DynamicModuleLoader/DynamicModuleLoader';
 import Themes from '@/shared/consts/theme';
 
 interface IComponentRenderOptions {

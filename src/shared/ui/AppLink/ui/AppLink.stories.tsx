@@ -1,15 +1,13 @@
-import type {Meta, StoryObj} from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import AppLink from './AppLink';
 import AppLinkThemes from '../consts/AppLinkThemes';
-
 
 const meta = {
     title: 'shared/AppLink',
     component: AppLink,
     tags: ['autodocs'],
-    argTypes: {
-    },
+    argTypes: {},
     args: {
         to: '/',
     },
@@ -17,7 +15,6 @@ const meta = {
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
 
 export const Primary: Story = {
     args: {
@@ -32,5 +29,3 @@ export const Secondary: Story = {
         theme: AppLinkThemes.SECONDARY,
     },
 };
-
-

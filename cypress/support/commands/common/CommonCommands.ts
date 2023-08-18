@@ -1,4 +1,4 @@
-import selectByTestId from "../../../helpers/selectByTestId";
+import selectByTestId from '../../../helpers/selectByTestId';
 
 class CommonCommands {
     static getByTestId(testId: string) {

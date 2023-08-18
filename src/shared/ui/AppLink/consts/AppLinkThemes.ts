@@ -1,6 +1,6 @@
 enum AppLinkThemes {
     PRIMARY = 'primary',
-    SECONDARY = 'secondary'
+    SECONDARY = 'secondary',
 }
 
 export default AppLinkThemes;

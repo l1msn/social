@@ -1,7 +1,6 @@
-import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {IUser, IUserScheme} from '../types/IUser';
-import {USER_LOCALSTORAGE_KEY} from '@/shared/consts/localStorage';
-
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { IUser, IUserScheme } from '../types/IUser';
+import { USER_LOCALSTORAGE_KEY } from '@/shared/consts/localStorage';
 
 const initialState: IUserScheme = {
     init: false,
@@ -30,6 +29,5 @@ export const userSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const {actions: userActions} = userSlice;
-export const {reducer: userReducer} = userSlice;
-
+export const { actions: userActions } = userSlice;
+export const { reducer: userReducer } = userSlice;

@@ -1,8 +1,8 @@
 import UserRole from '../types/UserRole';
 
 interface IUser {
-    id: string | number,
-    username: string
+    id: string | number;
+    username: string;
     avatar?: string;
     roles?: UserRole[];
 }
@@ -12,4 +12,4 @@ interface IUserScheme {
     init: boolean;
 }
 
-export type {IUser, IUserScheme};
+export type { IUser, IUserScheme };

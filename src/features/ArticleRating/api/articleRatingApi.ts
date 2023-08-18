@@ -2,26 +2,28 @@ import rtkApi from '@/shared/api/rtkApi';
 import IArticleRating from '../model/types/IArticleRating';
 
 interface IGetArticleRatingProps {
-    userId: string | number,
+    userId: string | number;
     articleId: string;
 }
 
-interface IRateArticleRatingProps extends IGetArticleRatingProps{
-    rate: number,
+interface IRateArticleRatingProps extends IGetArticleRatingProps {
+    rate: number;
     feedback?: string;
 }
 
 const articleRatingApi = rtkApi.injectEndpoints({
     endpoints: (build) => ({
-        getArticleRating: build.query<IArticleRating[], IGetArticleRatingProps>({
-            query: ({articleId, userId}) => ({
-                url: '/article-ratings',
-                params: {
-                    userId,
-                    articleId,
-                },
-            }),
-        }),
+        getArticleRating: build.query<IArticleRating[], IGetArticleRatingProps>(
+            {
+                query: ({ articleId, userId }) => ({
+                    url: '/article-ratings',
+                    params: {
+                        userId,
+                        articleId,
+                    },
+                }),
+            },
+        ),
         rateArticleRating: build.mutation<void, IRateArticleRatingProps>({
             query: (arg) => ({
                 url: '/article-ratings',
@@ -35,4 +37,4 @@ const articleRatingApi = rtkApi.injectEndpoints({
 const useGetArticleRating = articleRatingApi.useGetArticleRatingQuery;
 const useRateArticle = articleRatingApi.useRateArticleRatingMutation;
 
-export {useGetArticleRating, useRateArticle};
+export { useGetArticleRating, useRateArticle };

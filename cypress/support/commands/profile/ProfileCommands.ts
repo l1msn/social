@@ -9,17 +9,17 @@ class ProfileCommands {
         return cy.request({
             method: 'PUT',
             url: `http://localhost:8000/profile/${profileId}`,
-            headers: {Authorization: 'Authorization'},
+            headers: { Authorization: 'Authorization' },
             body: {
-                'id': '2',
-                'first': 'Alex',
-                'lastname': 'Sadykov',
-                'age': 23,
-                'currency': 'RUB',
-                'country': 'Russia',
-                'city': 'Saint-Petersburg',
-                'username': 'Darlingg',
-                'avatar': 'https://imgur.com/IyES7O4.png',
+                id: '2',
+                first: 'Alex',
+                lastname: 'Sadykov',
+                age: 23,
+                currency: 'RUB',
+                country: 'Russia',
+                city: 'Saint-Petersburg',
+                username: 'Darlingg',
+                avatar: 'https://imgur.com/IyES7O4.png',
             },
         });
     }

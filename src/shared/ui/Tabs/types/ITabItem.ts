@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface ITabItem {
-    value: string,
+    value: string;
     content: React.ReactNode;
 }
 

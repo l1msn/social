@@ -1,9 +1,18 @@
-import {createEntityAdapter, createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {IStateSchema} from '@/app/providers/StoreProvider';
-import {ArticleSortField, ArticleType, ArticleView, IArticle} from '@/entities/Article';
+import {
+    createEntityAdapter,
+    createSlice,
+    PayloadAction,
+} from '@reduxjs/toolkit';
+import { IStateSchema } from '@/app/providers/StoreProvider';
+import {
+    ArticleSortField,
+    ArticleType,
+    ArticleView,
+    IArticle,
+} from '@/entities/Article';
 import IArticlesPageSchema from '../types/IArticlesPageSchema';
 import fetchArticlesList from '../services/fetchArticlesList/fetchArticlesList';
-import {ARTICLE_VIEW_LOCALSTORAGE_KEY} from '@/shared/consts/localStorage';
+import { ARTICLE_VIEW_LOCALSTORAGE_KEY } from '@/shared/consts/localStorage';
 import SortOrder from '@/shared/types/sort';
 
 const articlesAdapter = createEntityAdapter<IArticle>({
@@ -11,8 +20,7 @@ const articlesAdapter = createEntityAdapter<IArticle>({
 });
 
 const getArticles = articlesAdapter.getSelectors<IStateSchema>(
-    (state) =>
-        state.articlesPage || articlesAdapter.getInitialState(),
+    (state) => state.articlesPage || articlesAdapter.getInitialState(),
 );
 
 const articlesPageSlice = createSlice({
@@ -44,7 +52,9 @@ const articlesPageSlice = createSlice({
             state.type = action.payload;
         },
         initState: (state) => {
-            const initView = localStorage.getItem(ARTICLE_VIEW_LOCALSTORAGE_KEY) as ArticleView;
+            const initView = localStorage.getItem(
+                ARTICLE_VIEW_LOCALSTORAGE_KEY,
+            ) as ArticleView;
             state.view = initView;
             state.limit = initView === ArticleView.LIST ? 4 : 9;
             state.init = true;
@@ -61,34 +71,31 @@ const articlesPageSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
-            .addCase(fetchArticlesList.pending,
-                (state, action) => {
-                    state.isLoading = true;
-                    state.error = undefined;
+            .addCase(fetchArticlesList.pending, (state, action) => {
+                state.isLoading = true;
+                state.error = undefined;
 
-                    if (action.meta.arg.replace) {
-                        articlesAdapter.removeAll(state);
-                    }
-                })
-            .addCase(fetchArticlesList.fulfilled,
-                (state, action) => {
-                    state.isLoading = false;
-                    state.hasMore = action.payload.length >= state.limit;
+                if (action.meta.arg.replace) {
+                    articlesAdapter.removeAll(state);
+                }
+            })
+            .addCase(fetchArticlesList.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.hasMore = action.payload.length >= state.limit;
 
-                    if (action.meta.arg.replace) {
-                        articlesAdapter.setAll(state, action.payload);
-                    } else {
-                        articlesAdapter.addMany(state, action.payload);
-                    }
-                })
-            .addCase(fetchArticlesList.rejected,
-                (state, action) => {
-                    state.isLoading = false;
-                    state.error = action.payload;
-                });
+                if (action.meta.arg.replace) {
+                    articlesAdapter.setAll(state, action.payload);
+                } else {
+                    articlesAdapter.addMany(state, action.payload);
+                }
+            })
+            .addCase(fetchArticlesList.rejected, (state, action) => {
+                state.isLoading = false;
+                state.error = action.payload;
+            });
     },
 });
 
-export const {reducer: articlesPageReducer} = articlesPageSlice;
-export const {actions: articlesPageActions} = articlesPageSlice;
-export {getArticles};
+export const { reducer: articlesPageReducer } = articlesPageSlice;
+export const { actions: articlesPageActions } = articlesPageSlice;
+export { getArticles };

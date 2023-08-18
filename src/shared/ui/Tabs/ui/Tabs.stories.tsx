@@ -1,22 +1,19 @@
-import type {Meta, StoryObj} from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
 import Tabs from './Tabs';
-import {action} from '@storybook/addon-actions';
+import { action } from '@storybook/addon-actions';
 import Themes from '@/shared/consts/theme';
-
 
 const meta = {
     title: 'widget/Tabs',
     component: Tabs,
     tags: ['autodocs'],
-    argTypes: {
-    },
+    argTypes: {},
 } satisfies Meta<typeof Tabs>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
 
 export const Light: Story = {
     args: {
@@ -52,5 +49,3 @@ export const Dark: Story = {
     },
     decorators: [themeDecorator(Themes.DARK)],
 };
-
-

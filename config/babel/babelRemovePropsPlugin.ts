@@ -1,4 +1,4 @@
-import {PluginItem} from '@babel/core';
+import { PluginItem } from '@babel/core';
 
 function babelRemovePropsPlugin(): PluginItem {
     return {
@@ -7,7 +7,7 @@ function babelRemovePropsPlugin(): PluginItem {
                 const forbidden = state.opts.props || [];
 
                 path.traverse({
-                    JSXIdentifier(current ) {
+                    JSXIdentifier(current) {
                         const nodeName = current.node.name;
 
                         if (forbidden.includes(nodeName)) {

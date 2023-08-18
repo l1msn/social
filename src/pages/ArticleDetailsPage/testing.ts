@@ -1,3 +1,3 @@
 import articleDetailsPageReducer from './model/slice';
 
-export {articleDetailsPageReducer};
+export { articleDetailsPageReducer };

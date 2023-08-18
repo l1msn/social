@@ -1,12 +1,12 @@
 import AppRouter from './AppRouter';
 import componentRender from '@/shared/lib/tests/componentRender/componentRender';
-import {RoutePaths} from '@/shared/consts/routerPaths';
-import {screen} from '@testing-library/react';
-import {UserRole} from '@/entities/User';
+import { RoutePaths } from '@/shared/consts/routerPaths';
+import { screen } from '@testing-library/react';
+import { UserRole } from '@/entities/User';
 
 describe('testing AppRouter functional', () => {
     test('success navigate render', async () => {
-        componentRender(<AppRouter/>, {
+        componentRender(<AppRouter />, {
             route: RoutePaths.getRouteAbout(),
         });
 
@@ -15,7 +15,7 @@ describe('testing AppRouter functional', () => {
     });
 
     test('unsuccessful navigate render', async () => {
-        componentRender(<AppRouter/>, {
+        componentRender(<AppRouter />, {
             route: '/asds',
         });
 
@@ -24,7 +24,7 @@ describe('testing AppRouter functional', () => {
     });
 
     test('not auth navigate render', async () => {
-        componentRender(<AppRouter/>, {
+        componentRender(<AppRouter />, {
             route: RoutePaths.getRouteProfile('1'),
         });
 
@@ -33,7 +33,7 @@ describe('testing AppRouter functional', () => {
     });
 
     test('auth navigate render', async () => {
-        componentRender(<AppRouter/>, {
+        componentRender(<AppRouter />, {
             route: RoutePaths.getRouteProfile('1'),
             initialState: {
                 user: {
@@ -48,7 +48,7 @@ describe('testing AppRouter functional', () => {
     });
 
     test('auth navigate without role render', async () => {
-        componentRender(<AppRouter/>, {
+        componentRender(<AppRouter />, {
             route: RoutePaths.getRouteAdminPanel(),
             initialState: {
                 user: {
@@ -63,12 +63,12 @@ describe('testing AppRouter functional', () => {
     });
 
     test('auth navigate with role render', async () => {
-        componentRender(<AppRouter/>, {
+        componentRender(<AppRouter />, {
             route: RoutePaths.getRouteAdminPanel(),
             initialState: {
                 user: {
                     init: true,
-                    authData: {roles: [UserRole.ADMIN]},
+                    authData: { roles: [UserRole.ADMIN] },
                 },
             },
         });

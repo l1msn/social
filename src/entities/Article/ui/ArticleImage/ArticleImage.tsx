@@ -1,25 +1,25 @@
-import React, {JSX, memo} from 'react';
+import React, { JSX, memo } from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
 import cls from './ArticleImage.module.scss';
-import {IArticleImageBlock} from '../../model/types/IArticle';
-import {AlignText, Text} from '@/shared/ui/Text';
+import { IArticleImageBlock } from '../../model/types/IArticle';
+import { AlignText, Text } from '@/shared/ui/Text';
 
 interface IArticleImageProps {
-    className?: string
-    block: IArticleImageBlock
+    className?: string;
+    block: IArticleImageBlock;
 }
 
-const ArticleImage: React.FC<IArticleImageProps> = memo(({className, block}: IArticleImageProps): JSX.Element => {
-    return (
-        <div className={classNames(cls.article, {}, [className])}>
-            <img src={block.src} className={cls.image} alt={block.title}/>
-            {block.title && (
-                <Text title={block.title} align={AlignText.CENTER}/>
-            )}
-        </div>
-    );
-});
+const ArticleImage: React.FC<IArticleImageProps> = memo(
+    ({ className, block }: IArticleImageProps): JSX.Element => {
+        return (
+            <div className={classNames(cls.article, {}, [className])}>
+                <img src={block.src} className={cls.image} alt={block.title} />
+                {block.title && (
+                    <Text title={block.title} align={AlignText.CENTER} />
+                )}
+            </div>
+        );
+    },
+);
 
 export default ArticleImage;
-
-

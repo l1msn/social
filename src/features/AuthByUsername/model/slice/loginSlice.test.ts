@@ -1,6 +1,6 @@
-import {IUser} from '@/entities/User';
+import { IUser } from '@/entities/User';
 import ILoginSchema from '../types/ILoginSchema';
-import {loginReducer} from './loginSlice';
+import { loginReducer } from './loginSlice';
 import loginByUsername from '../../services/loginByUsername/loginByUsername';
 
 const mockData: IUser = {
@@ -17,13 +17,14 @@ describe('testing articleDetailsCommentsSlice functional', () => {
             password: '',
             error: undefined,
         };
-        expect(loginReducer(state as ILoginSchema, loginByUsername.pending)).
-            toEqual({
-                isLoading: true,
-                username: '',
-                password: '',
-                error: undefined,
-            });
+        expect(
+            loginReducer(state as ILoginSchema, loginByUsername.pending),
+        ).toEqual({
+            isLoading: true,
+            username: '',
+            password: '',
+            error: undefined,
+        });
     });
 
     test('test login by username fulfilled', () => {
@@ -31,11 +32,15 @@ describe('testing articleDetailsCommentsSlice functional', () => {
             username: '',
             password: '',
         };
-        expect(loginReducer(state as ILoginSchema, loginByUsername.fulfilled(mockData, '', state))).
-            toEqual({
-                isLoading: false,
-                username: '',
-                password: '',
-            });
+        expect(
+            loginReducer(
+                state as ILoginSchema,
+                loginByUsername.fulfilled(mockData, '', state),
+            ),
+        ).toEqual({
+            isLoading: false,
+            username: '',
+            password: '',
+        });
     });
 });

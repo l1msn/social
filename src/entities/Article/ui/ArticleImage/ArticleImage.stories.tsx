@@ -1,18 +1,16 @@
-import type {Meta, StoryObj} from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import ArticleImage from './ArticleImage';
 import storeDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
 import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
-import {ArticleBlockType} from '../../model/types/IArticle';
+import { ArticleBlockType } from '../../model/types/IArticle';
 import Themes from '@/shared/consts/theme';
-
 
 const meta = {
     title: 'entities/ArticleImage',
     component: ArticleImage,
     tags: ['autodocs'],
-    argTypes: {
-    },
+    argTypes: {},
 } satisfies Meta<typeof ArticleImage>;
 
 export default meta;
@@ -53,5 +51,3 @@ export const DarkFree: Story = {
     },
     decorators: [themeDecorator(Themes.DARK), storeDecorator({})],
 };
-
-

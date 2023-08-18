@@ -1,3 +1,3 @@
 import ProfilePageLazy from './ui/ProfilePage.lazy';
 
-export {ProfilePageLazy as ProfilePage};
+export { ProfilePageLazy as ProfilePage };

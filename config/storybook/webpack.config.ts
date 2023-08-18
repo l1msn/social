@@ -1,9 +1,9 @@
-import webpack, {RuleSetRule} from 'webpack';
-import {IBuildPaths} from '../build/types/config';
+import webpack, { RuleSetRule } from 'webpack';
+import { IBuildPaths } from '../build/types/config';
 import path from 'path';
 import buildCSSLoader from '../build/loaders/buildCSSLoader';
 
-function webpackConfigStorybook({config}: {config: webpack.Configuration}) {
+function webpackConfigStorybook({ config }: { config: webpack.Configuration }) {
     const paths: IBuildPaths = {
         build: '',
         html: '',
@@ -12,7 +12,6 @@ function webpackConfigStorybook({config}: {config: webpack.Configuration}) {
         locales: '',
         buildLocales: '',
     };
-
 
     config!.resolve!.modules!.push(paths.src);
     config!.resolve!.extensions!.push('.ts', '.tsx', '.svg');
@@ -24,7 +23,7 @@ function webpackConfigStorybook({config}: {config: webpack.Configuration}) {
     // @ts-ignore
     config!.module!.rules = config!.module!.rules!.map((rule: RuleSetRule) => {
         if (/svg/.test(rule.test as string)) {
-            return {...rule, exclude: /\.svg$/};
+            return { ...rule, exclude: /\.svg$/ };
         }
         return rule;
     });
@@ -34,14 +33,15 @@ function webpackConfigStorybook({config}: {config: webpack.Configuration}) {
         loader: '@svgr/webpack',
     });
     config!.module!.rules!.push(buildCSSLoader(true));
-    config!.plugins!.push(new webpack.DefinePlugin({
-        __IS_DEV__: JSON.stringify(true),
-        __API__: JSON.stringify('https://testapi.com'),
-        __PROJECT__: JSON.stringify('storybook'),
-    }));
+    config!.plugins!.push(
+        new webpack.DefinePlugin({
+            __IS_DEV__: JSON.stringify(true),
+            __API__: JSON.stringify('https://testapi.com'),
+            __PROJECT__: JSON.stringify('storybook'),
+        }),
+    );
 
     return config;
 }
-
 
 export default webpackConfigStorybook;

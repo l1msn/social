@@ -8,7 +8,7 @@ class RatingCommands {
         return cy.request({
             method: 'DELETE',
             url: `http://localhost:8000/article-ratings/${articleId}`,
-            headers: {Authorization: 'Authorization'},
+            headers: { Authorization: 'Authorization' },
         });
     }
 }

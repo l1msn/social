@@ -1,7 +1,7 @@
 interface INotification {
-    id: string | number,
-    title: string,
-    description: string,
+    id: string | number;
+    title: string;
+    description: string;
     href?: string;
 }
 

@@ -1,5 +1,5 @@
 interface IArticleRating {
-    rate: number,
+    rate: number;
     feedback?: string;
 }
 

@@ -1,6 +1,6 @@
 enum ArticleView {
     LIST = 'LIST',
-    SHELF = 'SHELF'
+    SHELF = 'SHELF',
 }
 
 export default ArticleView;

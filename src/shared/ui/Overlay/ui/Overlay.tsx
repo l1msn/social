@@ -1,18 +1,22 @@
-import React, {JSX} from 'react';
+import React, { JSX } from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
 import cls from './Overlay.module.scss';
 
 interface IOverlayProps {
-    className?: string,
+    className?: string;
     onClick?: () => void;
 }
 
-const Overlay: React.FC<IOverlayProps> = ({className, onClick}: IOverlayProps): JSX.Element => {
+const Overlay: React.FC<IOverlayProps> = ({
+    className,
+    onClick,
+}: IOverlayProps): JSX.Element => {
     return (
-        <div onClick={onClick} className={classNames(cls.overlay, {}, [className])}/>
+        <div
+            onClick={onClick}
+            className={classNames(cls.overlay, {}, [className])}
+        />
     );
 };
 
 export default Overlay;
-
-

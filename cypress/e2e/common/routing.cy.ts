@@ -1,4 +1,4 @@
-import selectByTestId from "../../helpers/selectByTestId";
+import selectByTestId from '../../helpers/selectByTestId';
 
 describe('Routing testing', () => {
     describe('Not auth user', () => {
@@ -19,7 +19,7 @@ describe('Routing testing', () => {
     describe('Auth user', () => {
         beforeEach(() => {
             cy.login('username', 'password');
-        })
+        });
         it('Visit profile page', () => {
             cy.visit('/profile/1');
             cy.get(selectByTestId('ProfilePage')).should('exist');

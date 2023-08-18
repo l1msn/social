@@ -1,6 +1,6 @@
 enum LangButton {
     EN = 'en',
-    RU = 'ru'
+    RU = 'ru',
 }
 
 export default LangButton;

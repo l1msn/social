@@ -1,4 +1,4 @@
-import {IStateSchema} from '@/app/providers/StoreProvider';
+import { IStateSchema } from '@/app/providers/StoreProvider';
 import LoginSelectors from './LoginSelectors';
 
 describe('testing getLoginPassword functional', () => {
@@ -21,7 +21,9 @@ describe('testing getLoginPassword functional', () => {
 
     test('with empty state', () => {
         const state: DeepPartial<IStateSchema> = {};
-        expect(LoginSelectors.getLoginState(state as IStateSchema)).toEqual(undefined);
+        expect(LoginSelectors.getLoginState(state as IStateSchema)).toEqual(
+            undefined,
+        );
     });
 });
 
@@ -32,7 +34,9 @@ describe('testing getLoginError functional', () => {
                 error: 'ERROR',
             },
         };
-        expect(LoginSelectors.getLoginError(state as IStateSchema)).toEqual('ERROR');
+        expect(LoginSelectors.getLoginError(state as IStateSchema)).toEqual(
+            'ERROR',
+        );
     });
 
     test('with empty state', () => {
@@ -48,12 +52,16 @@ describe('testing getLoginIsLoading functional', () => {
                 isLoading: true,
             },
         };
-        expect(LoginSelectors.getLoginIsLoading(state as IStateSchema)).toEqual(true);
+        expect(LoginSelectors.getLoginIsLoading(state as IStateSchema)).toEqual(
+            true,
+        );
     });
 
     test('with empty state', () => {
         const state: DeepPartial<IStateSchema> = {};
-        expect(LoginSelectors.getLoginIsLoading(state as IStateSchema)).toEqual(false);
+        expect(LoginSelectors.getLoginIsLoading(state as IStateSchema)).toEqual(
+            false,
+        );
     });
 });
 
@@ -64,12 +72,16 @@ describe('testing getLoginPassword functional', () => {
                 password: '123',
             },
         };
-        expect(LoginSelectors.getLoginPassword(state as IStateSchema)).toEqual('123');
+        expect(LoginSelectors.getLoginPassword(state as IStateSchema)).toEqual(
+            '123',
+        );
     });
 
     test('with empty state', () => {
         const state: DeepPartial<IStateSchema> = {};
-        expect(LoginSelectors.getLoginPassword(state as IStateSchema)).toEqual('');
+        expect(LoginSelectors.getLoginPassword(state as IStateSchema)).toEqual(
+            '',
+        );
     });
 });
 
@@ -80,11 +92,15 @@ describe('testing getLoginUsername functional', () => {
                 username: 'asd',
             },
         };
-        expect(LoginSelectors.getLoginUsername(state as IStateSchema)).toEqual('asd');
+        expect(LoginSelectors.getLoginUsername(state as IStateSchema)).toEqual(
+            'asd',
+        );
     });
 
     test('with empty state', () => {
         const state: DeepPartial<IStateSchema> = {};
-        expect(LoginSelectors.getLoginUsername(state as IStateSchema)).toEqual('');
+        expect(LoginSelectors.getLoginUsername(state as IStateSchema)).toEqual(
+            '',
+        );
     });
 });

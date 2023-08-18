@@ -1,5 +1,5 @@
 interface ISelectOptions<T extends string> {
-    value: T,
+    value: T;
     content: string;
 }
 

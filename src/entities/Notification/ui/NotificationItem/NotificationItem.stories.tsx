@@ -1,28 +1,26 @@
-import type {Meta, StoryObj} from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import '@/app/styles/index.scss';
 import NotificationItem from './NotificationItem';
 import storeDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
 import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
 import Themes from '@/shared/consts/theme';
 
-
 const meta = {
     title: 'entities/NotificationItem',
     component: NotificationItem,
     tags: ['autodocs'],
-    argTypes: {
-    },
+    argTypes: {},
 } satisfies Meta<typeof NotificationItem>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 const mockNotification = {
-    'id': '1',
-    'title': 'Notification 1',
-    'description': 'Something new!',
-    'userId': '1',
-    'href': '/',
+    id: '1',
+    title: 'Notification 1',
+    description: 'Something new!',
+    userId: '1',
+    href: '/',
 };
 
 export const Light: Story = {
@@ -45,5 +43,3 @@ export const DarkHref: Story = {
     },
     decorators: [themeDecorator(Themes.DARK), storeDecorator({})],
 };
-
-

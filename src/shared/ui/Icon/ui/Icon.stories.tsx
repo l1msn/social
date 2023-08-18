@@ -1,4 +1,4 @@
-import type {Meta, StoryObj} from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import '@/app/styles/index.scss';
 import Icon from './Icon';
 import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
@@ -9,20 +9,17 @@ const meta = {
     title: 'widget/Icon',
     component: Icon,
     tags: ['autodocs'],
-    argTypes: {
-    },
+    argTypes: {},
 } satisfies Meta<typeof Icon>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
 
 export const Light: Story = {
     args: {
         Svg: UserIcon,
     },
 };
-
 
 export const Dark: Story = {
     args: {

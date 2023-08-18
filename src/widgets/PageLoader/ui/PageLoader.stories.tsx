@@ -1,31 +1,24 @@
-import type {Meta, StoryObj} from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
 import PageLoader from './PageLoader';
 import Themes from '@/shared/consts/theme';
 
-
 const meta = {
     title: 'widget/PageLoader',
     component: PageLoader,
     tags: ['autodocs'],
-    argTypes: {
-    },
+    argTypes: {},
 } satisfies Meta<typeof PageLoader>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-
 export const Light: Story = {
-    args: {
-    },
+    args: {},
 };
 
 export const Dark: Story = {
-    args: {
-    },
+    args: {},
     decorators: [themeDecorator(Themes.DARK)],
 };
-
-

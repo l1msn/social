@@ -1,18 +1,16 @@
-import type {Meta, StoryObj} from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import '@/app/styles/index.scss';
 import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
 import ArticlesPage from './ArticlesPage';
 import storeDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
-import {ArticleBlockType, ArticleType, IArticle} from '@/entities/Article';
+import { ArticleBlockType, ArticleType, IArticle } from '@/entities/Article';
 import Themes from '@/shared/consts/theme';
-
 
 const meta = {
     title: 'pages/ArticlesPage',
     component: ArticlesPage,
     tags: ['autodocs'],
-    argTypes: {
-    },
+    argTypes: {},
 } satisfies Meta<typeof ArticlesPage>;
 
 export default meta;
@@ -59,15 +57,11 @@ const article: IArticle = {
 };
 
 export const Light: Story = {
-    args: {
-    },
+    args: {},
     decorators: [storeDecorator({})],
 };
 
 export const Dark: Story = {
-    args: {
-    },
+    args: {},
     decorators: [themeDecorator(Themes.DARK), storeDecorator({})],
 };
-
-

@@ -1,5 +1,4 @@
-
-import {Story} from '@storybook/react';
+import { Story } from '@storybook/react';
 
 const styleDecorator = (story: () => Story<any>) => story();
 

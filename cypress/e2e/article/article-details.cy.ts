@@ -42,7 +42,9 @@ describe('Article Details testing on stabs', () => {
     });
 
     it('Set star rating (on stabs)', () => {
-        cy.intercept('GET', '**/articles/*', {fixture: 'article-details.json'});
+        cy.intercept('GET', '**/articles/*', {
+            fixture: 'article-details.json',
+        });
         cy.getByTestId('ArticleDetails.Info').should('exist');
         cy.getByTestId('RatingCard').scrollIntoView();
         cy.setRate(5, 'feedback');
@@ -50,5 +52,3 @@ describe('Article Details testing on stabs', () => {
         cy.removeRate(stabArticleId);
     });
 });
-
-

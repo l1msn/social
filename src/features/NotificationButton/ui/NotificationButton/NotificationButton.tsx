@@ -1,19 +1,21 @@
-import React, {JSX, useCallback, useState} from 'react';
+import React, { JSX, useCallback, useState } from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
 import cls from './NotificationButton.module.scss';
 import Button from '@/shared/ui/Button';
 import ThemeButton from '@/shared/ui/Button/consts/ThemeButton';
 import Icon from '@/shared/ui/Icon';
 import NotificationIcon from '@/shared/assets/icons/notification-icon.svg';
-import {NotificationList} from '@/entities/Notification';
-import {Drawer, Popover} from '@/shared/ui/Popups';
-import {BrowserView, MobileView} from 'react-device-detect';
+import { NotificationList } from '@/entities/Notification';
+import { Drawer, Popover } from '@/shared/ui/Popups';
+import { BrowserView, MobileView } from 'react-device-detect';
 
 interface INotificationButtonProps {
-    className?: string
+    className?: string;
 }
 
-const NotificationButton: React.FC<INotificationButtonProps> = ({className}: INotificationButtonProps): JSX.Element => {
+const NotificationButton: React.FC<INotificationButtonProps> = ({
+    className,
+}: INotificationButtonProps): JSX.Element => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
     const onToggleDrawer = useCallback(() => {
@@ -22,22 +24,27 @@ const NotificationButton: React.FC<INotificationButtonProps> = ({className}: INo
 
     const trigger = (
         <Button onClick={onToggleDrawer} theme={ThemeButton.CLEAR}>
-            <Icon className={cls.icon} Svg={NotificationIcon}/>
+            <Icon className={cls.icon} Svg={NotificationIcon} />
         </Button>
     );
 
     return (
         <div>
             <BrowserView>
-                <Popover className={classNames(cls.notificationButton, {}, [className])}
-                    direction={'bottom left'} trigger={trigger}>
-                    <NotificationList className={cls.notificationList}/>
+                <Popover
+                    className={classNames(cls.notificationButton, {}, [
+                        className,
+                    ])}
+                    direction={'bottom left'}
+                    trigger={trigger}
+                >
+                    <NotificationList className={cls.notificationList} />
                 </Popover>
             </BrowserView>
             <MobileView>
                 {trigger}
                 <Drawer isOpen={isOpen} onClose={onToggleDrawer}>
-                    <NotificationList/>
+                    <NotificationList />
                 </Drawer>
             </MobileView>
         </div>
@@ -45,5 +52,3 @@ const NotificationButton: React.FC<INotificationButtonProps> = ({className}: INo
 };
 
 export default NotificationButton;
-
-

@@ -1,11 +1,16 @@
 import TestAsyncThunk from '@/shared/lib/tests/testAsyncThunk/TestAsyncThunk';
 import initArticlesPage from './initArticlesPage';
 import fetchArticlesList from '../fetchArticlesList/fetchArticlesList';
-import {useSearchParams} from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 
 jest.mock('../fetchArticlesList/fetchArticlesList');
 
-const searchParams = {'sort': 'createdAt', 'order': 'asc', 'search': '', 'type': 'All'};
+const searchParams = {
+    sort: 'createdAt',
+    order: 'asc',
+    search: '',
+    type: 'All',
+};
 jest.mock('react-router-dom', () => ({
     ...(jest.requireActual('react-router-dom') as object),
     useSearchParams: () => [searchParams],

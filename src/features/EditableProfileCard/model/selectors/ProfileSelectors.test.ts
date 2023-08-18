@@ -1,15 +1,15 @@
-import {IStateSchema} from '@/app/providers/StoreProvider';
+import { IStateSchema } from '@/app/providers/StoreProvider';
 import ProfileSelectors from './ProfileSelectors';
-import {IProfile} from '@/entities/Profile';
-import {ValidateProfileError} from '../types/editableProfileCardSchema';
+import { IProfile } from '@/entities/Profile';
+import { ValidateProfileError } from '../types/editableProfileCardSchema';
 
 const mockData: IProfile = {
-    'first': 'Alex',
-    'lastname': 'Sadykov',
-    'age': 23,
-    'city': 'Saint-Petersburg',
-    'username': 'Darlingg',
-    'avatar': 'https://i.imgur.com/IyES7O4.png',
+    first: 'Alex',
+    lastname: 'Sadykov',
+    age: 23,
+    city: 'Saint-Petersburg',
+    username: 'Darlingg',
+    avatar: 'https://i.imgur.com/IyES7O4.png',
 };
 
 describe('testing getProfileData functional', () => {
@@ -19,12 +19,16 @@ describe('testing getProfileData functional', () => {
                 data: mockData,
             },
         };
-        expect(ProfileSelectors.getProfileData(state as IStateSchema)).toEqual(mockData);
+        expect(ProfileSelectors.getProfileData(state as IStateSchema)).toEqual(
+            mockData,
+        );
     });
 
     test('return empty', () => {
         const state: DeepPartial<IStateSchema> = {};
-        expect(ProfileSelectors.getProfileData(state as IStateSchema)).toEqual({});
+        expect(ProfileSelectors.getProfileData(state as IStateSchema)).toEqual(
+            {},
+        );
     });
 });
 
@@ -39,12 +43,16 @@ describe('testing getProfileAvatar functional', () => {
                 },
             },
         };
-        expect(ProfileSelectors.getProfileAvatar(state as IStateSchema)).toEqual(mockAvatar);
+        expect(
+            ProfileSelectors.getProfileAvatar(state as IStateSchema),
+        ).toEqual(mockAvatar);
     });
 
     test('return empty', () => {
         const state: DeepPartial<IStateSchema> = {};
-        expect(ProfileSelectors.getProfileAvatar(state as IStateSchema)).toEqual('');
+        expect(
+            ProfileSelectors.getProfileAvatar(state as IStateSchema),
+        ).toEqual('');
     });
 });
 
@@ -57,22 +65,26 @@ describe('testing getProfileError functional', () => {
                 error: mockError,
             },
         };
-        expect(ProfileSelectors.getProfileError(state as IStateSchema)).toEqual(mockError);
+        expect(ProfileSelectors.getProfileError(state as IStateSchema)).toEqual(
+            mockError,
+        );
     });
 
     test('return empty', () => {
         const state: DeepPartial<IStateSchema> = {};
-        expect(ProfileSelectors.getProfileError(state as IStateSchema)).toEqual('');
+        expect(ProfileSelectors.getProfileError(state as IStateSchema)).toEqual(
+            '',
+        );
     });
 });
 
 const mockForm: IProfile = {
-    'first': 'Alex',
-    'lastname': 'Sadykov',
-    'age': 23,
-    'city': 'Saint-Petersburg',
-    'username': 'Darlingg',
-    'avatar': 'https://i.imgur.com/IyES7O4.png',
+    first: 'Alex',
+    lastname: 'Sadykov',
+    age: 23,
+    city: 'Saint-Petersburg',
+    username: 'Darlingg',
+    avatar: 'https://i.imgur.com/IyES7O4.png',
 };
 
 describe('testing getProfileForm functional', () => {
@@ -82,15 +94,18 @@ describe('testing getProfileForm functional', () => {
                 form: mockForm,
             },
         };
-        expect(ProfileSelectors.getProfileForm(state as IStateSchema)).toEqual(mockForm);
+        expect(ProfileSelectors.getProfileForm(state as IStateSchema)).toEqual(
+            mockForm,
+        );
     });
 
     test('return empty', () => {
         const state: DeepPartial<IStateSchema> = {};
-        expect(ProfileSelectors.getProfileForm(state as IStateSchema)).toEqual({});
+        expect(ProfileSelectors.getProfileForm(state as IStateSchema)).toEqual(
+            {},
+        );
     });
 });
-
 
 const mockLoading: boolean = true;
 
@@ -101,12 +116,16 @@ describe('testing getProfileIsLoading functional', () => {
                 isLoading: mockLoading,
             },
         };
-        expect(ProfileSelectors.getProfileIsLoading(state as IStateSchema)).toEqual(mockLoading);
+        expect(
+            ProfileSelectors.getProfileIsLoading(state as IStateSchema),
+        ).toEqual(mockLoading);
     });
 
     test('return empty', () => {
         const state: DeepPartial<IStateSchema> = {};
-        expect(ProfileSelectors.getProfileIsLoading(state as IStateSchema)).toEqual(false);
+        expect(
+            ProfileSelectors.getProfileIsLoading(state as IStateSchema),
+        ).toEqual(false);
     });
 });
 
@@ -119,12 +138,16 @@ describe('testing getProfileReadonly functional', () => {
                 readonly: mockReadonly,
             },
         };
-        expect(ProfileSelectors.getProfileReadonly(state as IStateSchema)).toEqual(mockReadonly);
+        expect(
+            ProfileSelectors.getProfileReadonly(state as IStateSchema),
+        ).toEqual(mockReadonly);
     });
 
     test('return empty', () => {
         const state: DeepPartial<IStateSchema> = {};
-        expect(ProfileSelectors.getProfileReadonly(state as IStateSchema)).toEqual(false);
+        expect(
+            ProfileSelectors.getProfileReadonly(state as IStateSchema),
+        ).toEqual(false);
     });
 });
 
@@ -140,11 +163,15 @@ describe('testing getProfileValidateError functional', () => {
                 validateError: mockValidateErrors,
             },
         };
-        expect(ProfileSelectors.getProfileValidateError(state as IStateSchema)).toEqual(mockValidateErrors);
+        expect(
+            ProfileSelectors.getProfileValidateError(state as IStateSchema),
+        ).toEqual(mockValidateErrors);
     });
 
     test('return empty', () => {
         const state: DeepPartial<IStateSchema> = {};
-        expect(ProfileSelectors.getProfileValidateError(state as IStateSchema)).toEqual([]);
+        expect(
+            ProfileSelectors.getProfileValidateError(state as IStateSchema),
+        ).toEqual([]);
     });
 });

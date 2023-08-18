@@ -1,4 +1,4 @@
-import {Meta, StoryObj} from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import storeDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
 import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
 import EditableProfileCard from './EditableProfileCard';
@@ -9,8 +9,7 @@ const meta = {
     title: 'features/EditableProfileCard',
     component: EditableProfileCard,
     tags: ['autodocs'],
-    argTypes: {
-    },
+    argTypes: {},
 } satisfies Meta<typeof EditableProfileCard>;
 
 export default meta;

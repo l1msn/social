@@ -1,3 +1,3 @@
-import {articleReducer} from './model/slice/articleSlice';
+import { articleReducer } from './model/slice/articleSlice';
 
-export {articleReducer};
+export { articleReducer };

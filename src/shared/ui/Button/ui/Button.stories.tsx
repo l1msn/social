@@ -1,4 +1,4 @@
-import type {Meta, StoryObj} from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import Button from './Button';
 import ThemeButton from '../consts/ThemeButton';
 import '@/app/styles/index.scss';
@@ -10,13 +10,11 @@ const meta = {
     title: 'shared/Button',
     component: Button,
     tags: ['autodocs'],
-    argTypes: {
-    },
+    argTypes: {},
 } satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
 
 export const Primary: Story = {
     args: {
@@ -117,4 +115,3 @@ export const WithlineDarkDisabled: Story = {
         disabled: true,
     },
 };
-

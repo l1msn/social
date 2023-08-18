@@ -1,7 +1,7 @@
 enum ThemeText {
     PRIMARY = 'primary',
     INVERTED = 'inverted',
-    ERROR = 'error'
+    ERROR = 'error',
 }
 
 export default ThemeText;

@@ -1,4 +1,4 @@
-import React, {JSX} from 'react';
+import React, { JSX } from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
 import FlexAlign from '../consts/FlexAlign';
 import FlexDirection from '../consts/FlexDirection';
@@ -33,7 +33,9 @@ const gapClasses: Record<FlexGap, string> = {
 };
 
 const Flex: React.FC<IFlexProps> = (props: IFlexProps): JSX.Element => {
-    const {className, children,
+    const {
+        className,
+        children,
         justify = 'start',
         align = 'center',
         direction = 'row',
@@ -42,7 +44,8 @@ const Flex: React.FC<IFlexProps> = (props: IFlexProps): JSX.Element => {
         ...otherProps
     } = props;
 
-    const classes = [className,
+    const classes = [
+        className,
         justifyClasses[justify],
         alignClasses[align],
         directionClasses[direction],
@@ -61,5 +64,3 @@ const Flex: React.FC<IFlexProps> = (props: IFlexProps): JSX.Element => {
 };
 
 export default Flex;
-
-

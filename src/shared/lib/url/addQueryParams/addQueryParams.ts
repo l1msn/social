@@ -12,4 +12,4 @@ function addQueryParams(params: OptionalRecord<string, string>) {
     window.history.pushState(null, '', getQueryParams(params));
 }
 
-export {getQueryParams, addQueryParams};
+export { getQueryParams, addQueryParams };

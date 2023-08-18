@@ -1,6 +1,6 @@
 enum CardTheme {
     NORMAL = 'normal',
-    OUTLINE = 'outline'
+    OUTLINE = 'outline',
 }
 
 export default CardTheme;

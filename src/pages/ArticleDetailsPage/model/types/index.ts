@@ -2,7 +2,7 @@ import IArticleDetailsCommentsSchema from '../types/IArticleDetailsCommentsSchem
 import IArticleDetailsRecommendationsSchema from '../types/IArticleDetailsRecommendationsSchema';
 
 interface IArticleDetailsPageSchema {
-    comments: IArticleDetailsCommentsSchema,
+    comments: IArticleDetailsCommentsSchema;
     recommendations: IArticleDetailsRecommendationsSchema;
 }
 
