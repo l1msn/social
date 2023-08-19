@@ -10,6 +10,7 @@
     "start:dev": "npx concurrently \"npm run start:dev:vite\" \"npm run start:dev:server\" \"npm run storybook\"",
     "build:prod": "webpack --env mode=production apiUrl=https://social-backend-psi.vercel.app",
     "build:dev": "webpack --env mode=development",
+    "start:docker": "npx concurrently \"npx webpack-dev-server --hot --host 0.0.0.0 --port 3000\" \"npm run start:dev:server\"",
     "prettier": "npx prettier --write **/*.{ts,tsx}",
     "lint:ts": "eslint --ext .ts,.tsx ./src",
     "lint:ts:fix": "eslint --ext .ts,.tsx ./src --fix",

@@ -17,7 +17,7 @@ import TestProps from '@/shared/types/tests';
 
 interface IPageProps extends TestProps {
     className?: string;
-    children: React.ReactNode;
+    children?: React.ReactNode;
     onScrollEnd?: () => void;
 }
 
