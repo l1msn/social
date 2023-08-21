@@ -12,6 +12,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "isolatedModules": true,
+    "skipLibCheck": true,
     "paths": {
       "@/*": ["./src/*"]
     }
@@ -21,9 +22,13 @@
       "module": "CommonJS"
     }
   },
+  "exclude": [
+    "./node_modules"
+  ],
   "include": [
     "./config/jest/setupTest.ts",
     "./src/**/*.ts",
     "./src/**/*.tsx",
+    "./vite.config.ts"
   ]
 }
