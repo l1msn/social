@@ -11,17 +11,17 @@ import {
 
 interface IArticleRatingProps {
     className?: string;
-    articleId: string;
+    id: string;
 }
 
 const ArticleRating: React.FC<IArticleRatingProps> = memo(
-    ({ className, articleId }: IArticleRatingProps): JSX.Element => {
+    ({ className, id }: IArticleRatingProps): JSX.Element => {
         const { t } = useTranslation('rating');
 
         const userData = useSelector(UserSelectors.getUserAuthData);
 
         const { data, isLoading } = useGetArticleRating({
-            articleId,
+            articleId: id,
             userId: userData?.id ?? '',
         });
 
@@ -31,7 +31,7 @@ const ArticleRating: React.FC<IArticleRatingProps> = memo(
             (starsCount: number, feedback?: string) => {
                 try {
                     rateArticleMutation({
-                        articleId: articleId,
+                        articleId: id,
                         rate: starsCount,
                         feedback: feedback,
                         userId: userData?.id ?? '',
@@ -40,7 +40,7 @@ const ArticleRating: React.FC<IArticleRatingProps> = memo(
                     console.log(e);
                 }
             },
-            [articleId, rateArticleMutation, userData?.id],
+            [id, rateArticleMutation, userData?.id],
         );
 
         const onAccept = useCallback(

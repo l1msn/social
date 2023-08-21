@@ -40,6 +40,7 @@ const AvatarDropdown: React.FC<IAvatarDropdownProps> = ({
                 ...(isAdmin || isManager
                     ? [
                           {
+                              disabled: true,
                               content: t('Admin Panel'),
                               href: RoutePaths.getRouteAdminPanel(),
                           },

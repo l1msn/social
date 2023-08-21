@@ -31,7 +31,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
     args: {
-        articleId: '1',
+        id: 1,
     },
     decorators: [
         storeDecorator({
@@ -46,7 +46,7 @@ export const Light: Story = {
 
 export const Dark: Story = {
     args: {
-        articleId: '1',
+        id: '1',
     },
     decorators: [
         themeDecorator(Themes.DARK),
@@ -62,7 +62,7 @@ export const Dark: Story = {
 
 export const DarkFree: Story = {
     args: {
-        articleId: '1',
+        id: '1',
     },
     decorators: [
         themeDecorator(Themes.DARK),

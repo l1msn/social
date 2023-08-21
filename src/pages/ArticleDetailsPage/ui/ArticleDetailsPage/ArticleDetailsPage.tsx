@@ -18,6 +18,9 @@ import { ArticleRecommendationsList } from '@/features/ArticleRecommendationsLis
 import { ArticleRating } from '@/features/ArticleRating';
 import Loader from '@/shared/ui/Loader';
 import ArticleDetailsComments from '../ArticleDetailsComments/ArticleDetailsComments';
+import { toggleFeatures } from '@/shared/features';
+import { Card } from '@/shared/ui/Card';
+import { useTranslation } from 'react-i18next';
 
 interface IArticleDetailsPageProps {
     className?: string;
@@ -28,6 +31,8 @@ const reducers: ReducersList = {
 
 const ArticleDetailsPage: React.FC<IArticleDetailsPageProps> = memo(
     ({ className }: IArticleDetailsPageProps): JSX.Element | null => {
+        const { t } = useTranslation();
+
         const { id } = useParams<string>();
 
         const errorComments = useSelector(
@@ -45,6 +50,12 @@ const ArticleDetailsPage: React.FC<IArticleDetailsPageProps> = memo(
             return null;
         }
 
+        const articleRatingCard = toggleFeatures({
+            name: 'isArticleRatingEnabled',
+            on: () => <ArticleRating id={id} />,
+            off: () => <Card>{t('Feature coming soon!')}</Card>,
+        });
+
         return (
             <DynamicModuleLoader reducers={reducers} removeAfterAmount>
                 <Page
@@ -56,7 +67,7 @@ const ArticleDetailsPage: React.FC<IArticleDetailsPageProps> = memo(
                         <Suspense fallback={<Loader />}>
                             <ArticleDetailsPageHeader />
                             <ArticleDetails id={id} />
-                            <ArticleRating articleId={id} />
+                            {articleRatingCard}
                             <ArticleRecommendationsList />
                             <ArticleDetailsComments id={id} />
                         </Suspense>
