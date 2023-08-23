@@ -105,6 +105,16 @@ docker-compose down — для остановики проекта в Docker
 
 >[Документация i18next](https://react.i18next.com/)
 
+=======
+В проекте используются 4 вида тестов:
+1) Обычные unit тесты на jest - `npm run test:unit`
+2) Тесты на компоненты с React testing library -`npm run test:unit`
+3) Скриншотное тестирование с loki `npm run test:ui`
+4) e2e тестирование с Cypress `npm run test:e2e`
+5) Pages с CI (tests/build) на GitHub - [CI REPORT](https://l1msn.github.io/social/)
+
+Подробнее о тестах - [документация тестирование](/docs/tests.md)
+
 ----
 
 ### Работа с feature-flags
@@ -160,9 +170,23 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-   args: {
-      children: 'Text',
-   },
+    args: {
+        children: 'Text',
+    },
+};
+
+export const Clear: Story = {
+    args: {
+        children: 'Text',
+        theme: ThemeButton.CLEAR,
+    },
+};
+
+export const Outline: Story = {
+    args: {
+        children: 'Text',
+        theme: ThemeButton.OUTLINE,
+    },
 };
 ```
 
