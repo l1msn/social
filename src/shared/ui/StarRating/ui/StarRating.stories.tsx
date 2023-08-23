@@ -1,4 +1,4 @@
-import type {Meta, StoryObj} from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import '@/app/styles/index.scss';
 import StarRating from './StarRating';
 import storeDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
@@ -10,13 +10,11 @@ const meta = {
     title: 'widget/StarRating',
     component: StarRating,
     tags: ['autodocs'],
-    argTypes: {
-    },
+    argTypes: {},
 } satisfies Meta<typeof StarRating>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
 
 export const LightFree: Story = {
     args: {
@@ -31,5 +29,3 @@ export const DarkFree: Story = {
     },
     decorators: [themeDecorator(Themes.DARK), storeDecorator({})],
 };
-
-

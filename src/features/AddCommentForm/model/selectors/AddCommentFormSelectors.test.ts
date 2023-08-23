@@ -1,4 +1,4 @@
-import {IStateSchema} from '@/app/providers/StoreProvider';
+import { IStateSchema } from '@/app/providers/StoreProvider';
 import AddCommentFormSelectors from './AddCommentFormSelectors';
 
 const mockError: string = 'error here!';
@@ -10,12 +10,20 @@ describe('testing getProfileError functional', () => {
                 error: mockError,
             },
         };
-        expect(AddCommentFormSelectors.getAddCommentFormError(state as IStateSchema)).toEqual(mockError);
+        expect(
+            AddCommentFormSelectors.getAddCommentFormError(
+                state as IStateSchema,
+            ),
+        ).toEqual(mockError);
     });
 
     test('return empty', () => {
         const state: DeepPartial<IStateSchema> = {};
-        expect(AddCommentFormSelectors.getAddCommentFormError(state as IStateSchema)).toEqual(undefined);
+        expect(
+            AddCommentFormSelectors.getAddCommentFormError(
+                state as IStateSchema,
+            ),
+        ).toEqual(undefined);
     });
 });
 
@@ -28,11 +36,19 @@ describe('testing getProfileError functional', () => {
                 text: mockText,
             },
         };
-        expect(AddCommentFormSelectors.getAddCommentFormText(state as IStateSchema)).toEqual(mockText);
+        expect(
+            AddCommentFormSelectors.getAddCommentFormText(
+                state as IStateSchema,
+            ),
+        ).toEqual(mockText);
     });
 
     test('return empty', () => {
         const state: DeepPartial<IStateSchema> = {};
-        expect(AddCommentFormSelectors.getAddCommentFormText(state as IStateSchema)).toEqual('');
+        expect(
+            AddCommentFormSelectors.getAddCommentFormText(
+                state as IStateSchema,
+            ),
+        ).toEqual('');
     });
 });

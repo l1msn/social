@@ -1,6 +1,6 @@
-import {Meta, StoryObj} from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import ArticleViewSelector from './ArticleViewSelector';
-import {ArticleView} from '@/entities/Article';
+import { ArticleView } from '@/entities/Article';
 import storeDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
 import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
 import Themes from '@/shared/consts/theme';
@@ -9,8 +9,7 @@ const meta = {
     title: 'features/ArticleViewSelector',
     component: ArticleViewSelector,
     tags: ['autodocs'],
-    argTypes: {
-    },
+    argTypes: {},
 } satisfies Meta<typeof ArticleViewSelector>;
 
 export default meta;

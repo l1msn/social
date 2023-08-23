@@ -1,3 +1,3 @@
-import {loginReducer} from './model/slice/loginSlice';
+import { loginReducer } from './model/slice/loginSlice';
 
-export {loginReducer};
+export { loginReducer };

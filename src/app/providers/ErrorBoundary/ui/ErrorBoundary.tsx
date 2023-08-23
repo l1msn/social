@@ -1,4 +1,4 @@
-import React, {ErrorInfo, ReactNode, Suspense} from 'react';
+import React, { ErrorInfo, ReactNode, Suspense } from 'react';
 import PageError from '@/widgets/PageError';
 import Loader from '@/shared/ui/Loader';
 
@@ -10,14 +10,17 @@ interface IErrorBoundaryState {
     hasError: boolean;
 }
 
-class ErrorBoundary extends React.Component<IErrorBoundaryProps, IErrorBoundaryState> {
+class ErrorBoundary extends React.Component<
+    IErrorBoundaryProps,
+    IErrorBoundaryState
+> {
     constructor(props: IErrorBoundaryProps) {
         super(props);
-        this.state = {hasError: false};
+        this.state = { hasError: false };
     }
 
     static getDerivedStateFromError(error: Error) {
-        return {hasError: true};
+        return { hasError: true };
     }
 
     componentDidCatch(error: Error, errorInfo: ErrorInfo) {
@@ -25,12 +28,12 @@ class ErrorBoundary extends React.Component<IErrorBoundaryProps, IErrorBoundaryS
     }
 
     render() {
-        const {hasError} = this.state;
-        const {children} = this.props;
+        const { hasError } = this.state;
+        const { children } = this.props;
         if (hasError) {
             return (
-                <Suspense fallback={<Loader/>}>
-                    <PageError/>
+                <Suspense fallback={<Loader />}>
+                    <PageError />
                 </Suspense>
             );
         }

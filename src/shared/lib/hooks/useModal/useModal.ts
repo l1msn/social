@@ -1,36 +1,43 @@
-import {MutableRefObject, useCallback, useEffect, useRef, useState} from 'react';
+import {
+    MutableRefObject,
+    useCallback,
+    useEffect,
+    useRef,
+    useState,
+} from 'react';
 
 interface IUseModalProps {
     onClose?: () => void;
-    isOpen?: boolean,
+    isOpen?: boolean;
     animationDelay?: number;
 }
 
 function useModal(props: IUseModalProps) {
-    const {isOpen, animationDelay, onClose} = props;
+    const { isOpen, animationDelay, onClose } = props;
     const [isMounted, setIsMounted] = useState<boolean>(false);
     const [isClosing, setIsClosing] = useState<boolean>(false);
-    const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
+    const timerRef = useRef() as MutableRefObject<
+        ReturnType<typeof setTimeout>
+    >;
 
-    const onCloseHandler =
-        useCallback(() => {
-            if (onClose) {
-                setIsClosing(true);
-                timerRef.current = setTimeout(() => {
-                    onClose();
-                    setIsClosing(false);
-                }, animationDelay);
-            }
-        }, [animationDelay, onClose]);
+    const onCloseHandler = useCallback(() => {
+        if (onClose) {
+            setIsClosing(true);
+            timerRef.current = setTimeout(() => {
+                onClose();
+                setIsClosing(false);
+            }, animationDelay);
+        }
+    }, [animationDelay, onClose]);
 
-
-    const onKeyDown =
-        useCallback((e: KeyboardEvent) => {
+    const onKeyDown = useCallback(
+        (e: KeyboardEvent) => {
             if (e.key === 'Escape') {
                 onCloseHandler();
             }
-        }, [onCloseHandler]);
-
+        },
+        [onCloseHandler],
+    );
 
     useEffect(() => {
         isOpen && setIsMounted(true);
@@ -47,7 +54,7 @@ function useModal(props: IUseModalProps) {
         };
     }, [isOpen, onKeyDown]);
 
-    return {isClosing, onCloseHandler, isMounted};
+    return { isClosing, onCloseHandler, isMounted };
 }
 
 export default useModal;

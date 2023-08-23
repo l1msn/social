@@ -1,4 +1,4 @@
-import {IStateSchema} from '@/app/providers/StoreProvider';
+import { IStateSchema } from '@/app/providers/StoreProvider';
 import ArticleDetailsSelectors from './ArticleDetailsSelectors';
 
 describe('testing getArticleCommentsError functional', () => {
@@ -10,12 +10,20 @@ describe('testing getArticleCommentsError functional', () => {
                 },
             },
         };
-        expect(ArticleDetailsSelectors.getArticleCommentsError(state as IStateSchema)).toEqual('error');
+        expect(
+            ArticleDetailsSelectors.getArticleCommentsError(
+                state as IStateSchema,
+            ),
+        ).toEqual('error');
     });
 
     test('return empty', () => {
         const state: DeepPartial<IStateSchema> = {};
-        expect(ArticleDetailsSelectors.getArticleCommentsError(state as IStateSchema)).toEqual('');
+        expect(
+            ArticleDetailsSelectors.getArticleCommentsError(
+                state as IStateSchema,
+            ),
+        ).toEqual('');
     });
 });
 
@@ -28,11 +36,19 @@ describe('testing getArticleCommentsIsLoading functional', () => {
                 },
             },
         };
-        expect(ArticleDetailsSelectors.getArticleCommentsIsLoading(state as IStateSchema)).toEqual(false);
+        expect(
+            ArticleDetailsSelectors.getArticleCommentsIsLoading(
+                state as IStateSchema,
+            ),
+        ).toEqual(false);
     });
 
     test('return empty', () => {
         const state: DeepPartial<IStateSchema> = {};
-        expect(ArticleDetailsSelectors.getArticleCommentsIsLoading(state as IStateSchema)).toEqual(false);
+        expect(
+            ArticleDetailsSelectors.getArticleCommentsIsLoading(
+                state as IStateSchema,
+            ),
+        ).toEqual(false);
     });
 });

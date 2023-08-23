@@ -1,8 +1,8 @@
-import {IUser} from '@/entities/User';
+import { IUser } from '@/entities/User';
 
 interface IComment {
-    id: string | number,
-    user: IUser,
+    id: string | number;
+    user: IUser;
     text: string;
 }
 

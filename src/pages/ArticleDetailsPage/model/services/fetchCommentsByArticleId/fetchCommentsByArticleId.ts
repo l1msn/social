@@ -1,17 +1,24 @@
-import {createAsyncThunk} from '@reduxjs/toolkit';
-import {IThunkConfig} from '@/app/providers/StoreProvider';
-import {IComment} from '@/entities/Comment';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import { IThunkConfig } from '@/app/providers/StoreProvider';
+import { IComment } from '@/entities/Comment';
 
-
-const fetchCommentsByArticleId = createAsyncThunk<IComment[], number | string | undefined, IThunkConfig<string>>('articleDetailsPage/fetchCommentsByArticleId',
+const fetchCommentsByArticleId = createAsyncThunk<
+    IComment[],
+    number | string | undefined,
+    IThunkConfig<string>
+>(
+    'articleDetailsPage/fetchCommentsByArticleId',
     async (articleId: number | string | undefined, thunkAPI) => {
         try {
-            const response = await thunkAPI.extra.api.get<IComment[]>('/comments/', {
-                params: {
-                    articleId,
-                    _expand: 'user',
+            const response = await thunkAPI.extra.api.get<IComment[]>(
+                '/comments/',
+                {
+                    params: {
+                        articleId,
+                        _expand: 'user',
+                    },
                 },
-            });
+            );
 
             if (!articleId) {
                 return thunkAPI.rejectWithValue('Cant get a article id!');
@@ -26,6 +33,7 @@ const fetchCommentsByArticleId = createAsyncThunk<IComment[], number | string | 
             console.log(e);
             return thunkAPI.rejectWithValue('Cant fetch comments for article!');
         }
-    });
+    },
+);
 
 export default fetchCommentsByArticleId;

@@ -1,5 +1,5 @@
 interface IAddCommentFormSchema {
-    text?: string,
+    text?: string;
     error?: string;
 }
 

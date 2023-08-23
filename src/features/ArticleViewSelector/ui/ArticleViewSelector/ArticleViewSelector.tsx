@@ -1,4 +1,4 @@
-import React, {JSX, memo, useCallback} from 'react';
+import React, { JSX, memo, useCallback } from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
 import cls from './ArticleViewSelector.module.scss';
 import ShelfViewIcon from '@/shared/assets/icons/shelf-view-icon.svg';
@@ -6,11 +6,11 @@ import ListViewIcon from '@/shared/assets/icons/list-view-icon.svg';
 import Button from '@/shared/ui/Button';
 import Icon from '@/shared/ui/Icon';
 import ThemeButton from '@/shared/ui/Button/consts/ThemeButton';
-import {ArticleView} from '@/entities/Article';
+import { ArticleView } from '@/entities/Article';
 
 interface IArticleViewSelectorProps {
-    className?: string
-    view: ArticleView,
+    className?: string;
+    view: ArticleView;
     onViewClick?: (view: ArticleView) => void;
 }
 
@@ -25,24 +25,42 @@ const viewTypes = [
     },
 ];
 
-const ArticleViewSelector: React.FC<IArticleViewSelectorProps> = memo(({className, view, onViewClick}: IArticleViewSelectorProps): JSX.Element => {
-    const onClick = useCallback((newView: ArticleView) => {
-        return () => {
-            onViewClick?.(newView);
-        };
-    }, [onViewClick]);
+const ArticleViewSelector: React.FC<IArticleViewSelectorProps> = memo(
+    ({
+        className,
+        view,
+        onViewClick,
+    }: IArticleViewSelectorProps): JSX.Element => {
+        const onClick = useCallback(
+            (newView: ArticleView) => {
+                return () => {
+                    onViewClick?.(newView);
+                };
+            },
+            [onViewClick],
+        );
 
-    return (
-        <div className={classNames(cls.articleViewSelector, {}, [className])}>
-            {viewTypes.map((viewType) => (
-                <Button key={viewType.view} theme={ThemeButton.CLEAR} onClick={onClick(viewType.view)}>
-                    <Icon Svg={viewType.icon} className={classNames('', {[cls.notSelected]: viewType.view !== view})}/>
-                </Button>
-            ))}
-        </div>
-    );
-});
+        return (
+            <div
+                className={classNames(cls.articleViewSelector, {}, [className])}
+            >
+                {viewTypes.map((viewType) => (
+                    <Button
+                        key={viewType.view}
+                        theme={ThemeButton.CLEAR}
+                        onClick={onClick(viewType.view)}
+                    >
+                        <Icon
+                            Svg={viewType.icon}
+                            className={classNames('', {
+                                [cls.notSelected]: viewType.view !== view,
+                            })}
+                        />
+                    </Button>
+                ))}
+            </div>
+        );
+    },
+);
 
 export default ArticleViewSelector;
-
-

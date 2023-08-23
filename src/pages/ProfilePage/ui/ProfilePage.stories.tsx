@@ -1,32 +1,26 @@
-import type {Meta, StoryObj} from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
 import ProfilePage from './ProfilePage';
 import storeDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
 import Themes from '@/shared/consts/theme';
 
-
 const meta = {
     title: 'pages/ProfilePage',
     component: ProfilePage,
     tags: ['autodocs'],
-    argTypes: {
-    },
+    argTypes: {},
 } satisfies Meta<typeof ProfilePage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
-    args: {
-    },
+    args: {},
     decorators: [storeDecorator({})],
 };
 
 export const Dark: Story = {
-    args: {
-    },
+    args: {},
     decorators: [themeDecorator(Themes.DARK), storeDecorator({})],
 };
-
-

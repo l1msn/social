@@ -1,12 +1,11 @@
-import {createSelector} from '@reduxjs/toolkit';
-import {UserSelectors} from '@/entities/User';
+import { createSelector } from '@reduxjs/toolkit';
+import { UserSelectors } from '@/entities/User';
 import HomeIcon from '@/shared/assets/icons/home-icon.svg';
 import UserIcon from '@/shared/assets/icons/user-icon.svg';
 import ArticlesIcon from '@/shared/assets/icons/articles-icon.svg';
 import AboutIcon from '@/shared/assets/icons/about-icon.svg';
 import ISidebar from '../types/ISidebar';
-import {RoutePaths} from '@/shared/consts/routerPaths';
-
+import { RoutePaths } from '@/shared/consts/routerPaths';
 
 const getSidebarItems = createSelector(
     UserSelectors.getUserAuthData,
@@ -21,7 +20,8 @@ const getSidebarItems = createSelector(
                 path: RoutePaths.getRouteAbout(),
                 Icon: AboutIcon,
                 text: 'About',
-            }];
+            },
+        ];
         if (userData) {
             SidebarItemsList.push(
                 {
@@ -35,7 +35,8 @@ const getSidebarItems = createSelector(
                     Icon: ArticlesIcon,
                     text: 'Articles',
                     authOnly: true,
-                });
+                },
+            );
         }
         return SidebarItemsList;
     },

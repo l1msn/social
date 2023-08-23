@@ -40,4 +40,4 @@ class RoutePaths {
         return '/forbidden';
     }
 }
-export {AppRoutes, RoutePaths};
+export { AppRoutes, RoutePaths };

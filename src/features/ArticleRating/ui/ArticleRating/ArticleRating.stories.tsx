@@ -1,26 +1,26 @@
-import type {Meta, StoryObj} from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import '@/app/styles/index.scss';
 import ArticleRating from './ArticleRating';
 import storeDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
 import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
 import Themes from '@/shared/consts/theme';
 
-
 const meta = {
     title: 'pages/ArticleRating',
     component: ArticleRating,
     tags: ['autodocs'],
-    argTypes: {
-    },
+    argTypes: {},
     parameters: {
         mockData: [
             {
                 url: __API__ + '/article-ratings?userId=1&articleId=1',
                 method: 'GET',
                 status: 200,
-                response: [{
-                    rate: 4,
-                }],
+                response: [
+                    {
+                        rate: 4,
+                    },
+                ],
             },
         ],
     },
@@ -29,44 +29,51 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-
 export const Light: Story = {
     args: {
-        articleId: '1',
+        id: '1',
     },
-    decorators: [storeDecorator({
-        user: {
-            authData: {
-                id: 1,
+    decorators: [
+        storeDecorator({
+            user: {
+                authData: {
+                    id: 1,
+                },
             },
-        },
-    })],
+        }),
+    ],
 };
 
 export const Dark: Story = {
     args: {
-        articleId: '1',
+        id: '1',
     },
-    decorators: [themeDecorator(Themes.DARK), storeDecorator({
-        user: {
-            authData: {
-                id: 1,
+    decorators: [
+        themeDecorator(Themes.DARK),
+        storeDecorator({
+            user: {
+                authData: {
+                    id: 1,
+                },
             },
-        },
-    })],
+        }),
+    ],
 };
 
 export const DarkFree: Story = {
     args: {
-        articleId: '1',
+        id: '1',
     },
-    decorators: [themeDecorator(Themes.DARK), storeDecorator({
-        user: {
-            authData: {
-                id: 1,
+    decorators: [
+        themeDecorator(Themes.DARK),
+        storeDecorator({
+            user: {
+                authData: {
+                    id: 1,
+                },
             },
-        },
-    })],
+        }),
+    ],
     parameters: {
         mockData: [
             {
@@ -78,5 +85,3 @@ export const DarkFree: Story = {
         ],
     },
 };
-
-

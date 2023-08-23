@@ -1,25 +1,30 @@
-import React, {type JSX, Suspense, useEffect} from 'react';
+import React, { type JSX, Suspense, useEffect } from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
 import Navbar from '@/widgets/Navbar';
 import Sidebar from '@/widgets/Sidebar';
 import useAppDispatch from '../shared/lib/hooks/useAppDispatch/useAppDispatch';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import AppRouter from './providers/Router';
 import useTheme from '@/shared/lib/hooks/useTheme/useTheme';
 import Portal from '@/shared/ui/Portal';
-import {userActions, UserSelectors} from '@/entities/User';
+import { initAuthData, UserSelectors } from '@/entities/User';
+import PageLoader from '@/widgets/PageLoader';
+import withTheme from './providers/ThemeProvider/lib/withTheme';
 
 const App: React.FC = (): JSX.Element => {
-    const {theme} = useTheme();
+    const { theme } = useTheme();
 
     const dispatch = useAppDispatch();
 
     const init = useSelector(UserSelectors.getUserInit);
 
     useEffect(() => {
-        console.log('init auth data');
-        dispatch(userActions.initAuthData());
+        dispatch(initAuthData());
     }, [dispatch]);
+
+    if (!init) {
+        return <PageLoader />;
+    }
 
     return (
         <Portal>
@@ -27,7 +32,7 @@ const App: React.FC = (): JSX.Element => {
                 <Suspense fallback="">
                     <Navbar />
                     <div className="content-page">
-                        <Sidebar/>
+                        <Sidebar />
                         {init && <AppRouter />}
                     </div>
                 </Suspense>
@@ -36,4 +41,4 @@ const App: React.FC = (): JSX.Element => {
     );
 };
 
-export default App;
+export default withTheme(App);

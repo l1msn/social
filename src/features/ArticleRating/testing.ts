@@ -1,3 +1,3 @@
-import {useGetArticleRating, useRateArticle} from './api/articleRatingApi';
+import { useGetArticleRating, useRateArticle } from './api/articleRatingApi';
 
-export {useGetArticleRating, useRateArticle};
+export { useGetArticleRating, useRateArticle };

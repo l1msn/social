@@ -1,4 +1,4 @@
-import type {Meta, StoryObj} from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import SidebarItem from './SidebarItem';
 import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
@@ -11,13 +11,11 @@ const meta = {
     title: 'widget/SidebarItem',
     component: SidebarItem,
     tags: ['autodocs'],
-    argTypes: {
-    },
+    argTypes: {},
 } satisfies Meta<typeof SidebarItem>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
 
 export const LightProfile: Story = {
     args: {
@@ -28,9 +26,11 @@ export const LightProfile: Story = {
         },
         collapsed: false,
     },
-    decorators: [storeDecorator({
-        loginForm: {username: '123', password: 'asd'},
-    })],
+    decorators: [
+        storeDecorator({
+            loginForm: { username: '123', password: 'asd' },
+        }),
+    ],
 };
 
 export const DarkProfile: Story = {
@@ -42,9 +42,12 @@ export const DarkProfile: Story = {
         },
         collapsed: false,
     },
-    decorators: [themeDecorator(Themes.DARK), storeDecorator({
-        loginForm: {username: '123', password: 'asd'},
-    })],
+    decorators: [
+        themeDecorator(Themes.DARK),
+        storeDecorator({
+            loginForm: { username: '123', password: 'asd' },
+        }),
+    ],
 };
 
 export const DarkProfileCollapsed: Story = {
@@ -56,9 +59,10 @@ export const DarkProfileCollapsed: Story = {
         },
         collapsed: true,
     },
-    decorators: [themeDecorator(Themes.DARK), storeDecorator({
-        loginForm: {username: '123', password: 'asd'},
-    })],
+    decorators: [
+        themeDecorator(Themes.DARK),
+        storeDecorator({
+            loginForm: { username: '123', password: 'asd' },
+        }),
+    ],
 };
-
-

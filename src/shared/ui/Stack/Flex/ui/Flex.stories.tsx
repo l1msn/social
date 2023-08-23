@@ -1,21 +1,18 @@
-import type {Meta, StoryObj} from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import '@/app/styles/index.scss';
 import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
 import Flex from './Flex';
 import Themes from '@/shared/consts/theme';
 
-
 const meta = {
     title: 'widget/Flex',
     component: Flex,
     tags: ['autodocs'],
-    argTypes: {
-    },
+    argTypes: {},
 } satisfies Meta<typeof Flex>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
 
 export const LightRow: Story = {
     args: {
@@ -149,4 +146,3 @@ export const DarkCenter: Story = {
     },
     decorators: [themeDecorator(Themes.DARK)],
 };
-

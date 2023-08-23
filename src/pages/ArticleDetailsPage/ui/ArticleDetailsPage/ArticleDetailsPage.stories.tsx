@@ -1,11 +1,10 @@
-import type {Meta, StoryObj} from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import '@/app/styles/index.scss';
 import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
 import ArticleDetailsPage from './ArticleDetailsPage';
 import storeDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
-import {ArticleType, ArticleBlockType, IArticle} from '@/entities/Article';
+import { ArticleType, ArticleBlockType, IArticle } from '@/entities/Article';
 import Themes from '@/shared/consts/theme';
-
 
 const article: IArticle = {
     id: '1',
@@ -51,15 +50,19 @@ const meta = {
     title: 'pages/ArticleDetailsPage',
     component: ArticleDetailsPage,
     tags: ['autodocs'],
-    argTypes: {
-    },
+    argTypes: {},
     parameters: {
         mockData: [
             {
                 url: __API__ + '/articles?_limit=4',
                 method: 'GET',
                 status: 200,
-                response: [{...article, id: '4'}, {...article, id: '3'}, {...article, id: '5'}, {...article, id: '6'}],
+                response: [
+                    { ...article, id: '4' },
+                    { ...article, id: '3' },
+                    { ...article, id: '5' },
+                    { ...article, id: '6' },
+                ],
             },
         ],
     },
@@ -68,25 +71,25 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-
 export const Light: Story = {
-    args: {
-    },
-    decorators: [storeDecorator({
-        article: {
-            data: article,
-        },
-    })],
+    args: {},
+    decorators: [
+        storeDecorator({
+            article: {
+                data: article,
+            },
+        }),
+    ],
 };
 
 export const Dark: Story = {
-    args: {
-    },
-    decorators: [themeDecorator(Themes.DARK), storeDecorator({
-        article: {
-            data: article,
-        },
-    })],
+    args: {},
+    decorators: [
+        themeDecorator(Themes.DARK),
+        storeDecorator({
+            article: {
+                data: article,
+            },
+        }),
+    ],
 };
-
-

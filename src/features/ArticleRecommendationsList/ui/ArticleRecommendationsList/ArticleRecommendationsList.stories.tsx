@@ -1,8 +1,8 @@
-import {Meta, StoryObj} from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import storeDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
 import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
 import ArticleRecommendationsList from './ArticleRecommendationsList';
-import {ArticleBlockType, ArticleType, IArticle} from '@/entities/Article';
+import { ArticleBlockType, ArticleType, IArticle } from '@/entities/Article';
 import '@/app/styles/index.scss';
 import Themes from '@/shared/consts/theme';
 
@@ -50,15 +50,19 @@ const meta = {
     title: 'features/ArticleRecommendationsList',
     component: ArticleRecommendationsList,
     tags: ['autodocs'],
-    argTypes: {
-    },
+    argTypes: {},
     parameters: {
         mockData: [
             {
                 url: __API__ + '/articles?_limit=4',
                 method: 'GET',
                 status: 200,
-                response: [{...article, id: '4'}, {...article, id: '3'}, {...article, id: '5'}, {...article, id: '6'}],
+                response: [
+                    { ...article, id: '4' },
+                    { ...article, id: '3' },
+                    { ...article, id: '5' },
+                    { ...article, id: '6' },
+                ],
             },
         ],
     },
@@ -68,13 +72,11 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
-    args: {
-    },
+    args: {},
     decorators: [storeDecorator({})],
 };
 
 export const Dark: Story = {
-    args: {
-    },
+    args: {},
     decorators: [themeDecorator(Themes.DARK), storeDecorator({})],
 };

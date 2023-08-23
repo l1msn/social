@@ -1,29 +1,32 @@
-import React, {JSX, useCallback, useState} from 'react';
-import {Card} from '@/shared/ui/Card';
-import {HStack, VStack} from '@/shared/ui/Stack';
+import React, { JSX, useCallback, useState } from 'react';
+import { Card } from '@/shared/ui/Card';
+import { HStack, VStack } from '@/shared/ui/Stack';
 import StarRating from '@/shared/ui/StarRating';
-import {Text} from '@/shared/ui/Text';
-import {Modal} from '@/shared/ui/Modal';
-import {Input} from '@/shared/ui/Input';
-import {useTranslation} from 'react-i18next';
+import { Text } from '@/shared/ui/Text';
+import { Modal } from '@/shared/ui/Modal';
+import { Input } from '@/shared/ui/Input';
+import { useTranslation } from 'react-i18next';
 import Button from '@/shared/ui/Button';
 import ThemeButton from '@/shared/ui/Button/consts/ThemeButton';
-import {BrowserView, MobileView} from 'react-device-detect';
-import {Drawer} from '@/shared/ui/Popups';
+import { BrowserView, MobileView } from 'react-device-detect';
+import { Drawer } from '@/shared/ui/Popups';
 import SizeButton from '@/shared/ui/Button/consts/SizeButton';
 
 interface IRatingCardProps {
-    className?: string,
-    rate?: number,
-    title?: string,
-    feedbackTitle?: string,
-    hasFeedback?: boolean,
-    onCancel?: (starsCount: number) => void,
+    className?: string;
+    rate?: number;
+    title?: string;
+    feedbackTitle?: string;
+    hasFeedback?: boolean;
+    onCancel?: (starsCount: number) => void;
     onAccept?: (starsCount: number, feedback?: string) => void;
 }
 
-const RatingCard: React.FC<IRatingCardProps> = (props: IRatingCardProps): JSX.Element => {
-    const {className,
+const RatingCard: React.FC<IRatingCardProps> = (
+    props: IRatingCardProps,
+): JSX.Element => {
+    const {
+        className,
         title,
         feedbackTitle,
         hasFeedback,
@@ -32,20 +35,23 @@ const RatingCard: React.FC<IRatingCardProps> = (props: IRatingCardProps): JSX.El
         rate = 0,
     } = props;
 
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
     const [isModalOpen, setIsOpenModal] = useState<boolean>(false);
     const [starsCount, setStarsCount] = useState<number>(rate);
     const [feedback, setFeedback] = useState<string>('');
 
-    const onSelectStars = useCallback((selectedStartCount: number) => {
-        setStarsCount(selectedStartCount);
-        if (hasFeedback) {
-            setIsOpenModal((prevState) => !prevState);
-        } else {
-            onAccept?.(selectedStartCount);
-        }
-    }, [hasFeedback, onAccept]);
+    const onSelectStars = useCallback(
+        (selectedStartCount: number) => {
+            setStarsCount(selectedStartCount);
+            if (hasFeedback) {
+                setIsOpenModal((prevState) => !prevState);
+            } else {
+                onAccept?.(selectedStartCount);
+            }
+        },
+        [hasFeedback, onAccept],
+    );
 
     const acceptHandler = useCallback(() => {
         setIsOpenModal(false);
@@ -59,26 +65,43 @@ const RatingCard: React.FC<IRatingCardProps> = (props: IRatingCardProps): JSX.El
 
     const modalContent = (
         <>
-            <Text title={feedbackTitle}/>
-            <Input value={feedback} onChange={setFeedback} placeholder={t('Your review')}/>
+            <Text title={feedbackTitle} />
+            <Input
+                data-testid={'RatingCard.Input'}
+                value={feedback}
+                onChange={setFeedback}
+                placeholder={t('Your review')}
+            />
         </>
     );
 
     return (
-        <Card className={className} max>
+        <Card className={className} max data-testid={'RatingCard'}>
             <VStack align={'center'} gap={'8'}>
-                <Text title={starsCount ? t('Thanks for review') : title}/>
-                <StarRating selectedStars={starsCount} size={60} onSelect={onSelectStars}/>
+                <Text title={starsCount ? t('Thanks for review') : title} />
+                <StarRating
+                    selectedStars={starsCount}
+                    size={60}
+                    onSelect={onSelectStars}
+                />
             </VStack>
             <BrowserView>
                 <Modal isOpen={isModalOpen} lazy>
                     <VStack gap={'32'} max>
                         {modalContent}
                         <HStack max gap={'16'} justify={'end'}>
-                            <Button onClick={cancelHandler} theme={ThemeButton.WITHLINE_RED}>
+                            <Button
+                                data-testid={'RatingCard.Close'}
+                                onClick={cancelHandler}
+                                theme={ThemeButton.WITHLINE_RED}
+                            >
                                 {t('Close')}
                             </Button>
-                            <Button onClick={acceptHandler} theme={ThemeButton.WITHLINE}>
+                            <Button
+                                data-testid={'RatingCard.Send'}
+                                onClick={acceptHandler}
+                                theme={ThemeButton.WITHLINE}
+                            >
                                 {t('Send')}
                             </Button>
                         </HStack>
@@ -89,7 +112,12 @@ const RatingCard: React.FC<IRatingCardProps> = (props: IRatingCardProps): JSX.El
                 <Drawer isOpen={isModalOpen} onClose={cancelHandler} lazy>
                     <VStack gap={'32'}>
                         {modalContent}
-                        <Button fullWidth onClick={acceptHandler} size={SizeButton.XL} theme={ThemeButton.WITHLINE}>
+                        <Button
+                            fullWidth
+                            onClick={acceptHandler}
+                            size={SizeButton.XL}
+                            theme={ThemeButton.WITHLINE}
+                        >
                             {t('Send')}
                         </Button>
                     </VStack>
@@ -100,5 +128,3 @@ const RatingCard: React.FC<IRatingCardProps> = (props: IRatingCardProps): JSX.El
 };
 
 export default RatingCard;
-
-

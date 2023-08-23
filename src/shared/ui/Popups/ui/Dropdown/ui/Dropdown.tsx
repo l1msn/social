@@ -1,28 +1,32 @@
-import React, {Fragment, JSX} from 'react';
+import React, { Fragment, JSX } from 'react';
 import cls from './Dropdown.module.scss';
 import popupCls from '../../../styles/popup.module.scss';
 import classNames from '@/shared/lib/classNames/classNames';
-import {Menu, Transition} from '@headlessui/react';
+import { Menu, Transition } from '@headlessui/react';
 import IDropdownItem from '../types/IDropdownItem';
-import {DropDownDirection} from '@/shared/types/ui';
-import AppLink from '@/shared/ui/AppLink';
+import { DropDownDirection } from '@/shared/types/ui';
+import AppLink from '../../../../AppLink';
 import mapDirectionClass from '../../../styles/consts';
 interface IDropdownProps {
-    className?: string,
-    items: IDropdownItem[],
-    trigger?: React.ReactNode,
+    className?: string;
+    items: IDropdownItem[];
+    trigger?: React.ReactNode;
     direction?: DropDownDirection;
 }
 
-const Dropdown: React.FC<IDropdownProps> = (props: IDropdownProps): JSX.Element => {
-    const {className,
-        items,
-        trigger,
-        direction = 'bottom right',
-    } = props;
+const Dropdown: React.FC<IDropdownProps> = (
+    props: IDropdownProps,
+): JSX.Element => {
+    const { className, items, trigger, direction = 'bottom right' } = props;
 
     return (
-        <Menu as={'div'} className={classNames(cls.Dropdown, {}, [className, popupCls.popup])}>
+        <Menu
+            as={'div'}
+            className={classNames(cls.Dropdown, {}, [
+                className,
+                popupCls.popup,
+            ])}
+        >
             <Menu.Button className={popupCls.trigger}>{trigger}</Menu.Button>
             <Transition
                 enter="transition duration-100 ease-out"
@@ -32,13 +36,24 @@ const Dropdown: React.FC<IDropdownProps> = (props: IDropdownProps): JSX.Element 
                 leaveFrom="transform scale-100 opacity-100"
                 leaveTo="transform scale-95 opacity-0"
             >
-                <Menu.Items className={classNames(cls.menu, {}, [mapDirectionClass[direction]])}>
+                <Menu.Items
+                    className={classNames(cls.menu, {}, [
+                        mapDirectionClass[direction],
+                    ])}
+                >
                     {items.map((item, index) => {
-                        const content = ({active}: {active: boolean}) => (
+                        const content = ({ active }: { active: boolean }) => (
                             <button
                                 type={'button'}
                                 disabled={item.disabled}
-                                className={classNames(cls.item, {[popupCls.active]: active, [popupCls.disabled]: item.disabled}, [])}
+                                className={classNames(
+                                    cls.item,
+                                    {
+                                        [popupCls.active]: active,
+                                        [popupCls.disabled]: item.disabled,
+                                    },
+                                    [],
+                                )}
                                 onClick={item.onClick}
                             >
                                 {item.content}
@@ -58,7 +73,11 @@ const Dropdown: React.FC<IDropdownProps> = (props: IDropdownProps): JSX.Element 
                         }
 
                         return (
-                            <Menu.Item key={'dropdown-key' + index} disabled={item.disabled} as={Fragment}>
+                            <Menu.Item
+                                key={'dropdown-key' + index}
+                                disabled={item.disabled}
+                                as={Fragment}
+                            >
                                 {content}
                             </Menu.Item>
                         );

@@ -1,27 +1,38 @@
-import React, {InputHTMLAttributes, JSX, memo, useEffect, useRef, useState} from 'react';
+import React, {
+    InputHTMLAttributes,
+    JSX,
+    memo,
+    useEffect,
+    useRef,
+    useState,
+} from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
+type HTMLInputProps = Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    'value' | 'onChange' | 'readOnly'
+>;
 
-interface IInputProps extends HTMLInputProps{
-    className?: string,
-    value?: string | number,
-    onChange?: (value: string) => void,
+interface IInputProps extends HTMLInputProps {
+    className?: string;
+    value?: string | number;
+    onChange?: (value: string) => void;
     autofocus?: boolean;
     readonly?: boolean;
 }
 
 const Input: React.FC<IInputProps> = memo((props: IInputProps): JSX.Element => {
-    const {className,
+    const {
+        className,
         readonly,
         autofocus,
         placeholder,
         value,
         onChange,
         type = 'text',
-        ...otherProps} = props;
-
+        ...otherProps
+    } = props;
 
     function onChangeHandler(e: React.ChangeEvent<HTMLInputElement>): void {
         onChange?.(e.target.value);
@@ -55,12 +66,16 @@ const Input: React.FC<IInputProps> = memo((props: IInputProps): JSX.Element => {
     const isCaretVisible = isFocus && !readonly;
 
     return (
-        <div className={classNames(cls.InputWrapper, {[cls.readonly]: readonly}, [className])}>
-            {placeholder &&
-                (<div className={cls.placeholder}>
-                    {`${placeholder}>`}
-                </div>)
-            }
+        <div
+            className={classNames(
+                cls.InputWrapper,
+                { [cls.readonly]: readonly },
+                [className],
+            )}
+        >
+            {placeholder && (
+                <div className={cls.placeholder}>{`${placeholder}>`}</div>
+            )}
             <div className={cls.caretWrapper}>
                 <input
                     readOnly={readonly}
@@ -74,12 +89,15 @@ const Input: React.FC<IInputProps> = memo((props: IInputProps): JSX.Element => {
                     className={cls.input}
                     {...otherProps}
                 />
-                {isCaretVisible && (<span className={cls.caret} style={{left: `${caretPosition * 9}px`}} />)}
+                {isCaretVisible && (
+                    <span
+                        className={cls.caret}
+                        style={{ left: `${caretPosition * 9}px` }}
+                    />
+                )}
             </div>
         </div>
     );
 });
 
 export default Input;
-
-

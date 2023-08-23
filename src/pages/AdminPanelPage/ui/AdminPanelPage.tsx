@@ -1,19 +1,22 @@
-import React, {JSX} from 'react';
+import React, { JSX } from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
 import Page from '@/widgets/Page';
 
 interface IAdminPanelPageProps {
-    className?: string
+    className?: string;
 }
 
-const AdminPanelPage: React.FC<IAdminPanelPageProps> = ({className}: IAdminPanelPageProps): JSX.Element => {
+const AdminPanelPage: React.FC<IAdminPanelPageProps> = ({
+    className,
+}: IAdminPanelPageProps): JSX.Element => {
     return (
-        <Page className={classNames('', {}, [className])}>
+        <Page
+            data-testid={'AdminPanelPage'}
+            className={classNames('', {}, [className])}
+        >
             AdminPanelPage
         </Page>
     );
 };
 
 export default AdminPanelPage;
-
-

@@ -1,23 +1,26 @@
-import type {Meta, StoryObj} from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import '@/app/styles/index.scss';
 import ListBox from './ListBox';
 import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
 
 import Themes from '@/shared/consts/theme';
 
-
 const meta = {
     title: 'shared/ListBox',
     component: ListBox,
     tags: ['autodocs'],
-    argTypes: {
-    },
-    decorators: [(Story) => <div style={{padding: 100}}><Story /></div>],
+    argTypes: {},
+    decorators: [
+        (Story) => (
+            <div style={{ padding: 100 }}>
+                <Story />
+            </div>
+        ),
+    ],
 } satisfies Meta<typeof ListBox>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
 
 export const Light: Story = {
     args: {
@@ -25,13 +28,12 @@ export const Light: Story = {
         /* eslint-disable-next-line @typescript-eslint/no-empty-function */
         onChange: (value: string) => {},
         items: [
-            {value: '1', content: 'content 1'},
-            {value: '2', content: 'content 2', disabled: true},
-            {value: '3', content: 'content 3'},
+            { value: '1', content: 'content 1' },
+            { value: '2', content: 'content 2', disabled: true },
+            { value: '3', content: 'content 3' },
         ],
     },
 };
-
 
 export const Dark: Story = {
     args: {
@@ -39,9 +41,9 @@ export const Dark: Story = {
         /* eslint-disable-next-line @typescript-eslint/no-empty-function */
         onChange: (value: string) => {},
         items: [
-            {value: '1', content: 'content 1'},
-            {value: '2', content: 'content 2', disabled: true},
-            {value: '3', content: 'content 3'},
+            { value: '1', content: 'content 1' },
+            { value: '2', content: 'content 2', disabled: true },
+            { value: '3', content: 'content 3' },
         ],
     },
     decorators: [themeDecorator(Themes.DARK)],
@@ -54,9 +56,9 @@ export const DarkTopLeft: Story = {
         /* eslint-disable-next-line @typescript-eslint/no-empty-function */
         onChange: (value: string) => {},
         items: [
-            {value: '1', content: 'content 1'},
-            {value: '2', content: 'content 2', disabled: true},
-            {value: '3', content: 'content 3'},
+            { value: '1', content: 'content 1' },
+            { value: '2', content: 'content 2', disabled: true },
+            { value: '3', content: 'content 3' },
         ],
     },
     decorators: [themeDecorator(Themes.DARK)],
@@ -69,9 +71,9 @@ export const DarkTopRight: Story = {
         /* eslint-disable-next-line @typescript-eslint/no-empty-function */
         onChange: (value: string) => {},
         items: [
-            {value: '1', content: 'content 1'},
-            {value: '2', content: 'content 2', disabled: true},
-            {value: '3', content: 'content 3'},
+            { value: '1', content: 'content 1' },
+            { value: '2', content: 'content 2', disabled: true },
+            { value: '3', content: 'content 3' },
         ],
     },
     decorators: [themeDecorator(Themes.DARK)],
@@ -84,9 +86,9 @@ export const DarkBottomLeft: Story = {
         /* eslint-disable-next-line @typescript-eslint/no-empty-function */
         onChange: (value: string) => {},
         items: [
-            {value: '1', content: 'content 1'},
-            {value: '2', content: 'content 2', disabled: true},
-            {value: '3', content: 'content 3'},
+            { value: '1', content: 'content 1' },
+            { value: '2', content: 'content 2', disabled: true },
+            { value: '3', content: 'content 3' },
         ],
     },
     decorators: [themeDecorator(Themes.DARK)],
@@ -99,9 +101,9 @@ export const DarkBottomRight: Story = {
         /* eslint-disable-next-line @typescript-eslint/no-empty-function */
         onChange: (value: string) => {},
         items: [
-            {value: '1', content: 'content 1'},
-            {value: '2', content: 'content 2', disabled: true},
-            {value: '3', content: 'content 3'},
+            { value: '1', content: 'content 1' },
+            { value: '2', content: 'content 2', disabled: true },
+            { value: '3', content: 'content 3' },
         ],
     },
     decorators: [themeDecorator(Themes.DARK)],

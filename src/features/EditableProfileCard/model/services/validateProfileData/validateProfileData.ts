@@ -1,12 +1,11 @@
-import {IProfile} from '@/entities/Profile';
-import {ValidateProfileError} from '../../types/editableProfileCardSchema';
-
+import { IProfile } from '@/entities/Profile';
+import { ValidateProfileError } from '../../types/editableProfileCardSchema';
 
 function validateProfileData(profile: IProfile) {
     if (!profile) {
         return [ValidateProfileError.NO_DATA];
     }
-    const {first, lastname, age, country} = profile;
+    const { first, lastname, age, country } = profile;
 
     const errors: ValidateProfileError[] = [];
 

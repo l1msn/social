@@ -1,5 +1,5 @@
-import {Story} from '@storybook/react';
-import {ThemeProvider} from '@/app/providers/ThemeProvider';
+import { Story } from '@storybook/react';
+import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import Themes from '@/shared/consts/theme';
 
 function themeDecorator(theme: Themes) {
@@ -8,7 +8,7 @@ function themeDecorator(theme: Themes) {
         return (
             <ThemeProvider initialTheme={theme}>
                 <div className={`app ${theme}`}>
-                    <StoryComponent/>
+                    <StoryComponent />
                 </div>
             </ThemeProvider>
         );

@@ -1,0 +1,8 @@
+/node_modules
+/config
+/json-server
+/scripts
+webpack.config.ts
+vite.config.ts
+/dist
+/build

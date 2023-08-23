@@ -1,4 +1,4 @@
-import {IProfile} from '@/entities/Profile';
+import { IProfile } from '@/entities/Profile';
 
 enum ValidateProfileError {
     INCORRECT_USER_DATA = 'INCORRECT_USER_DATA',
@@ -9,12 +9,12 @@ enum ValidateProfileError {
 }
 
 interface IProfileSchema {
-    data?: IProfile,
-    isLoading?: boolean,
-    error?: string,
-    readonly?: boolean,
-    form?: IProfile,
+    data?: IProfile;
+    isLoading?: boolean;
+    error?: string;
+    readonly?: boolean;
+    form?: IProfile;
     validateError?: ValidateProfileError[];
 }
 
-export {ValidateProfileError, type IProfileSchema};
+export { ValidateProfileError, type IProfileSchema };

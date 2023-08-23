@@ -1,11 +1,18 @@
-import {createContext, useContext, useEffect, useMemo, useRef, useState} from 'react';
+import {
+    createContext,
+    useContext,
+    useEffect,
+    useMemo,
+    useRef,
+    useState,
+} from 'react';
 
 type SpringType = typeof import('@react-spring/web');
 type GestureType = typeof import('@use-gesture/react');
 
 interface IAnimationContextPayload {
-    Gesture?: GestureType,
-    Spring?: SpringType,
+    Gesture?: GestureType;
+    Spring?: SpringType;
     isLoaded?: boolean;
 }
 
@@ -22,7 +29,9 @@ function getAsyncAnimationModules() {
     ]);
 }
 
-const AnimationProvider: React.FC<IAnimationProviderProps> = ({children}: IAnimationProviderProps) => {
+const AnimationProvider: React.FC<IAnimationProviderProps> = ({
+    children,
+}: IAnimationProviderProps) => {
     const SpringRef = useRef<SpringType>();
     const GestureRef = useRef<GestureType>();
     const [isLoaded, setIsLoaded] = useState<boolean>(false);
@@ -35,11 +44,14 @@ const AnimationProvider: React.FC<IAnimationProviderProps> = ({children}: IAnima
         });
     }, []);
 
-    const value = useMemo(() => ({
-        Gesture: GestureRef.current,
-        Spring: SpringRef.current,
-        isLoaded,
-    }), [isLoaded]);
+    const value = useMemo(
+        () => ({
+            Gesture: GestureRef.current,
+            Spring: SpringRef.current,
+            isLoaded,
+        }),
+        [isLoaded],
+    );
 
     return (
         <AnimationContext.Provider value={value}>
@@ -52,4 +64,4 @@ function useAnimationLibs() {
     return useContext(AnimationContext) as Required<IAnimationContextPayload>;
 }
 
-export {useAnimationLibs, AnimationProvider};
+export { useAnimationLibs, AnimationProvider };

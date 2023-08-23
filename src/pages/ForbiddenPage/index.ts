@@ -1,3 +1,3 @@
 import ForbiddenPageLazy from './ui/ForbiddenPage.lazy';
 
-export {ForbiddenPageLazy as ForbiddenPage};
+export { ForbiddenPageLazy as ForbiddenPage };

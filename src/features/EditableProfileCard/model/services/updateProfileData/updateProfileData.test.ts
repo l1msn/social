@@ -1,10 +1,9 @@
 import axios from 'axios';
 import TestAsyncThunk from '@/shared/lib/tests/testAsyncThunk/TestAsyncThunk';
-import {Country} from '@/entities/Country';
+import { Country } from '@/entities/Country';
 import updateProfileData from './updateProfileData';
-import {ValidateProfileError} from '@/features/EditableProfileCard/testing';
-import {IProfile} from '@/entities/Profile';
-
+import { ValidateProfileError } from '../../types/editableProfileCardSchema';
+import { IProfile } from '@/entities/Profile';
 
 jest.mock('axios');
 
@@ -13,14 +12,14 @@ const mockedAxios = jest.mocked(axios, {
 });
 
 const mockForm: IProfile = {
-    'id': 1,
-    'first': 'Alex',
-    'lastname': 'Sadykov',
-    'age': 23,
-    'city': 'Saint-Petersburg',
-    'username': 'Darlingg',
-    'avatar': 'https://i.imgur.com/IyES7O4.png',
-    'country': Country.RUSSIA,
+    id: 1,
+    first: 'Alex',
+    lastname: 'Sadykov',
+    age: 23,
+    city: 'Saint-Petersburg',
+    username: 'Darlingg',
+    avatar: 'https://i.imgur.com/IyES7O4.png',
+    country: Country.RUSSIA,
 };
 
 describe('testing fetchProfileData functional', () => {
@@ -30,7 +29,7 @@ describe('testing fetchProfileData functional', () => {
                 form: mockForm,
             },
         });
-        thunk.api.put.mockReturnValue(Promise.resolve({data: mockForm}));
+        thunk.api.put.mockReturnValue(Promise.resolve({ data: mockForm }));
 
         const result = await thunk.callThunk();
 
@@ -45,12 +44,10 @@ describe('testing fetchProfileData functional', () => {
                 form: mockForm,
             },
         });
-        thunk.api.put.mockReturnValue(Promise.resolve({status: 403}));
+        thunk.api.put.mockReturnValue(Promise.resolve({ status: 403 }));
         const result = await thunk.callThunk();
 
         expect(result.meta.requestStatus).toBe('rejected');
-        expect(result.payload).toEqual([
-            ValidateProfileError.SERVER_ERROR,
-        ]);
+        expect(result.payload).toEqual([ValidateProfileError.SERVER_ERROR]);
     });
 });

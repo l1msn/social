@@ -1,31 +1,40 @@
-import React, {JSX, Suspense} from 'react';
-import classNames from '@/shared/lib/classNames/classNames';
-import cls from './LoginModal.module.scss';
-import {Modal} from '@/shared/ui/Modal';
+import React, { JSX, Suspense } from 'react';
+import { Modal } from '@/shared/ui/Modal';
 import LoginFormLazy from '../LoginForm/LoginForm.lazy';
 import Loader from '@/shared/ui/Loader';
+import { isMobile } from 'react-device-detect';
+import { Drawer } from '@/shared/ui/Popups';
 
 interface ILoginModalProps {
-    className?: string,
-    isOpen: boolean,
+    className?: string;
+    isOpen: boolean;
     onClose: () => void;
 }
 
-const LoginModal: React.FC<ILoginModalProps> = ({className, isOpen, onClose}: ILoginModalProps): JSX.Element => {
+const LoginModal: React.FC<ILoginModalProps> = ({
+    className,
+    isOpen,
+    onClose,
+}: ILoginModalProps): JSX.Element => {
+    const content = (
+        <Suspense fallback={<Loader />}>
+            <LoginFormLazy onSuccess={onClose} />
+        </Suspense>
+    );
+
+    if (isMobile) {
+        return (
+            <Drawer isOpen={isOpen} onClose={onClose} lazy>
+                {content}
+            </Drawer>
+        );
+    }
+
     return (
-        <Modal
-            className={classNames(cls.login_modal, {}, [className])}
-            isOpen={isOpen}
-            onClose={onClose}
-            lazy
-        >
-            <Suspense fallback={<Loader/>}>
-                <LoginFormLazy onSuccess={onClose}/>
-            </Suspense>
+        <Modal isOpen={isOpen} onClose={onClose} lazy>
+            {content}
         </Modal>
     );
 };
 
 export default LoginModal;
-
-
