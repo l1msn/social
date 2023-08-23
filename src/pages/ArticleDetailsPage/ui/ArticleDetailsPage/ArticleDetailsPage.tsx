@@ -18,9 +18,9 @@ import { ArticleRecommendationsList } from '@/features/ArticleRecommendationsLis
 import { ArticleRating } from '@/features/ArticleRating';
 import Loader from '@/shared/ui/Loader';
 import ArticleDetailsComments from '../ArticleDetailsComments/ArticleDetailsComments';
-import { toggleFeatures } from '@/shared/features';
-import { Card } from '@/shared/ui/Card';
+import { ToggleFeatures } from '@/shared/features';
 import { useTranslation } from 'react-i18next';
+import { Card } from '@/shared/ui/Card';
 
 interface IArticleDetailsPageProps {
     className?: string;
@@ -50,12 +50,6 @@ const ArticleDetailsPage: React.FC<IArticleDetailsPageProps> = memo(
             return null;
         }
 
-        const articleRatingCard = toggleFeatures({
-            name: 'isArticleRatingEnabled',
-            on: () => <ArticleRating id={id} />,
-            off: () => <Card>{t('Feature coming soon!')}</Card>,
-        });
-
         return (
             <DynamicModuleLoader reducers={reducers} removeAfterAmount>
                 <Page
@@ -67,7 +61,11 @@ const ArticleDetailsPage: React.FC<IArticleDetailsPageProps> = memo(
                         <Suspense fallback={<Loader />}>
                             <ArticleDetailsPageHeader />
                             <ArticleDetails id={id} />
-                            {articleRatingCard}
+                            <ToggleFeatures
+                                feature={'isArticleRatingEnabled'}
+                                on={<ArticleRating id={id} />}
+                                off={<Card>{t('Feature coming soon!')}</Card>}
+                            />
                             <ArticleRecommendationsList />
                             <ArticleDetailsComments id={id} />
                         </Suspense>
