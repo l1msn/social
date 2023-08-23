@@ -1430,7 +1430,13 @@
       "features": {
         "isArticleRatingEnabled": true
       },
-      "avatar": "https://cdn-icons-png.flaticon.com/512/2304/2304226.png"
+      "avatar": "https://cdn-icons-png.flaticon.com/512/2304/2304226.png",
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": false,
+        "settingsPageHasBeenOpen": true,
+        "isArticlesPageWasOpened": true
+      }
     },
     {
       "id": "2",
@@ -1442,7 +1448,13 @@
       "features": {
         "isArticleRatingEnabled": false
       },
-      "avatar": "https://imgur.com/IyES7O4.png"
+      "avatar": "https://imgur.com/IyES7O4.png",
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": false,
+        "settingsPageHasBeenOpen": false,
+        "isArticlesPageWasOpened": true
+      }
     },
     {
       "id": "3",
@@ -1454,7 +1466,12 @@
       "features": {
         "isArticleRatingEnabled": false
       },
-      "avatar": "https://imgur.com/IyES7O4.png"
+      "avatar": "https://imgur.com/IyES7O4.png",
+      "jsonSettings": {
+        "theme": "app_dark_light",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": false
+      }
     }
   ],
   "profile": [

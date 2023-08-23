@@ -26,7 +26,7 @@ const preview: Preview = {
     decorators: [
         // @ts-ignore
         styleDecorator,
-        themeDecorator(Themes.LIGHT),
+        themeDecorator(Themes.DARK),
         routerDecorator,
         suspenseDecorator,
     ],

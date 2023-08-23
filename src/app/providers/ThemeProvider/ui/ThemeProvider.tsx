@@ -1,6 +1,5 @@
-import React, { JSX, useMemo, useState } from 'react';
+import React, { JSX, useEffect, useMemo, useState } from 'react';
 import Themes from '@/shared/consts/theme';
-import { LocalStorageThemeKey } from '@/shared/consts/localStorage';
 import { ThemeContext } from '@/shared/lib/context/ThemeContext';
 
 interface IThemeProviderProps {
@@ -8,13 +7,18 @@ interface IThemeProviderProps {
     initialTheme?: Themes;
 }
 
-const defaultTheme: Themes =
-    (localStorage.getItem(LocalStorageThemeKey) as Themes) || Themes.LIGHT;
-
 const ThemeProvider: React.FC<IThemeProviderProps> = (props): JSX.Element => {
     const { initialTheme, children } = props;
 
-    const [theme, setTheme] = useState<Themes>(initialTheme || defaultTheme);
+    const [theme, setTheme] = useState<Themes>(initialTheme || Themes.DARK);
+    const [isThemeInit, setIsThemeInit] = useState<boolean>(false);
+
+    useEffect(() => {
+        if (!isThemeInit && initialTheme) {
+            setTheme(initialTheme);
+            setIsThemeInit((prevState) => !prevState);
+        }
+    }, [isThemeInit, initialTheme]);
 
     const defaultProps = useMemo(
         () => ({

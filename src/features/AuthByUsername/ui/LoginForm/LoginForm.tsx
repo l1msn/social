@@ -16,6 +16,7 @@ import {
     ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import useAppDispatch from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import useCallbackButton from '@/shared/lib/hooks/useCallbackButton/useCallbackButton';
 
 const initialReducers: ReducersList = {
     loginForm: loginReducer,
@@ -59,6 +60,11 @@ const LoginForm: React.FC<ILoginFormProps> = memo(
             }
         }, [onSuccess, dispatch, password, username]);
 
+        const onLoginClickWithEnterConfirm = useCallbackButton(
+            onLoginClick,
+            'Enter',
+        );
+
         return (
             <DynamicModuleLoader removeAfterAmount reducers={initialReducers}>
                 <div className={classNames(cls.LoginForm, {}, [className])}>
@@ -86,9 +92,10 @@ const LoginForm: React.FC<ILoginFormProps> = memo(
                     />
                     <Button
                         disabled={isLoading}
-                        onClick={onLoginClick}
+                        onClick={(e) => onLoginClickWithEnterConfirm}
                         theme={ThemeButton.WITHLINE}
                         className={cls.loginBtn}
+                        type={'submit'}
                     >
                         {t('Login')}
                     </Button>

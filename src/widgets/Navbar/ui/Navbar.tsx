@@ -53,6 +53,13 @@ const Navbar: React.FC<INavbarProps> = memo(
 
         return (
             <header className={classNames(cls.navbar, {}, [className])}>
+                <AppLink to={RoutePaths.getRouteMain()}>
+                    <Text
+                        theme={ThemeText.INVERTED}
+                        title={'Social'}
+                        className={cls.appName}
+                    />
+                </AppLink>
                 <Button
                     theme={ThemeButton.CLEAR}
                     className={cls.links}

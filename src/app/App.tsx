@@ -7,7 +7,9 @@ import { useSelector } from 'react-redux';
 import AppRouter from './providers/Router';
 import useTheme from '@/shared/lib/hooks/useTheme/useTheme';
 import Portal from '@/shared/ui/Portal';
-import { userActions, UserSelectors } from '@/entities/User';
+import { initAuthData, UserSelectors } from '@/entities/User';
+import PageLoader from '@/widgets/PageLoader';
+import withTheme from './providers/ThemeProvider/lib/withTheme';
 
 const App: React.FC = (): JSX.Element => {
     const { theme } = useTheme();
@@ -17,9 +19,12 @@ const App: React.FC = (): JSX.Element => {
     const init = useSelector(UserSelectors.getUserInit);
 
     useEffect(() => {
-        console.log('init auth data');
-        dispatch(userActions.initAuthData());
+        dispatch(initAuthData());
     }, [dispatch]);
+
+    if (!init) {
+        return <PageLoader />;
+    }
 
     return (
         <Portal>
@@ -36,4 +41,4 @@ const App: React.FC = (): JSX.Element => {
     );
 };
 
-export default App;
+export default withTheme(App);

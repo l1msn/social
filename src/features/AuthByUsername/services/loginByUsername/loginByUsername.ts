@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import ILoginSchema from '../../model/types/ILoginSchema';
 import { IUser, userActions } from '@/entities/User';
-import { USER_LOCALSTORAGE_KEY } from '@/shared/consts/localStorage';
 import { IThunkConfig } from '@/app/providers/StoreProvider';
 
 type loginByUsernameProps = Omit<ILoginSchema, 'isLoading' | 'error'>;
@@ -21,10 +20,6 @@ const loginByUsername = createAsyncThunk<
             throw new Error('No data!');
         }
 
-        localStorage.setItem(
-            USER_LOCALSTORAGE_KEY,
-            JSON.stringify(response.data),
-        );
         thunkAPI.dispatch(userActions.setAuthData(response.data));
         return response.data;
     } catch (e) {
