@@ -105,7 +105,6 @@ docker-compose down — для остановики проекта в Docker
 
 >[Документация i18next](https://react.i18next.com/)
 
-=======
 В проекте используются 4 вида тестов:
 1) Обычные unit тесты на jest - `npm run test:unit`
 2) Тесты на компоненты с React testing library -`npm run test:unit`
