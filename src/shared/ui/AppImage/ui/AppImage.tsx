@@ -48,8 +48,7 @@ const AppImage: React.FC<IAppImageProps> = memo(
         }
 
         return (
-            <img alt={alt} src={src} className={className}
-{...otherProps} />
+            <img alt={alt} src={src} className={className} {...otherProps} />
         );
     },
 );

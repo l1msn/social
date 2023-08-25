@@ -6,10 +6,12 @@ import useAppDispatch from '../shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import AppRouter from './providers/Router';
 import useTheme from '@/shared/lib/hooks/useTheme/useTheme';
-import Portal from '@/shared/ui/Portal';
 import { initAuthData, UserSelectors } from '@/entities/User';
 import PageLoader from '@/widgets/PageLoader';
 import withTheme from './providers/ThemeProvider/lib/withTheme';
+import { ToggleFeatures } from '@/shared/features';
+import Portal from '@/shared/ui/Portal';
+import { MainLayout } from '@/shared/layouts';
 
 const App: React.FC = (): JSX.Element => {
     const { theme } = useTheme();
@@ -26,7 +28,7 @@ const App: React.FC = (): JSX.Element => {
         return <PageLoader />;
     }
 
-    return (
+    const DeprecatedApp = (
         <Portal>
             <div className={classNames('app', {}, [theme])}>
                 <Suspense fallback="">
@@ -38,6 +40,29 @@ const App: React.FC = (): JSX.Element => {
                 </Suspense>
             </div>
         </Portal>
+    );
+
+    const RedesignedApp = (
+        <Portal>
+            <div className={classNames('app_redesigned', {}, [theme])}>
+                <Suspense>
+                    <MainLayout
+                        header={<Navbar />}
+                        content={<AppRouter />}
+                        sidebar={<Sidebar />}
+                        toolbar={<div>asd</div>}
+                    />
+                </Suspense>
+            </div>
+        </Portal>
+    );
+
+    return (
+        <ToggleFeatures
+            feature={'isAppRedesigned'}
+            off={DeprecatedApp}
+            on={RedesignedApp}
+        />
     );
 };
 

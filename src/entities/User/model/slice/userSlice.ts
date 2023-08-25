@@ -25,6 +25,7 @@ export const userSlice = createSlice({
         },
         logout: (state) => {
             state.authData = undefined;
+            setFeatureFlags({});
             localStorage.removeItem(USER_LOCALSTORAGE_KEY);
         },
     },
@@ -51,6 +52,5 @@ export const userSlice = createSlice({
     },
 });
 
-// Action creators are generated for each case reducer function
 export const { actions: userActions } = userSlice;
 export const { reducer: userReducer } = userSlice;

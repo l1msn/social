@@ -1428,7 +1428,8 @@
         "ADMIN"
       ],
       "features": {
-        "isArticleRatingEnabled": true
+        "isArticleRatingEnabled": true,
+        "isAppRedesigned": false
       },
       "avatar": "https://cdn-icons-png.flaticon.com/512/2304/2304226.png",
       "jsonSettings": {
@@ -1446,7 +1447,8 @@
         "USER"
       ],
       "features": {
-        "isArticleRatingEnabled": false
+        "isArticleRatingEnabled": false,
+        "isAppRedesigned": true
       },
       "avatar": "https://imgur.com/IyES7O4.png",
       "jsonSettings": {
@@ -1464,7 +1466,8 @@
         "MANAGER"
       ],
       "features": {
-        "isArticleRatingEnabled": false
+        "isArticleRatingEnabled": false,
+        "isAppRedesigned": true
       },
       "avatar": "https://imgur.com/IyES7O4.png",
       "jsonSettings": {

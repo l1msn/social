@@ -13,6 +13,7 @@ import { NotificationButton } from '@/features/NotificationButton';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
 import { HStack } from '@/shared/ui/Stack';
 import { RoutePaths } from '@/shared/consts/routerPaths';
+import { ToggleFeatures } from '@/shared/features';
 
 interface INavbarProps {
     className?: string;
@@ -30,24 +31,53 @@ const Navbar: React.FC<INavbarProps> = memo(
             setIsAuthModal((prevState) => !prevState);
         }, []);
 
+        const DeprecatedNavbar = (
+            <header className={classNames(cls.navbar, {}, [className])}>
+                <AppLink to={RoutePaths.getRouteMain()}>
+                    <Text
+                        theme={ThemeText.INVERTED}
+                        title={'Social'}
+                        className={cls.appName}
+                    />
+                </AppLink>
+                {/* <AppLink theme={AppLinkThemes.SECONDARY} to={RoutePaths.getRouteArticleCreate()}>*/}
+                {/*    {t('Create new article')}*/}
+                {/* </AppLink>*/}
+                <HStack gap={'16'} className={cls.actions}>
+                    <NotificationButton />
+                    <AvatarDropdown />
+                </HStack>
+            </header>
+        );
+
+        const RedesignedNavbar = (
+            <header
+                className={classNames(cls.navbarRedesigned, {}, [className])}
+            >
+                <AppLink to={RoutePaths.getRouteMain()}>
+                    {/* <Text*/}
+                    {/*    theme={ThemeText.INVERTED}*/}
+                    {/*    title={'Social'}*/}
+                    {/*    className={cls.appName}*/}
+                    {/* />*/}
+                </AppLink>
+                {/* <AppLink theme={AppLinkThemes.SECONDARY} to={RoutePaths.getRouteArticleCreate()}>*/}
+                {/*    {t('Create new article')}*/}
+                {/* </AppLink>*/}
+                <HStack gap={'16'} className={cls.actions}>
+                    <NotificationButton />
+                    <AvatarDropdown />
+                </HStack>
+            </header>
+        );
+
         if (authData) {
             return (
-                <header className={classNames(cls.navbar, {}, [className])}>
-                    <AppLink to={RoutePaths.getRouteMain()}>
-                        <Text
-                            theme={ThemeText.INVERTED}
-                            title={'Social'}
-                            className={cls.appName}
-                        />
-                    </AppLink>
-                    {/* <AppLink theme={AppLinkThemes.SECONDARY} to={RoutePaths.getRouteArticleCreate()}>*/}
-                    {/*    {t('Create new article')}*/}
-                    {/* </AppLink>*/}
-                    <HStack gap={'16'} className={cls.actions}>
-                        <NotificationButton />
-                        <AvatarDropdown />
-                    </HStack>
-                </header>
+                <ToggleFeatures
+                    feature={'isAppRedesigned'}
+                    on={RedesignedNavbar}
+                    off={DeprecatedNavbar}
+                />
             );
         }
 

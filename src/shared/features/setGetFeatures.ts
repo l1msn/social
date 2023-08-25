@@ -1,6 +1,8 @@
-import IFeatureFlags from '../types/featureFlags';
+import IFeatureFlags from '../types/IFeatureFlags';
 
-let featureFlags: IFeatureFlags;
+let featureFlags: IFeatureFlags = {
+    isAppRedesigned: true,
+};
 
 function setFeatureFlags(newFeatureFlags?: IFeatureFlags) {
     if (newFeatureFlags) {

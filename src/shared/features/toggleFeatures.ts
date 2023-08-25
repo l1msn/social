@@ -1,8 +1,8 @@
-import FeatureFlags from '@/shared/types/featureFlags';
+import IFeatureFlags from '@/shared/types/IFeatureFlags';
 import { getFeatureFlags } from './setGetFeatures';
 
 interface IToggleFeaturesOptions<T> {
-    name: keyof FeatureFlags;
+    name: keyof IFeatureFlags;
     on: () => T;
     off: () => T;
 }

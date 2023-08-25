@@ -92,7 +92,8 @@ const LoginForm: React.FC<ILoginFormProps> = memo(
                     />
                     <Button
                         disabled={isLoading}
-                        onClick={(e) => onLoginClickWithEnterConfirm}
+                        onKeyDown={(e) => onLoginClickWithEnterConfirm}
+                        onClick={onLoginClick}
                         theme={ThemeButton.WITHLINE}
                         className={cls.loginBtn}
                         type={'submit'}

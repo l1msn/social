@@ -10,6 +10,8 @@ import getSidebarItems from '../../model/selectors/getSidebarItems';
 import LangSwitcher from '@/features/LangSwitcher';
 import ThemeSwitcher from '@/features/ThemeSwitcher';
 import { VStack } from '@/shared/ui/Stack';
+import { ToggleFeatures } from '@/shared/features';
+import { AppLogo } from '@/shared/ui/AppLogo';
 
 interface ISidebarProps {
     className?: string;
@@ -37,7 +39,7 @@ const Sidebar: React.FC<ISidebarProps> = memo(
             [sidebarItemsList, collapsed],
         );
 
-        return (
+        const DeprecatedSidebar = (
             <aside
                 data-testid={'sidebar'}
                 className={classNames(
@@ -62,6 +64,42 @@ const Sidebar: React.FC<ISidebarProps> = memo(
                     <ThemeSwitcher />
                 </div>
             </aside>
+        );
+
+        const RedesignedSidebar = (
+            <aside
+                data-testid={'sidebar'}
+                className={classNames(
+                    cls.SidebarRedesigned,
+                    { [cls.collapsed]: collapsed },
+                    [className],
+                )}
+            >
+                <AppLogo className={cls.appLogo} />
+                {/* <Button*/}
+                {/*    data-testid={'sidebar-toggle'}*/}
+                {/*    className={cls.burger}*/}
+                {/*    theme={ThemeButton.OUTLINE}*/}
+                {/*    onClick={onToggle}*/}
+                {/* >*/}
+                {/*    <MenuIcon className={cls.icon} />*/}
+                {/* </Button>*/}
+                {/* <VStack role={'navigation'} gap={'8'} className={cls.items}>*/}
+                {/*    {itemsList}*/}
+                {/* </VStack>*/}
+                {/* <div className={cls.switchers}>*/}
+                {/*    <LangSwitcher className={cls.lang} />*/}
+                {/*    <ThemeSwitcher />*/}
+                {/* </div>*/}
+            </aside>
+        );
+
+        return (
+            <ToggleFeatures
+                feature={'isAppRedesigned'}
+                on={RedesignedSidebar}
+                off={DeprecatedSidebar}
+            />
         );
     },
 );
