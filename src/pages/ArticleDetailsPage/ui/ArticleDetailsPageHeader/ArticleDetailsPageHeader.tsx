@@ -1,13 +1,13 @@
 import React, { JSX, useCallback } from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
-import ThemeButton from '@/shared/ui/Button/consts/ThemeButton';
-import Button from '@/shared/ui/Button';
+import ThemeButton from '@/shared/ui/deprecated/Button/consts/ThemeButton';
+import Button from '@/shared/ui/deprecated/Button';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ArticleDetailsSelectors from '../../model/selectors/ArticleDetailsSelectors';
 import { ArticleSelectors } from '@/entities/Article';
-import { HStack } from '@/shared/ui/Stack';
+import { HStack } from '@/shared/ui/deprecated/Stack';
 import { RoutePaths } from '@/shared/consts/routerPaths';
 
 interface IArticleDetailsPageHeaderProps {

@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import React, { JSX, memo, useCallback, useEffect, useState } from 'react';
-import { Modal } from '@/shared/ui/Modal';
-import { Text } from '@/shared/ui/Text';
+import { Modal } from '@/shared/ui/deprecated/Modal';
+import { Text } from '@/shared/ui/deprecated/Text';
 import { JsonSelectors, saveJsonSettings } from '@/entities/User';
 import useAppDispatch from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { isMobile } from 'react-device-detect';
-import { Drawer } from '@/shared/ui/Popups';
+import { Drawer } from '@/shared/ui/deprecated/Popups';
 
 interface IArticlePageGreetingProps {
     className?: string;

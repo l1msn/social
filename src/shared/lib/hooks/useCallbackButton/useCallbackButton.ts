@@ -2,9 +2,9 @@ import { useCallback, useEffect } from 'react';
 
 function useCallbackButton(callback: (...args: any[]) => any, key: string) {
     const callbackWithButton = useCallback(
-        (e: KeyboardEvent) => {
+        (e: KeyboardEvent, ...args: any[]) => {
             if (e.key === key) {
-                callback();
+                callback(...args);
             }
         },
         [callback, key],

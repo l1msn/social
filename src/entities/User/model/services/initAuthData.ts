@@ -19,8 +19,8 @@ const initAuthData = createAsyncThunk<IUser, void, IThunkConfig<string>>(
                 .unwrap();
 
             return response;
-        } catch (e) {
-            console.log(e);
+        } catch (error) {
+            console.log(error);
             return thunkAPI.rejectWithValue('Cant init auth data!');
         }
     },

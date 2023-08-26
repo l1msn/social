@@ -10,18 +10,18 @@ import useAppDispatch from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import fetchArticleById from '../../model/services/fetchArticleById/fetchArticleById';
 import { useSelector } from 'react-redux';
 import ArticleSelectors from '../../model/selectors/ArticleSelectors';
-import { AlignText, SizeText, Text } from '@/shared/ui/Text';
+import { AlignText, SizeText, Text } from '@/shared/ui/deprecated/Text';
 import { useTranslation } from 'react-i18next';
-import Skeleton from '@/shared/ui/Skeleton';
-import Avatar from '@/shared/ui/Avatar';
-import DateIcon from '@/shared/assets/icons/date-icon.svg';
-import ViewsIcon from '@/shared/assets/icons/views-icon.svg';
-import Icon from '@/shared/ui/Icon';
+import Skeleton from '@/shared/ui/deprecated/Skeleton';
+import Avatar from '@/shared/ui/deprecated/Avatar';
+import DateIcon from '@/shared/assets/icons/deprecated/date-icon.svg';
+import ViewsIcon from '@/shared/assets/icons/deprecated/views-icon.svg';
+import Icon from '@/shared/ui/deprecated/Icon';
 import { ArticleBlock, ArticleBlockType } from '../../model/types/IArticle';
 import ArticleCode from '../ArticleCode/ArticleCode';
 import ArticleText from '../ArticleText/ArticleText';
 import ArticleImage from '../ArticleImage/ArticleImage';
-import { HStack, VStack } from '@/shared/ui/Stack';
+import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
 
 interface IArticleDetailsProps {
     className?: string;

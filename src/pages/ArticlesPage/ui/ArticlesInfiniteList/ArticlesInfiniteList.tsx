@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { getArticles } from '../../model/slice/articlesPageSlice';
 import ArticlesPageSelectors from '../../model/selectors/ArticlesPageSelectors';
 import { ArticleList } from '@/entities/Article';
-import { Text, ThemeText } from '@/shared/ui/Text';
+import { Text, ThemeText } from '@/shared/ui/deprecated/Text';
 
 interface IArticlesInfiniteListProps {
     className?: string;

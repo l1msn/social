@@ -2,9 +2,9 @@ import React, { JSX } from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
 import cls from './NotificationItem.module.scss';
 import INotification from '../../model/types/INotification';
-import { Card, CardTheme } from '@/shared/ui/Card';
-import { Text } from '@/shared/ui/Text';
-import AppLink from '@/shared/ui/AppLink';
+import { Card, CardTheme } from '@/shared/ui/deprecated/Card';
+import { Text } from '@/shared/ui/deprecated/Text';
+import AppLink from '@/shared/ui/deprecated/AppLink';
 
 interface INotificationItemProps {
     className?: string;

@@ -1,13 +1,13 @@
 import React, { JSX, useCallback } from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
-import { Dropdown } from '@/shared/ui/Popups';
+import { Dropdown } from '@/shared/ui/deprecated/Popups';
 import { useDispatch, useSelector } from 'react-redux';
 import { UserSelectors, userActions } from '@/entities/User';
 import { useTranslation } from 'react-i18next';
-import Button from '@/shared/ui/Button';
-import ThemeButton from '@/shared/ui/Button/consts/ThemeButton';
+import Button from '@/shared/ui/deprecated/Button';
+import ThemeButton from '@/shared/ui/deprecated/Button/consts/ThemeButton';
 import { RoutePaths } from '@/shared/consts/routerPaths';
-import Avatar from '@/shared/ui/Avatar';
+import Avatar from '@/shared/ui/deprecated/Avatar';
 
 interface IAvatarDropdownProps {
     className?: string;

@@ -2,14 +2,14 @@ import React, { JSX, memo, useCallback } from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
 import cls from './LoginForm.module.scss';
 import { useTranslation } from 'react-i18next';
-import Button from '@/shared/ui/Button';
-import { Input } from '@/shared/ui/Input';
-import ThemeButton from '@/shared/ui/Button/consts/ThemeButton';
+import Button from '@/shared/ui/deprecated/Button';
+import { Input } from '@/shared/ui/deprecated/Input';
+import ThemeButton from '@/shared/ui/deprecated/Button/consts/ThemeButton';
 import { useSelector } from 'react-redux';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import loginByUsername from '../../services/loginByUsername/loginByUsername';
-import ThemeText from '@/shared/ui/Text/consts/ThemeText';
-import { Text } from '@/shared/ui/Text';
+import ThemeText from '@/shared/ui/deprecated/Text/consts/ThemeText';
+import { Text } from '@/shared/ui/deprecated/Text';
 import LoginSelectors from '../../model/selectors/LoginSelectors';
 import {
     DynamicModuleLoader,
@@ -92,7 +92,9 @@ const LoginForm: React.FC<ILoginFormProps> = memo(
                     />
                     <Button
                         disabled={isLoading}
-                        onKeyDown={(e) => onLoginClickWithEnterConfirm}
+                        onKeyDown={(keyboardEvent) =>
+                            onLoginClickWithEnterConfirm
+                        }
                         onClick={onLoginClick}
                         theme={ThemeButton.WITHLINE}
                         className={cls.loginBtn}

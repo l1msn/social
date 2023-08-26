@@ -1,11 +1,11 @@
 import classNames from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import React, { JSX, memo } from 'react';
-import { SizeText, Text } from '@/shared/ui/Text';
+import { SizeText, Text } from '@/shared/ui/deprecated/Text';
 import { ArticleList, ArticleView } from '@/entities/Article';
-import { HStack, VStack } from '@/shared/ui/Stack';
+import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
 import useArticleRecommendationsList from '../../api/articleRecommendationsApi';
-import Skeleton from '@/shared/ui/Skeleton';
+import Skeleton from '@/shared/ui/deprecated/Skeleton';
 import cls from './ArticleRecommendationsList.module.scss';
 
 interface IArticleRecommendationsListProps {

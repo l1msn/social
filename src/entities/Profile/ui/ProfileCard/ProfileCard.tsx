@@ -2,14 +2,14 @@ import React, { JSX, memo } from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
 import cls from './ProfileCard.module.scss';
 import { useTranslation } from 'react-i18next';
-import { AlignText, Text, ThemeText } from '@/shared/ui/Text';
-import { Input } from '@/shared/ui/Input';
+import { AlignText, Text, ThemeText } from '@/shared/ui/deprecated/Text';
+import { Input } from '@/shared/ui/deprecated/Input';
 import { IProfile } from '../../model/types/IProfile';
-import Loader from '@/shared/ui/Loader';
-import Avatar from '@/shared/ui/Avatar';
+import Loader from '@/shared/ui/deprecated/Loader';
+import Avatar from '@/shared/ui/deprecated/Avatar';
 import { Currency, CurrencySelect } from '@/entities/Currency';
 import { Country, CountrySelect } from '@/entities/Country';
-import { HStack, VStack } from '@/shared/ui/Stack';
+import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
 
 interface IProfileCardProps {
     className?: string;
@@ -130,8 +130,9 @@ const ProfileCard: React.FC<IProfileCardProps> = memo(
                     data-testid={'ProfileCard.Avatar'}
                 />
                 <Input
-                    onKeyPress={(e) =>
-                        !/[0-9]/.test(e.key) && e.preventDefault()
+                    onKeyPress={(keyboardEvent) =>
+                        !/[0-9]/.test(keyboardEvent.key) &&
+                        keyboardEvent.preventDefault()
                     }
                     readonly={readonly}
                     onChange={onChangeAge}

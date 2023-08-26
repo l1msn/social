@@ -1,12 +1,12 @@
 import { IUserScheme } from '@/entities/User';
-import { ILoginSchema } from 'src/features/AuthByUsername';
+import { ILoginSchema } from '@/features/AuthByUsername';
 import { IArticleSchema } from '@/entities/Article';
 import { IArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
-import { IAddCommentFormSchema } from 'src/features/AddCommentForm';
-import { IArticlesPageSchema } from 'src/pages/ArticlesPage';
-import { IScrollSchema } from 'src/features/ScrollRestore';
+import { IAddCommentFormSchema } from '@/features/AddCommentForm';
+import { IArticlesPageSchema } from '@/pages/ArticlesPage';
+import { IScrollSchema } from '@/features/ScrollRestore';
 import rtkApi from '@/shared/api/rtkApi';
-import { IProfileSchema } from 'src/features/EditableProfileCard';
+import { IProfileSchema } from '@/features/EditableProfileCard';
 
 interface IStateSchema {
     user: IUserScheme;

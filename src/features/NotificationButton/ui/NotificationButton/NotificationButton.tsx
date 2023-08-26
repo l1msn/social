@@ -1,12 +1,12 @@
 import React, { JSX, useCallback, useState } from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
 import cls from './NotificationButton.module.scss';
-import Button from '@/shared/ui/Button';
-import ThemeButton from '@/shared/ui/Button/consts/ThemeButton';
-import Icon from '@/shared/ui/Icon';
-import NotificationIcon from '@/shared/assets/icons/notification-icon.svg';
+import Button from '@/shared/ui/deprecated/Button';
+import ThemeButton from '@/shared/ui/deprecated/Button/consts/ThemeButton';
+import Icon from '@/shared/ui/deprecated/Icon';
+import NotificationIcon from '@/shared/assets/icons/deprecated/notification-icon.svg';
 import { NotificationList } from '@/entities/Notification';
-import { Drawer, Popover } from '@/shared/ui/Popups';
+import { Drawer, Popover } from '@/shared/ui/deprecated/Popups';
 import { BrowserView, MobileView } from 'react-device-detect';
 
 interface INotificationButtonProps {

@@ -1,16 +1,16 @@
 import React, { JSX, useCallback, useState } from 'react';
-import { Card } from '@/shared/ui/Card';
-import { HStack, VStack } from '@/shared/ui/Stack';
-import StarRating from '@/shared/ui/StarRating';
-import { Text } from '@/shared/ui/Text';
-import { Modal } from '@/shared/ui/Modal';
-import { Input } from '@/shared/ui/Input';
+import { Card } from '@/shared/ui/deprecated/Card';
+import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
+import StarRating from '@/shared/ui/deprecated/StarRating';
+import { Text } from '@/shared/ui/deprecated/Text';
+import { Modal } from '@/shared/ui/deprecated/Modal';
+import { Input } from '@/shared/ui/deprecated/Input';
 import { useTranslation } from 'react-i18next';
-import Button from '@/shared/ui/Button';
-import ThemeButton from '@/shared/ui/Button/consts/ThemeButton';
+import Button from '@/shared/ui/deprecated/Button';
+import ThemeButton from '@/shared/ui/deprecated/Button/consts/ThemeButton';
 import { BrowserView, MobileView } from 'react-device-detect';
-import { Drawer } from '@/shared/ui/Popups';
-import SizeButton from '@/shared/ui/Button/consts/SizeButton';
+import { Drawer } from '@/shared/ui/deprecated/Popups';
+import SizeButton from '@/shared/ui/deprecated/Button/consts/SizeButton';
 
 interface IRatingCardProps {
     className?: string;

@@ -6,12 +6,13 @@ const storyTemplate = require('./storyTemplate');
 const styleTemplate = require('./styleTemplate');
 
 module.exports = async (layer, sliceName) => {
-    const resolveUIPath = (...segments) => resolveRoot('src', layer, sliceName, 'ui', ...segments);
+    const resolveUIPath = (...segments) =>
+        resolveRoot('src', layer, sliceName, 'ui', ...segments);
 
     const createUIDir = async () => {
         try {
             await fs.mkdir(resolveUIPath());
-        } catch (e) {
+        } catch (error) {
             console.log('Не удалось создать UI директорию');
         }
     };
@@ -32,7 +33,7 @@ module.exports = async (layer, sliceName) => {
                 resolveUIPath(componentName, `${componentName}.module.scss`),
                 styleTemplate(componentName),
             );
-        } catch (e) {
+        } catch (error) {
             console.log('Не удалось создать компонент');
         }
     };

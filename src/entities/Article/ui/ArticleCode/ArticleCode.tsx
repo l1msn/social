@@ -1,7 +1,7 @@
 import React, { JSX, memo, useId } from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
 import cls from './ArticleCode.module.scss';
-import Code from '@/shared/ui/Code';
+import Code from '@/shared/ui/deprecated/Code';
 import { IArticleCodeBlock } from '../../model/types/IArticle';
 
 interface IArticleCodeProps {

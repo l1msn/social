@@ -3,7 +3,7 @@ import RatingCard from '@/entities/Rating';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { UserSelectors } from '@/entities/User';
-import Skeleton from '@/shared/ui/Skeleton';
+import Skeleton from '@/shared/ui/deprecated/Skeleton';
 import {
     useGetArticleRating,
     useRateArticle,
@@ -36,8 +36,8 @@ const ArticleRating: React.FC<IArticleRatingProps> = memo(
                         feedback: feedback,
                         userId: userData?.id ?? '',
                     });
-                } catch (e) {
-                    console.log(e);
+                } catch (error) {
+                    console.log(error);
                 }
             },
             [id, rateArticleMutation, userData?.id],

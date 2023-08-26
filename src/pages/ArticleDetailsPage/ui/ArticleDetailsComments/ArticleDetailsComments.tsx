@@ -1,5 +1,5 @@
 import React, { JSX, Suspense, useCallback } from 'react';
-import { SizeText, Text } from '@/shared/ui/Text';
+import { SizeText, Text } from '@/shared/ui/deprecated/Text';
 import { AddCommentForm } from '@/features/AddCommentForm';
 import { CommentList } from '@/entities/Comment';
 import { useSelector } from 'react-redux';
@@ -9,13 +9,13 @@ import addCommentForArticle from '../../model/services/addCommentForArticle/addC
 import { useTranslation } from 'react-i18next';
 import useInitialEffect from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import fetchCommentsByArticleId from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import Loader from '@/shared/ui/Loader';
+import Loader from '@/shared/ui/deprecated/Loader';
 import classNames from '@/shared/lib/classNames/classNames';
-import { VStack } from '@/shared/ui/Stack';
+import { VStack } from '@/shared/ui/deprecated/Stack';
 import ArticleDetailsSelectors from '../../model/selectors/ArticleDetailsSelectors';
 import { ArticleSelectors } from '@/entities/Article';
 
-import Skeleton from '@/shared/ui/Skeleton';
+import Skeleton from '@/shared/ui/deprecated/Skeleton';
 
 interface IArticleDetailsCommentsProps {
     className?: string;

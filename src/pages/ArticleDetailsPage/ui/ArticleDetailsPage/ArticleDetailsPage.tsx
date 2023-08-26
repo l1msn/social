@@ -13,14 +13,14 @@ import Page from '@/widgets/Page';
 import articleDetailsPageReducer from '../../model/slice/index';
 import ArticleDetailsPageHeader from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { ArticleDetails } from '@/entities/Article';
-import { VStack } from '@/shared/ui/Stack';
+import { VStack } from '@/shared/ui/deprecated/Stack';
 import { ArticleRecommendationsList } from '@/features/ArticleRecommendationsList';
 import { ArticleRating } from '@/features/ArticleRating';
-import Loader from '@/shared/ui/Loader';
+import Loader from '@/shared/ui/deprecated/Loader';
 import ArticleDetailsComments from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ToggleFeatures } from '@/shared/features';
 import { useTranslation } from 'react-i18next';
-import { Card } from '@/shared/ui/Card';
+import { Card } from '@/shared/ui/deprecated/Card';
 
 interface IArticleDetailsPageProps {
     className?: string;

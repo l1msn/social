@@ -1,0 +1,28 @@
+.appLink {
+    transition: 0.2s;
+    color: var(--primary-color);
+
+    &:hover {
+        transform: scale(1.01);
+        opacity: 0.65;
+        animation: animate 0.3s linear;
+    }
+
+    @keyframes animate {
+        0% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0.65;
+        }
+    }
+}
+
+.primary {
+    color: var(--primary-color);
+}
+
+.secondary {
+    color: var(--inverted-primary-color)
+}

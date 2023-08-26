@@ -1,0 +1,43 @@
+.primary {
+    transition: 0.2s;
+    color: var(--text-redesigned);
+
+    &:hover {
+        transform: scale(1.025);
+        opacity: 0.65;
+        animation: animate 0.1s linear;
+        color: var(--accent-redesigned);
+    }
+
+    @keyframes animate {
+        0% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0.65;
+        }
+    }
+}
+
+.red {
+    transition: 0.2s;
+    color: var(--cancel-redesigned);
+
+    &:hover {
+        transform: scale(1.025);
+        opacity: 0.65;
+        animation: animate 0.3s linear;
+        color: var(--cancel-redesigned);
+    }
+
+    @keyframes animate {
+        0% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0.65;
+        }
+    }
+}

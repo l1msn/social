@@ -1,9 +1,9 @@
 import React, { JSX } from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
-import { VStack } from '@/shared/ui/Stack';
+import { VStack } from '@/shared/ui/deprecated/Stack';
 import INotification from '../../model/types/INotification';
 import NotificationItem from '../../ui/NotificationItem/NotificationItem';
-import Skeleton from '@/shared/ui/Skeleton';
+import Skeleton from '@/shared/ui/deprecated/Skeleton';
 import useNotifications from '../../api/notificationApi';
 
 interface INotificationListProps {

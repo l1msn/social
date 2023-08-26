@@ -38,8 +38,8 @@ const saveJsonSettings = createAsyncThunk<
         }
 
         return response.jsonSettings;
-    } catch (e) {
-        console.log(e);
+    } catch (error) {
+        console.log(error);
         return thunkAPI.rejectWithValue('Cant save json settings!');
     }
 });
