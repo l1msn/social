@@ -1,11 +1,18 @@
 .card {
     padding: 24px;
-    border-radius: 12px;
     background: var(--card-bg);
 }
 
 .max {
     width: 100%;
+}
+
+.normal {
+    border-radius: 12px;
+}
+
+.round {
+    border-radius: 40px;
 }
 
 .normal {

@@ -1,3 +1,4 @@
 import MainLayout from './MainLayout/MainLayout';
+import StickyContentLayout from './StickyContentLayout/StickyContentLayout';
 
-export { MainLayout };
+export { MainLayout, StickyContentLayout };

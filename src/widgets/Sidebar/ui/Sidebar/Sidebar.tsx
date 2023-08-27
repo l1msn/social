@@ -77,7 +77,11 @@ const Sidebar: React.FC<ISidebarProps> = memo(
                     [className],
                 )}
             >
-                <AppLogo size={collapsed ? 60 : 120} className={cls.appLogo} />
+                <AppLogo
+                    withShadow={!collapsed}
+                    size={collapsed ? 60 : 120}
+                    className={cls.appLogo}
+                />
                 <VStack role={'navigation'} gap={'16'} className={cls.items}>
                     {itemsList}
                 </VStack>

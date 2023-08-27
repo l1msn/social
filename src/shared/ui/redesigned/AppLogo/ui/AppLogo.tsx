@@ -8,18 +8,23 @@ import Icon from '../../Icon';
 interface IAppLogoProps {
     className?: string;
     size?: number;
+    withShadow?: boolean;
 }
 
 const AppLogo: React.FC<IAppLogoProps> = memo(
-    ({ className, size = 50 }: IAppLogoProps): JSX.Element => {
+    ({
+        className,
+        withShadow = true,
+        size = 50,
+    }: IAppLogoProps): JSX.Element => {
         return (
             <HStack
                 max
                 justify={'center'}
                 className={classNames(cls.appLogoWrapper, {}, [className])}
             >
-                <div className={cls.gradientBig} />
-                <div className={cls.gradientBig} />
+                {withShadow && <div className={cls.gradientBig} />}
+                <div className={cls.gradientSmall} />
                 <Icon
                     width={size}
                     height={size}

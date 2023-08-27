@@ -37,7 +37,11 @@ const Page: React.FC<IPageProps> = (props: IPageProps): JSX.Element => {
 
     useInfiniteScroll({
         triggerRef: triggerRef,
-        wrapperRef: wrapperRef,
+        wrapperRef: toggleFeatures({
+            name: 'isAppRedesigned',
+            on: () => undefined,
+            off: () => wrapperRef,
+        }),
         callback: onScrollEnd,
     });
 

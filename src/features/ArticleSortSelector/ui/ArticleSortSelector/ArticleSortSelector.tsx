@@ -1,10 +1,17 @@
 import React, { JSX, useMemo } from 'react';
 import cls from './ArticleSortSelector.module.scss';
 import classNames from '@/shared/lib/classNames/classNames';
-import { ISelectOptions, Select } from '@/shared/ui/deprecated/Select';
+import {
+    ISelectOptions,
+    Select as DeprecatedSelect,
+} from '@/shared/ui/deprecated/Select';
 import { useTranslation } from 'react-i18next';
 import SortOrder from '@/shared/types/sort';
 import { ArticleSortField } from '@/entities/Article';
+import { ToggleFeatures } from '@/shared/features';
+import { ListBox } from '@/shared/ui/redesigned/Popups';
+import { HStack } from '@/shared/ui/redesigned/Stack';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 interface IArticleSortSelectorProps {
     className?: string;
@@ -53,16 +60,16 @@ const ArticleSortSelector: React.FC<IArticleSortSelectorProps> = (
         [t],
     );
 
-    return (
+    const DeprecatedArticleSortSelector = (
         <div className={classNames(cls.ArticleSortSelector, {}, [className])}>
-            <Select<ArticleSortField>
+            <DeprecatedSelect<ArticleSortField>
                 options={sortFieldOptions}
                 label={t('Sort')}
                 value={sort}
                 onChange={onChangeSort}
                 className={cls.order}
             />
-            <Select<SortOrder>
+            <DeprecatedSelect<SortOrder>
                 options={orderOptions}
                 label={t('by')}
                 value={order}
@@ -70,6 +77,38 @@ const ArticleSortSelector: React.FC<IArticleSortSelectorProps> = (
                 className={cls.order}
             />
         </div>
+    );
+    const RedesignedArticleSortSelector = (
+        <div
+            className={classNames(cls.ArticleSortSelectorRedesigned, {}, [
+                className,
+            ])}
+        >
+            <Text align={'center'} className={cls.label} text={t('Sort by')} />
+            <HStack justify={'center'} gap={'8'}>
+                <ListBox
+                    items={sortFieldOptions}
+                    value={sort}
+                    onChange={onChangeSort}
+                    direction={'bottom right'}
+                />
+                <Text text={'|'} />
+                <ListBox
+                    items={orderOptions}
+                    value={order}
+                    onChange={onChangeOrder}
+                    direction={'bottom left'}
+                />
+            </HStack>
+        </div>
+    );
+
+    return (
+        <ToggleFeatures
+            feature={'isAppRedesigned'}
+            off={DeprecatedArticleSortSelector}
+            on={RedesignedArticleSortSelector}
+        />
     );
 };
 

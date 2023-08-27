@@ -1,3 +1,3 @@
-type ButtonVariant = 'clear' | 'outline';
+type ButtonVariant = 'clear' | 'outline' | 'filled';
 
 export default ButtonVariant;

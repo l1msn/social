@@ -1,7 +1,7 @@
 import React from 'react';
 
-interface IListBoxItems {
-    value: string;
+interface IListBoxItems<T extends string> {
+    value: T;
     content: React.ReactNode;
     disabled?: boolean;
 }

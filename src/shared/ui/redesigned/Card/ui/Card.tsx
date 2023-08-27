@@ -3,6 +3,7 @@ import classNames from '@/shared/lib/classNames/classNames';
 import CardVariant from '../consts/CardVariant';
 import cls from './Card.module.scss';
 import CardPadding from '../consts/CardPadding';
+import CardBorder from '../consts/CardBorder';
 
 interface ICardProps extends HTMLAttributes<HTMLDivElement> {
     className?: string;
@@ -10,6 +11,7 @@ interface ICardProps extends HTMLAttributes<HTMLDivElement> {
     variant?: CardVariant;
     max?: boolean;
     padding?: CardPadding;
+    border?: CardBorder;
 }
 
 const mapPaddingToClass: Record<CardPadding, string> = {
@@ -26,6 +28,7 @@ const Card: React.FC<ICardProps> = memo((props: ICardProps): JSX.Element => {
         max,
         padding = '8',
         variant = 'normal',
+        border = 'normal',
         ...otherProps
     } = props;
 
@@ -38,6 +41,7 @@ const Card: React.FC<ICardProps> = memo((props: ICardProps): JSX.Element => {
                 className,
                 cls[variant],
                 cls[paddingClass],
+                cls[border],
             ])}
         >
             {children}
