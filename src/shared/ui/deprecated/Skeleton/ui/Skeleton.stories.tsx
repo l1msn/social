@@ -5,7 +5,7 @@ import Skeleton from './Skeleton';
 import Themes from '@/shared/consts/theme';
 
 const meta = {
-    title: 'shared/Skeleton',
+    title: 'shared/deprecated/Skeleton',
     component: Skeleton,
     tags: ['autodocs'],
     argTypes: {},

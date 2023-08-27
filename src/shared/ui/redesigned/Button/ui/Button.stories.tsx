@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Button from './Button';
 import '@/app/styles/index.scss';
-import themeRedesignDecorator from '@/shared/config/storybook/themeRedesignDecorator/themeRedesignDecorator';
+import themeRedesignedDecorator from '@/shared/config/storybook/themeRedesignedDecorator/themeRedesignedDecorator';
 import Themes from '@/shared/consts/theme';
 
 const meta = {
-    title: 'shared/ButtonRedesigned',
+    title: 'shared/redesigned/Button',
     component: Button,
     tags: ['autodocs'],
     argTypes: {},
-    decorators: [themeRedesignDecorator(Themes.DARK)],
+    decorators: [themeRedesignedDecorator(Themes.DARK)],
 } satisfies Meta<typeof Button>;
 
 export default meta;

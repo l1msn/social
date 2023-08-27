@@ -6,7 +6,7 @@ import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecora
 import Themes from '@/shared/consts/theme';
 
 const meta = {
-    title: 'shared/Select',
+    title: 'shared/deprecated/Select',
     component: Select,
     tags: ['autodocs'],
     argTypes: {},

@@ -11,7 +11,7 @@ import useInitialEffect from '@/shared/lib/hooks/useInitialEffect/useInitialEffe
 import fetchCommentsByArticleId from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import Loader from '@/shared/ui/deprecated/Loader';
 import classNames from '@/shared/lib/classNames/classNames';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import ArticleDetailsSelectors from '../../model/selectors/ArticleDetailsSelectors';
 import { ArticleSelectors } from '@/entities/Article';
 

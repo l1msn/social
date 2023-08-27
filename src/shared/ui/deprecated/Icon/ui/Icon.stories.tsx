@@ -6,7 +6,7 @@ import UserIcon from '@/shared/assets/icons/deprecated/date-icon.svg';
 import Themes from '@/shared/consts/theme';
 
 const meta = {
-    title: 'shared/Icon',
+    title: 'shared/deprecated/Icon',
     component: Icon,
     tags: ['autodocs'],
     argTypes: {},

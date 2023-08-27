@@ -6,7 +6,7 @@ import { Text } from '../../Text';
 import Themes from '@/shared/consts/theme';
 
 const meta = {
-    title: 'shared/Card',
+    title: 'shared/deprecated/Card',
     component: Card,
     tags: ['autodocs'],
     argTypes: {},

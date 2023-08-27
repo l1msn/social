@@ -7,7 +7,7 @@ import classNames from '@/shared/lib/classNames/classNames';
 import IListBoxItems from '../consts/IListBoxItems';
 import { DropDownDirection } from '@/shared/types/ui';
 import mapDirectionClass from '../../../styles/consts';
-import { HStack } from '../../../../Stack';
+import { HStack } from '../../../../../redesigned/Stack';
 
 interface IListBoxProps {
     className?: string;

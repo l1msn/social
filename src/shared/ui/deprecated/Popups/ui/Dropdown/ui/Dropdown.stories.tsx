@@ -6,7 +6,7 @@ import Button from '../../../../Button';
 import Themes from '@/shared/consts/theme';
 
 const meta = {
-    title: 'shared/Dropdown',
+    title: 'shared/deprecated/Dropdown',
     component: Dropdown,
     tags: ['autodocs'],
     argTypes: {},

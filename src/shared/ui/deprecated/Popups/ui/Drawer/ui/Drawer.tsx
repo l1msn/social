@@ -6,8 +6,8 @@ import {
     AnimationProvider,
     useAnimationLibs,
 } from '@/shared/lib/components/AnimationProvider/AnimationProvider';
-import Portal from '../../../../Portal';
-import Overlay from '../../../../Overlay';
+import Portal from '../../../../../redesigned/Portal';
+import Overlay from '../../../../../redesigned/Overlay';
 import Loader from '../../../../Loader';
 
 interface IDrawerProps {

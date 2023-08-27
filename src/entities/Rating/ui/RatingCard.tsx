@@ -1,6 +1,6 @@
 import React, { JSX, useCallback, useState } from 'react';
 import { Card } from '@/shared/ui/deprecated/Card';
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import StarRating from '@/shared/ui/deprecated/StarRating';
 import { Text } from '@/shared/ui/deprecated/Text';
 import { Modal } from '@/shared/ui/deprecated/Modal';

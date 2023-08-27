@@ -1,18 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import AppLink from './AppLink';
-import themeRedesignDecorator from '@/shared/config/storybook/themeRedesignDecorator/themeRedesignDecorator';
+import themeRedesignedDecorator from '@/shared/config/storybook/themeRedesignedDecorator/themeRedesignedDecorator';
 import Themes from '@/shared/consts/theme';
 import '@/app/styles/index.scss';
 
 const meta = {
-    title: 'shared/AppLinkRedesigned',
+    title: 'shared/redesigned/AppLink',
     component: AppLink,
     tags: ['autodocs'],
     argTypes: {},
     args: {
         to: '/',
     },
-    decorators: [themeRedesignDecorator(Themes.DARK)],
+    decorators: [themeRedesignedDecorator(Themes.DARK)],
 } satisfies Meta<typeof AppLink>;
 
 export default meta;

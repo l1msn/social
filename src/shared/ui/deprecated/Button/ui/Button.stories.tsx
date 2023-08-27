@@ -7,7 +7,7 @@ import SizeButton from '../consts/SizeButton';
 import Themes from '@/shared/consts/theme';
 
 const meta = {
-    title: 'shared/Button',
+    title: 'shared/deprecated/Button',
     component: Button,
     tags: ['autodocs'],
     argTypes: {},

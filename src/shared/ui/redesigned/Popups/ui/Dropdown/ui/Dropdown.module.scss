@@ -1,0 +1,39 @@
+.Dropdown {
+    position: relative;
+}
+
+.menu {
+    background: var(--dark-bg-redesigned);
+    position: absolute;
+    z-index: 10000;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid var(--accent-redesigned);
+    flex-direction: column;
+    display: flex;
+
+    @keyframes animate {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    animation: animate 0.3s linear;
+}
+
+.item {
+    padding: 10px 25px;
+    width: 100px;
+    border: none;
+    background: none;
+    outline: none;
+    color: var(--text-redesigned);
+    cursor: pointer;
+
+
+}
+

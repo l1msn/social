@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions';
 import Themes from '@/shared/consts/theme';
 
 const meta = {
-    title: 'shared/Tabs',
+    title: 'shared/deprecated/Tabs',
     component: Tabs,
     tags: ['autodocs'],
     argTypes: {},

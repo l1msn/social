@@ -5,7 +5,7 @@ import Input from './Input';
 import Themes from '@/shared/consts/theme';
 
 const meta = {
-    title: 'shared/Input',
+    title: 'shared/deprecated/Input',
     component: Input,
     tags: ['autodocs'],
     argTypes: {},

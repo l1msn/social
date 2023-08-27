@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import AppLogo from './AppLogo';
-import themeRedesignDecorator from '@/shared/config/storybook/themeRedesignDecorator/themeRedesignDecorator';
+import themeRedesignedDecorator from '@/shared/config/storybook/themeRedesignedDecorator/themeRedesignedDecorator';
 import Themes from '@/shared/consts/theme';
 import '@/app/styles/index.scss';
 
 const meta = {
-    title: 'shared/AppLogoRedesigned',
+    title: 'shared/redesigned/AppLogo',
     component: AppLogo,
     tags: ['autodocs'],
     argTypes: {},
-    decorators: [themeRedesignDecorator(Themes.DARK)],
+    decorators: [themeRedesignedDecorator(Themes.DARK)],
 } satisfies Meta<typeof AppLogo>;
 
 export default meta;

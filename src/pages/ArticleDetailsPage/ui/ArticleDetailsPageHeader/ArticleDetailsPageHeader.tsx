@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ArticleDetailsSelectors from '../../model/selectors/ArticleDetailsSelectors';
 import { ArticleSelectors } from '@/entities/Article';
-import { HStack } from '@/shared/ui/deprecated/Stack';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 import { RoutePaths } from '@/shared/consts/routerPaths';
 
 interface IArticleDetailsPageHeaderProps {

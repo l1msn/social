@@ -10,7 +10,7 @@ import { initAuthData, UserSelectors } from '@/entities/User';
 import PageLoader from '@/widgets/PageLoader';
 import withTheme from './providers/ThemeProvider/lib/withTheme';
 import { ToggleFeatures } from '@/shared/features';
-import Portal from '@/shared/ui/deprecated/Portal';
+import Portal from '@/shared/ui/redesigned/Portal';
 import { MainLayout } from '@/shared/layouts';
 
 const App: React.FC = (): JSX.Element => {

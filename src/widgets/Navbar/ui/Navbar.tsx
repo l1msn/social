@@ -11,7 +11,7 @@ import { Text, ThemeText } from '@/shared/ui/deprecated/Text';
 import AppLink from '@/shared/ui/deprecated/AppLink';
 import { NotificationButton } from '@/features/NotificationButton';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
-import { HStack } from '@/shared/ui/deprecated/Stack';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 import { RoutePaths } from '@/shared/consts/routerPaths';
 import { ToggleFeatures } from '@/shared/features';
 

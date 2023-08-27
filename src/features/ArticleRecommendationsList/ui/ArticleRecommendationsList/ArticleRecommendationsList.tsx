@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import React, { JSX, memo } from 'react';
 import { SizeText, Text } from '@/shared/ui/deprecated/Text';
 import { ArticleList, ArticleView } from '@/entities/Article';
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import useArticleRecommendationsList from '../../api/articleRecommendationsApi';
 import Skeleton from '@/shared/ui/deprecated/Skeleton';
 import cls from './ArticleRecommendationsList.module.scss';

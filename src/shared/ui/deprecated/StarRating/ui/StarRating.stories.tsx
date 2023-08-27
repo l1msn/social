@@ -7,7 +7,7 @@ import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecora
 import Themes from '@/shared/consts/theme';
 
 const meta = {
-    title: 'shared/StarRating',
+    title: 'shared/deprecated/StarRating',
     component: StarRating,
     tags: ['autodocs'],
     argTypes: {},
