@@ -16,6 +16,18 @@
     }
 }
 
+.drawerRedesigned {
+    .sheet {
+        background: var(--light-bg-redesigned);
+    }
+}
+
+.drawerDeprecated {
+    .sheet {
+        background: var(--bg-color);
+    }
+}
+
 .sheet {
     z-index: var(--modal-z-index);
     position: fixed;
@@ -23,7 +35,6 @@
     height: calc(100vh + 100px);
     width: 96vw;
     border-radius: 12px 12px 0;
-    background: var(--bg-color);
     touch-action: none;
     padding: 15px;
 }

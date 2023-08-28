@@ -20,7 +20,10 @@ import Loader from '@/shared/ui/deprecated/Loader';
 import ArticleDetailsComments from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ToggleFeatures } from '@/shared/features';
 import { useTranslation } from 'react-i18next';
-import { Card } from '@/shared/ui/deprecated/Card';
+import { Card as DeprecatedCard } from '@/shared/ui/deprecated/Card';
+import { StickyContentLayout } from '@/shared/layouts';
+import DetailsContainer from '../DetailsContainer/DetailsContainer';
+import AdditionalInfoContainer from '../AdditionalInfoContainer/AdditionalInfoContainer';
 
 interface IArticleDetailsPageProps {
     className?: string;
@@ -50,27 +53,59 @@ const ArticleDetailsPage: React.FC<IArticleDetailsPageProps> = memo(
             return null;
         }
 
+        const DeprecatedDynamicModuleLoader = (
+            <Page
+                className={classNames(cls.articleDetailsPage, {}, [className])}
+            >
+                <VStack gap={'16'} max>
+                    <Suspense fallback={<Loader />}>
+                        <ArticleDetailsPageHeader />
+                        <ArticleDetails id={id} />
+                        <ToggleFeatures
+                            feature={'isArticleRatingEnabled'}
+                            on={<ArticleRating id={id} />}
+                            off={
+                                <DeprecatedCard>
+                                    {t('Feature coming soon!')}
+                                </DeprecatedCard>
+                            }
+                        />
+                        <ArticleRecommendationsList />
+                        <ArticleDetailsComments id={id} />
+                    </Suspense>
+                </VStack>
+            </Page>
+        );
+
+        const RedesignedDynamicModuleLoader = (
+            <StickyContentLayout
+                content={
+                    <Page
+                        className={classNames(cls.articleDetailsPage, {}, [
+                            className,
+                        ])}
+                    >
+                        <VStack gap={'16'} max>
+                            <Suspense fallback={<Loader />}>
+                                <DetailsContainer />
+                                <ArticleRating id={id} />
+                                <ArticleRecommendationsList />
+                                <ArticleDetailsComments id={id} />
+                            </Suspense>
+                        </VStack>
+                    </Page>
+                }
+                right={<AdditionalInfoContainer />}
+            />
+        );
+
         return (
             <DynamicModuleLoader reducers={reducers} removeAfterAmount>
-                <Page
-                    className={classNames(cls.articleDetailsPage, {}, [
-                        className,
-                    ])}
-                >
-                    <VStack gap={'16'} max>
-                        <Suspense fallback={<Loader />}>
-                            <ArticleDetailsPageHeader />
-                            <ArticleDetails id={id} />
-                            <ToggleFeatures
-                                feature={'isArticleRatingEnabled'}
-                                on={<ArticleRating id={id} />}
-                                off={<Card>{t('Feature coming soon!')}</Card>}
-                            />
-                            <ArticleRecommendationsList />
-                            <ArticleDetailsComments id={id} />
-                        </Suspense>
-                    </VStack>
-                </Page>
+                <ToggleFeatures
+                    feature={'isAppRedesigned'}
+                    on={RedesignedDynamicModuleLoader}
+                    off={DeprecatedDynamicModuleLoader}
+                />
             </DynamicModuleLoader>
         );
     },

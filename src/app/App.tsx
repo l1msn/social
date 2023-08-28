@@ -10,7 +10,6 @@ import { initAuthData, UserSelectors } from '@/entities/User';
 import PageLoader from '@/widgets/PageLoader';
 import withTheme from './providers/ThemeProvider/lib/withTheme';
 import { ToggleFeatures } from '@/shared/features';
-import Portal from '@/shared/ui/redesigned/Portal';
 import { MainLayout } from '@/shared/layouts';
 
 const App: React.FC = (): JSX.Element => {
@@ -29,32 +28,28 @@ const App: React.FC = (): JSX.Element => {
     }
 
     const DeprecatedApp = (
-        <Portal>
-            <div className={classNames('app', {}, [theme])}>
-                <Suspense fallback="">
-                    <Navbar />
-                    <div className="content-page">
-                        <Sidebar />
-                        {init && <AppRouter />}
-                    </div>
-                </Suspense>
-            </div>
-        </Portal>
+        <div id={'app'} className={classNames('app', {}, [theme])}>
+            <Suspense fallback="">
+                <Navbar />
+                <div className="content-page">
+                    <Sidebar />
+                    {init && <AppRouter />}
+                </div>
+            </Suspense>
+        </div>
     );
 
     const RedesignedApp = (
-        <Portal>
-            <div className={classNames('app_redesigned', {}, [theme])}>
-                <Suspense>
-                    <MainLayout
-                        header={<Navbar />}
-                        content={<AppRouter />}
-                        sidebar={<Sidebar />}
-                        toolbar={<div>asd</div>}
-                    />
-                </Suspense>
-            </div>
-        </Portal>
+        <div id={'app'} className={classNames('app_redesigned', {}, [theme])}>
+            <Suspense>
+                <MainLayout
+                    header={<Navbar />}
+                    content={<AppRouter />}
+                    sidebar={<Sidebar />}
+                    toolbar={<div>asd</div>}
+                />
+            </Suspense>
+        </div>
     );
 
     return (

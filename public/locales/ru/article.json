@@ -12,7 +12,6 @@
   "descending": "убыванию",
   "date": "дате",
   "title": "заголовоку",
-  "views": "просмотрам",
   "All": "Все",
   "IT": "Айти",
   "Economics": "Экономика",
@@ -20,5 +19,9 @@
   "Recommendations": "Рекомендации",
   "Edit": "Редактировать",
   "Edit article": "Редактирование статьи",
-  "Creating new Article": "Создание новой Статьи"
+  "Creating new Article": "Создание новой Статьи",
+  "{{count}} views_zero": "{{count}} просмотров",
+  "{{count}} views_one": "{{count}} просмотр",
+  "{{count}} views_few": "{{count}} просмотра",
+  "{{count}} views_many": "{{count}} просмотров"
 }

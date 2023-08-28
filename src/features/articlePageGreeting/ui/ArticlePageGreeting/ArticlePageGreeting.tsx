@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import React, { JSX, memo, useCallback, useEffect, useState } from 'react';
-import { Modal } from '@/shared/ui/deprecated/Modal';
+import { Modal } from '@/shared/ui/redesigned/Modal';
 import { Text } from '@/shared/ui/deprecated/Text';
 import { JsonSelectors, saveJsonSettings } from '@/entities/User';
 import useAppDispatch from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';

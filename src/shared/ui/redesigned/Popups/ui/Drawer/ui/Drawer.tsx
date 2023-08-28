@@ -6,9 +6,10 @@ import {
     AnimationProvider,
     useAnimationLibs,
 } from '@/shared/lib/components/AnimationProvider/AnimationProvider';
-import Portal from '../../../../../redesigned/Portal';
-import Overlay from '../../../../../redesigned/Overlay';
 import { default as DeprecatedLoader } from '../../../../../deprecated/Loader';
+import Portal from '../../../../Portal';
+import Overlay from '../../../../Overlay';
+import { toggleFeatures } from '@/shared/features';
 
 interface IDrawerProps {
     className?: string;
@@ -87,12 +88,17 @@ const DrawerContent: React.FC<IDrawerProps> = (
     const display = y.to((py) => (py < height ? 'block' : 'none'));
 
     return (
-        <Portal>
+        <Portal element={document.getElementById('app') ?? document.body}>
             <div
                 className={classNames(cls.Drawer, {}, [
                     className,
                     theme,
                     'app_drawer',
+                    toggleFeatures({
+                        name: 'isAppRedesigned',
+                        on: () => cls.drawerRedesigned,
+                        off: () => cls.drawerDeprecated,
+                    }),
                 ])}
             >
                 <Overlay onClick={close} />

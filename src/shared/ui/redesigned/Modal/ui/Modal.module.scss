@@ -4,7 +4,6 @@
     pointer-events: none;
     z-index: -1;
     inset: 0;
-    color: var(--primary-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,10 +18,21 @@
     justify-content: center;
 }
 
+.modalRedesigned {
+    .content {
+        background: var(--light-bg-redesigned);
+    }
+}
+
+.modalDeprecated {
+    .content {
+        background: var(--bg-color);
+    }
+}
+
 .content {
     padding: 20px;
     border-radius: 12px;
-    background: var(--bg-color);
     transition: 0.3s transform;
     transform: scale(0.5);
     max-width: 60%;
