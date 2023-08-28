@@ -23,8 +23,6 @@ const AppLogo: React.FC<IAppLogoProps> = memo(
                 justify={'center'}
                 className={classNames(cls.appLogoWrapper, {}, [className])}
             >
-                {withShadow && <div className={cls.gradientBig} />}
-                <div className={cls.gradientSmall} />
                 <Icon
                     width={size}
                     height={size}
@@ -32,6 +30,8 @@ const AppLogo: React.FC<IAppLogoProps> = memo(
                     className={cls.appLogo}
                     Svg={Logo}
                 />
+                {withShadow && <div className={cls.gradientBig} />}
+                <div className={cls.gradientSmall} />
             </HStack>
         );
     },

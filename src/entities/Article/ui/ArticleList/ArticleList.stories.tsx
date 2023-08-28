@@ -10,6 +10,8 @@ import {
 } from '../../model/types/IArticle';
 import ArticleView from '../../model/types/ArticleView';
 import Themes from '@/shared/consts/theme';
+import themeRedesignedDecorator from '@/shared/config/storybook/themeRedesignedDecorator/themeRedesignedDecorator';
+import featureFlagsDecorator from '@/shared/config/storybook/featureFlagsDecorator/featureFlagsDecorator';
 
 const meta = {
     title: 'entities/ArticleList',
@@ -54,6 +56,19 @@ export const Light: Story = {
         articles: mockData,
     },
     decorators: [storeDecorator({})],
+};
+
+export const DarkRedesigned: Story = {
+    args: {
+        articles: mockData,
+    },
+    decorators: [
+        themeRedesignedDecorator(Themes.DARK),
+        storeDecorator({}),
+        featureFlagsDecorator({
+            isAppRedesigned: true,
+        }),
+    ],
 };
 
 export const Dark: Story = {

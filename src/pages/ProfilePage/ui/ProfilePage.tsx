@@ -16,7 +16,7 @@ const ProfilePage: React.FC<IProfilePageProps> = ({
 
     return (
         <Page
-            data-testid={'ProfilePage'}
+            data-testid="ProfilePage"
             className={classNames('', {}, [className])}
         >
             <VStack max gap={'16'}>

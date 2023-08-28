@@ -12,6 +12,7 @@ interface ITextProps {
     size?: TextSize;
     variant?: TextVariant;
     align?: TextAlign;
+    bold?: boolean;
 
     'data-testid'?: string;
 }
@@ -33,9 +34,10 @@ const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
 const Text: React.FC<ITextProps> = memo((props: ITextProps): JSX.Element => {
     const {
         className,
-        align = 'left',
         title,
         text,
+        bold = false,
+        align = 'left',
         variant = 'primary',
         size = 'm',
         'data-testid': dataTestId = 'Text',
@@ -46,7 +48,7 @@ const Text: React.FC<ITextProps> = memo((props: ITextProps): JSX.Element => {
 
     return (
         <div
-            className={classNames(cls.Text, {}, [
+            className={classNames(cls.Text, { [cls.bold]: bold }, [
                 className,
                 cls[size],
                 cls[align],

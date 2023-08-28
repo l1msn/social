@@ -29,6 +29,7 @@ const gapClasses: Record<FlexGap, string> = {
     4: cls.gap4,
     8: cls.gap8,
     16: cls.gap16,
+    24: cls.gap24,
     32: cls.gap32,
 };
 
@@ -36,11 +37,12 @@ const Flex: React.FC<IFlexProps> = (props: IFlexProps): JSX.Element => {
     const {
         className,
         children,
+        gap,
+        max,
+        wrap = 'nowrap',
         justify = 'start',
         align = 'center',
         direction = 'row',
-        gap,
-        max,
         ...otherProps
     } = props;
 
@@ -50,6 +52,7 @@ const Flex: React.FC<IFlexProps> = (props: IFlexProps): JSX.Element => {
         alignClasses[align],
         directionClasses[direction],
         gap && gapClasses[gap],
+        cls[wrap],
     ];
 
     const mods: Record<string, boolean | undefined> = {

@@ -44,7 +44,8 @@ const ArticlesFilters: React.FC<IArticlesFiltersProps> = memo(
                 padding={'24'}
                 className={classNames(cls.articlesFilters, {}, [className])}
             >
-                <VStack max align={'center'} justify={'center'} gap={'32'}>
+                <VStack max align={'center'} justify={'center'}
+gap={'32'}>
                     <Input
                         onChange={onChangeSearch}
                         value={search}

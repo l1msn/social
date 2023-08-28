@@ -4,10 +4,12 @@
     height: calc(100vh - var(--navbar-height));
     overflow-y: auto;
     flex-shrink: 100;
+
 }
 
 .pageRedesigned {
     overflow-y: auto;
+    height: 100%;
 }
 
 .trigger {

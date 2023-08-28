@@ -5,6 +5,8 @@ import ArticleView from '../../model/types/ArticleView';
 import ArticleListItem from '../ArticleListItem/ArticleListItem';
 import ArticleListItemSkeleton from '../ArticleListItem/ArticleListItemSkeleton';
 import { IArticle } from '../../model/types/IArticle';
+import { ToggleFeatures } from '@/shared/features';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 interface IArticleListProps {
     className?: string;
@@ -35,7 +37,7 @@ const ArticleList: React.FC<IArticleListProps> = memo(
             target,
         } = props;
 
-        return (
+        const DeprecatedArticleList = (
             <div
                 data-testid={'ArticleList'}
                 className={classNames(cls.articleList, {}, [
@@ -54,6 +56,36 @@ const ArticleList: React.FC<IArticleListProps> = memo(
                 ))}
                 {isLoading && getSkeletons(view)}
             </div>
+        );
+
+        const RedesignedArticleList = (
+            <HStack
+                align={'center'}
+                justify={'center'}
+                wrap={'wrap'}
+                gap={'16'}
+                data-testid={'ArticleList'}
+                className={classNames(cls.articleListRedesigned, {}, [])}
+            >
+                {articles.map((item) => (
+                    <ArticleListItem
+                        article={item}
+                        view={view}
+                        key={item.id}
+                        className={cls.card}
+                        target={target}
+                    />
+                ))}
+                {isLoading && getSkeletons(view)}
+            </HStack>
+        );
+
+        return (
+            <ToggleFeatures
+                feature={'isAppRedesigned'}
+                on={RedesignedArticleList}
+                off={DeprecatedArticleList}
+            />
         );
     },
 );

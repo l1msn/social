@@ -50,6 +50,10 @@ const AvatarDropdown: React.FC<IAvatarDropdownProps> = ({
             href: RoutePaths.getRouteProfile(authData.id),
         },
         {
+            content: t('Settings'),
+            href: RoutePaths.getRouteSettings(),
+        },
+        {
             content: t('Logout'),
             onClick: onLogout,
         },

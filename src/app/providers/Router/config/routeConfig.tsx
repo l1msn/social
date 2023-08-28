@@ -10,11 +10,16 @@ import NotFoundPage from '@/pages/NotFoundPage';
 import { ArticlesPage } from '@/pages/ArticlesPage';
 import { AppRoutes, RoutePaths } from '@/shared/consts/routerPaths';
 import { AppRoutesProps } from '@/shared/types/router';
+import { SettingsPage } from '@/pages/SettingsPage';
 
 const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.MAIN]: {
         path: RoutePaths.getRouteMain(),
         element: <MainPage />,
+    },
+    [AppRoutes.SETTINGS]: {
+        path: RoutePaths.getRouteSettings(),
+        element: <SettingsPage />,
     },
     [AppRoutes.ABOUT]: {
         path: RoutePaths.getRouteAbout(),

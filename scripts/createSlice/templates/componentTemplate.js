@@ -1,6 +1,8 @@
 const interfaceConst = 'interface';
 
-module.exports = (componentName) => `import classNames from '@/shared/lib/classNames/classNames';
+module.exports = (
+    componentName,
+) => `import classNames from '@/shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
 import cls from './${componentName}.module.scss';
 import React, {JSX, memo} from 'react';
@@ -14,7 +16,7 @@ const ${componentName}: React.FC<I${componentName}Props> = memo((props: I${compo
     const {t} = useTranslation();
 
     return (
-        <div className={classNames(cls.ArticleRecommendationsList, {}, [className])}>
+        <div className={classNames(cls.${componentName}, {}, [className])}>
 
         </div>
     );

@@ -49,7 +49,7 @@ const ListBox = <T extends string>(props: IListBoxProps<T>): JSX.Element => {
                         [className],
                     )}
                 >
-                    {label + '>'}
+                    {label}
                 </span>
             )}
             <HListBox

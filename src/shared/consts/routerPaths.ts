@@ -1,5 +1,6 @@
 enum AppRoutes {
     MAIN = 'main',
+    SETTINGS = 'settings',
     ABOUT = 'about',
     PROFILE = 'profile',
     ARTICLES = 'articles',
@@ -17,6 +18,9 @@ class RoutePaths {
     }
     static getRouteAbout() {
         return '/about';
+    }
+    static getRouteSettings() {
+        return '/settings';
     }
     static getRouteProfile(id: string | number) {
         return '/profile/' + id.toString();

@@ -1,7 +1,9 @@
 import React, { JSX, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ListBox } from '@/shared/ui/deprecated/Popups';
+import { ListBox as DeprecatedListBox } from '@/shared/ui/deprecated/Popups';
 import Country from '../model/types/country';
+import { ToggleFeatures } from '@/shared/features';
+import { ListBox } from '@/shared/ui/redesigned/Popups';
 
 interface ICountrySelectProps {
     className?: string;
@@ -31,7 +33,20 @@ const CountrySelect: React.FC<ICountrySelectProps> = memo(
             [onChange],
         );
 
-        return (
+        const DeprecatedCountrySelect = (
+            <DeprecatedListBox
+                className={className}
+                value={value}
+                readonly={readonly}
+                items={options}
+                onChange={onChangeHandler}
+                defaultValue={t('Country')}
+                label={t('Country')}
+                direction={'top right'}
+            />
+        );
+
+        const RedesignedCountrySelect = (
             <ListBox
                 className={className}
                 value={value}
@@ -41,6 +56,14 @@ const CountrySelect: React.FC<ICountrySelectProps> = memo(
                 defaultValue={t('Country')}
                 label={t('Country')}
                 direction={'top right'}
+            />
+        );
+
+        return (
+            <ToggleFeatures
+                feature={'isAppRedesigned'}
+                off={DeprecatedCountrySelect}
+                on={RedesignedCountrySelect}
             />
         );
     },

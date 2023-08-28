@@ -1,4 +1,4 @@
-import IFeatureFlags from '../types/IFeatureFlags';
+import IFeatureFlags from '../../types/IFeatureFlags';
 
 let featureFlags: IFeatureFlags = {
     isAppRedesigned: true,
@@ -14,4 +14,8 @@ function getFeatureFlags(flag: keyof IFeatureFlags) {
     return featureFlags[flag];
 }
 
-export { setFeatureFlags, getFeatureFlags };
+function getAllFeatureFlags() {
+    return featureFlags;
+}
+
+export { setFeatureFlags, getFeatureFlags, getAllFeatureFlags };
