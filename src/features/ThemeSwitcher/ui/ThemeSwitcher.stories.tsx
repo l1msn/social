@@ -5,7 +5,7 @@ import Themes from '@/shared/consts/theme';
 import storeDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
 
 const meta = {
-    title: 'widget/ThemeSwitcher',
+    title: 'features/ThemeSwitcher',
     component: ThemeSwitcher,
     tags: ['autodocs'],
     argTypes: {},

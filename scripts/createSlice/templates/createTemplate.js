@@ -7,7 +7,7 @@ const createPublicApi = require('./createPublicApi');
 module.exports = async (layer, sliceName) => {
     try {
         await fs.mkdir(resolveRoot('src', layer, sliceName));
-    } catch (e) {
+    } catch (error) {
         console.log(`не удалось создать директорию для слайса${sliceName}`);
     }
 

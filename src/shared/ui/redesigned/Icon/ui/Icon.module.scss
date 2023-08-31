@@ -1,0 +1,31 @@
+.Icon {
+    transition: 0.3s;
+    color: var(--icon-redesigned);
+}
+
+.button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+
+.button .Icon {
+    &:hover {
+        opacity: 0.65;
+        animation: animate 0.1s linear;
+        color: var(--accent-redesigned);
+    }
+
+    @keyframes animate {
+        0% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0.65;
+        }
+    }
+}

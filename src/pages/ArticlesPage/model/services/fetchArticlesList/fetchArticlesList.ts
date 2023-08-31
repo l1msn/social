@@ -55,10 +55,11 @@ const fetchArticlesList = createAsyncThunk<
         if (!response.data) {
             return thunkAPI.rejectWithValue('Cant get a article data!');
         }
+        console.log(response.data);
 
         return response.data;
-    } catch (e) {
-        console.log(e);
+    } catch (error) {
+        console.log(error);
         return thunkAPI.rejectWithValue('Cant get a article list!');
     }
 });

@@ -1,10 +1,13 @@
 import IComment from '../../model/types/IComment';
 import React, { JSX, memo } from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/Text';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
+import { Text } from '@/shared/ui/redesigned/Text';
 import { useTranslation } from 'react-i18next';
 import CommentCard from '../CommentCard/CommentCard';
-import { VStack } from '@/shared/ui/Stack';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
+import { ToggleFeatures } from '@/shared/features';
+import { Card } from '@/shared/ui/redesigned/Card';
 
 interface ICommentListProps {
     className?: string;
@@ -41,7 +44,17 @@ const CommentList: React.FC<ICommentListProps> = memo(
                         />
                     ))
                 ) : (
-                    <Text text={t('No comments')} />
+                    <ToggleFeatures
+                        feature={'isAppRedesigned'}
+                        on={
+                            <Card max>
+                                <HStack max justify={'center'} align={'center'}>
+                                    <Text title={t('No comments')} />
+                                </HStack>
+                            </Card>
+                        }
+                        off={<TextDeprecated text={t('No comments')} />}
+                    />
                 )}
             </VStack>
         );

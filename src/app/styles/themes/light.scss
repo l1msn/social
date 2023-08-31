@@ -1,6 +1,7 @@
 .app_light_theme {
     transition: 0.2s linear;
 
+    // old
     --bg-color: #e8e8ea;
     --inverted-bg-color: #0a0a57;
     --primary-color: #072fac;
@@ -11,5 +12,16 @@
     --skeleton-shadow: #037703;
     --code-bg: #fff;
     --card-bg: #c6c6c7;
+
+    // new
+    --dark-bg-redesigned: #FFF;
+    --bg-redesigned: #a7b6bb;
+    --light-bg-redesigned: #E2EEF1;
+    --text-redesigned: #141C1F;
+    --hint-redesigned: #ADBCC0;
+    --cancel-redesigned: #F77;
+    --save-redesigned: #62DE85;
+    --icon-redesigned: #5ED3F3;
+    --accent-redesigned: #00C8FF;
 }
 

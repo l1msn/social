@@ -24,8 +24,8 @@ const fetchNextArticlesPage = createAsyncThunk<
             thunkAPI.dispatch(articlesPageActions.setPage(page + 1));
             thunkAPI.dispatch(fetchArticlesList({ replace: false }));
         }
-    } catch (e) {
-        console.log(e);
+    } catch (error) {
+        console.log(error);
         return thunkAPI.rejectWithValue('Cant get load next articles for page');
     }
 });

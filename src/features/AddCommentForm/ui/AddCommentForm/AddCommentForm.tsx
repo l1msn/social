@@ -1,10 +1,10 @@
 import React, { JSX, memo, useCallback } from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
-import { Input } from '@/shared/ui/Input';
+import { Input as DeprecatedInput } from '@/shared/ui/deprecated/Input';
 import cls from './AddCommentForm.module.scss';
 import { useTranslation } from 'react-i18next';
-import Button from '@/shared/ui/Button';
-import ThemeButton from '@/shared/ui/Button/consts/ThemeButton';
+import { default as DeprecatedButton } from '@/shared/ui/deprecated/Button';
+import ThemeButton from '@/shared/ui/deprecated/Button/consts/ThemeButton';
 import { useSelector } from 'react-redux';
 import AddCommentFormSelectors from '../../model/selectors/AddCommentFormSelectors';
 import useAppDispatch from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -16,7 +16,11 @@ import {
     DynamicModuleLoader,
     ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { HStack } from '@/shared/ui/Stack';
+import { HStack } from '@/shared/ui/redesigned/Stack';
+import { ToggleFeatures } from '@/shared/features';
+import Button from '@/shared/ui/redesigned/Button';
+import { Input } from '@/shared/ui/redesigned/Input';
+import { Card } from '@/shared/ui/redesigned/Card';
 
 interface IAddCommentFormProps {
     className?: string;
@@ -47,13 +51,40 @@ const AddCommentForm: React.FC<IAddCommentFormProps> = memo(
             onCommentTextChange('');
         }, [text, onSendComment, onCommentTextChange]);
 
-        return (
-            <DynamicModuleLoader reducers={reducers} removeAfterAmount>
+        const DeprecatedAddCommentForm = (
+            <HStack
+                data-testid={'AddCommentForm'}
+                justify={'between'}
+                max
+                className={classNames(cls.commentForm, {}, [className])}
+            >
+                <DeprecatedInput
+                    data-testid={'AddCommentForm.Input'}
+                    className={cls.input}
+                    value={text}
+                    onChange={onCommentTextChange}
+                    placeholder={t('Your comment...')}
+                />
+                <DeprecatedButton
+                    data-testid={'AddCommentForm.Button'}
+                    onClick={onSendHandler}
+                    theme={ThemeButton.WITHLINE}
+                >
+                    {t('Send')}
+                </DeprecatedButton>
+            </HStack>
+        );
+
+        const RedesignedAddCommentForm = (
+            <Card padding={'24'} border={'round'} max>
                 <HStack
+                    gap={'16'}
                     data-testid={'AddCommentForm'}
                     justify={'between'}
                     max
-                    className={classNames(cls.commentForm, {}, [className])}
+                    className={classNames(cls.commentFormRedesigned, {}, [
+                        className,
+                    ])}
                 >
                     <Input
                         data-testid={'AddCommentForm.Input'}
@@ -65,11 +96,22 @@ const AddCommentForm: React.FC<IAddCommentFormProps> = memo(
                     <Button
                         data-testid={'AddCommentForm.Button'}
                         onClick={onSendHandler}
-                        theme={ThemeButton.WITHLINE}
+                        variant={'outline'}
+                        className={cls.sendBtn}
                     >
                         {t('Send')}
                     </Button>
                 </HStack>
+            </Card>
+        );
+
+        return (
+            <DynamicModuleLoader reducers={reducers} removeAfterAmount>
+                <ToggleFeatures
+                    feature={'isAppRedesigned'}
+                    on={RedesignedAddCommentForm}
+                    off={DeprecatedAddCommentForm}
+                />
             </DynamicModuleLoader>
         );
     },

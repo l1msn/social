@@ -1,9 +1,9 @@
 import React, { JSX, Suspense } from 'react';
-import { Modal } from '@/shared/ui/Modal';
+import { Modal } from '@/shared/ui/redesigned/Modal';
 import LoginFormLazy from '../LoginForm/LoginForm.lazy';
-import Loader from '@/shared/ui/Loader';
+import Loader from '@/shared/ui/deprecated/Loader';
 import { isMobile } from 'react-device-detect';
-import { Drawer } from '@/shared/ui/Popups';
+import { Drawer } from '@/shared/ui/deprecated/Popups';
 
 interface ILoginModalProps {
     className?: string;

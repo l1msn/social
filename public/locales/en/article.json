@@ -4,6 +4,7 @@
   "No titles": "No titles",
   "Read more...": "Read more...",
   "Back to list": "Back to list",
+  "Sort by": "Sort by",
   "Sort": "Sort",
   "by": "by",
   "Search": "Search",
@@ -19,5 +20,8 @@
   "Recommendations": "Recommendations",
   "Edit": "Edit",
   "Edit article": "Edit article",
-  "Creating new Article": "Creating new Article"
+  "Creating new Article": "Creating new Article",
+  "{{count}} views_zero": "{{count}} views",
+  "{{count}} views_one": "{{count}} view",
+  "{{count}} views_other": "{{count}} views"
 }

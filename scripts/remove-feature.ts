@@ -2,11 +2,8 @@ import { JsxAttribute, Node, Project, SyntaxKind } from 'ts-morph';
 
 const project = new Project({});
 
-// project.addSourceFilesAtPaths('src/**/*.ts');
-// project.addSourceFilesAtPaths('src/**/*.tsx');
-
-project.addSourceFilesAtPaths('src/**/ArticleDetailsPage.ts');
-project.addSourceFilesAtPaths('src/**/ArticleDetailsPage.tsx');
+project.addSourceFilesAtPaths('src/**/*.ts');
+project.addSourceFilesAtPaths('src/**/*.tsx');
 
 const removedFeatureName = process.argv[2];
 const featureState = process.argv[3];
@@ -129,13 +126,13 @@ const replaceComponent = (node: Node) => {
 files.forEach((sourceFile) => {
     sourceFile.forEachDescendant((node) => {
         if (node.isKind(SyntaxKind.CallExpression) && isToggleFunction(node)) {
-            replaceToggleFunction(node);
+            return replaceToggleFunction(node);
         }
         if (
             node.isKind(SyntaxKind.JsxSelfClosingElement) &&
             isToggleComponent(node)
         ) {
-            replaceComponent(node);
+            return replaceComponent(node);
         }
     });
 });

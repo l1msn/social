@@ -6,7 +6,7 @@ import storeDecorator from '@/shared/config/storybook/storeDecorator/storeDecora
 import Themes from '@/shared/consts/theme';
 
 const meta = {
-    title: 'feature/LoginForm',
+    title: 'features/LoginForm',
     component: LoginForm,
     tags: ['autodocs'],
     argTypes: {},

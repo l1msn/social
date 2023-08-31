@@ -1,5 +1,6 @@
 import React, { JSX, Suspense, useCallback } from 'react';
-import { SizeText, Text } from '@/shared/ui/Text';
+import { SizeText, Text as DeprecatedText } from '@/shared/ui/deprecated/Text';
+import { Text } from '@/shared/ui/redesigned/Text';
 import { AddCommentForm } from '@/features/AddCommentForm';
 import { CommentList } from '@/entities/Comment';
 import { useSelector } from 'react-redux';
@@ -9,13 +10,14 @@ import addCommentForArticle from '../../model/services/addCommentForArticle/addC
 import { useTranslation } from 'react-i18next';
 import useInitialEffect from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import fetchCommentsByArticleId from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import Loader from '@/shared/ui/Loader';
+import Loader from '@/shared/ui/deprecated/Loader';
 import classNames from '@/shared/lib/classNames/classNames';
-import { VStack } from '@/shared/ui/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import ArticleDetailsSelectors from '../../model/selectors/ArticleDetailsSelectors';
 import { ArticleSelectors } from '@/entities/Article';
-
-import Skeleton from '@/shared/ui/Skeleton';
+import { default as DeprecatedSkeleton } from '@/shared/ui/deprecated/Skeleton';
+import { ToggleFeatures } from '@/shared/features';
+import Skeleton from '@/shared/ui/redesigned/Skeleton';
 
 interface IArticleDetailsCommentsProps {
     className?: string;
@@ -49,13 +51,27 @@ const ArticleDetailsComments: React.FC<IArticleDetailsCommentsProps> = ({
         [dispatch],
     );
 
+    const DeprecatedArticleDetailsCommentsLoader = (
+        <DeprecatedSkeleton width={'100%'} height={'120px'} />
+    );
+
+    const RedesignedArticleDetailsCommentsLoader = (
+        <Skeleton width={'100%'} height={'120px'} />
+    );
+
     if (isLoading) {
-        return <Skeleton width={'100%'} height={'120px'} />;
+        return (
+            <ToggleFeatures
+                feature={'isAppRedesigned'}
+                off={DeprecatedArticleDetailsCommentsLoader}
+                on={RedesignedArticleDetailsCommentsLoader}
+            />
+        );
     }
 
-    return (
+    const DeprecatedArticleDetailsComments = (
         <VStack gap={'8'} max className={classNames('', {}, [className])}>
-            <Text size={SizeText.L} title={t('Comments')} />
+            <DeprecatedText size={SizeText.L} title={t('Comments')} />
             <Suspense fallback={<Loader />}>
                 <AddCommentForm onSendComment={onSendComment} />
                 <CommentList
@@ -64,6 +80,27 @@ const ArticleDetailsComments: React.FC<IArticleDetailsCommentsProps> = ({
                 />
             </Suspense>
         </VStack>
+    );
+
+    const RedesignedArticleDetailsComments = (
+        <VStack gap={'8'} max className={classNames('', {}, [className])}>
+            <Text size={'l'} title={t('Comments')} />
+            <Suspense fallback={<Loader />}>
+                <AddCommentForm onSendComment={onSendComment} />
+                <CommentList
+                    isLoading={isLoadingComments}
+                    comments={comments}
+                />
+            </Suspense>
+        </VStack>
+    );
+
+    return (
+        <ToggleFeatures
+            feature={'isAppRedesigned'}
+            off={DeprecatedArticleDetailsComments}
+            on={RedesignedArticleDetailsComments}
+        />
     );
 };
 

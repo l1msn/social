@@ -1,6 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IUser, IUserScheme } from '../types/IUser';
-import { USER_LOCALSTORAGE_KEY } from '@/shared/consts/localStorage';
+import {
+    LOCAL_STORAGE_LAST_DESIGN_KEY,
+    USER_LOCALSTORAGE_KEY,
+} from '@/shared/consts/localStorage';
 import { setFeatureFlags } from '@/shared/features';
 import saveJsonSettings from '../services/saveJsonSettings';
 import IJsonSettings from '../types/IJsonSettings';
@@ -22,9 +25,15 @@ export const userSlice = createSlice({
                 USER_LOCALSTORAGE_KEY,
                 action.payload.id.toString(),
             );
+
+            localStorage.setItem(
+                LOCAL_STORAGE_LAST_DESIGN_KEY,
+                action.payload.features?.isAppRedesigned ? 'new' : 'old',
+            );
         },
         logout: (state) => {
             state.authData = undefined;
+            setFeatureFlags({});
             localStorage.removeItem(USER_LOCALSTORAGE_KEY);
         },
     },
@@ -51,6 +60,5 @@ export const userSlice = createSlice({
     },
 });
 
-// Action creators are generated for each case reducer function
 export const { actions: userActions } = userSlice;
 export const { reducer: userReducer } = userSlice;

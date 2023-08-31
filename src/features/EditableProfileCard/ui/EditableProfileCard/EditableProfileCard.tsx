@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import useInitialEffect from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
-import { Text, ThemeText } from '@/shared/ui/Text';
+import { Text, ThemeText } from '@/shared/ui/deprecated/Text';
 import ProfileSelectors from '../../model/selectors/ProfileSelectors';
 import fetchProfileData from '../../model/services/fetchProfileData/fetchProfileData';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
@@ -16,7 +16,7 @@ import {
     ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import EditableProfileCardHeader from '../EditableProfileCardHeader/EditableProfileCardHeader';
-import { VStack } from '@/shared/ui/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { ValidateProfileError } from '../../model/types/editableProfileCardSchema';
 
 interface IEditableProfileCardProps {

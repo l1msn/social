@@ -6,6 +6,7 @@
     "no-empty-source": null,
     "no-descending-specificity": null,
     "block-no-empty": null,
-    "keyframes-name-pattern": null
+    "keyframes-name-pattern": null,
+    "no-duplicate-selectors": null
   }
 }

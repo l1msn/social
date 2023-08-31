@@ -20,8 +20,8 @@ const fetchArticleRecommendations = createAsyncThunk<
         }
 
         return response.data;
-    } catch (e) {
-        console.log(e);
+    } catch (error) {
+        console.log(error);
         return thunkAPI.rejectWithValue('Cant get a recommendations list!');
     }
 });

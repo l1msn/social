@@ -39,8 +39,8 @@ const initArticlesPage = createAsyncThunk<
             thunkAPI.dispatch(articlesPageActions.initState());
             thunkAPI.dispatch(fetchArticlesList({ replace: false }));
         }
-    } catch (e) {
-        console.log(e);
+    } catch (error) {
+        console.log(error);
         return thunkAPI.rejectWithValue('Cant init articles page');
     }
 });

@@ -1,8 +1,8 @@
-import React, { JSX, memo, useId } from 'react';
+import React, { JSX, memo } from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
 import cls from './ArticleCode.module.scss';
-import Code from '@/shared/ui/Code';
 import { IArticleCodeBlock } from '../../model/types/IArticle';
+import Code from '@/shared/ui/redesigned/Code';
 
 interface IArticleCodeProps {
     className?: string;
@@ -11,7 +11,6 @@ interface IArticleCodeProps {
 
 const ArticleCode: React.FC<IArticleCodeProps> = memo(
     ({ className, block }: IArticleCodeProps): JSX.Element => {
-        useId();
         return (
             <div className={classNames(cls.articleCode, {}, [className])}>
                 <Code codeText={block.code} />

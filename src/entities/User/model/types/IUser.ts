@@ -1,5 +1,5 @@
 import UserRole from '../types/UserRole';
-import FeatureFlags from '@/shared/types/featureFlags';
+import IFeatureFlags from '@/shared/types/IFeatureFlags';
 import IJsonSettings from './IJsonSettings';
 
 interface IUser {
@@ -7,7 +7,7 @@ interface IUser {
     username: string;
     avatar?: string;
     roles?: UserRole[];
-    features?: FeatureFlags;
+    features?: IFeatureFlags;
     jsonSettings?: IJsonSettings;
 }
 

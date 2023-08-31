@@ -31,13 +31,24 @@
 
 ## Обзор проекта
 
-...
+Оценить проект можите по [ссылке](https://melodious-taiyaki-b821a0.netlify.app) 
+
+Проект представляет из себя pet-проект для демонстрации своих навыков
+работадателю. 
 
 ----
 
 ## Стек
 
-...
+
+| Стэк         | Технологии                                               |
+|--------------|----------------------------------------------------------|
+| Серверная часть | JavaScript, NodeJS, Express, MicroDB                     |
+| Клиентская часть | TypeScript, React, Redux Toolkit\Query, SCSS, HeadlessUI |
+| Сборщики | Webpack, Vite                                            |
+| Тестирование | React Testing Library, Cypress, Jest, .loki, Unit        |
+| Линтеры/Форматирование | ESLint, StyleLint, Prettier                              |
+| Дополнительно | Babel, Docker, GitHub Workflow (CI), i18n                |
 
 ----
 
@@ -86,7 +97,9 @@ docker-compose down — для остановики проекта в Docker
 
 ### Netlify и Vercel
 
-...
+Серверная часть размещена на [Vercel](https://vercel.com) - https://social-backend-psi.vercel.app
+
+Клиентская часть размещена на [Netlify](https://app.netlify.com) - https://melodious-taiyaki-b821a0.netlify.app
 
 ----
 
@@ -155,7 +168,7 @@ import Button from './Button';
 import ThemeButton from '../consts/ThemeButton';
 import '@/app/styles/index.scss';
 import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
-import SizeButton from '../consts/SizeButton';
+import ButtonSize from '../consts/ButtonSize';
 import Themes from '@/shared/consts/theme';
 
 const meta = {

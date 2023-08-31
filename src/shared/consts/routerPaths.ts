@@ -1,5 +1,6 @@
 enum AppRoutes {
     MAIN = 'main',
+    SETTINGS = 'settings',
     ABOUT = 'about',
     PROFILE = 'profile',
     ARTICLES = 'articles',
@@ -17,6 +18,9 @@ class RoutePaths {
     }
     static getRouteAbout() {
         return '/about';
+    }
+    static getRouteSettings() {
+        return '/settings';
     }
     static getRouteProfile(id: string | number) {
         return '/profile/' + id.toString();
@@ -40,4 +44,18 @@ class RoutePaths {
         return '/forbidden';
     }
 }
-export { AppRoutes, RoutePaths };
+
+const AppRouteByPathPattern: Record<string, AppRoutes> = {
+    [RoutePaths.getRouteMain()]: AppRoutes.MAIN,
+    [RoutePaths.getRouteAbout()]: AppRoutes.ABOUT,
+    [RoutePaths.getRouteSettings()]: AppRoutes.SETTINGS,
+    [RoutePaths.getRouteProfile(':id')]: AppRoutes.PROFILE,
+    [RoutePaths.getRouteArticles()]: AppRoutes.ARTICLES,
+    [RoutePaths.getRouteArticleDetails(':id')]: AppRoutes.ARTICLE_DETAILS,
+    [RoutePaths.getRouteArticleCreate()]: AppRoutes.ARTICLE_CREATE,
+    [RoutePaths.getRouteArticleEdit(':id')]: AppRoutes.ARTICLE_EDIT,
+    [RoutePaths.getRouteAdminPanel()]: AppRoutes.ADMIN_PANEL,
+    [RoutePaths.getRouteForbidden()]: AppRoutes.FORBIDDEN,
+};
+
+export { AppRoutes, RoutePaths, AppRouteByPathPattern };

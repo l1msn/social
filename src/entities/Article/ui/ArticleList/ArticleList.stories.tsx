@@ -10,6 +10,8 @@ import {
 } from '../../model/types/IArticle';
 import ArticleView from '../../model/types/ArticleView';
 import Themes from '@/shared/consts/theme';
+import themeRedesignedDecorator from '@/shared/config/storybook/themeRedesignedDecorator/themeRedesignedDecorator';
+import featureFlagsDecorator from '@/shared/config/storybook/featureFlagsDecorator/featureFlagsDecorator';
 
 const meta = {
     title: 'entities/ArticleList',
@@ -28,7 +30,7 @@ const mockData: IArticle[] = [
         subtitle: 'Actual features',
         img: 'https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/',
         views: '1022',
-        createAt: '26.02.2022',
+        createdAt: '26.02.2022',
         user: {
             id: '2',
             avatar: 'https://imgur.com/IyES7O4.png',
@@ -54,6 +56,19 @@ export const Light: Story = {
         articles: mockData,
     },
     decorators: [storeDecorator({})],
+};
+
+export const DarkRedesigned: Story = {
+    args: {
+        articles: mockData,
+    },
+    decorators: [
+        themeRedesignedDecorator(Themes.DARK),
+        storeDecorator({}),
+        featureFlagsDecorator({
+            isAppRedesigned: true,
+        }),
+    ],
 };
 
 export const Dark: Story = {

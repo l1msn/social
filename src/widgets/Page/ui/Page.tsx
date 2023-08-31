@@ -14,6 +14,7 @@ import {
     scrollRestoreActions,
 } from '@/features/ScrollRestore';
 import TestProps from '@/shared/types/tests';
+import { toggleFeatures } from '@/shared/features';
 
 interface IPageProps extends TestProps {
     className?: string;
@@ -36,7 +37,11 @@ const Page: React.FC<IPageProps> = (props: IPageProps): JSX.Element => {
 
     useInfiniteScroll({
         triggerRef: triggerRef,
-        wrapperRef: wrapperRef,
+        wrapperRef: toggleFeatures({
+            name: 'isAppRedesigned',
+            on: () => undefined,
+            off: () => wrapperRef,
+        }),
         callback: onScrollEnd,
     });
 
@@ -53,11 +58,17 @@ const Page: React.FC<IPageProps> = (props: IPageProps): JSX.Element => {
         wrapperRef.current.scrollTop = scrollPosition;
     });
 
+    const pageStyles = toggleFeatures({
+        name: 'isAppRedesigned',
+        on: () => cls.pageRedesigned,
+        off: () => cls.page,
+    });
+
     return (
         <main
             onScroll={onScroll}
             ref={wrapperRef}
-            className={classNames(cls.page, {}, [className])}
+            className={classNames(pageStyles, {}, [className])}
             id={PAGE_ID}
             data-testid={props['data-testid'] ?? 'Page'}
         >

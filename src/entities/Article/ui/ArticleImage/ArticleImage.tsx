@@ -2,7 +2,10 @@ import React, { JSX, memo } from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
 import cls from './ArticleImage.module.scss';
 import { IArticleImageBlock } from '../../model/types/IArticle';
-import { AlignText, Text } from '@/shared/ui/Text';
+import { AlignText, Text as DeprecatedText } from '@/shared/ui/deprecated/Text';
+import { Text } from '@/shared/ui/redesigned/Text';
+import { ToggleFeatures } from '@/shared/features';
+import AppImage from '@/shared/ui/redesigned/AppImage';
 
 interface IArticleImageProps {
     className?: string;
@@ -11,13 +14,35 @@ interface IArticleImageProps {
 
 const ArticleImage: React.FC<IArticleImageProps> = memo(
     ({ className, block }: IArticleImageProps): JSX.Element => {
-        return (
+        const DeprecatedArticleImage = (
             <div className={classNames(cls.article, {}, [className])}>
                 <img src={block.src} className={cls.image} alt={block.title} />
                 {block.title && (
-                    <Text title={block.title} align={AlignText.CENTER} />
+                    <DeprecatedText
+                        title={block.title}
+                        align={AlignText.CENTER}
+                    />
                 )}
             </div>
+        );
+
+        const RedesignedArticleImage = (
+            <div className={classNames(cls.article, {}, [className])}>
+                <AppImage
+                    src={block.src}
+                    className={cls.image}
+                    alt={block.title}
+                />
+                {block.title && <Text title={block.title} align={'center'} />}
+            </div>
+        );
+
+        return (
+            <ToggleFeatures
+                feature={'isAppRedesigned'}
+                off={DeprecatedArticleImage}
+                on={RedesignedArticleImage}
+            />
         );
     },
 );

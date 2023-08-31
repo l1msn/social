@@ -29,7 +29,7 @@ export const Light: Story = {
                     subtitle: 'Actual features',
                     img: 'https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/',
                     views: '1022',
-                    createAt: '26.02.2022',
+                    createdAt: '26.02.2022',
                     type: [ArticleType.IT],
                     blocks: [
                         {
@@ -62,7 +62,7 @@ export const Dark: Story = {
                     subtitle: 'Actual features',
                     img: 'https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/',
                     views: '1022',
-                    createAt: '26.02.2022',
+                    createdAt: '26.02.2022',
                     type: [ArticleType.IT],
                     blocks: [
                         {
@@ -96,7 +96,7 @@ export const Loading: Story = {
                     subtitle: 'Actual features',
                     img: 'https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/',
                     views: '1022',
-                    createAt: '26.02.2022',
+                    createdAt: '26.02.2022',
                     type: [ArticleType.IT],
                     blocks: [
                         {
@@ -130,7 +130,7 @@ export const Error: Story = {
                     subtitle: 'Actual features',
                     img: 'https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/',
                     views: '1022',
-                    createAt: '26.02.2022',
+                    createdAt: '26.02.2022',
                     type: [ArticleType.IT],
                     blocks: [
                         {

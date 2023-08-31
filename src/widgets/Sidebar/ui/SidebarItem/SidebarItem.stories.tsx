@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import SidebarItem from './SidebarItem';
 import themeDecorator from '@/shared/config/storybook/themeDecorator/themeDecorator';
-import UserIcon from '@/shared/assets/icons/user-icon.svg';
+import UserIcon from '@/shared/assets/icons/deprecated/user-icon.svg';
 import storeDecorator from '@/shared/config/storybook/storeDecorator/storeDecorator';
 
 import Themes from '@/shared/consts/theme';

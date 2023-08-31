@@ -50,7 +50,7 @@ interface IArticle {
     img: string;
     user: IUser;
     views: number | string;
-    createAt: string;
+    createdAt: string;
     type: ArticleType[];
     blocks: ArticleBlock[];
     move?: () => void;

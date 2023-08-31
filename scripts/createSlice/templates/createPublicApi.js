@@ -15,7 +15,7 @@ import ${firstCharUpperCase(schemaName)} from './model/types/${schemaName}';
 export {${componentName}, ${firstCharUpperCase(schemaName)}};
 `,
         );
-    } catch (e) {
+    } catch (error) {
         console.log('Не удалось создать PUBLIC API');
     }
 };

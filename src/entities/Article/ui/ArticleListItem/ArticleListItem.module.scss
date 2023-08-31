@@ -1,138 +1,286 @@
 .articleListItem {
     margin: 10px;
-}
 
-.SHELF {
-    width: 230px;
-    transition: 0.2s;
-    cursor: pointer;
+    &.SHELF {
+        width: 230px;
+        transition: 0.2s;
+        cursor: pointer;
 
-    &:hover {
-        opacity: 0.9;
-        transform: scale(1.05);
+        &:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+
+            .date {
+                display: block;
+                animation: animate 0.3s linear;
+            }
+        }
+
+        @keyframes animate {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .imageWrapper {
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+
+        .image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
 
         .date {
-            display: block;
-            animation: animate 0.3s linear;
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: none;
+        }
+
+        .infoWrapper {
+            display: flex;
+            align-items: center;
+            margin-top: 8px;
+        }
+
+        .types p {
+            width: 115px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .views {
+            margin-left: auto;
+            margin-right: 8px;
+        }
+
+        .title p {
+            width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
 
-    @keyframes animate {
-        0% {
-            opacity: 0;
+    &.LIST {
+        transition: 0.2s;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.9;
+            transform: scale(1.01);
+
+            .date {
+                display: block;
+                animation: animate 0.3s linear;
+            }
         }
 
-        100% {
-            opacity: 1;
+        @keyframes animate {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
         }
-    }
 
-    .imageWrapper {
-        width: 200px;
-        height: 200px;
-        position: relative;
-    }
+        .header {
+            display: flex;
+            align-items: center;
+        }
 
-    .image {
-        width: 200px;
-        height: 200px;
-        object-fit: cover;
-    }
+        .username {
+            margin-left: 8px;
+        }
 
-    .date {
-        position: absolute;
-        right: 0;
-        top: 0;
-        display: none;
-    }
+        .date {
+            margin-left: auto;
+        }
 
-    .infoWrapper {
-        display: flex;
-        align-items: center;
-        margin-top: 8px;
-    }
+        .title {
+            margin-top: 8px;
+        }
 
-    .types p {
-        width: 115px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+        .image {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            margin: 16px 0;
+        }
 
-    .views {
-        margin-left: auto;
-        margin-right: 8px;
-    }
+        .footer {
+            display: flex;
+            align-items: center;
+            margin-top: 16px;
+        }
 
-    .title p {
-        width: 200px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        .views {
+            margin-left: auto;
+        }
+
+        .textBlock {
+            max-height: 300px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
     }
 }
 
-.LIST {
-    transition: 0.2s;
-    cursor: pointer;
 
-    &:hover {
-        opacity: 0.9;
-        transform: scale(1.01);
+.articleListItemRedesigned {
+    &.SHELF {
+        margin: 8px;
+        width: 240px;
+        height: 350px;
+        transition: 0.2s;
+        cursor: pointer;
 
-        .date {
-            display: block;
-            animation: animate 0.3s linear;
+        &:hover {
+            transform: scale(1.01);
+
+            .card {
+                border: 1px solid var(--icon-redesigned);
+            }
+        }
+
+        .card {
+            width: 240px;
+            height: 350px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+
+        .info {
+            padding: 8px 8px 16px;
+            height: 100%;
+        }
+
+        .footer {
+            height: 100%;
+            justify-content: flex-end;
+        }
+
+
+        .imageWrapper {
+            width: 225px;
+            height: 140px;
+            position: relative;
+        }
+
+        .image {
+            width: 100%;
+            object-fit: cover;
+            min-height: 140px;
+            max-height: 140px;
+            border-radius: 32px 32px 0 0;
+        }
+
+        .infoWrapper {
+            display: flex;
+            align-items: center;
+            margin-top: 8px;
+        }
+
+        .views {
+            margin-left: auto;
+            margin-right: 8px;
+        }
+
+        .title {
+            border-radius: 0 0 40px 40px;
+        }
+
+        .title p {
+            width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .avatar {
+            margin-left: 8px;
         }
     }
 
-    @keyframes animate {
-        0% {
-            opacity: 0;
-        }
-
-        100% {
-            opacity: 1;
-        }
-    }
-
-    .header {
-        display: flex;
-        align-items: center;
-    }
-
-    .username {
-        margin-left: 8px;
-    }
-
-    .date {
-        margin-left: auto;
-    }
-
-    .title {
-        margin-top: 8px;
-    }
-
-    .image {
+    &.LIST {
         width: 100%;
-        max-height: 250px;
-        object-fit: cover;
-        margin: 16px 0;
-    }
+        margin: 8px;
+        transition: 0.2s;
+        cursor: pointer;
 
-    .footer {
-        display: flex;
-        align-items: center;
-        margin-top: 16px;
-    }
+        &:hover {
+            opacity: 0.9;
+            transform: scale(1.01);
+            border: 1px solid var(--icon-redesigned);
 
-    .views {
-        margin-left: auto;
-    }
+            .date {
+                display: block;
+                animation: animate 0.3s linear;
+            }
+        }
 
-    .textBlock {
-        max-height: 300px;
-        text-overflow: ellipsis;
-        overflow: hidden;
+        @keyframes animate {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+        }
+
+        .username {
+            margin-left: 8px;
+        }
+
+        .date {
+            margin-left: auto;
+        }
+
+        .title {
+            margin-top: 8px;
+        }
+
+        .image {
+            width: 100%;
+            max-height: 420px;
+            object-fit: cover;
+            margin: 16px 0;
+        }
+
+        .footer {
+            display: flex;
+            align-items: center;
+            margin-top: 16px;
+        }
+
+        .views {
+            margin-left: auto;
+        }
+
+        .textBlock {
+            max-height: 72px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
     }
 }

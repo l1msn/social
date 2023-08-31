@@ -22,8 +22,8 @@ const loginByUsername = createAsyncThunk<
 
         thunkAPI.dispatch(userActions.setAuthData(response.data));
         return response.data;
-    } catch (e) {
-        console.log(e);
+    } catch (error) {
+        console.log(error);
         return thunkAPI.rejectWithValue('Invalid username or password');
     }
 });

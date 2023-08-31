@@ -12,7 +12,7 @@ const article: IArticle = {
     subtitle: 'Что нового в JS за 2022 год?',
     img: '',
     views: 1022,
-    createAt: '26.02.2022',
+    createdAt: '26.02.2022',
     type: [ArticleType.IT],
     user: {
         id: '1',
@@ -54,7 +54,7 @@ const meta = {
     parameters: {
         mockData: [
             {
-                url: __API__ + '/articles?_limit=4',
+                url: __API__ + '/articles?_limit=4&_expand=user',
                 method: 'GET',
                 status: 200,
                 response: [

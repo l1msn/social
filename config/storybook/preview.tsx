@@ -4,6 +4,7 @@ import themeDecorator from '../../src/shared/config/storybook/themeDecorator/the
 import routerDecorator from '../../src/shared/config/storybook/routerDecorator/routerDecorator';
 import suspenseDecorator from '../../src/shared/config/storybook/suspenseDecorator/suspenseDecorator';
 import Themes from '../../src/shared/consts/theme';
+import featureFlagsDecorator from '../../src/shared/config/storybook/featureFlagsDecorator/featureFlagsDecorator';
 
 // @ts-ignore
 const preview: Preview = {
@@ -29,6 +30,7 @@ const preview: Preview = {
         themeDecorator(Themes.DARK),
         routerDecorator,
         suspenseDecorator,
+        featureFlagsDecorator({ isAppRedesigned: false }),
     ],
 };
 

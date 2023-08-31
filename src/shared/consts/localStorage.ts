@@ -1,6 +1,11 @@
-const USER_LOCALSTORAGE_KEY: string = 'user';
-const ARTICLE_VIEW_LOCALSTORAGE_KEY: string = 'articles_view';
+const USER_LOCALSTORAGE_KEY = 'user';
+const ARTICLE_VIEW_LOCALSTORAGE_KEY = 'articles_view';
+const LOCAL_STORAGE_THEME_KEY = 'theme';
+const LOCAL_STORAGE_LAST_DESIGN_KEY = 'last_design';
 
-export { ARTICLE_VIEW_LOCALSTORAGE_KEY, USER_LOCALSTORAGE_KEY };
-const LocalStorageThemeKey = 'theme';
-export { LocalStorageThemeKey };
+export {
+    ARTICLE_VIEW_LOCALSTORAGE_KEY,
+    USER_LOCALSTORAGE_KEY,
+    LOCAL_STORAGE_THEME_KEY,
+    LOCAL_STORAGE_LAST_DESIGN_KEY,
+};

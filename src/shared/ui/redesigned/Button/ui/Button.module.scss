@@ -1,0 +1,126 @@
+.Button {
+    transition: 0.2s;
+    cursor: pointer;
+    color: var(--text-redesigned);
+    padding: 6px 16px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+
+    &:not(.disabled) {
+        &:hover {
+            color: var(--accent-redesigned);
+            transform: scale(1.05);
+            opacity: 0.8;
+            fill-opacity: 0.8;
+            stroke-opacity: 0.8;
+            animation: animate 0.3s linear;
+
+            .addonRight svg,
+            .addonLeft svg {
+                color: var(--accent-redesigned)
+            }
+        }
+
+        @keyframes animate {
+            0% {
+                opacity: 1;
+                color: var(--text-redesigned);
+            }
+
+            100% {
+                opacity: 0.8;
+                color: var(--accent-redesigned);
+            }
+        }
+    }
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+.clear {
+    padding: 0;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.addonRight,
+.addonLeft {
+    display: flex;
+}
+
+.addonRight svg,
+.addonLeft svg {
+    color: var(--hint-redesigned)
+}
+
+.filled {
+    background: var(--light-bg-redesigned);
+    border: none;
+    outline: none;
+    padding: 8px 16px;
+    border-radius: 12px;
+}
+
+.cancel {
+    background: var(--light-bg-redesigned);
+    color: var(--cancel-redesigned);
+    border: none;
+    outline: none;
+    padding: 8px 16px;
+    border-radius: 12px;
+}
+
+.accept {
+    background: var(--light-bg-redesigned);
+    color: var(--save-redesigned);
+    border: none;
+    outline: none;
+    padding: 8px 16px;
+    border-radius: 12px;
+}
+
+.outline {
+    background: none;
+    border: 2px solid var(--icon-redesigned);
+    padding: 8px 16px;
+    border-radius: 12px;
+}
+
+.square {
+    padding: 0;
+}
+
+.square.m {
+    width: var(--font-line-m);
+    height: var(--font-line-m);
+}
+
+.square.l {
+    width: var(--font-line-l);
+    height: var(--font-line-l);
+}
+
+.square.xl {
+    width: var(--font-line-xl);
+    height: var(--font-line-xl);
+}
+
+.m {
+    font: var(--font-m-redesigned);
+}
+
+.l {
+    font: var(--font-l-redesigned);
+}
+
+.xl {
+    font: var(--font-xl-redesigned);
+}
+
+.disabled {
+    opacity: 0.35;
+}
