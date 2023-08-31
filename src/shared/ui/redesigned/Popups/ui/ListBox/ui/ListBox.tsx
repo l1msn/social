@@ -62,14 +62,13 @@ const ListBox = <T extends string>(props: IListBoxProps<T>): JSX.Element => {
                 onChange={onChange}
                 disabled={readonly}
             >
-                <HListBox.Button className={cls.trigger}>
-                    <Button
-                        addonRight={<Icon Svg={ArrowIcon} />}
-                        variant={'filled'}
-                        disabled={readonly}
-                    >
-                        {selectedItem?.content ?? defaultValue}
-                    </Button>
+                <HListBox.Button
+                    as={Button}
+                    className={cls.trigger}
+                    addonRight={<Icon Svg={ArrowIcon} />}
+                    variant={'filled'}
+                >
+                    {selectedItem?.content ?? defaultValue}
                 </HListBox.Button>
                 <Transition
                     enter="transition duration-100 ease-out"

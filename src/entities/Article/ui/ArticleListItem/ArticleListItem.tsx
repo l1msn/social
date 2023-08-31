@@ -69,7 +69,7 @@ const ArticleListItem: React.FC<IArticleListItemProps> = memo(
                             className={cls.image}
                         />
                         <DeprecatedText
-                            text={article.createAt}
+                            text={article.createdAt}
                             className={cls.date}
                         />
                     </div>
@@ -102,9 +102,9 @@ const ArticleListItem: React.FC<IArticleListItemProps> = memo(
                 ])}
                 to={RoutePaths.getRouteArticleDetails(article.id)}
             >
-                <Card className={cls.card} border={'round'}>
+                <Card className={cls.card} border={'round'} padding={'0'}>
                     <AppImage
-                        fallback={<Skeleton width={200} height={200} />}
+                        fallback={<Skeleton width={'100%'} height={200} />}
                         src={article.img}
                         alt={article.title}
                         className={cls.image}
@@ -114,7 +114,7 @@ const ArticleListItem: React.FC<IArticleListItemProps> = memo(
                         <VStack gap={'4'} className={cls.footer} max>
                             <HStack justify={'between'} max>
                                 <Text
-                                    text={article.createAt}
+                                    text={article.createdAt}
                                     className={cls.date}
                                 />
                                 <HStack gap={'8'}>
@@ -126,7 +126,11 @@ const ArticleListItem: React.FC<IArticleListItemProps> = memo(
                                 </HStack>
                             </HStack>
                             <HStack gap={'4'}>
-                                <Avatar size={32} src={article.user.avatar} />
+                                <Avatar
+                                    size={32}
+                                    src={article.user.avatar}
+                                    className={cls.avatar}
+                                />
                                 <Text bold text={article.user.username} />
                             </HStack>
                         </VStack>
@@ -151,7 +155,7 @@ const ArticleListItem: React.FC<IArticleListItemProps> = memo(
                             className={cls.username}
                         />
                         <DeprecatedText
-                            text={article.createAt}
+                            text={article.createdAt}
                             className={cls.date}
                         />
                     </div>
@@ -210,11 +214,11 @@ const ArticleListItem: React.FC<IArticleListItemProps> = memo(
                     <HStack max gap={'8'}>
                         <Avatar src={article.user.avatar} size={32} />
                         <Text bold text={article.user.username} />
-                        <Text text={article.createAt} />
+                        <Text text={article.createdAt} />
                     </HStack>
-                    <Text text={article.title} bold />
-                    <Text text={article.subtitle} size={'s'} />
-                    <Text text={article.type.join(', ')} bold size={'s'} />
+                    <Text title={article.title} bold />
+                    <Text title={article.subtitle} size={'s'} />
+                    <Text title={article.type.join(', ')} bold size={'s'} />
                     <AppImage
                         fallback={<Skeleton width={'100%'} height={250} />}
                         src={article.img}

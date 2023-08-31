@@ -31,7 +31,7 @@ const AdditionalInfoContainer: React.FC<IAdditionalInfoContainerProps> = ({
         <Card className={cls.card} padding={'24'} border={'round'}>
             <ArticleAdditionalInfo
                 onEdit={onEditArticle}
-                createdAt={article.createAt}
+                createdAt={article.createdAt}
                 author={article.user}
                 views={article.views}
                 className={className}

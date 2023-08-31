@@ -12,7 +12,7 @@ const article: IArticle = {
     subtitle: 'Что нового в JS за 2022 год?',
     img: '',
     views: 1022,
-    createAt: '26.02.2022',
+    createdAt: '26.02.2022',
     type: [ArticleType.IT],
     user: {
         id: '1',

@@ -6,10 +6,6 @@ interface ILoaderProps {
     className?: string;
 }
 
-/**
- * Устаревший\deprecated UI component, используй новый из папки redesigned
- * @deprecated
- */
 const Loader: React.FC<ILoaderProps> = memo(
     ({ className }: ILoaderProps): JSX.Element => {
         return (

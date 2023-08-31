@@ -16,8 +16,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Dark: Story = {
-    args: {
-        placeholder: 'input',
-        value: 'input',
-    },
+    args: {},
 };

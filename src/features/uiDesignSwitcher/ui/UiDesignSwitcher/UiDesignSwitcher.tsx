@@ -15,6 +15,7 @@ import { UserSelectors } from '@/entities/User';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 // eslint-disable-next-line l1msn-plugin/layer-imports
 import PageLoader from '@/widgets/PageLoader';
+import { useUpdate } from '@/shared/lib/render/forceUpdate/forceUpdate';
 
 interface IUiDesignSwitcherProps {
     className?: string;
@@ -26,6 +27,8 @@ const UiDesignSwitcher: React.FC<IUiDesignSwitcherProps> = memo(
         const { t } = useTranslation();
 
         const dispatch = useAppDispatch();
+
+        const forceUpdate = useUpdate();
 
         const authData = useSelector(UserSelectors.getUserAuthData);
 
@@ -60,9 +63,10 @@ const UiDesignSwitcher: React.FC<IUiDesignSwitcherProps> = memo(
                         }),
                     ).unwrap();
                     setIsLoading((prevState) => !prevState);
+                    forceUpdate();
                 }
             },
-            [authData, dispatch],
+            [authData, dispatch, forceUpdate],
         );
 
         const DeprecatedUiDesignSwitcher = (

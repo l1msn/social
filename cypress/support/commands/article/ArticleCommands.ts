@@ -5,7 +5,7 @@ const defaultArticle = {
     subtitle: 'TEST subtitle',
     img: 'https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/',
     views: '1',
-    createAt: '26.02.2022',
+    createdAt: '26.02.2022',
     userId: '1',
     type: ['IT'],
     blocks: [],

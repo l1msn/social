@@ -4,13 +4,16 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { UserSelectors } from '@/entities/User';
 import { HStack } from '@/shared/ui/redesigned/Stack';
-import { Text } from '@/shared/ui/deprecated/Text';
-import Button from '@/shared/ui/deprecated/Button';
+import { Text as DeprecatedText } from '@/shared/ui/deprecated/Text';
+import { default as DeprecatedButton } from '@/shared/ui/deprecated/Button';
 import ThemeButton from '@/shared/ui/deprecated/Button/consts/ThemeButton';
 import ProfileSelectors from '../../model/selectors/ProfileSelectors';
 import { profileActions } from '../../model/slice/profileSlice';
 import updateProfileData from '../../model/services/updateProfileData/updateProfileData';
 import useAppDispatch from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { ToggleFeatures } from '@/shared/features';
+import Button from '@/shared/ui/redesigned/Button';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 interface IEditableProfileCardHeaderProps {
     className?: string;
@@ -41,7 +44,51 @@ const EditableProfileCardHeader: React.FC<IEditableProfileCardHeaderProps> = ({
         dispatch(updateProfileData());
     }, [dispatch]);
 
-    return (
+    const DeprecatedEditableProfileCardHeader = (
+        <HStack
+            max
+            justify={'between'}
+            className={classNames('', {}, [className])}
+        >
+            <DeprecatedText title={t('Profile')} />
+            {canEdit && (
+                <>
+                    {readonly ? (
+                        <DeprecatedButton
+                            theme={ThemeButton.WITHLINE}
+                            data-testid={'EditableProfileCardHeader.EditButton'}
+                            onClick={onEdit}
+                        >
+                            {t('Edit')}
+                        </DeprecatedButton>
+                    ) : (
+                        <HStack gap={'8'}>
+                            <DeprecatedButton
+                                theme={ThemeButton.WITHLINE_RED}
+                                data-testid={
+                                    'EditableProfileCardHeader.CancelButton'
+                                }
+                                onClick={onCancelEdit}
+                            >
+                                {t('Cancel')}
+                            </DeprecatedButton>
+                            <DeprecatedButton
+                                theme={ThemeButton.WITHLINE}
+                                data-testid={
+                                    'EditableProfileCardHeader.SaveButton'
+                                }
+                                onClick={onSave}
+                            >
+                                {t('Save')}
+                            </DeprecatedButton>
+                        </HStack>
+                    )}
+                </>
+            )}
+        </HStack>
+    );
+
+    const RedesignedEditableProfileCardHeader = (
         <HStack
             max
             justify={'between'}
@@ -52,7 +99,7 @@ const EditableProfileCardHeader: React.FC<IEditableProfileCardHeaderProps> = ({
                 <>
                     {readonly ? (
                         <Button
-                            theme={ThemeButton.WITHLINE}
+                            variant={'filled'}
                             data-testid={'EditableProfileCardHeader.EditButton'}
                             onClick={onEdit}
                         >
@@ -61,7 +108,7 @@ const EditableProfileCardHeader: React.FC<IEditableProfileCardHeaderProps> = ({
                     ) : (
                         <HStack gap={'8'}>
                             <Button
-                                theme={ThemeButton.WITHLINE_RED}
+                                variant={'cancel'}
                                 data-testid={
                                     'EditableProfileCardHeader.CancelButton'
                                 }
@@ -70,7 +117,7 @@ const EditableProfileCardHeader: React.FC<IEditableProfileCardHeaderProps> = ({
                                 {t('Cancel')}
                             </Button>
                             <Button
-                                theme={ThemeButton.WITHLINE}
+                                variant={'accept'}
                                 data-testid={
                                     'EditableProfileCardHeader.SaveButton'
                                 }
@@ -83,6 +130,14 @@ const EditableProfileCardHeader: React.FC<IEditableProfileCardHeaderProps> = ({
                 </>
             )}
         </HStack>
+    );
+
+    return (
+        <ToggleFeatures
+            feature={'isAppRedesigned'}
+            on={RedesignedEditableProfileCardHeader}
+            off={DeprecatedEditableProfileCardHeader}
+        />
     );
 };
 

@@ -10,18 +10,26 @@ import useAppDispatch from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import fetchArticleById from '../../model/services/fetchArticleById/fetchArticleById';
 import { useSelector } from 'react-redux';
 import ArticleSelectors from '../../model/selectors/ArticleSelectors';
-import { AlignText, SizeText, Text } from '@/shared/ui/deprecated/Text';
+import {
+    AlignText,
+    SizeText,
+    Text as DeprecatedText,
+} from '@/shared/ui/deprecated/Text';
 import { useTranslation } from 'react-i18next';
-import Skeleton from '@/shared/ui/deprecated/Skeleton';
-import Avatar from '@/shared/ui/deprecated/Avatar';
-import DateIcon from '@/shared/assets/icons/deprecated/date-icon.svg';
-import ViewsIcon from '@/shared/assets/icons/deprecated/views-icon.svg';
-import Icon from '@/shared/ui/deprecated/Icon';
+import { default as DeprecatedSkeleton } from '@/shared/ui/deprecated/Skeleton';
+import { default as DeprecatedAvatar } from '@/shared/ui/deprecated/Avatar';
+import DeprecatedDateIcon from '@/shared/assets/icons/deprecated/date-icon.svg';
+import DeprecatedViewsIcon from '@/shared/assets/icons/deprecated/views-icon.svg';
+import { default as DeprecatedIcon } from '@/shared/ui/deprecated/Icon';
 import { ArticleBlock, ArticleBlockType } from '../../model/types/IArticle';
 import ArticleCode from '../ArticleCode/ArticleCode';
 import ArticleText from '../ArticleText/ArticleText';
 import ArticleImage from '../ArticleImage/ArticleImage';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
+import { ToggleFeatures } from '@/shared/features';
+import { Text } from '@/shared/ui/redesigned/Text';
+import Skeleton from '@/shared/ui/redesigned/Skeleton';
+import AppImage from '@/shared/ui/redesigned/AppImage';
 
 interface IArticleDetailsProps {
     className?: string;
@@ -81,7 +89,38 @@ const ArticleDetails: React.FC<IArticleDetailsProps> = memo(
         let content;
 
         if (isLoading) {
-            content = (
+            const DeprecatedArticleDetailsLoader = (
+                <>
+                    <DeprecatedSkeleton
+                        className={cls.avatar}
+                        width={200}
+                        height={200}
+                        borderRadius={'50%'}
+                    />
+                    <DeprecatedSkeleton
+                        className={cls.title}
+                        width={300}
+                        height={32}
+                    />
+                    <DeprecatedSkeleton
+                        className={cls.skeleton}
+                        width={500}
+                        height={32}
+                    />
+                    <DeprecatedSkeleton
+                        className={cls.skeleton}
+                        width="100%"
+                        height={200}
+                    />
+                    <DeprecatedSkeleton
+                        className={cls.skeleton}
+                        width="100%"
+                        height={200}
+                    />
+                </>
+            );
+
+            const RedesignedArticleDetailsLoader = (
                 <>
                     <Skeleton
                         className={cls.avatar}
@@ -107,45 +146,114 @@ const ArticleDetails: React.FC<IArticleDetailsProps> = memo(
                     />
                 </>
             );
-        } else if (error) {
+
             content = (
-                <Text
+                <ToggleFeatures
+                    feature={'isAppRedesigned'}
+                    on={RedesignedArticleDetailsLoader}
+                    off={DeprecatedArticleDetailsLoader}
+                />
+            );
+        } else if (error) {
+            const DeprecatedArticleDetailsError = (
+                <DeprecatedText
                     text={t('Article loading error')}
                     align={AlignText.CENTER}
                 />
             );
-        } else {
+
+            const RedesignedArticleDetailsError = (
+                <Text
+                    text={t('Article loading error')}
+                    variant={'error'}
+                    align={AlignText.CENTER}
+                />
+            );
+
             content = (
+                <ToggleFeatures
+                    feature={'isAppRedesigned'}
+                    on={RedesignedArticleDetailsError}
+                    off={DeprecatedArticleDetailsError}
+                />
+            );
+        } else {
+            const DeprecatedArticleDetailsContent = (
                 <>
                     <HStack
                         justify={'center'}
                         max
                         className={cls.avatarWrapper}
                     >
-                        <Avatar
+                        <DeprecatedAvatar
                             size={200}
                             src={article?.img}
                             className={cls.avatar}
                         />
                     </HStack>
                     <VStack gap={'4'} max data-testid={'ArticleDetails.Info'}>
-                        <Text
+                        <DeprecatedText
                             size={SizeText.L}
                             className={cls.title}
                             title={article?.title}
                             text={article?.subtitle}
                         />
                         <HStack gap={'8'} className={cls.articleInfo}>
-                            <Icon className={cls.icon} Svg={DateIcon} />
-                            <Text text={article?.createAt} />
+                            <DeprecatedIcon
+                                className={cls.icon}
+                                Svg={DeprecatedDateIcon}
+                            />
+                            <DeprecatedText text={article?.createdAt} />
                         </HStack>
                         <HStack gap={'8'} className={cls.articleInfo}>
-                            <Icon className={cls.icon} Svg={ViewsIcon} />
-                            <Text text={article?.views} />
+                            <DeprecatedIcon
+                                className={cls.icon}
+                                Svg={DeprecatedViewsIcon}
+                            />
+                            <DeprecatedText text={article?.views} />
                         </HStack>
                     </VStack>
                     {article?.blocks.map(renderBlock)}
                 </>
+            );
+
+            const RedesignedArticleDetailsContent = (
+                <>
+                    <VStack gap={'4'} data-testid={'ArticleDetails.Info'}>
+                        <Text
+                            size={'l'}
+                            className={cls.title}
+                            title={article?.title}
+                            bold
+                        />
+                        <Text
+                            className={cls.subtitle}
+                            title={article?.subtitle}
+                        />
+                    </VStack>
+                    <HStack max justify={'center'} align={'center'}>
+                        <AppImage
+                            fallback={
+                                <Skeleton
+                                    width={'100%'}
+                                    height={420}
+                                    borderRadius={'16px'}
+                                />
+                            }
+                            src={article?.img}
+                            className={cls.img}
+                        />
+                    </HStack>
+                    {article?.blocks.map(renderBlock)}
+                </>
+            );
+
+            content = (
+                <ToggleFeatures
+                    feature={'isAppRedesigned'}
+                    off={DeprecatedArticleDetailsContent}
+                    on={RedesignedArticleDetailsContent}
+                />
             );
         }
 

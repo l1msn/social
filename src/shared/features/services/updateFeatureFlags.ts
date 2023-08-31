@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { IThunkConfig } from '@/app/providers/StoreProvider';
 import IFeatureFlags from '@/shared/types/IFeatureFlags';
 import { updateFeatureFlagsMutation } from '../api/featureFlagsApi';
-import { getAllFeatureFlags } from '../lib/setGetFeatures';
+import { getAllFeatureFlags, setFeatureFlags } from '../lib/setGetFeatures';
 
 interface IUpdateFeatureFlagsOptions {
     userId: string;
@@ -28,6 +28,10 @@ const updateFeatureFlags = createAsyncThunk<
                 },
             }),
         );
+        setFeatureFlags({
+            ...getAllFeatureFlags(),
+            ...newFeatures,
+        });
 
         window.location.reload();
     } catch (error) {

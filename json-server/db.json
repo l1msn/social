@@ -1,70 +1,28 @@
 {
-  "article-ratings": [
-    {
-      "articleId": "2",
-      "rate": 4,
-      "userId": "2",
-      "id": 1
-    }
-  ],
-  "profile-ratings": [
-    {
-      "id": "1",
-      "rate": 4,
-      "feedback": "Good profile",
-      "userId": "1",
-      "profileId": "1"
-    },
-    {
-      "id": "2",
-      "rate": 5,
-      "feedback": "Very good profile",
-      "userId": "2",
-      "profileId": "1"
-    }
-  ],
+  "article-ratings": [],
+  "profile-ratings": [],
   "notifications": [
     {
       "id": "1",
-      "title": "Notification 1",
+      "title": "New article on IT tag",
       "description": "Something new!",
       "userId": "1"
     },
     {
       "id": "2",
-      "title": "Notification 2",
-      "description": "Something new!",
-      "userId": "1",
-      "href": "http://localhost:3000/admin"
-    },
-    {
-      "id": "3",
-      "title": "Notification 3",
-      "description": "Something new!",
-      "userId": "1",
-      "href": "http://localhost:3000/admin"
-    },
-    {
-      "id": "4",
-      "title": "Notification 4",
-      "description": "Something new!",
+      "title": "Greetings",
+      "description": "Thank you for completing your profile.",
       "userId": "1"
-    },
-    {
-      "id": "5",
-      "title": "Notification 5",
-      "description": "Something new!",
-      "userId": "2"
     }
   ],
   "articles": [
     {
       "id": "1",
-      "title": "TypeScript 5.0 and 4.9 1 new",
+      "title": "TypeScript 5.0 and 4.9",
       "subtitle": "Actual features",
       "img": "https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/",
-      "views": "1022",
-      "createAt": "26.02.2022",
+      "views": 1022,
+      "createdAt": "26.02.2022",
       "userId": "2",
       "type": [
         "IT"
@@ -159,16 +117,77 @@
           "id": "13",
           "type": "code",
           "code": "class Person {\n  age: number = 0\n\n  @Logger\n  changeAge() {\n    console.log(\"changing age...\")\n  }\n}\n\nconst person = new Person();\nperson.changeAge()"
+        },
+        {
+          "id": "14",
+          "type": "image",
+          "title": "Here are some of the speed and size improvements we've made over TypeScript 4.9",
+          "src": "https://hsto.org/r/w1560/getpro/habr/upload_files/f69/cf0/dd9/f69cf0dd9982290b34166bd88d239d8a.png"
         }
       ]
     },
     {
       "id": "2",
-      "title": "TypeScript 5.0 and 4.9 2 old Science",
-      "subtitle": "Actual features",
-      "img": "https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/",
-      "views": "1022",
-      "createAt": "23.02.2022",
+      "title": "Что происходит в экономике?",
+      "subtitle": "Читальный зал",
+      "img": "https://hsto.org/getpro/habr/upload_files/5d9/f31/405/5d9f31405c12c3ddb4ffd2a7fbe1c093.jpeg",
+      "views": 822,
+      "createdAt": "27.02.2022",
+      "userId": "2",
+      "type": [
+        "Economics"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "text",
+          "title": "Великой депрессии в России не будет. Многие люди говорят про экономический колла",
+          "paragraphs": [
+            "Многие люди говорят про экономический коллапс, каскад схлопывания предприятий, грядущий дефолт, потерянное тридцатилетие и прочие апокалиптические думки. Однако J.P. Morgan ожидает, что экономика России сократится на 35% во втором квартале и на 7% в 2022 году. Американские банкиры прогнозируют снижение российского ВВП от пика на 12%.",
+            "\n\nДля осознания значений упомяну, что в 1998 году ВВП просел на 10%, в 2008 на 11%, а из-за пандемии на 9%. Обратите внимание на последнюю цифру. Коронавирусные ограничения по степени изоляционного воздействия на экономику можно сравнить с сегодняшними санкциями. К слову, ВВП США в Q2 2020 упал на 31,2%, но жизнь на этом не закончилась.",
+            "\n\nЯ не хочу умалить экономический ущерб от санкций, в краткосрочной перспективе будет особенно тяжело, прогноз действительно может сбыться, но это не конец света, как думают многие. В цифрах это сравнимо с локдаунами, а мы их пережили и даже не померли с голоду.",
+            "\n\nМногие предприниматели наверняка фыркнут на мою последнюю фразу, особенно владельцы ресторанов, офисной недвижимости или кинотеатров, однако моя мысль в том, что похожий стресс мы уже испытывали и экономика не рухнула. Причём сейчас больше заденет крупняк, нежели малый и средний бизнес.",
+            "\n\nНе забывайте, что большая часть мира не вводила санкции. И, например, экономист Goldman Sachs по Центральной и Восточной Европе Клеменс Грейф в беседе с Financial Times сказал, что непосредственный кризис для России рассеется через шесть-девять месяцев.",
+            "\n\nПодумайте об этом. Хватит паниковать. Нужно консолидироваться и работать. И я знаю, что за один такой намёк на избитую фразу «кризис — время возможностей» меня невзлюбят как минимум все владельцы стартапов с валютной выручкой, но объективный оптимизм сегодня необходим."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "text",
+          "title": "От российских энергоресурсов не откажутся",
+          "paragraphs": [
+            "Спрос ‎на ‎отечественный ‎нефтегаз неизбежен‏ ‎как ‎восход ‎солнца. Показываю счётчик экспортной выручки России от продажи топлива в Европе, который курирует CREA. Сейчас этот счётчик набирает популярность, и зелёные ссылаются на него как на ещё один важный повод перейти на возобновляемые источники энергии. Упомяну, что CREA аппроксимирует официальные данные Eurostat с ENTSOG и описывает свою методологию."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "image",
+          "src": "https://habrastorage.org/getpro/habr/upload_files/ac8/dc8/2b5/ac8dc82b560ddea02cae046ac7d8e483.webp",
+          "title": "Весь экспорт России в 2021 году в страны Евросоюза"
+        },
+        {
+          "id": "4",
+          "type": "text",
+          "paragraphs": [
+            "Весь экспорт России в 2021 году в страны Евросоюза составил €158 млрд, €99 млрд из которых приходится на топливо, согласно тому же Евростату. А за 23 дня беспрецедентных санкций Европа импортировала нашего газа и нефти почти на €15 ярдов. При таком темпе и при таких ценах на ресурсы в годовом выражении это будет эквивалентно значению, превышающему €200 ярдов.\n\nСальдо торгового баланса с Россией у них и так было в минусе на $69 млрд, а сейчас они ещё перекрыли себе почти весь экспорт. Напомню, что в Еврозоне и до последних событий структурных проблем было не мало — от итальянских долгов и последствий политики количественного смягчения до какой-нибудь гринфляции.\n\nПолностью отказаться от российских энергоресурсов европейские страны не смогут в принципе. Чем больше они захотят сократить от нас зависисимость, тем больший ущерб они нанесут своей экономике и тем сильнее вырастут мировые цены на энергоресурсы.\n\nBank of America предостерегает, что запрет экспорта российской нефти, обернётся увеличением стоимости барреля до $200 и глобальной рецессией. Похожие сценарии предсказывают в Barclays и Goldman Sachs. А я напоминаю, что большая часть мира не вводила санкции."
+          ]
+        },
+        {
+          "id": "5",
+          "type": "text",
+          "paragraphs": [
+            "Согласно данным Федеральной таможенной службы (ФТС) РФ, по итогам 2021 года Россия экспортировала 230 млн тонн сырой нефти на общую сумму $110,1 млрд, экспорт природного газа трубопроводным транспортом составим 203,5 млрд куб. м на сумму в $55,5 млрд и ещё СПГ на $7,32 млрд."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Медичи",
+      "subtitle": "семья, которая изобрела современные банки",
+      "img": "https://hsto.org/r/w1560/webt/3o/nm/ng/3onmngxocvcutm9edozldctahvw.jpeg",
+      "views": 122,
+      "createdAt": "28.02.2022",
       "userId": "2",
       "type": [
         "Science"
@@ -177,1051 +196,42 @@
         {
           "id": "1",
           "type": "text",
-          "title": "TypeScript 5.0 and 4.9: evaluate and compare changes",
+          "title": "Чтобы понять, что происходит с банками сейчас, стоит посмотреть, а как их вообще изобретали.",
           "paragraphs": [
-            "In mid-March 2023, Microsoft announced the release of TypeScript version 5.0. The developers expect a 10-20% performance boost from it, but since it all depends on the codebase and hardware characteristics, they strongly recommend trying these changes.",
-            "In this article, we'll take a look at some of the changes in TypeScript 4.9 and 5.0 and compare what's new with previous versions. Using code examples, we will try to understand why they were added and how they simplify our life. The article will be useful for experienced developers who often use TypeScript in their work, and for beginners, as we will analyze in detail the solutions to some problems."
+            "То есть именно эта семья поняла, что нужно заниматься не только кредитованием бизнеса, не только обменом валюты, но и всеми торговыми транзакциями.\n\nНадо сказать, что аналог SWIFT'а тех лет — так называемые таволи, банки, работающие на городских площадях, где при свидетелях вносились записи в книги. Поскольку они не обладали крупной филиальной сетью, их бизнес был не очень устойчивым.\n\nА ещё Медичи — это те самые люди, благодаря которым мы знаем черепашек-ниндзя: они всячески поддерживали художников и скульпторов. Это был самый эффективный метод пиара тех лет. Так, Козимо де Медичи взял под своё покровительство Донателло, а Лоренцо ди Пьеро де Медичи заметил молодого Микеланджело и привлёк его к архитектуре Флоренции.\n\nРазумеется, всё это семья делала не просто так, а потому что они настойчиво и целеустремлённо захватывали влияние и потом защищали свои инвестиции."
           ]
         },
         {
           "id": "2",
           "type": "text",
-          "title": "New satisfies operator",
+          "title": "Когда знать теряла власть — её подхватывали торговцы",
           "paragraphs": [
-            "Allows us to check if an expression matches a certain type without changing the type itself. This helps when working with objects with mixed data types.",
-            "\nLet's look at an example."
+            "В Средние века Италия полностью раздроблена. Существовало несколько сильных и богатых торговых республик: Венеция, Флоренция и Милан. В это время в независимой Флоренции управляли знатные люди, владеющие большими землями, а бедняки постоянно восставали. И когда знать теряла власть, её приобретали люди не столь знатного происхождения, но уже имеющие деньги. Например, как семейство Медичи: без аристократического происхождения, обычные торговцы, которые всячески стремились выйти в свет. В дальнейшем их политические интересы одержат верх над банковскими.\n\nВ XII–XIII веках представители клана Медичи уже четырежды избирались на пост гонфалоньера — того, кто следил за соблюдением законов и сбором налогов во Флоренции. Их дважды изгоняли из города из-за неудачного заговора на бедноту и бунта чомпи. Но у них было достаточно много союзников и связей в политике, и всё это изгнание продолжалось недолго.\n\nВ XIV веке начался расцвет фамилии Медичи. Во главе семейства встал Джованни ди Биччи де Медичи и возглавил банковский филиал в Риме, доставшийся ему от дяди Вьери де Медичи.\n\nЗатем он открыл отделение во Флоренции и его избрали на пост гонфалоньера. Именно Джованни изобрёл банковскую систему, которая позже распространилась на весь мир. А благодаря денежному богатству представители семейства Медичи приобрели политическую власть во Флоренции, к которой так стремились."
           ]
         },
         {
           "id": "3",
-          "type": "code",
-          "code": "type FormFields = \"name\" | \"surname\" | \"age\";\n\nconst data: Record<FormFields, number | string> = {\n    name: \"name\",\n    surname: \"surname\",\n    age: 21,\n}\n\nconst newAge = data.age * 2;\nconst nameUpperCase = data.name.toUpperCase();"
-        },
-        {
-          "id": "4",
           "type": "text",
+          "title": "От обычных менял к банку папской курии",
           "paragraphs": [
-            "The data object has both numeric and string values, so when working with this object, we get the following errors:"
+            "В Средневековье католическая церковь отлучала тех, кто занимался ростовщичеством. Под ростовщичеством понимали предоставление денег взаймы под процент.\n\nСуществовали полулегальные ломбарды для низших слоёв населения, так называемые банки пеньо. Они брали 20% от оценки за услугу хранения ценного предмета, то есть выдавали неявные кредиты. Почему полулегальные — потому что законы писались на основе Библии и ростовщичество в таком виде было запрещено. Но при этом во Флоренции официальным наказанием был коллективный штраф. Достаточно было скинуться на 2000 флоринов каждый год (это примерно десять поместий), и закон запрещал дальнейшие наказания. Сегодня такую же операцию мы называем лицензией на ведение деятельности.\n\nБанки крупнее занимались обменом валюты и давали кредиты под залог драгоценных камней.\n\nИногда и без залога, если репутация кредитора позволяла.\n\nПереводные банки (те самые таволи) занимались тем, что выполняли переводы и хранили депозиты, чтобы деньги лежали не на складе, а были записаны в книгу. Это способствовало торговле. Депозиты не росли, они просто хранились. Зарабатывали такие банки на комиссии за обмен валюты и комиссии за перевод.\n\nВеликие банки зарабатывали и на перечисленных способах, и на дискреционных депозитах.\n\nДискреционный депозит работает так: богатый человек приносит деньги в банк и кладёт на анонимный депозит. Банк обязуется хранить эти деньги и не начисляет никаких процентов.\n\nСовершенно никаких. Но раз в год банк делает подарок владельцу депозита. Просто так. Но по усреднённой банковской ставке, потому что включается саморегуляция: там, где подарки лучше, клиентов больше, то есть в итоге такая система депозитов приходит к уровню 8–12% годовых.\n\nЗабрать депозит можно было, только сказав сильно заранее, например за год."
           ]
-        },
-        {
-          "id": "5",
-          "type": "code",
-          "code": "The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type. \n\n\nProperty 'toUpperCase' does not exist on type 'string | number'.\nProperty 'toUpperCase' does not exist on type 'number'."
-        },
-        {
-          "id": "6",
-          "type": "text",
-          "paragraphs": [
-            "This is where the satisfies operator will help us."
-          ]
-        },
-        {
-          "id": "7",
-          "type": "code",
-          "code": "type FormFields = \"name\" | \"surname\" | \"age\";\n\nconst data = {\n    name: \"name\",\n    surname: \"surname\",\n    age: 21,\n} satisfies Record<FormFields, string | number>\n\nconst newAge = data.age * 2;\nconst nameUpperCase = data.name.toUpperCase();"
-        },
-        {
-          "id": "8",
-          "type": "text",
-          "title": "Decorator Functions",
-          "paragraphs": [
-            "These are ordinary functions that allow you to add additional behavior to a class, method, property.",
-            "\nAn example of a class without a decorator:"
-          ]
-        },
-        {
-          "id": "9",
-          "type": "code",
-          "code": "class Person {\n  age: number = 0\n\n  changeAge() {\n    console.log(\"Logger: Func start\")\n    console.log(\"changing age...\")\n    console.log(\"Logger: Func end\")\n  }\n}\n\nconst person = new Person();\nperson.changeAge()"
-        },
-        {
-          "id": "10",
-          "type": "text",
-          "title": "Decorator Functions",
-          "paragraphs": [
-            "We see that we need to add logging to the method in order to track its operation. In this case, decorators come to our aid.",
-            "\nDecorator example:"
-          ]
-        },
-        {
-          "id": "11",
-          "type": "code",
-          "code": "function Logger<This, Args extends number[], Return>(\n    target: (this: This, ...args: Args) => Return, \n    context: ClassMethodDecoratorContext<This, (this: This, ...args: Args) => Return>\n) {\n  return function(this: This, ...args: Args) {\n    console.log(\"Logger: Func start\")\n    const result = target.call(this, ...args)\n    console.log(\"Logger: Func end\")\n\n    return result\n  }\n}"
-        },
-        {
-          "id": "12",
-          "type": "text",
-          "title": "Decorator Functions",
-          "paragraphs": [
-            "The decorator takes the function to which we apply this decorator and a context.",
-            "And it returns a function in which we can add logging, the main thing is not to forget to return the result of executing the target function.",
-            "\nNow let's see how to apply a decorator to our class:"
-          ]
-        },
-        {
-          "id": "13",
-          "type": "code",
-          "code": "class Person {\n  age: number = 0\n\n  @Logger\n  changeAge() {\n    console.log(\"changing age...\")\n  }\n}\n\nconst person = new Person();\nperson.changeAge()"
         }
       ]
-    },
-    {
-      "id": "3",
-      "title": "TypeScript 5.0 and 4.9 3 a lot of views",
-      "subtitle": "Actual features",
-      "img": "https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/",
-      "views": "10220",
-      "createAt": "20.02.2022",
-      "userId": "2",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "text",
-          "title": "TypeScript 5.0 and 4.9: evaluate and compare changes",
-          "paragraphs": [
-            "In mid-March 2023, Microsoft announced the release of TypeScript version 5.0. The developers expect a 10-20% performance boost from it, but since it all depends on the codebase and hardware characteristics, they strongly recommend trying these changes.",
-            "In this article, we'll take a look at some of the changes in TypeScript 4.9 and 5.0 and compare what's new with previous versions. Using code examples, we will try to understand why they were added and how they simplify our life. The article will be useful for experienced developers who often use TypeScript in their work, and for beginners, as we will analyze in detail the solutions to some problems."
-          ]
-        },
-        {
-          "id": "2",
-          "type": "text",
-          "title": "New satisfies operator",
-          "paragraphs": [
-            "Allows us to check if an expression matches a certain type without changing the type itself. This helps when working with objects with mixed data types.",
-            "\nLet's look at an example."
-          ]
-        },
-        {
-          "id": "3",
-          "type": "code",
-          "code": "type FormFields = \"name\" | \"surname\" | \"age\";\n\nconst data: Record<FormFields, number | string> = {\n    name: \"name\",\n    surname: \"surname\",\n    age: 21,\n}\n\nconst newAge = data.age * 2;\nconst nameUpperCase = data.name.toUpperCase();"
-        },
-        {
-          "id": "4",
-          "type": "text",
-          "paragraphs": [
-            "The data object has both numeric and string values, so when working with this object, we get the following errors:"
-          ]
-        },
-        {
-          "id": "5",
-          "type": "code",
-          "code": "The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type. \n\n\nProperty 'toUpperCase' does not exist on type 'string | number'.\nProperty 'toUpperCase' does not exist on type 'number'."
-        },
-        {
-          "id": "6",
-          "type": "text",
-          "paragraphs": [
-            "This is where the satisfies operator will help us."
-          ]
-        },
-        {
-          "id": "7",
-          "type": "code",
-          "code": "type FormFields = \"name\" | \"surname\" | \"age\";\n\nconst data = {\n    name: \"name\",\n    surname: \"surname\",\n    age: 21,\n} satisfies Record<FormFields, string | number>\n\nconst newAge = data.age * 2;\nconst nameUpperCase = data.name.toUpperCase();"
-        },
-        {
-          "id": "8",
-          "type": "text",
-          "title": "Decorator Functions",
-          "paragraphs": [
-            "These are ordinary functions that allow you to add additional behavior to a class, method, property.",
-            "\nAn example of a class without a decorator:"
-          ]
-        },
-        {
-          "id": "9",
-          "type": "code",
-          "code": "class Person {\n  age: number = 0\n\n  changeAge() {\n    console.log(\"Logger: Func start\")\n    console.log(\"changing age...\")\n    console.log(\"Logger: Func end\")\n  }\n}\n\nconst person = new Person();\nperson.changeAge()"
-        },
-        {
-          "id": "10",
-          "type": "text",
-          "title": "Decorator Functions",
-          "paragraphs": [
-            "We see that we need to add logging to the method in order to track its operation. In this case, decorators come to our aid.",
-            "\nDecorator example:"
-          ]
-        },
-        {
-          "id": "11",
-          "type": "code",
-          "code": "function Logger<This, Args extends number[], Return>(\n    target: (this: This, ...args: Args) => Return, \n    context: ClassMethodDecoratorContext<This, (this: This, ...args: Args) => Return>\n) {\n  return function(this: This, ...args: Args) {\n    console.log(\"Logger: Func start\")\n    const result = target.call(this, ...args)\n    console.log(\"Logger: Func end\")\n\n    return result\n  }\n}"
-        },
-        {
-          "id": "12",
-          "type": "text",
-          "title": "Decorator Functions",
-          "paragraphs": [
-            "The decorator takes the function to which we apply this decorator and a context.",
-            "And it returns a function in which we can add logging, the main thing is not to forget to return the result of executing the target function.",
-            "\nNow let's see how to apply a decorator to our class:"
-          ]
-        },
-        {
-          "id": "13",
-          "type": "code",
-          "code": "class Person {\n  age: number = 0\n\n  @Logger\n  changeAge() {\n    console.log(\"changing age...\")\n  }\n}\n\nconst person = new Person();\nperson.changeAge()"
-        }
-      ]
-    },
-    {
-      "id": "4",
-      "title": "TypeScript 5.0 and 4.9 4",
-      "subtitle": "Actual features",
-      "img": "https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/",
-      "views": "1022",
-      "createAt": "26.02.2022",
-      "userId": "2",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "text",
-          "title": "TypeScript 5.0 and 4.9: evaluate and compare changes",
-          "paragraphs": [
-            "In mid-March 2023, Microsoft announced the release of TypeScript version 5.0. The developers expect a 10-20% performance boost from it, but since it all depends on the codebase and hardware characteristics, they strongly recommend trying these changes.",
-            "In this article, we'll take a look at some of the changes in TypeScript 4.9 and 5.0 and compare what's new with previous versions. Using code examples, we will try to understand why they were added and how they simplify our life. The article will be useful for experienced developers who often use TypeScript in their work, and for beginners, as we will analyze in detail the solutions to some problems."
-          ]
-        },
-        {
-          "id": "2",
-          "type": "text",
-          "title": "New satisfies operator",
-          "paragraphs": [
-            "Allows us to check if an expression matches a certain type without changing the type itself. This helps when working with objects with mixed data types.",
-            "\nLet's look at an example."
-          ]
-        },
-        {
-          "id": "3",
-          "type": "code",
-          "code": "type FormFields = \"name\" | \"surname\" | \"age\";\n\nconst data: Record<FormFields, number | string> = {\n    name: \"name\",\n    surname: \"surname\",\n    age: 21,\n}\n\nconst newAge = data.age * 2;\nconst nameUpperCase = data.name.toUpperCase();"
-        },
-        {
-          "id": "4",
-          "type": "text",
-          "paragraphs": [
-            "The data object has both numeric and string values, so when working with this object, we get the following errors:"
-          ]
-        },
-        {
-          "id": "5",
-          "type": "code",
-          "code": "The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type. \n\n\nProperty 'toUpperCase' does not exist on type 'string | number'.\nProperty 'toUpperCase' does not exist on type 'number'."
-        },
-        {
-          "id": "6",
-          "type": "text",
-          "paragraphs": [
-            "This is where the satisfies operator will help us."
-          ]
-        },
-        {
-          "id": "7",
-          "type": "code",
-          "code": "type FormFields = \"name\" | \"surname\" | \"age\";\n\nconst data = {\n    name: \"name\",\n    surname: \"surname\",\n    age: 21,\n} satisfies Record<FormFields, string | number>\n\nconst newAge = data.age * 2;\nconst nameUpperCase = data.name.toUpperCase();"
-        },
-        {
-          "id": "8",
-          "type": "text",
-          "title": "Decorator Functions",
-          "paragraphs": [
-            "These are ordinary functions that allow you to add additional behavior to a class, method, property.",
-            "\nAn example of a class without a decorator:"
-          ]
-        },
-        {
-          "id": "9",
-          "type": "code",
-          "code": "class Person {\n  age: number = 0\n\n  changeAge() {\n    console.log(\"Logger: Func start\")\n    console.log(\"changing age...\")\n    console.log(\"Logger: Func end\")\n  }\n}\n\nconst person = new Person();\nperson.changeAge()"
-        },
-        {
-          "id": "10",
-          "type": "text",
-          "title": "Decorator Functions",
-          "paragraphs": [
-            "We see that we need to add logging to the method in order to track its operation. In this case, decorators come to our aid.",
-            "\nDecorator example:"
-          ]
-        },
-        {
-          "id": "11",
-          "type": "code",
-          "code": "function Logger<This, Args extends number[], Return>(\n    target: (this: This, ...args: Args) => Return, \n    context: ClassMethodDecoratorContext<This, (this: This, ...args: Args) => Return>\n) {\n  return function(this: This, ...args: Args) {\n    console.log(\"Logger: Func start\")\n    const result = target.call(this, ...args)\n    console.log(\"Logger: Func end\")\n\n    return result\n  }\n}"
-        },
-        {
-          "id": "12",
-          "type": "text",
-          "title": "Decorator Functions",
-          "paragraphs": [
-            "The decorator takes the function to which we apply this decorator and a context.",
-            "And it returns a function in which we can add logging, the main thing is not to forget to return the result of executing the target function.",
-            "\nNow let's see how to apply a decorator to our class:"
-          ]
-        },
-        {
-          "id": "13",
-          "type": "code",
-          "code": "class Person {\n  age: number = 0\n\n  @Logger\n  changeAge() {\n    console.log(\"changing age...\")\n  }\n}\n\nconst person = new Person();\nperson.changeAge()"
-        }
-      ]
-    },
-    {
-      "id": "5",
-      "title": "TypeScript 5.0 and 4.9 5",
-      "subtitle": "Actual features",
-      "img": "https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/",
-      "views": "1022",
-      "createAt": "26.02.2022",
-      "userId": "2",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "text",
-          "title": "TypeScript 5.0 and 4.9: evaluate and compare changes",
-          "paragraphs": [
-            "In mid-March 2023, Microsoft announced the release of TypeScript version 5.0. The developers expect a 10-20% performance boost from it, but since it all depends on the codebase and hardware characteristics, they strongly recommend trying these changes.",
-            "In this article, we'll take a look at some of the changes in TypeScript 4.9 and 5.0 and compare what's new with previous versions. Using code examples, we will try to understand why they were added and how they simplify our life. The article will be useful for experienced developers who often use TypeScript in their work, and for beginners, as we will analyze in detail the solutions to some problems."
-          ]
-        },
-        {
-          "id": "2",
-          "type": "text",
-          "title": "New satisfies operator",
-          "paragraphs": [
-            "Allows us to check if an expression matches a certain type without changing the type itself. This helps when working with objects with mixed data types.",
-            "\nLet's look at an example."
-          ]
-        },
-        {
-          "id": "3",
-          "type": "code",
-          "code": "type FormFields = \"name\" | \"surname\" | \"age\";\n\nconst data: Record<FormFields, number | string> = {\n    name: \"name\",\n    surname: \"surname\",\n    age: 21,\n}\n\nconst newAge = data.age * 2;\nconst nameUpperCase = data.name.toUpperCase();"
-        },
-        {
-          "id": "4",
-          "type": "text",
-          "paragraphs": [
-            "The data object has both numeric and string values, so when working with this object, we get the following errors:"
-          ]
-        },
-        {
-          "id": "5",
-          "type": "code",
-          "code": "The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type. \n\n\nProperty 'toUpperCase' does not exist on type 'string | number'.\nProperty 'toUpperCase' does not exist on type 'number'."
-        },
-        {
-          "id": "6",
-          "type": "text",
-          "paragraphs": [
-            "This is where the satisfies operator will help us."
-          ]
-        },
-        {
-          "id": "7",
-          "type": "code",
-          "code": "type FormFields = \"name\" | \"surname\" | \"age\";\n\nconst data = {\n    name: \"name\",\n    surname: \"surname\",\n    age: 21,\n} satisfies Record<FormFields, string | number>\n\nconst newAge = data.age * 2;\nconst nameUpperCase = data.name.toUpperCase();"
-        },
-        {
-          "id": "8",
-          "type": "text",
-          "title": "Decorator Functions",
-          "paragraphs": [
-            "These are ordinary functions that allow you to add additional behavior to a class, method, property.",
-            "\nAn example of a class without a decorator:"
-          ]
-        },
-        {
-          "id": "9",
-          "type": "code",
-          "code": "class Person {\n  age: number = 0\n\n  changeAge() {\n    console.log(\"Logger: Func start\")\n    console.log(\"changing age...\")\n    console.log(\"Logger: Func end\")\n  }\n}\n\nconst person = new Person();\nperson.changeAge()"
-        },
-        {
-          "id": "10",
-          "type": "text",
-          "title": "Decorator Functions",
-          "paragraphs": [
-            "We see that we need to add logging to the method in order to track its operation. In this case, decorators come to our aid.",
-            "\nDecorator example:"
-          ]
-        },
-        {
-          "id": "11",
-          "type": "code",
-          "code": "function Logger<This, Args extends number[], Return>(\n    target: (this: This, ...args: Args) => Return, \n    context: ClassMethodDecoratorContext<This, (this: This, ...args: Args) => Return>\n) {\n  return function(this: This, ...args: Args) {\n    console.log(\"Logger: Func start\")\n    const result = target.call(this, ...args)\n    console.log(\"Logger: Func end\")\n\n    return result\n  }\n}"
-        },
-        {
-          "id": "12",
-          "type": "text",
-          "title": "Decorator Functions",
-          "paragraphs": [
-            "The decorator takes the function to which we apply this decorator and a context.",
-            "And it returns a function in which we can add logging, the main thing is not to forget to return the result of executing the target function.",
-            "\nNow let's see how to apply a decorator to our class:"
-          ]
-        },
-        {
-          "id": "13",
-          "type": "code",
-          "code": "class Person {\n  age: number = 0\n\n  @Logger\n  changeAge() {\n    console.log(\"changing age...\")\n  }\n}\n\nconst person = new Person();\nperson.changeAge()"
-        }
-      ]
-    },
-    {
-      "id": "6",
-      "title": "TypeScript 5.0 and 4.9 6",
-      "subtitle": "Actual features",
-      "img": "https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/",
-      "views": "1022",
-      "createAt": "26.02.2022",
-      "userId": "2",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "text",
-          "title": "TypeScript 5.0 and 4.9: evaluate and compare changes",
-          "paragraphs": [
-            "In mid-March 2023, Microsoft announced the release of TypeScript version 5.0. The developers expect a 10-20% performance boost from it, but since it all depends on the codebase and hardware characteristics, they strongly recommend trying these changes.",
-            "In this article, we'll take a look at some of the changes in TypeScript 4.9 and 5.0 and compare what's new with previous versions. Using code examples, we will try to understand why they were added and how they simplify our life. The article will be useful for experienced developers who often use TypeScript in their work, and for beginners, as we will analyze in detail the solutions to some problems."
-          ]
-        },
-        {
-          "id": "2",
-          "type": "text",
-          "title": "New satisfies operator",
-          "paragraphs": [
-            "Allows us to check if an expression matches a certain type without changing the type itself. This helps when working with objects with mixed data types.",
-            "\nLet's look at an example."
-          ]
-        },
-        {
-          "id": "3",
-          "type": "code",
-          "code": "type FormFields = \"name\" | \"surname\" | \"age\";\n\nconst data: Record<FormFields, number | string> = {\n    name: \"name\",\n    surname: \"surname\",\n    age: 21,\n}\n\nconst newAge = data.age * 2;\nconst nameUpperCase = data.name.toUpperCase();"
-        },
-        {
-          "id": "4",
-          "type": "text",
-          "paragraphs": [
-            "The data object has both numeric and string values, so when working with this object, we get the following errors:"
-          ]
-        },
-        {
-          "id": "5",
-          "type": "code",
-          "code": "The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type. \n\n\nProperty 'toUpperCase' does not exist on type 'string | number'.\nProperty 'toUpperCase' does not exist on type 'number'."
-        },
-        {
-          "id": "6",
-          "type": "text",
-          "paragraphs": [
-            "This is where the satisfies operator will help us."
-          ]
-        },
-        {
-          "id": "7",
-          "type": "code",
-          "code": "type FormFields = \"name\" | \"surname\" | \"age\";\n\nconst data = {\n    name: \"name\",\n    surname: \"surname\",\n    age: 21,\n} satisfies Record<FormFields, string | number>\n\nconst newAge = data.age * 2;\nconst nameUpperCase = data.name.toUpperCase();"
-        },
-        {
-          "id": "8",
-          "type": "text",
-          "title": "Decorator Functions",
-          "paragraphs": [
-            "These are ordinary functions that allow you to add additional behavior to a class, method, property.",
-            "\nAn example of a class without a decorator:"
-          ]
-        },
-        {
-          "id": "9",
-          "type": "code",
-          "code": "class Person {\n  age: number = 0\n\n  changeAge() {\n    console.log(\"Logger: Func start\")\n    console.log(\"changing age...\")\n    console.log(\"Logger: Func end\")\n  }\n}\n\nconst person = new Person();\nperson.changeAge()"
-        },
-        {
-          "id": "10",
-          "type": "text",
-          "title": "Decorator Functions",
-          "paragraphs": [
-            "We see that we need to add logging to the method in order to track its operation. In this case, decorators come to our aid.",
-            "\nDecorator example:"
-          ]
-        },
-        {
-          "id": "11",
-          "type": "code",
-          "code": "function Logger<This, Args extends number[], Return>(\n    target: (this: This, ...args: Args) => Return, \n    context: ClassMethodDecoratorContext<This, (this: This, ...args: Args) => Return>\n) {\n  return function(this: This, ...args: Args) {\n    console.log(\"Logger: Func start\")\n    const result = target.call(this, ...args)\n    console.log(\"Logger: Func end\")\n\n    return result\n  }\n}"
-        },
-        {
-          "id": "12",
-          "type": "text",
-          "title": "Decorator Functions",
-          "paragraphs": [
-            "The decorator takes the function to which we apply this decorator and a context.",
-            "And it returns a function in which we can add logging, the main thing is not to forget to return the result of executing the target function.",
-            "\nNow let's see how to apply a decorator to our class:"
-          ]
-        },
-        {
-          "id": "13",
-          "type": "code",
-          "code": "class Person {\n  age: number = 0\n\n  @Logger\n  changeAge() {\n    console.log(\"changing age...\")\n  }\n}\n\nconst person = new Person();\nperson.changeAge()"
-        }
-      ]
-    },
-    {
-      "id": "7",
-      "title": "TypeScript 5.0 and 4.9 7",
-      "subtitle": "Actual features",
-      "img": "https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/",
-      "views": "1022",
-      "createAt": "26.02.2022",
-      "userId": "2",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "text",
-          "title": "TypeScript 5.0 and 4.9: evaluate and compare changes",
-          "paragraphs": [
-            "In mid-March 2023, Microsoft announced the release of TypeScript version 5.0. The developers expect a 10-20% performance boost from it, but since it all depends on the codebase and hardware characteristics, they strongly recommend trying these changes.",
-            "In this article, we'll take a look at some of the changes in TypeScript 4.9 and 5.0 and compare what's new with previous versions. Using code examples, we will try to understand why they were added and how they simplify our life. The article will be useful for experienced developers who often use TypeScript in their work, and for beginners, as we will analyze in detail the solutions to some problems."
-          ]
-        },
-        {
-          "id": "2",
-          "type": "text",
-          "title": "New satisfies operator",
-          "paragraphs": [
-            "Allows us to check if an expression matches a certain type without changing the type itself. This helps when working with objects with mixed data types.",
-            "\nLet's look at an example."
-          ]
-        },
-        {
-          "id": "3",
-          "type": "code",
-          "code": "type FormFields = \"name\" | \"surname\" | \"age\";\n\nconst data: Record<FormFields, number | string> = {\n    name: \"name\",\n    surname: \"surname\",\n    age: 21,\n}\n\nconst newAge = data.age * 2;\nconst nameUpperCase = data.name.toUpperCase();"
-        },
-        {
-          "id": "4",
-          "type": "text",
-          "paragraphs": [
-            "The data object has both numeric and string values, so when working with this object, we get the following errors:"
-          ]
-        },
-        {
-          "id": "5",
-          "type": "code",
-          "code": "The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type. \n\n\nProperty 'toUpperCase' does not exist on type 'string | number'.\nProperty 'toUpperCase' does not exist on type 'number'."
-        },
-        {
-          "id": "6",
-          "type": "text",
-          "paragraphs": [
-            "This is where the satisfies operator will help us."
-          ]
-        },
-        {
-          "id": "7",
-          "type": "code",
-          "code": "type FormFields = \"name\" | \"surname\" | \"age\";\n\nconst data = {\n    name: \"name\",\n    surname: \"surname\",\n    age: 21,\n} satisfies Record<FormFields, string | number>\n\nconst newAge = data.age * 2;\nconst nameUpperCase = data.name.toUpperCase();"
-        },
-        {
-          "id": "8",
-          "type": "text",
-          "title": "Decorator Functions",
-          "paragraphs": [
-            "These are ordinary functions that allow you to add additional behavior to a class, method, property.",
-            "\nAn example of a class without a decorator:"
-          ]
-        },
-        {
-          "id": "9",
-          "type": "code",
-          "code": "class Person {\n  age: number = 0\n\n  changeAge() {\n    console.log(\"Logger: Func start\")\n    console.log(\"changing age...\")\n    console.log(\"Logger: Func end\")\n  }\n}\n\nconst person = new Person();\nperson.changeAge()"
-        },
-        {
-          "id": "10",
-          "type": "text",
-          "title": "Decorator Functions",
-          "paragraphs": [
-            "We see that we need to add logging to the method in order to track its operation. In this case, decorators come to our aid.",
-            "\nDecorator example:"
-          ]
-        },
-        {
-          "id": "11",
-          "type": "code",
-          "code": "function Logger<This, Args extends number[], Return>(\n    target: (this: This, ...args: Args) => Return, \n    context: ClassMethodDecoratorContext<This, (this: This, ...args: Args) => Return>\n) {\n  return function(this: This, ...args: Args) {\n    console.log(\"Logger: Func start\")\n    const result = target.call(this, ...args)\n    console.log(\"Logger: Func end\")\n\n    return result\n  }\n}"
-        },
-        {
-          "id": "12",
-          "type": "text",
-          "title": "Decorator Functions",
-          "paragraphs": [
-            "The decorator takes the function to which we apply this decorator and a context.",
-            "And it returns a function in which we can add logging, the main thing is not to forget to return the result of executing the target function.",
-            "\nNow let's see how to apply a decorator to our class:"
-          ]
-        },
-        {
-          "id": "13",
-          "type": "code",
-          "code": "class Person {\n  age: number = 0\n\n  @Logger\n  changeAge() {\n    console.log(\"changing age...\")\n  }\n}\n\nconst person = new Person();\nperson.changeAge()"
-        }
-      ]
-    },
-    {
-      "id": "8",
-      "title": "TypeScript 5.0 and 4.9 8",
-      "subtitle": "Actual features",
-      "img": "https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/",
-      "views": "1022",
-      "createAt": "26.02.2022",
-      "userId": "2",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "text",
-          "title": "TypeScript 5.0 and 4.9: evaluate and compare changes",
-          "paragraphs": [
-            "In mid-March 2023, Microsoft announced the release of TypeScript version 5.0. The developers expect a 10-20% performance boost from it, but since it all depends on the codebase and hardware characteristics, they strongly recommend trying these changes.",
-            "In this article, we'll take a look at some of the changes in TypeScript 4.9 and 5.0 and compare what's new with previous versions. Using code examples, we will try to understand why they were added and how they simplify our life. The article will be useful for experienced developers who often use TypeScript in their work, and for beginners, as we will analyze in detail the solutions to some problems."
-          ]
-        },
-        {
-          "id": "2",
-          "type": "text",
-          "title": "New satisfies operator",
-          "paragraphs": [
-            "Allows us to check if an expression matches a certain type without changing the type itself. This helps when working with objects with mixed data types.",
-            "\nLet's look at an example."
-          ]
-        },
-        {
-          "id": "3",
-          "type": "code",
-          "code": "type FormFields = \"name\" | \"surname\" | \"age\";\n\nconst data: Record<FormFields, number | string> = {\n    name: \"name\",\n    surname: \"surname\",\n    age: 21,\n}\n\nconst newAge = data.age * 2;\nconst nameUpperCase = data.name.toUpperCase();"
-        },
-        {
-          "id": "4",
-          "type": "text",
-          "paragraphs": [
-            "The data object has both numeric and string values, so when working with this object, we get the following errors:"
-          ]
-        },
-        {
-          "id": "5",
-          "type": "code",
-          "code": "The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type. \n\n\nProperty 'toUpperCase' does not exist on type 'string | number'.\nProperty 'toUpperCase' does not exist on type 'number'."
-        },
-        {
-          "id": "6",
-          "type": "text",
-          "paragraphs": [
-            "This is where the satisfies operator will help us."
-          ]
-        },
-        {
-          "id": "7",
-          "type": "code",
-          "code": "type FormFields = \"name\" | \"surname\" | \"age\";\n\nconst data = {\n    name: \"name\",\n    surname: \"surname\",\n    age: 21,\n} satisfies Record<FormFields, string | number>\n\nconst newAge = data.age * 2;\nconst nameUpperCase = data.name.toUpperCase();"
-        },
-        {
-          "id": "8",
-          "type": "text",
-          "title": "Decorator Functions",
-          "paragraphs": [
-            "These are ordinary functions that allow you to add additional behavior to a class, method, property.",
-            "\nAn example of a class without a decorator:"
-          ]
-        },
-        {
-          "id": "9",
-          "type": "code",
-          "code": "class Person {\n  age: number = 0\n\n  changeAge() {\n    console.log(\"Logger: Func start\")\n    console.log(\"changing age...\")\n    console.log(\"Logger: Func end\")\n  }\n}\n\nconst person = new Person();\nperson.changeAge()"
-        },
-        {
-          "id": "10",
-          "type": "text",
-          "title": "Decorator Functions",
-          "paragraphs": [
-            "We see that we need to add logging to the method in order to track its operation. In this case, decorators come to our aid.",
-            "\nDecorator example:"
-          ]
-        },
-        {
-          "id": "11",
-          "type": "code",
-          "code": "function Logger<This, Args extends number[], Return>(\n    target: (this: This, ...args: Args) => Return, \n    context: ClassMethodDecoratorContext<This, (this: This, ...args: Args) => Return>\n) {\n  return function(this: This, ...args: Args) {\n    console.log(\"Logger: Func start\")\n    const result = target.call(this, ...args)\n    console.log(\"Logger: Func end\")\n\n    return result\n  }\n}"
-        },
-        {
-          "id": "12",
-          "type": "text",
-          "title": "Decorator Functions",
-          "paragraphs": [
-            "The decorator takes the function to which we apply this decorator and a context.",
-            "And it returns a function in which we can add logging, the main thing is not to forget to return the result of executing the target function.",
-            "\nNow let's see how to apply a decorator to our class:"
-          ]
-        },
-        {
-          "id": "13",
-          "type": "code",
-          "code": "class Person {\n  age: number = 0\n\n  @Logger\n  changeAge() {\n    console.log(\"changing age...\")\n  }\n}\n\nconst person = new Person();\nperson.changeAge()"
-        }
-      ]
-    },
-    {
-      "id": "9",
-      "title": "TypeScript 5.0 and 4.9 9",
-      "subtitle": "Actual features",
-      "img": "https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/",
-      "views": "1022",
-      "createAt": "26.02.2022",
-      "userId": "2",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "text",
-          "title": "TypeScript 5.0 and 4.9: evaluate and compare changes",
-          "paragraphs": [
-            "In mid-March 2023, Microsoft announced the release of TypeScript version 5.0. The developers expect a 10-20% performance boost from it, but since it all depends on the codebase and hardware characteristics, they strongly recommend trying these changes.",
-            "In this article, we'll take a look at some of the changes in TypeScript 4.9 and 5.0 and compare what's new with previous versions. Using code examples, we will try to understand why they were added and how they simplify our life. The article will be useful for experienced developers who often use TypeScript in their work, and for beginners, as we will analyze in detail the solutions to some problems."
-          ]
-        },
-        {
-          "id": "2",
-          "type": "text",
-          "title": "New satisfies operator",
-          "paragraphs": [
-            "Allows us to check if an expression matches a certain type without changing the type itself. This helps when working with objects with mixed data types.",
-            "\nLet's look at an example."
-          ]
-        },
-        {
-          "id": "3",
-          "type": "code",
-          "code": "type FormFields = \"name\" | \"surname\" | \"age\";\n\nconst data: Record<FormFields, number | string> = {\n    name: \"name\",\n    surname: \"surname\",\n    age: 21,\n}\n\nconst newAge = data.age * 2;\nconst nameUpperCase = data.name.toUpperCase();"
-        },
-        {
-          "id": "4",
-          "type": "text",
-          "paragraphs": [
-            "The data object has both numeric and string values, so when working with this object, we get the following errors:"
-          ]
-        },
-        {
-          "id": "5",
-          "type": "code",
-          "code": "The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type. \n\n\nProperty 'toUpperCase' does not exist on type 'string | number'.\nProperty 'toUpperCase' does not exist on type 'number'."
-        },
-        {
-          "id": "6",
-          "type": "text",
-          "paragraphs": [
-            "This is where the satisfies operator will help us."
-          ]
-        },
-        {
-          "id": "7",
-          "type": "code",
-          "code": "type FormFields = \"name\" | \"surname\" | \"age\";\n\nconst data = {\n    name: \"name\",\n    surname: \"surname\",\n    age: 21,\n} satisfies Record<FormFields, string | number>\n\nconst newAge = data.age * 2;\nconst nameUpperCase = data.name.toUpperCase();"
-        },
-        {
-          "id": "8",
-          "type": "text",
-          "title": "Decorator Functions",
-          "paragraphs": [
-            "These are ordinary functions that allow you to add additional behavior to a class, method, property.",
-            "\nAn example of a class without a decorator:"
-          ]
-        },
-        {
-          "id": "9",
-          "type": "code",
-          "code": "class Person {\n  age: number = 0\n\n  changeAge() {\n    console.log(\"Logger: Func start\")\n    console.log(\"changing age...\")\n    console.log(\"Logger: Func end\")\n  }\n}\n\nconst person = new Person();\nperson.changeAge()"
-        },
-        {
-          "id": "10",
-          "type": "text",
-          "title": "Decorator Functions",
-          "paragraphs": [
-            "We see that we need to add logging to the method in order to track its operation. In this case, decorators come to our aid.",
-            "\nDecorator example:"
-          ]
-        },
-        {
-          "id": "11",
-          "type": "code",
-          "code": "function Logger<This, Args extends number[], Return>(\n    target: (this: This, ...args: Args) => Return, \n    context: ClassMethodDecoratorContext<This, (this: This, ...args: Args) => Return>\n) {\n  return function(this: This, ...args: Args) {\n    console.log(\"Logger: Func start\")\n    const result = target.call(this, ...args)\n    console.log(\"Logger: Func end\")\n\n    return result\n  }\n}"
-        },
-        {
-          "id": "12",
-          "type": "text",
-          "title": "Decorator Functions",
-          "paragraphs": [
-            "The decorator takes the function to which we apply this decorator and a context.",
-            "And it returns a function in which we can add logging, the main thing is not to forget to return the result of executing the target function.",
-            "\nNow let's see how to apply a decorator to our class:"
-          ]
-        },
-        {
-          "id": "13",
-          "type": "code",
-          "code": "class Person {\n  age: number = 0\n\n  @Logger\n  changeAge() {\n    console.log(\"changing age...\")\n  }\n}\n\nconst person = new Person();\nperson.changeAge()"
-        }
-      ]
-    },
-    {
-      "title": "TypeScript 5.0 and 4.9 1 new",
-      "subtitle": "Actual features",
-      "img": "https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/",
-      "views": "1022",
-      "createAt": "26.02.2022",
-      "userId": "2",
-      "type": [
-        "IT"
-      ],
-      "blocks": [],
-      "id": "7QmRN6D"
-    },
-    {
-      "title": "TypeScript 5.0 and 4.9 1 new",
-      "subtitle": "Actual features",
-      "img": "https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/",
-      "views": "1022",
-      "createAt": "26.02.2022",
-      "userId": "2",
-      "type": [
-        "IT"
-      ],
-      "blocks": [],
-      "id": "iHyK5SI"
-    },
-    {
-      "title": "TypeScript 5.0 and 4.9 1 new",
-      "subtitle": "Actual features",
-      "img": "https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/",
-      "views": "1022",
-      "createAt": "26.02.2022",
-      "userId": "2",
-      "type": [
-        "IT"
-      ],
-      "blocks": [],
-      "id": "goFuKmS"
-    },
-    {
-      "title": "TypeScript 5.0 and 4.9 1 new",
-      "subtitle": "Actual features",
-      "img": "https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/",
-      "views": "1022",
-      "createAt": "26.02.2022",
-      "userId": "2",
-      "type": [
-        "IT"
-      ],
-      "blocks": [],
-      "id": "Ml0PiUT"
-    },
-    {
-      "title": "TypeScript 5.0 and 4.9 1 new",
-      "subtitle": "Actual features",
-      "img": "https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/",
-      "views": "1022",
-      "createAt": "26.02.2022",
-      "userId": "2",
-      "type": [
-        "IT"
-      ],
-      "blocks": [],
-      "id": "pSGiZiQ"
-    },
-    {
-      "title": "TypeScript 5.0 and 4.9 1 new",
-      "subtitle": "Actual features",
-      "img": "https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/",
-      "views": "1022",
-      "createAt": "26.02.2022",
-      "userId": "2",
-      "type": [
-        "IT"
-      ],
-      "blocks": [],
-      "id": "LktThCE"
-    },
-    {
-      "title": "TypeScript 5.0 and 4.9 1 new",
-      "subtitle": "Actual features",
-      "img": "https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/",
-      "views": "1022",
-      "createAt": "26.02.2022",
-      "userId": "2",
-      "type": [
-        "IT"
-      ],
-      "blocks": [],
-      "id": "am_nBgV"
-    },
-    {
-      "title": "TypeScript 5.0 and 4.9 1 new",
-      "subtitle": "Actual features",
-      "img": "https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/",
-      "views": "1022",
-      "createAt": "26.02.2022",
-      "userId": "2",
-      "type": [
-        "IT"
-      ],
-      "blocks": [],
-      "id": "o2MxhPx"
-    },
-    {
-      "title": "TypeScript 5.0 and 4.9 1 new",
-      "subtitle": "Actual features",
-      "img": "https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/",
-      "views": "1022",
-      "createAt": "26.02.2022",
-      "userId": "2",
-      "type": [
-        "IT"
-      ],
-      "blocks": [],
-      "id": "eMOVRJ3"
-    },
-    {
-      "title": "TypeScript 5.0 and 4.9 1 new",
-      "subtitle": "Actual features",
-      "img": "https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/",
-      "views": "1022",
-      "createAt": "26.02.2022",
-      "userId": "2",
-      "type": [
-        "IT"
-      ],
-      "blocks": [],
-      "id": "e2yrRb0"
-    },
-    {
-      "title": "TypeScript 5.0 and 4.9 1 new",
-      "subtitle": "Actual features",
-      "img": "https://appmaster.io/api/_files/3DHUg7jMzvAyeByh528NuV/download/",
-      "views": "1022",
-      "createAt": "26.02.2022",
-      "userId": "2",
-      "type": [
-        "IT"
-      ],
-      "blocks": [],
-      "id": "XsGlB8W"
     }
   ],
   "comments": [
     {
-      "id": "1",
-      "text": "very good",
       "articleId": "1",
-      "userId": "1"
-    },
-    {
-      "id": "2",
-      "text": "not bad",
-      "articleId": "1",
-      "userId": "2"
-    },
-    {
-      "articleId": "1",
-      "userId": 2,
-      "text": "new comment",
-      "id": "C6JhxR_"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "success",
-      "id": "JIGdjQA"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "123",
-      "id": "87VGqtL"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "1",
-      "id": "gESb_AA"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "123",
-      "id": "imF7okx"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "3333",
-      "id": "3bSnlK7"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "123",
-      "id": "7uMSiPi"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "222",
-      "id": "Sv4IBUt"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "43",
-      "id": "a9lebzF"
-    },
-    {
-      "articleId": "9",
-      "userId": "1",
-      "text": "first",
-      "id": "-TlY-_B"
-    },
-    {
-      "articleId": "-rYxAnk",
       "userId": "2",
-      "text": "test",
-      "id": "T6huInr"
+      "text": "Что-то про auto-accessor как-то вообще коротко написали, непонятно зачем он нужен. В других языках автосвойства нужны потому, что в будущем может понадобиться полноценное свойство, а замена поля на свойство нарушает ABI. Но в JavaScript-то такой проблемы нет!",
+      "id": 1
     },
     {
-      "articleId": "rlTsD8Q",
+      "articleId": "2",
       "userId": "2",
-      "text": "test",
-      "id": "geGJGAq"
+      "text": "Нет, ну нехорошо из всех оценок потерь выбирать оценку противника) даже американские эксперты оценили в 7к, но вы почему-то берете ВСУ-шные фантазии, как факт. Если им верить, знаете ли, то у них и в Дебальцево никто не погиб и окружения не было, а они зато уничтожили несколько псковских дивизий под луганском... так что это нууу... недостоверные оценки прямо скажем.",
+      "id": 2
     }
   ],
   "users": [
@@ -1246,7 +256,7 @@
     },
     {
       "id": "2",
-      "username": "username",
+      "username": "Alex",
       "password": "password",
       "roles": [
         "USER"
@@ -1291,14 +301,14 @@
       "currency": "RUB",
       "country": "Russia",
       "city": "Saint-Petersburg",
-      "username": "2",
+      "username": "L1msn",
       "avatar": "https://imgur.com/IyES7O4.png"
     },
     {
       "id": "1",
       "first": "admin",
       "lastname": "superuser",
-      "age": 3,
+      "age": 100,
       "currency": "USD",
       "country": "Russia",
       "city": "Saint-Petersburg",

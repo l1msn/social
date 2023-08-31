@@ -1,25 +1,46 @@
 .starRating {
     padding: 10px;
+
+    .starIcon {
+        cursor: pointer;
+    }
+
+    .starIcon path {
+        stroke: var(--primary-color);
+
+    }
+
+    .normal path {
+        fill: none;
+    }
+
+    .hovered path {
+        fill: var(--primary-color);
+
+    }
+
+    .selected {
+        cursor: auto;
+    }
 }
 
-.starIcon {
-    cursor: pointer;
-}
+.starRatingRedesigned {
+    padding: 10px;
 
-.starIcon path {
-    stroke: var(--primary-color);
+    .starIcon {
+        cursor: pointer;
+    }
 
-}
+    .normal path {
+        fill: none;
+    }
 
-.normal path {
-    fill: none;
-}
+    .hovered path {
+        fill: var(--icon-redesigned);
 
-.hovered path {
-    fill: var(--primary-color);
+    }
 
-}
-
-.selected {
-    cursor: auto;
+    .selected {
+        cursor: auto;
+    }
 }

@@ -39,6 +39,7 @@ const ArticlesFilters: React.FC<IArticlesFiltersProps> = memo(
         } = props;
 
         const { t } = useTranslation('article');
+
         return (
             <Card
                 padding={'24'}

@@ -5,8 +5,6 @@ import Button from '@/shared/ui/deprecated/Button';
 import MenuIcon from '@/shared/assets/icons/deprecated/menu-icon.svg';
 import ThemeButton from '@/shared/ui/deprecated/Button/consts/ThemeButton';
 import SidebarItem from '../SidebarItem/SidebarItem';
-import { useSelector } from 'react-redux';
-import getSidebarItems from '../../model/selectors/getSidebarItems';
 import LangSwitcher from '@/features/LangSwitcher';
 import ThemeSwitcher from '@/features/ThemeSwitcher';
 import { VStack } from '@/shared/ui/redesigned/Stack';
@@ -14,6 +12,7 @@ import { ToggleFeatures } from '@/shared/features';
 import { AppLogo } from '@/shared/ui/redesigned/AppLogo';
 import Icon from '@/shared/ui/redesigned/Icon';
 import ArrowIcon from '@/shared/assets/icons/redesigned/arrow-bottom.svg';
+import useSidebarItems from '../../model/selectors/getSidebarItems';
 
 interface ISidebarProps {
     className?: string;
@@ -27,7 +26,7 @@ const Sidebar: React.FC<ISidebarProps> = memo(
             setCollapsed((prevState) => !prevState);
         };
 
-        const sidebarItemsList = useSelector(getSidebarItems);
+        const sidebarItemsList = useSidebarItems();
 
         const itemsList = useMemo(
             () =>

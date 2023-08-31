@@ -2,8 +2,8 @@
     transition: 0.2s;
     cursor: pointer;
     color: var(--text-redesigned);
-    padding: 6px;
-    border-radius: 10px;
+    padding: 6px 16px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
 
@@ -65,9 +65,27 @@
     border-radius: 12px;
 }
 
+.cancel {
+    background: var(--light-bg-redesigned);
+    color: var(--cancel-redesigned);
+    border: none;
+    outline: none;
+    padding: 8px 16px;
+    border-radius: 12px;
+}
+
+.accept {
+    background: var(--light-bg-redesigned);
+    color: var(--save-redesigned);
+    border: none;
+    outline: none;
+    padding: 8px 16px;
+    border-radius: 12px;
+}
+
 .outline {
     background: none;
-    border: 1px solid var(--icon-redesigned);
+    border: 2px solid var(--icon-redesigned);
     padding: 8px 16px;
     border-radius: 12px;
 }

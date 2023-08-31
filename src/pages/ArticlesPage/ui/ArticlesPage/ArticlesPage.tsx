@@ -14,7 +14,7 @@ import fetchNextArticlesPage from '../../model/services/fetchNextArticlesPage/fe
 import ArticlesPageFilter from '../ArticlesPageFilter/ArticlesPageFilter';
 import { useSearchParams } from 'react-router-dom';
 import ArticlesInfiniteList from '../ArticlesInfiniteList/ArticlesInfiniteList';
-import { ArticlePageGreeting } from '@/features/articlePageGreeting';
+import { ArticlePageGreeting } from '@/features/ArticlePageGreeting';
 import { ToggleFeatures } from '@/shared/features';
 import { StickyContentLayout } from '@/shared/layouts';
 import ViewSelectorContainer from '../ViewSelectorContainer/ViewSelectorContainer';

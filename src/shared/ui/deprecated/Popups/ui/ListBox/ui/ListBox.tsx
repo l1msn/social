@@ -60,7 +60,7 @@ const ListBox: React.FC<IListBoxProps> = memo(
                     onChange={onChange}
                     disabled={readonly}
                 >
-                    <HListBox.Button className={cls.trigger}>
+                    <HListBox.Button as={Button} className={cls.trigger}>
                         <Button disabled={readonly}>
                             {value ?? defaultValue}
                         </Button>

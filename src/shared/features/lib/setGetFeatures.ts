@@ -1,7 +1,11 @@
 import IFeatureFlags from '../../types/IFeatureFlags';
 
-let featureFlags: IFeatureFlags = {
+const defaultFeatures: IFeatureFlags = {
     isAppRedesigned: true,
+};
+
+let featureFlags: IFeatureFlags = {
+    ...defaultFeatures,
 };
 
 function setFeatureFlags(newFeatureFlags?: IFeatureFlags) {

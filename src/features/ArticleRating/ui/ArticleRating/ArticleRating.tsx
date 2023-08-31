@@ -3,11 +3,13 @@ import RatingCard from '@/entities/Rating';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { UserSelectors } from '@/entities/User';
-import Skeleton from '@/shared/ui/deprecated/Skeleton';
+import { default as DeprecatedSkeleton } from '@/shared/ui/deprecated/Skeleton';
 import {
     useGetArticleRating,
     useRateArticle,
 } from '../../api/articleRatingApi';
+import { ToggleFeatures } from '@/shared/features';
+import Skeleton from '@/shared/ui/redesigned/Skeleton';
 
 interface IArticleRatingProps {
     className?: string;
@@ -57,8 +59,22 @@ const ArticleRating: React.FC<IArticleRatingProps> = memo(
             [handleRateArticle],
         );
 
+        const DeprecatedArticleRatingLoader = (
+            <DeprecatedSkeleton width={'100%'} height={'120px'} />
+        );
+
+        const RedesignedArticleRatingLoader = (
+            <Skeleton width={'100%'} height={'120px'} />
+        );
+
         if (isLoading) {
-            return <Skeleton width={'100%'} height={'120px'} />;
+            return (
+                <ToggleFeatures
+                    feature={'isAppRedesigned'}
+                    on={RedesignedArticleRatingLoader}
+                    off={DeprecatedArticleRatingLoader}
+                />
+            );
         }
 
         const rating = data?.[0];

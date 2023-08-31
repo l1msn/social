@@ -53,7 +53,7 @@ const ArticleDetailsPage: React.FC<IArticleDetailsPageProps> = memo(
             return null;
         }
 
-        const DeprecatedDynamicModuleLoader = (
+        const DeprecatedArticleDetailsPage = (
             <Page
                 className={classNames(cls.articleDetailsPage, {}, [className])}
             >
@@ -77,14 +77,10 @@ const ArticleDetailsPage: React.FC<IArticleDetailsPageProps> = memo(
             </Page>
         );
 
-        const RedesignedDynamicModuleLoader = (
+        const RedesignedArticleDetailsPage = (
             <StickyContentLayout
                 content={
-                    <Page
-                        className={classNames(cls.articleDetailsPage, {}, [
-                            className,
-                        ])}
-                    >
+                    <Page className={classNames('', {}, [className])}>
                         <VStack gap={'16'} max>
                             <Suspense fallback={<Loader />}>
                                 <DetailsContainer />
@@ -103,8 +99,8 @@ const ArticleDetailsPage: React.FC<IArticleDetailsPageProps> = memo(
             <DynamicModuleLoader reducers={reducers} removeAfterAmount>
                 <ToggleFeatures
                     feature={'isAppRedesigned'}
-                    on={RedesignedDynamicModuleLoader}
-                    off={DeprecatedDynamicModuleLoader}
+                    on={RedesignedArticleDetailsPage}
+                    off={DeprecatedArticleDetailsPage}
                 />
             </DynamicModuleLoader>
         );

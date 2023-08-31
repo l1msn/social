@@ -1,4 +1,9 @@
-import React, { memo, type ButtonHTMLAttributes, type JSX } from 'react';
+import React, {
+    type ButtonHTMLAttributes,
+    type JSX,
+    forwardRef,
+    ForwardedRef,
+} from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 import ButtonVariant from '../consts/ButtonVariant';
@@ -16,8 +21,11 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     addonRight?: React.ReactNode;
 }
 
-const Button: React.FC<IButtonProps> = memo(
-    (props: IButtonProps): JSX.Element => {
+const Button: React.FC<IButtonProps> = forwardRef(
+    (
+        props: IButtonProps,
+        ref: ForwardedRef<HTMLButtonElement>,
+    ): JSX.Element => {
         const {
             className,
             disabled,
@@ -35,6 +43,7 @@ const Button: React.FC<IButtonProps> = memo(
             <button
                 disabled={disabled}
                 {...otherProps}
+                ref={ref}
                 className={classNames(
                     cls.Button,
                     {
