@@ -33,7 +33,9 @@ export const userSlice = createSlice({
         },
         logout: (state) => {
             state.authData = undefined;
-            setFeatureFlags({});
+            setFeatureFlags({
+                isAppRedesigned: true,
+            });
             localStorage.removeItem(USER_LOCALSTORAGE_KEY);
         },
     },

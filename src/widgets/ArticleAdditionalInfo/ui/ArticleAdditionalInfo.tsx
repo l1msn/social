@@ -38,7 +38,7 @@ const ArticleAdditionalInfo: React.FC<IArticleAdditionalInfoProps> = memo(
                     />
                 </HStack>
                 <HStack max justify={'center'} gap={'8'}>
-                    <Button onClick={onEdit} variant={'filled'}>
+                    <Button disabled onClick={onEdit} variant={'filled'}>
                         {t('Edit')}
                     </Button>
                 </HStack>

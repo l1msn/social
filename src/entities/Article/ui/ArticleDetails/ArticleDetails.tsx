@@ -30,6 +30,9 @@ import { ToggleFeatures } from '@/shared/features';
 import { Text } from '@/shared/ui/redesigned/Text';
 import Skeleton from '@/shared/ui/redesigned/Skeleton';
 import AppImage from '@/shared/ui/redesigned/AppImage';
+import { RoutePaths } from '@/shared/consts/routerPaths';
+import Button from '@/shared/ui/redesigned/Button';
+import AppLink from '@/shared/ui/redesigned/AppLink';
 
 interface IArticleDetailsProps {
     className?: string;
@@ -219,6 +222,11 @@ const ArticleDetails: React.FC<IArticleDetailsProps> = memo(
 
             const RedesignedArticleDetailsContent = (
                 <>
+                    <AppLink to={RoutePaths.getRouteArticles()}>
+                        <Button variant={'outline'}>
+                            {t('Going back...')}
+                        </Button>
+                    </AppLink>
                     <VStack gap={'4'} data-testid={'ArticleDetails.Info'}>
                         <Text
                             size={'l'}

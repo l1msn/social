@@ -28,7 +28,7 @@ const articlesPageSlice = createSlice({
     initialState: articlesAdapter.getInitialState<IArticlesPageSchema>({
         isLoading: false,
         error: undefined,
-        view: ArticleView.SHELF,
+        view: ArticleView.LIST,
         page: 1,
         hasMore: true,
         ids: [],

@@ -125,13 +125,20 @@ const ArticleListItem: React.FC<IArticleListItemProps> = memo(
                                     />
                                 </HStack>
                             </HStack>
-                            <HStack gap={'4'}>
-                                <Avatar
-                                    size={32}
-                                    src={article.user.avatar}
-                                    className={cls.avatar}
+                            <HStack max gap={'4'} justify={'between'}>
+                                <HStack gap={'4'}>
+                                    <Avatar
+                                        size={32}
+                                        src={article.user.avatar}
+                                        className={cls.avatar}
+                                    />
+                                    <Text bold text={article.user.username} />
+                                </HStack>
+                                <Text
+                                    className={cls.idTitle}
+                                    bold
+                                    text={'№' + article.id}
                                 />
-                                <Text bold text={article.user.username} />
                             </HStack>
                         </VStack>
                     </VStack>
@@ -211,10 +218,13 @@ const ArticleListItem: React.FC<IArticleListItemProps> = memo(
                 ])}
             >
                 <VStack max gap={'8'}>
-                    <HStack max gap={'8'}>
-                        <Avatar src={article.user.avatar} size={32} />
-                        <Text bold text={article.user.username} />
-                        <Text text={article.createdAt} />
+                    <HStack max gap={'8'} justify={'between'}>
+                        <HStack gap={'8'}>
+                            <Avatar src={article.user.avatar} size={32} />
+                            <Text bold text={article.user.username} />
+                            <Text text={article.createdAt} />
+                        </HStack>
+                        <Text bold text={'№' + article.id} />
                     </HStack>
                     <Text title={article.title} bold />
                     <Text title={article.subtitle} size={'s'} />
